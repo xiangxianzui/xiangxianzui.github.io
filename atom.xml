@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Muser</title>
+  <subtitle>Coding While Thinking</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="https://xiangxianzui.github.io/"/>
+  <updated>2017-01-05T08:36:56.927Z</updated>
+  <id>https://xiangxianzui.github.io/</id>
+  
+  <author>
+    <name>xiangxianzui</name>
+    <email>xiangxianzui@gmail.com</email>
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Customize hexo blogs</title>
+    <link href="https://xiangxianzui.github.io/2017/01/Customize-hexo-blogs/"/>
+    <id>https://xiangxianzui.github.io/2017/01/Customize-hexo-blogs/</id>
+    <published>2017-01-05T03:37:09.000Z</published>
+    <updated>2017-01-05T08:36:56.927Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;In my previous &lt;a href=&quot;https://xiangxianzui.github.io/2017/01/Build-blogs-with-Hexo/&quot;&gt;post&lt;/a&gt;, I introduced how to build personal blog 
+    
+    </summary>
+    
+      <category term="Guides" scheme="https://xiangxianzui.github.io/categories/Guides/"/>
+    
+    
+      <category term="Hexo" scheme="https://xiangxianzui.github.io/tags/Hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Build blogs with Hexo!</title>
+    <link href="https://xiangxianzui.github.io/2017/01/Build-blogs-with-Hexo/"/>
+    <id>https://xiangxianzui.github.io/2017/01/Build-blogs-with-Hexo/</id>
+    <published>2017-01-05T02:29:32.000Z</published>
+    <updated>2017-01-05T03:41:02.345Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Welcome to my blog! In this my very first post, I will record my experience of building this blog with the help of &lt;a href=&quot;https://pages
+    
+    </summary>
+    
+      <category term="Guides" scheme="https://xiangxianzui.github.io/categories/Guides/"/>
+    
+    
+      <category term="Hexo" scheme="https://xiangxianzui.github.io/tags/Hexo/"/>
+    
+  </entry>
+  
+</feed>

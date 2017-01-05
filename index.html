@@ -58,9 +58,9 @@
           <a id="nav-github-link" class="nav-icon" href="https://github.com/xiangxianzui" title="Github"></a>
         
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://xiangxianzui.github.io"></form>
@@ -115,6 +115,18 @@
 <p>If you want to put your images according to post, which means one asset folder per post, you can set <code>post_asset_folder</code> to true in <em>_config.yml</em>. And when you <code>$ hexo new post [new-post]</code>, an asset folder will be created by hexo automatically.</p>
 <h2 id="Enabling-Comments"><a href="#Enabling-Comments" class="headerlink" title="Enabling Comments"></a>Enabling Comments</h2><p>The default theme (landscape) of Hexo already supports <a href="https://disqus.com/" target="_blank" rel="external">Disqus</a>. So, just go to Disqus, register an account, and click <em>install Disqus on site</em>. Follow the guideline, and specify a unique disqus shortname. After that, add this to your <em>_config.yml</em>.</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Disqus comments</span></div><div class="line">disqus_shortname: [your-disqus-shortname]</div></pre></td></tr></table></figure>
+<h2 id="RSS-plugin"><a href="#RSS-plugin" class="headerlink" title="RSS plugin"></a>RSS plugin</h2><p>Use the official tool <em>hexo-generator-feed</em> to generate RSS feed. Firstly intall it:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo-generator-feed --save</div></pre></td></tr></table></figure>
+<p>Configure options in <em>_config.yml</em>:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># RSS feed</span></div><div class="line">feed:</div><div class="line">  <span class="built_in">type</span>: atom</div><div class="line">  path: atom.xml</div><div class="line">  <span class="built_in">limit</span>: 20</div><div class="line">  hub:</div><div class="line">  content:</div></pre></td></tr></table></figure>
+<ul>
+<li>type - Feed type. (atom/rss2)</li>
+<li>path - Feed path. (Default: atom.xml/rss2.xml)</li>
+<li>limit - Maximum number of posts in the feed (Use 0 or false to show<br>all posts)</li>
+<li>hub - URL of the PubSubHubbub hubs (Leave it empty if you don’t use<br>it)</li>
+<li>content - (optional) set to ‘true’ to include the contents of the<br>entire post in the feed.</li>
+</ul>
+<p>A <em>atom.xml</em> file will be generated automatically when you run <code>hexo generate</code>.</p>
 <h2 id="Customize-default-theme"><a href="#Customize-default-theme" class="headerlink" title="Customize default theme"></a>Customize default theme</h2><h3 id="Add-icons-to-navigation-bar"><a href="#Add-icons-to-navigation-bar" class="headerlink" title="Add icons to navigation bar"></a>Add icons to navigation bar</h3><p>I will explain how to add icons to the navigation bar in the default theme.</p>
 <p>Open directory <code>/themes/landscape/source/css/_partial</code>, and find <code>header.styl</code>. Add following code:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">#nav-github-link</div><div class="line">  &amp;:before</div><div class="line">    content: &quot;\f09b&quot;</div></pre></td></tr></table></figure>
@@ -139,9 +151,9 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xiangxianzui.github.io/2017/01/Customize-hexo-blogs/" data-id="cixk350wz00011wr750fpdc31" class="article-share-link">Partager</a>
+      <a data-url="https://xiangxianzui.github.io/2017/01/Customize-hexo-blogs/" data-id="cixk4ixo40000x8r7sxi98tet" class="article-share-link">Share</a>
       
-        <a href="https://xiangxianzui.github.io/2017/01/Customize-hexo-blogs/#disqus_thread" class="article-comment-link">Commentaires</a>
+        <a href="https://xiangxianzui.github.io/2017/01/Customize-hexo-blogs/#disqus_thread" class="article-comment-link">Comments</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
@@ -216,9 +228,9 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xiangxianzui.github.io/2017/01/Build-blogs-with-Hexo/" data-id="cixk350wt00001wr7herzir0q" class="article-share-link">Partager</a>
+      <a data-url="https://xiangxianzui.github.io/2017/01/Build-blogs-with-Hexo/" data-id="cixk4ixp50001x8r7kxwuxf4q" class="article-share-link">Share</a>
       
-        <a href="https://xiangxianzui.github.io/2017/01/Build-blogs-with-Hexo/#disqus_thread" class="article-comment-link">Commentaires</a>
+        <a href="https://xiangxianzui.github.io/2017/01/Build-blogs-with-Hexo/#disqus_thread" class="article-comment-link">Comments</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
@@ -237,7 +249,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Articles récents</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
         
@@ -256,7 +268,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Catégories</h3>
+    <h3 class="widget-title">Categories</h3>
     <div class="widget">
       <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Guides/">Guides</a><span class="category-list-count">2</span></li></ul>
     </div>
@@ -266,7 +278,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Nuage de mot-clés</h3>
+    <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
       <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a>
     </div>
@@ -292,7 +304,7 @@
     <div id="footer-info" class="inner">
       &copy; 2017 xiangxianzui<br>
       Github: <a href='https://github.com/xiangxianzui/xiangxianzui.github.io'>xiangxianzui</a><br>
-      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a><br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a><br>
 
     </div>
   </div>
