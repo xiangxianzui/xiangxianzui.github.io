@@ -3,17 +3,26 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Muser</title>
+  <title>Customize hexo blogs | Muser</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="thinking in a different way">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Muser">
-<meta property="og:url" content="https://xiangxianzui.github.io/index.html">
+  <meta name="description" content="In my previous post, I introduced how to build personal blog site with the help of Hexo and Github Pages. Now it’s time to customize the hexo blog to show some personalities.
+_config.yml_config.yml is">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Customize hexo blogs">
+<meta property="og:url" content="https://xiangxianzui.github.io/2017/01/Customize-hexo-blogs/index.html">
 <meta property="og:site_name" content="Muser">
-<meta property="og:description" content="thinking in a different way">
+<meta property="og:description" content="In my previous post, I introduced how to build personal blog site with the help of Hexo and Github Pages. Now it’s time to customize the hexo blog to show some personalities.
+_config.yml_config.yml is">
+<meta property="og:image" content="https://xiangxianzui.github.io/hexo-1.png">
+<meta property="og:image" content="https://xiangxianzui.github.io/hexo-2.png">
+<meta property="og:image" content="https://xiangxianzui.github.io/hexo-3.png">
+<meta property="og:image" content="https://xiangxianzui.github.io/hexo-4.png">
+<meta property="og:updated_time" content="2017-01-05T08:02:02.440Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Muser">
-<meta name="twitter:description" content="thinking in a different way">
+<meta name="twitter:title" content="Customize hexo blogs">
+<meta name="twitter:description" content="In my previous post, I introduced how to build personal blog site with the help of Hexo and Github Pages. Now it’s time to customize the hexo blog to show some personalities.
+_config.yml_config.yml is">
+<meta name="twitter:image" content="https://xiangxianzui.github.io/hexo-1.png">
   
     <link rel="alternate" href="/atom.xml" title="Muser" type="application/atom+xml">
   
@@ -69,9 +78,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-Customize-hexo-blogs" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Customize-hexo-blogs" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/01/Customize-hexo-blogs/" class="article-date">
   <time datetime="2017-01-05T03:37:09.000Z" itemprop="datePublished">2017-01-05</time>
@@ -88,8 +95,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/Customize-hexo-blogs/">Customize hexo blogs</a>
+    <h1 class="article-title" itemprop="name">
+      Customize hexo blogs
     </h1>
   
 
@@ -149,88 +156,26 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-Build-blogs-with-Hexo" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/01/Build-blogs-with-Hexo/" class="article-date">
-  <time datetime="2017-01-05T02:29:32.000Z" itemprop="datePublished">2017-01-05</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Guides/">Guides</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/Build-blogs-with-Hexo/">Build blogs with Hexo!</a>
-    </h1>
+    <a href="/2017/01/Build-blogs-with-Hexo/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">Build blogs with Hexo!</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to my blog! In this my very first post, I will record my experience of building this blog with the help of <a href="https://pages.github.com/" target="_blank" rel="external">Github Pages</a> and the amazing <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This not only keeps a record what I did, but also may help those who want to build a personal blog site. Ok, let’s get down to the business. </p>
-<h2 id="Prerequisite"><a href="#Prerequisite" class="headerlink" title="Prerequisite"></a>Prerequisite</h2><ul>
-<li>Node.js</li>
-<li>Git</li>
-</ul>
-<p>Node.js and Git should be installed properly on your machine.<br>If not, download <a href="https://nodejs.org/en/download/" target="_blank" rel="external">Node.js</a> and <a href="https://git-scm.com/downloads" target="_blank" rel="external">Git</a>, then choose the version you want.</p>
-<h2 id="Install-Hexo"><a href="#Install-Hexo" class="headerlink" title="Install Hexo"></a>Install Hexo</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install -g hexo-cli</div></pre></td></tr></table></figure>
-<h2 id="Set-up-Hexo"><a href="#Set-up-Hexo" class="headerlink" title="Set up Hexo"></a>Set up Hexo</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ hexo init [your-site-directory]</div><div class="line">$ <span class="built_in">cd</span> [your-site-directory]</div><div class="line">$ npm install</div></pre></td></tr></table></figure>
-<p>If [your-site-directory] is not specified, hexo will create the project in the current working directory.</p>
-<h2 id="Create-a-post"><a href="#Create-a-post" class="headerlink" title="Create a post"></a>Create a post</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new post [your-post-title]</div></pre></td></tr></table></figure>
-<p>Will find a new post is created in /source/_posts</p>
-<p>All posts created by hexo is written in Markdown. You can edit in favorite editor or I recommend to use this online editor – <a href="https://stackedit.io/" target="_blank" rel="external">StackEdit</a>.</p>
-<h2 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>This will create a /public folder in the root of your project, and it contains all static html, css, js, fonts, images, etc. </p>
-<h2 id="Run-hexo-server-locally"><a href="#Run-hexo-server-locally" class="headerlink" title="Run hexo server locally"></a>Run hexo server locally</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>The server will be running in <a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a> And this offers a convenient way for you to view what you have changed with the look of your website.</p>
-<h2 id="From-offline-to-online"><a href="#From-offline-to-online" class="headerlink" title="From offline to online"></a>From offline to online</h2><p>Hexo provides many ways to deploy the website to your real server. I choose to deploy to Github Pages.</p>
-<h4 id="Create-a-github-repository"><a href="#Create-a-github-repository" class="headerlink" title="Create a github repository"></a>Create a github repository</h4><p>Go to github and create a repository named: <code>[your-github-username]-github.io</code>, mine is <code>xiangxianzui.github.io</code>.</p>
-<p>Go to <em>settings</em> of created repository, pull down the page and you find:</p>
-<p><img src="hexo-1.png" alt="GitHub Page Setting"> </p>
-<p>Next, deploy a SSH key to this repository. This <a href="https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/" target="_blank" rel="external">article</a> is helpful.</p>
-<h4 id="Git-deploy-strategy-for-Hexo"><a href="#Git-deploy-strategy-for-Hexo" class="headerlink" title="Git deploy strategy for Hexo"></a>Git deploy strategy for Hexo</h4><p>Install the official git deploy strategy for hexo.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo-deployer-git --save</div></pre></td></tr></table></figure>
-<p>After that, edit deploy config in your <em>_config.yml</em> (located in project root).</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  <span class="built_in">type</span>: git</div><div class="line">  repo: [your-ssh-repo]</div><div class="line">  branch: master</div><div class="line">  message: <span class="string">"Site updated: &#123;&#123; now('YYYY-MM-DD HH:mm:ss') &#125;&#125;"</span></div></pre></td></tr></table></figure>
-<p>Then, deploy website to git repository</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p><strong>Note</strong>: If you are using Windows, it is recommended to run deploy command in Git Bash.</p>
-<h4 id="Take-off"><a href="#Take-off" class="headerlink" title="Take off!"></a>Take off!</h4><p>Browse <a href="https://[your-github-username].github.io/" target="_blank" rel="external">https://[your-github-username].github.io/</a> and enjoy your flight with Hexo!</p>
-<hr>
-<blockquote>
-<p>Written with <a href="https://stackedit.io/" target="_blank" rel="external">StackEdit</a>.</p>
-</blockquote>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://xiangxianzui.github.io/2017/01/Build-blogs-with-Hexo/" data-id="cixk350wt00001wr7herzir0q" class="article-share-link">Partager</a>
-      
-        <a href="https://xiangxianzui.github.io/2017/01/Build-blogs-with-Hexo/#disqus_thread" class="article-comment-link">Commentaires</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
-
-    </footer>
-  </div>
   
 </article>
 
 
-  
-
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
 </section>
         
           <aside id="sidebar">
@@ -309,11 +254,13 @@
 <script>
   var disqus_shortname = 'xiangxianzui';
   
+  var disqus_url = 'https://xiangxianzui.github.io/2017/01/Customize-hexo-blogs/';
+  
   (function(){
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>
