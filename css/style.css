@@ -441,6 +441,9 @@ body {
 #nav-github-link:before {
   content: "\f09b";
 }
+#nav-sitemap-link:before {
+  content: "\f0e8";
+}
 #nav-rss-link:before {
   content: "\f09e";
 }
@@ -1289,6 +1292,12 @@ pre .javascript .function {
   .mobile-nav-link:hover {
     color: #fff;
   }
+}
+#right-bottom {
+  position: fixed;
+  right: 10%;
+  bottom: 20%;
+  display: none;
 }
 @media screen and (min-width: 768px) {
   #sidebar {
