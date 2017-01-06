@@ -438,8 +438,8 @@ body {
   float: right;
   margin-right: -15px;
 }
-#nav-github-link:before {
-  content: "\f09b";
+#nav-google-analytic-link:before {
+  content: "\f080";
 }
 #nav-sitemap-link:before {
   content: "\f0e8";
