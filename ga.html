@@ -7,9 +7,9 @@
 
 <!-- Step 1: Create the containing elements. -->
 
-<section id="auth-button"></section>
-<section id="view-selector"></section>
-<section id="timeline"></section>
+<div id="embed-api-auth-container"></div>
+<div id="chart-container"></div>
+<div id="view-selector-container"></div>
 
 <!-- Step 2: Load the library. -->
 
@@ -23,54 +23,61 @@
 </script>
 
 <script>
+
 gapi.analytics.ready(function() {
-  //put your application code here...
 
-  // Step 3: Authorize the user.
-
-  var CLIENT_ID = '568143776140-67iusjugtvnm8svcjqaai22h7dpprfrh.apps.googleusercontent.com';
-
+  /**
+   * Authorize the user immediately if the user has already granted access.
+   * If no access has been created, render an authorize button inside the
+   * element with the ID "embed-api-auth-container".
+   */
   gapi.analytics.auth.authorize({
-    container: 'auth-button',
-    clientid: CLIENT_ID,
+    container: 'embed-api-auth-container',
+    clientid: 'REPLACE WITH YOUR CLIENT ID'
   });
 
-  // Step 4: Create the view selector.
 
+  /**
+   * Create a new ViewSelector instance to be rendered inside of an
+   * element with the id "view-selector-container".
+   */
   var viewSelector = new gapi.analytics.ViewSelector({
-    container: 'view-selector'
+    container: 'view-selector-container'
   });
 
-  // Step 5: Create the timeline chart.
+  // Render the view selector to the page.
+  viewSelector.execute();
 
-  var timeline = new gapi.analytics.googleCharts.DataChart({
-    reportType: 'ga',
+
+  /**
+   * Create a new DataChart instance with the given query parameters
+   * and Google chart options. It will be rendered inside an element
+   * with the id "chart-container".
+   */
+  var dataChart = new gapi.analytics.googleCharts.DataChart({
     query: {
-      'dimensions': 'ga:date',
-      'metrics': 'ga:sessions',
+      metrics: 'ga:sessions',
+      dimensions: 'ga:date',
       'start-date': '30daysAgo',
-      'end-date': 'today',
+      'end-date': 'yesterday'
     },
     chart: {
+      container: 'chart-container',
       type: 'LINE',
-      container: 'timeline'
-    }
-  });
-
-  // Step 6: Hook up the components to work together.
-
-  gapi.analytics.auth.on('success', function(response) {
-    viewSelector.execute();
-  });
-
-  viewSelector.on('change', function(ids) {
-    var newIds = {
-      query: {
-        ids: ids
+      options: {
+        width: '100%'
       }
     }
-    timeline.set(newIds).execute();
   });
+
+
+  /**
+   * Render the dataChart on the page whenever a new view is selected.
+   */
+  viewSelector.on('change', function(ids) {
+    dataChart.set({query: {ids: ids}}).execute();
+  });
+
 });
 </script>
 </body>
