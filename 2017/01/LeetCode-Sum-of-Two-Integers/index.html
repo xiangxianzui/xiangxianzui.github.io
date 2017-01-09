@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>LeetCode: Sum of Two Integers | Muser</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="LeetCode: Sum of Two IntegersProblem1234Calculate the sum of two integers a and b, but you are not allowed to use the operator + and -.Example:Given a = 1 and b = 2, return 3.
+SolutionThink this probl">
+<meta property="og:type" content="article">
+<meta property="og:title" content="LeetCode: Sum of Two Integers">
+<meta property="og:url" content="https://xiangxianzui.github.io/2017/01/LeetCode-Sum-of-Two-Integers/index.html">
+<meta property="og:site_name" content="Muser">
+<meta property="og:description" content="LeetCode: Sum of Two IntegersProblem1234Calculate the sum of two integers a and b, but you are not allowed to use the operator + and -.Example:Given a = 1 and b = 2, return 3.
+SolutionThink this probl">
+<meta property="og:updated_time" content="2017-01-09T14:59:52.408Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="LeetCode: Sum of Two Integers">
+<meta name="twitter:description" content="LeetCode: Sum of Two IntegersProblem1234Calculate the sum of two integers a and b, but you are not allowed to use the operator + and -.Example:Given a = 1 and b = 2, return 3.
+SolutionThink this probl">
+  
+    <link rel="alternate" href="/atom.xml" title="Muser" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-89925013-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Muser</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Coding While Thinking</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/projects">Projects</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-google-analytic-link" class="nav-icon" href="/ga.html" title="Google Analytics"></a>
+        
+        
+          <a id="nav-sitemap-link" class="nav-icon" href="/sitemap.xml" title="Sitemap"></a>
+        
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://xiangxianzui.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-LeetCode-Sum-of-Two-Integers" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/01/LeetCode-Sum-of-Two-Integers/" class="article-date">
+  <time datetime="2017-01-09T14:00:24.000Z" itemprop="datePublished">2017-01-09</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/LeetCode/">LeetCode</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      LeetCode: Sum of Two Integers
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="LeetCode-Sum-of-Two-Integers"><a href="#LeetCode-Sum-of-Two-Integers" class="headerlink" title="LeetCode: Sum of Two Integers"></a>LeetCode: Sum of Two Integers</h2><h3 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Calculate the sum of two integers a and b, but you are not allowed to use the operator + and -.</div><div class="line"></div><div class="line">Example:</div><div class="line">Given a = 1 and b = 2, return 3.</div></pre></td></tr></table></figure>
+<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><p>Think this problem with an example. </p>
+<p>Consider 15+9=24.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#XOR holds the remaining part of the result</span></div><div class="line">     00001111</div><div class="line">XOR  00001001</div><div class="line">-------------</div><div class="line">     00000110</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#AND holds the carry part of the result</span></div><div class="line">     00001111</div><div class="line">AND  00001001</div><div class="line">-------------</div><div class="line">     00001001</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># shift the carry to left for 1 place, and add with the remaining</span></div><div class="line">     00000110</div><div class="line"> +   00010010</div><div class="line">-------------</div><div class="line">     00011000</div></pre></td></tr></table></figure>
+<p>Thus, for any integer <code>a</code> and <code>b</code>, <code>a + b = a^b + (a&amp;b)&lt;&lt;1</code>. Because <code>+</code> operator is not allowed, we can regard <code>a^b</code> as new <code>a</code>, and <code>(a&amp;b)&lt;&lt;1</code> as new <code>b</code>. Repeat this until current carry is <code>0</code>.</p>
+<p>The java implementation is like this:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Java solution</span></div><div class="line">public class Solution &#123;</div><div class="line">    public int getSum(int a, int b) &#123;</div><div class="line">        <span class="keyword">if</span>(b==0)    <span class="built_in">return</span> a;</div><div class="line">        <span class="keyword">while</span>(b!=0)&#123;</div><div class="line">            int carry = (a&amp;b)&lt;&lt;1;</div><div class="line">            int remain = a^b;</div><div class="line">            b = carry;</div><div class="line">            a = remain;</div><div class="line">        &#125;</div><div class="line">        <span class="built_in">return</span> a;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>Written with <a href="https://stackedit.io/" target="_blank" rel="external">StackEdit</a>.</p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://xiangxianzui.github.io/2017/01/LeetCode-Sum-of-Two-Integers/" data-id="cixq7tgev0004f0r7imr1n81b" class="article-share-link">Share</a>
+      
+        <a href="https://xiangxianzui.github.io/2017/01/LeetCode-Sum-of-Two-Integers/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Bit-Manipulation/">Bit Manipulation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithm/">algorithm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/01/Customize-hexo-blogs/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Customize hexo blogs</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/01/LeetCode-Sum-of-Two-Integers/">LeetCode: Sum of Two Integers</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/Customize-hexo-blogs/">Customize hexo blogs</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/Build-blogs-with-Hexo/">Build blogs with Hexo!</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Guides/">Guides</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/LeetCode/">LeetCode</a><span class="category-list-count">1</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Bit-Manipulation/" style="font-size: 10px;">Bit Manipulation</a> <a href="/tags/Hexo/" style="font-size: 20px;">Hexo</a> <a href="/tags/algorithm/" style="font-size: 10px;">algorithm</a> <a href="/tags/java/" style="font-size: 10px;">java</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">3</span></li></ul>
+    </div>
+  </div>
+
+
+  
+</aside>
+        
+        <div id="right-bottom">
+	<a id="back-to-top" href='#main'><img style="width:50px; height:50px" src="http://www.clker.com/cliparts/8/7/Y/H/W/e/up-arrow-circle-hi.png"></a>
+</div>
+
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 xiangxianzui<br>
+      Github: <a href='https://github.com/xiangxianzui/xiangxianzui.github.io'>xiangxianzui</a><br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a><br>
+
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/projects" class="mobile-nav-link">Projects</a>
+  
+</nav>
+    
+<script>
+  var disqus_shortname = 'xiangxianzui';
+  
+  var disqus_url = 'https://xiangxianzui.github.io/2017/01/LeetCode-Sum-of-Two-Integers/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
