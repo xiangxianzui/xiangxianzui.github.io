@@ -5,19 +5,19 @@
   
   <title>LeetCode: Delete Node in a Linked List | Muser</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="LeetCode: Delete Node in a Linked ListProblemWrite a function to delete a node (except the tail) in a singly linked list, given only access to that node.
-Supposed the linked list is 1 -&amp;gt; 2 -&amp;gt; 3">
+  <meta name="description" content="ProblemWrite a function to delete a node (except the tail) in a singly linked list, given only access to that node.
+Supposed the linked list is 1 -&amp;gt; 2 -&amp;gt; 3 -&amp;gt; 4 and you are given the third no">
 <meta property="og:type" content="article">
 <meta property="og:title" content="LeetCode: Delete Node in a Linked List">
 <meta property="og:url" content="https://xiangxianzui.github.io/2017/01/LeetCode-Delete-Node-in-a-Linked-List/index.html">
 <meta property="og:site_name" content="Muser">
-<meta property="og:description" content="LeetCode: Delete Node in a Linked ListProblemWrite a function to delete a node (except the tail) in a singly linked list, given only access to that node.
-Supposed the linked list is 1 -&amp;gt; 2 -&amp;gt; 3">
-<meta property="og:updated_time" content="2017-01-12T03:38:54.537Z">
+<meta property="og:description" content="ProblemWrite a function to delete a node (except the tail) in a singly linked list, given only access to that node.
+Supposed the linked list is 1 -&amp;gt; 2 -&amp;gt; 3 -&amp;gt; 4 and you are given the third no">
+<meta property="og:updated_time" content="2017-01-12T05:52:51.524Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="LeetCode: Delete Node in a Linked List">
-<meta name="twitter:description" content="LeetCode: Delete Node in a Linked ListProblemWrite a function to delete a node (except the tail) in a singly linked list, given only access to that node.
-Supposed the linked list is 1 -&amp;gt; 2 -&amp;gt; 3">
+<meta name="twitter:description" content="ProblemWrite a function to delete a node (except the tail) in a singly linked list, given only access to that node.
+Supposed the linked list is 1 -&amp;gt; 2 -&amp;gt; 3 -&amp;gt; 4 and you are given the third no">
   
     <link rel="alternate" href="/atom.xml" title="Muser" type="application/atom+xml">
   
@@ -117,9 +117,9 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="LeetCode-Delete-Node-in-a-Linked-List"><a href="#LeetCode-Delete-Node-in-a-Linked-List" class="headerlink" title="LeetCode: Delete Node in a Linked List"></a>LeetCode: Delete Node in a Linked List</h2><h3 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h3><p>Write a function to delete a node (except the tail) in a singly linked list, given only access to that node.</p>
+        <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>Write a function to delete a node (except the tail) in a singly linked list, given only access to that node.</p>
 <p>Supposed the linked list is <code>1 -&gt; 2 -&gt; 3 -&gt; 4</code> and you are given the third node with value <code>3</code>, the linked list should become <code>1 -&gt; 2 -&gt; 4</code> after calling your function.</p>
-<h3 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h3><p>The solution is a little tricky. Normally, when we delete a node from a linked list, we should know the previous node of the one we want to delete. However, at this time, we only have access to the node to be deleted. So, we have to “<strong>sacrifice</strong>“ the next node! Here is the java code:</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>The solution is a little tricky. Normally, when we delete a node from a linked list, we should know the previous node of the one we want to delete. However, at this time, we only have access to the node to be deleted. So, we have to “<strong>sacrifice</strong>“ the next node! Here is the java code:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">public class Solution &#123;</div><div class="line">    public void deleteNode(ListNode node) &#123;</div><div class="line">        if(node!=null)&#123;</div><div class="line">            node.val = node.next.val;</div><div class="line">            node.next = node.next.next;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>This problem is quite easy, but tricky. I just want to record this trick to guarantee I won’t forget it someday :)</p>
 <blockquote>
@@ -129,7 +129,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xiangxianzui.github.io/2017/01/LeetCode-Delete-Node-in-a-Linked-List/" data-id="cixttutwh00079or7i9ccxrkw" class="article-share-link">Share</a>
+      <a data-url="https://xiangxianzui.github.io/2017/01/LeetCode-Delete-Node-in-a-Linked-List/" data-id="cixudr98e0008wsr7m3zd8usf" class="article-share-link">Share</a>
       
         <a href="https://xiangxianzui.github.io/2017/01/LeetCode-Delete-Node-in-a-Linked-List/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -141,6 +141,15 @@ ga('send', 'pageview');
   
     
 <nav id="article-nav">
+  
+    <a href="/2017/01/LeetCode-Binary-Watch/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          LeetCode: Binary Watch
+        
+      </div>
+    </a>
   
   
     <a href="/2017/01/LeetCode-Move-Zeroes/" id="article-nav-older" class="article-nav-link-wrap">
@@ -170,6 +179,10 @@ ga('send', 'pageview');
       <ul>
         
           <li>
+            <a href="/2017/01/LeetCode-Binary-Watch/">LeetCode: Binary Watch</a>
+          </li>
+        
+          <li>
             <a href="/2017/01/LeetCode-Delete-Node-in-a-Linked-List/">LeetCode: Delete Node in a Linked List</a>
           </li>
         
@@ -185,10 +198,6 @@ ga('send', 'pageview');
             <a href="/2017/01/Customize-hexo-blogs/">Customize hexo blogs</a>
           </li>
         
-          <li>
-            <a href="/2017/01/Build-blogs-with-Hexo/">Build blogs with Hexo!</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -198,7 +207,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Guides/">Guides</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/LeetCode/">LeetCode</a><span class="category-list-count">3</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Guides/">Guides</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/LeetCode/">LeetCode</a><span class="category-list-count">4</span></li></ul>
     </div>
   </div>
 
@@ -208,7 +217,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/Bit-Manipulation/" style="font-size: 10px;">Bit Manipulation</a> <a href="/tags/Hexo/" style="font-size: 15px;">Hexo</a> <a href="/tags/Linked-List/" style="font-size: 10px;">Linked List</a> <a href="/tags/algorithm/" style="font-size: 20px;">algorithm</a>
+      <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/Backtracking/" style="font-size: 10px;">Backtracking</a> <a href="/tags/Bit-Manipulation/" style="font-size: 10px;">Bit Manipulation</a> <a href="/tags/Hexo/" style="font-size: 15px;">Hexo</a> <a href="/tags/Linked-List/" style="font-size: 10px;">Linked List</a> <a href="/tags/algorithm/" style="font-size: 20px;">algorithm</a>
     </div>
   </div>
 
@@ -217,7 +226,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">5</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">6</span></li></ul>
     </div>
   </div>
 

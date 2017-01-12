@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://xiangxianzui.github.io/"/>
-  <updated>2017-01-12T03:38:54.537Z</updated>
+  <updated>2017-01-12T12:56:44.492Z</updated>
   <id>https://xiangxianzui.github.io/</id>
   
   <author>
@@ -16,15 +16,37 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>LeetCode: Binary Watch</title>
+    <link href="https://xiangxianzui.github.io/2017/01/LeetCode-Binary-Watch/"/>
+    <id>https://xiangxianzui.github.io/2017/01/LeetCode-Binary-Watch/</id>
+    <published>2017-01-12T05:43:05.000Z</published>
+    <updated>2017-01-12T12:56:44.492Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;A binary watch has 4 LEDs on the top which represe
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="https://xiangxianzui.github.io/categories/LeetCode/"/>
+    
+    
+      <category term="algorithm" scheme="https://xiangxianzui.github.io/tags/algorithm/"/>
+    
+      <category term="Backtracking" scheme="https://xiangxianzui.github.io/tags/Backtracking/"/>
+    
+  </entry>
+  
+  <entry>
     <title>LeetCode: Delete Node in a Linked List</title>
     <link href="https://xiangxianzui.github.io/2017/01/LeetCode-Delete-Node-in-a-Linked-List/"/>
     <id>https://xiangxianzui.github.io/2017/01/LeetCode-Delete-Node-in-a-Linked-List/</id>
     <published>2017-01-12T03:27:07.000Z</published>
-    <updated>2017-01-12T03:38:54.537Z</updated>
+    <updated>2017-01-12T05:52:51.524Z</updated>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;LeetCode-Delete-Node-in-a-Linked-List&quot;&gt;&lt;a href=&quot;#LeetCode-Delete-Node-in-a-Linked-List&quot; class=&quot;headerlink&quot; title=&quot;LeetCode: Delete N
+      &lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;Write a function to delete a node (except the tail
     
     </summary>
     
@@ -42,11 +64,11 @@
     <link href="https://xiangxianzui.github.io/2017/01/LeetCode-Move-Zeroes/"/>
     <id>https://xiangxianzui.github.io/2017/01/LeetCode-Move-Zeroes/</id>
     <published>2017-01-12T02:14:39.000Z</published>
-    <updated>2017-01-12T03:31:26.949Z</updated>
+    <updated>2017-01-12T05:52:18.754Z</updated>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;LeetCode-Move-Zeroes&quot;&gt;&lt;a href=&quot;#LeetCode-Move-Zeroes&quot; class=&quot;headerlink&quot; title=&quot;LeetCode: Move Zeroes&quot;&gt;&lt;/a&gt;LeetCode: Move Zeroes&lt;/h2
+      &lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;Given an array nums, write a function to move all 
     
     </summary>
     
@@ -64,11 +86,11 @@
     <link href="https://xiangxianzui.github.io/2017/01/LeetCode-Sum-of-Two-Integers/"/>
     <id>https://xiangxianzui.github.io/2017/01/LeetCode-Sum-of-Two-Integers/</id>
     <published>2017-01-09T14:00:24.000Z</published>
-    <updated>2017-01-12T03:27:51.847Z</updated>
+    <updated>2017-01-12T05:51:32.289Z</updated>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;LeetCode-Sum-of-Two-Integers&quot;&gt;&lt;a href=&quot;#LeetCode-Sum-of-Two-Integers&quot; class=&quot;headerlink&quot; title=&quot;LeetCode: Sum of Two Integers&quot;&gt;&lt;/a&gt;L
+      &lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=
     
     </summary>
     
