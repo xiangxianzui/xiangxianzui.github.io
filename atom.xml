@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://xiangxianzui.github.io/"/>
-  <updated>2017-01-09T14:59:52.408Z</updated>
+  <updated>2017-01-12T02:59:48.209Z</updated>
   <id>https://xiangxianzui.github.io/</id>
   
   <author>
@@ -14,6 +14,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>LeetCode: Move Zeroes</title>
+    <link href="https://xiangxianzui.github.io/2017/01/LeetCode-Move-Zeroes/"/>
+    <id>https://xiangxianzui.github.io/2017/01/LeetCode-Move-Zeroes/</id>
+    <published>2017-01-12T02:14:39.000Z</published>
+    <updated>2017-01-12T02:59:48.209Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;Given an array nums, write a function to move all 
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="https://xiangxianzui.github.io/categories/LeetCode/"/>
+    
+    
+      <category term="algorithm" scheme="https://xiangxianzui.github.io/tags/algorithm/"/>
+    
+      <category term="java" scheme="https://xiangxianzui.github.io/tags/java/"/>
+    
+      <category term="Array" scheme="https://xiangxianzui.github.io/tags/Array/"/>
+    
+  </entry>
   
   <entry>
     <title>LeetCode: Sum of Two Integers</title>

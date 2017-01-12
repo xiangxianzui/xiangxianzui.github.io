@@ -89,6 +89,61 @@ ga('send', 'pageview');
       <div class="outer">
         <section id="main">
   
+    <article id="post-LeetCode-Move-Zeroes" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/01/LeetCode-Move-Zeroes/" class="article-date">
+  <time datetime="2017-01-12T02:14:39.000Z" itemprop="datePublished">2017-01-12</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/LeetCode/">LeetCode</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/01/LeetCode-Move-Zeroes/">LeetCode: Move Zeroes</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>Given an array nums, write a function to move all 0’s to the end of it while maintaining the relative order of the non-zero elements.</p>
+<p>For example, given <code>nums = [0, 1, 0, 3, 12]</code>, after calling your function, <code>nums</code> should be <code>[1, 3, 12, 0, 0]</code>.</p>
+<p><strong>Note</strong>:<br>You must do this in-place without making a copy of the array.<br>Minimize the total number of operations.</p>
+<h2 id="Solution-1-–-59ms"><a href="#Solution-1-–-59ms" class="headerlink" title="Solution 1 – 59ms"></a>Solution 1 – 59ms</h2><p>Go through the array. If <code>ith</code> element is 0, then move all elements within [i+1,nums,length-1] one place ahead, and set the last element of the array to 0. To prevent endless loop when <code>nums=[0,0,...,0]</code>, set a variable <code>reapeatCount</code>.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">public void moveZeroes(int[] nums) &#123;</div><div class="line">    int repeatCount = 0;</div><div class="line">    for(int i=0; i&lt;nums.length; i++)&#123;</div><div class="line">        if(nums[i]==0)&#123;</div><div class="line">            for(int j=i; j&lt;nums.length-1; j++)&#123;</div><div class="line">                nums[j] = nums[j+1];</div><div class="line">            &#125;</div><div class="line">            nums[nums.length-1] = 0;</div><div class="line">            i--;</div><div class="line">            repeatCount++;</div><div class="line">        &#125;</div><div class="line">        if(repeatCount==nums.length)    break;</div><div class="line">            </div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="Solution-2-–-19ms"><a href="#Solution-2-–-19ms" class="headerlink" title="Solution 2 – 19ms"></a>Solution 2 – 19ms</h2><p>Go through the array. If <code>ith</code> element is 0, then find the first non-zero element within range [i+1,nums.length-1] and swap it with current element; if there is no such non-zero element, it means all non-zero elements are before zeroes – done! If current element is non-zero, just go on to the next.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">public void moveZeroes(int[] nums) &#123;</div><div class="line">    if(nums != null)&#123;</div><div class="line">        for(int i=0; i&lt;nums.length; i++)&#123;</div><div class="line">            if(nums[i]==0)&#123;</div><div class="line">                //find the first non-zero element within range [i+1,nums.length-1]</div><div class="line">                int firstNonZeroIdx = -1;</div><div class="line">                for(int j=i+1; j&lt;nums.length; j++)&#123;</div><div class="line">                    if(nums[j]!=0)&#123;</div><div class="line">                        firstNonZeroIdx = j;</div><div class="line">                        break;</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">                if(firstNonZeroIdx==-1) break;</div><div class="line">                else&#123;</div><div class="line">                    int temp = nums[i];</div><div class="line">                    nums[i] = nums[firstNonZeroIdx];</div><div class="line">                    nums[firstNonZeroIdx] = temp;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>Solution 2 is better than Solution 1. This is because in Solution 1, it is unnecessary to move all elements after a non-zero element one place ahead. </p>
+<blockquote>
+<p>Written with <a href="https://stackedit.io/" target="_blank" rel="external">StackEdit</a>.</p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://xiangxianzui.github.io/2017/01/LeetCode-Move-Zeroes/" data-id="cixtsg9yv0007vgr7st7wtjaj" class="article-share-link">Share</a>
+      
+        <a href="https://xiangxianzui.github.io/2017/01/LeetCode-Move-Zeroes/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Array/">Array</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithm/">algorithm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/java/">java</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-LeetCode-Sum-of-Two-Integers" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/01/LeetCode-Sum-of-Two-Integers/" class="article-date">
@@ -131,7 +186,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xiangxianzui.github.io/2017/01/LeetCode-Sum-of-Two-Integers/" data-id="cixq7tgev0004f0r7imr1n81b" class="article-share-link">Share</a>
+      <a data-url="https://xiangxianzui.github.io/2017/01/LeetCode-Sum-of-Two-Integers/" data-id="cixtsg9yy0008vgr7ck058blm" class="article-share-link">Share</a>
       
         <a href="https://xiangxianzui.github.io/2017/01/LeetCode-Sum-of-Two-Integers/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -235,7 +290,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xiangxianzui.github.io/2017/01/Customize-hexo-blogs/" data-id="cixq7tgem0002f0r77q7zboub" class="article-share-link">Share</a>
+      <a data-url="https://xiangxianzui.github.io/2017/01/Customize-hexo-blogs/" data-id="cixtsg9ya0002vgr7pw2uhu5j" class="article-share-link">Share</a>
       
         <a href="https://xiangxianzui.github.io/2017/01/Customize-hexo-blogs/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -312,7 +367,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xiangxianzui.github.io/2017/01/Build-blogs-with-Hexo/" data-id="cixq7tgg0000hf0r705k9mbbj" class="article-share-link">Share</a>
+      <a data-url="https://xiangxianzui.github.io/2017/01/Build-blogs-with-Hexo/" data-id="cixtsg9yj0004vgr7ibsyooyw" class="article-share-link">Share</a>
       
         <a href="https://xiangxianzui.github.io/2017/01/Build-blogs-with-Hexo/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -338,6 +393,10 @@ ga('send', 'pageview');
       <ul>
         
           <li>
+            <a href="/2017/01/LeetCode-Move-Zeroes/">LeetCode: Move Zeroes</a>
+          </li>
+        
+          <li>
             <a href="/2017/01/LeetCode-Sum-of-Two-Integers/">LeetCode: Sum of Two Integers</a>
           </li>
         
@@ -358,7 +417,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Guides/">Guides</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/LeetCode/">LeetCode</a><span class="category-list-count">1</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Guides/">Guides</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/LeetCode/">LeetCode</a><span class="category-list-count">2</span></li></ul>
     </div>
   </div>
 
@@ -368,7 +427,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Bit-Manipulation/" style="font-size: 10px;">Bit Manipulation</a> <a href="/tags/Hexo/" style="font-size: 20px;">Hexo</a> <a href="/tags/algorithm/" style="font-size: 10px;">algorithm</a> <a href="/tags/java/" style="font-size: 10px;">java</a>
+      <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/Bit-Manipulation/" style="font-size: 10px;">Bit Manipulation</a> <a href="/tags/Hexo/" style="font-size: 20px;">Hexo</a> <a href="/tags/algorithm/" style="font-size: 20px;">algorithm</a> <a href="/tags/java/" style="font-size: 20px;">java</a>
     </div>
   </div>
 
@@ -377,7 +436,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">3</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">4</span></li></ul>
     </div>
   </div>
 
