@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://xiangxianzui.github.io/"/>
-  <updated>2017-01-12T02:59:48.209Z</updated>
+  <updated>2017-01-12T03:38:54.537Z</updated>
   <id>https://xiangxianzui.github.io/</id>
   
   <author>
@@ -16,15 +16,15 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>LeetCode: Move Zeroes</title>
-    <link href="https://xiangxianzui.github.io/2017/01/LeetCode-Move-Zeroes/"/>
-    <id>https://xiangxianzui.github.io/2017/01/LeetCode-Move-Zeroes/</id>
-    <published>2017-01-12T02:14:39.000Z</published>
-    <updated>2017-01-12T02:59:48.209Z</updated>
+    <title>LeetCode: Delete Node in a Linked List</title>
+    <link href="https://xiangxianzui.github.io/2017/01/LeetCode-Delete-Node-in-a-Linked-List/"/>
+    <id>https://xiangxianzui.github.io/2017/01/LeetCode-Delete-Node-in-a-Linked-List/</id>
+    <published>2017-01-12T03:27:07.000Z</published>
+    <updated>2017-01-12T03:38:54.537Z</updated>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;Given an array nums, write a function to move all 
+      &lt;h2 id=&quot;LeetCode-Delete-Node-in-a-Linked-List&quot;&gt;&lt;a href=&quot;#LeetCode-Delete-Node-in-a-Linked-List&quot; class=&quot;headerlink&quot; title=&quot;LeetCode: Delete N
     
     </summary>
     
@@ -33,7 +33,27 @@
     
       <category term="algorithm" scheme="https://xiangxianzui.github.io/tags/algorithm/"/>
     
-      <category term="java" scheme="https://xiangxianzui.github.io/tags/java/"/>
+      <category term="Linked List" scheme="https://xiangxianzui.github.io/tags/Linked-List/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LeetCode: Move Zeroes</title>
+    <link href="https://xiangxianzui.github.io/2017/01/LeetCode-Move-Zeroes/"/>
+    <id>https://xiangxianzui.github.io/2017/01/LeetCode-Move-Zeroes/</id>
+    <published>2017-01-12T02:14:39.000Z</published>
+    <updated>2017-01-12T03:31:26.949Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;LeetCode-Move-Zeroes&quot;&gt;&lt;a href=&quot;#LeetCode-Move-Zeroes&quot; class=&quot;headerlink&quot; title=&quot;LeetCode: Move Zeroes&quot;&gt;&lt;/a&gt;LeetCode: Move Zeroes&lt;/h2
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="https://xiangxianzui.github.io/categories/LeetCode/"/>
+    
+    
+      <category term="algorithm" scheme="https://xiangxianzui.github.io/tags/algorithm/"/>
     
       <category term="Array" scheme="https://xiangxianzui.github.io/tags/Array/"/>
     
@@ -44,7 +64,7 @@
     <link href="https://xiangxianzui.github.io/2017/01/LeetCode-Sum-of-Two-Integers/"/>
     <id>https://xiangxianzui.github.io/2017/01/LeetCode-Sum-of-Two-Integers/</id>
     <published>2017-01-09T14:00:24.000Z</published>
-    <updated>2017-01-09T14:59:52.408Z</updated>
+    <updated>2017-01-12T03:27:51.847Z</updated>
     
     <summary type="html">
     
@@ -56,8 +76,6 @@
     
     
       <category term="algorithm" scheme="https://xiangxianzui.github.io/tags/algorithm/"/>
-    
-      <category term="java" scheme="https://xiangxianzui.github.io/tags/java/"/>
     
       <category term="Bit Manipulation" scheme="https://xiangxianzui.github.io/tags/Bit-Manipulation/"/>
     
