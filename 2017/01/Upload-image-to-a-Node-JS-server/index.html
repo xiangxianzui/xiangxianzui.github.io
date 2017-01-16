@@ -3,63 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Muser</title>
+  <title>Upload image to a Node.JS server | Muser</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Google Analytics
-
-
-
-
-
-
-
-
-
-
-
-
-(function(w,d,s,g,js,fjs){
-  g=w.gapi||(w.gapi={});g.analytics={q:[],ready:function(cb){this.q.push(cb)}};
-  js=d.createElement(s);fjs=d.getElementsByTagName(s)[0];">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Muser">
-<meta property="og:url" content="https://xiangxianzui.github.io/ga.html">
+  <meta name="description" content="Recently, I came up with a problem that I need to upload images to a Node server and display the image instantly. 
+Generally, firstly I wrap the uploading image as a FormData. Then I use jquery .ajax(">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Upload image to a Node.JS server">
+<meta property="og:url" content="https://xiangxianzui.github.io/2017/01/Upload-image-to-a-Node-JS-server/index.html">
 <meta property="og:site_name" content="Muser">
-<meta property="og:description" content="Google Analytics
-
-
-
-
-
-
-
-
-
-
-
-
-(function(w,d,s,g,js,fjs){
-  g=w.gapi||(w.gapi={});g.analytics={q:[],ready:function(cb){this.q.push(cb)}};
-  js=d.createElement(s);fjs=d.getElementsByTagName(s)[0];">
-<meta property="og:updated_time" content="2017-01-06T09:15:19.803Z">
+<meta property="og:description" content="Recently, I came up with a problem that I need to upload images to a Node server and display the image instantly. 
+Generally, firstly I wrap the uploading image as a FormData. Then I use jquery .ajax(">
+<meta property="og:updated_time" content="2017-01-16T13:07:45.072Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Muser">
-<meta name="twitter:description" content="Google Analytics
-
-
-
-
-
-
-
-
-
-
-
-
-(function(w,d,s,g,js,fjs){
-  g=w.gapi||(w.gapi={});g.analytics={q:[],ready:function(cb){this.q.push(cb)}};
-  js=d.createElement(s);fjs=d.getElementsByTagName(s)[0];">
+<meta name="twitter:title" content="Upload image to a Node.JS server">
+<meta name="twitter:description" content="Recently, I came up with a problem that I need to upload images to a Node server and display the image instantly. 
+Generally, firstly I wrap the uploading image as a FormData. Then I use jquery .ajax(">
   
     <link rel="alternate" href="/atom.xml" title="Muser" type="application/atom+xml">
   
@@ -133,114 +91,74 @@ ga('send', 'pageview');
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="page-undefined" class="article article-type-page" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Upload-image-to-a-Node-JS-server" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/ga.html" class="article-date">
-  <time datetime="2017-01-06T09:29:03.828Z" itemprop="datePublished">2017-01-06</time>
+    <a href="/2017/01/Upload-image-to-a-Node-JS-server/" class="article-date">
+  <time datetime="2017-01-16T11:10:26.000Z" itemprop="datePublished">2017-01-16</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Guides/">Guides</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Upload image to a Node.JS server
+    </h1>
+  
+
+      </header>
+    
     <div class="article-entry" itemprop="articleBody">
       
-        <!DOCTYPE html>
-<html>
-<head>
-  <title>Google Analytics</title>
-</head>
-<body>
+        <p>Recently, I came up with a problem that I need to upload images to a Node server and display the image instantly. </p>
+<p>Generally, firstly I wrap the uploading image as a <a href="https://developer.mozilla.org/en-US/docs/Web/API/FormData" target="_blank" rel="external">FormData</a>. Then I use jquery <code>.ajax()</code> method to send <code>POST</code> request to the server. At server, <a href="https://github.com/felixge/node-formidable" target="_blank" rel="external">formidable</a> middleware is used to handle the uploading file. </p>
+<p>I write this post to keep a record of what I have done.</p>
+<p><strong>Note: A working demo is available in <a href="https://github.com/xiangxianzui/node-image-previewer-uploader" target="_blank" rel="external">github</a>.</strong></p>
+<p>The demo could be used like this:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># clone the repo to local machine</span></div><div class="line">$ git <span class="built_in">clone</span> https://github.com/xiangxianzui/node-image-previewer-uploader</div><div class="line"><span class="comment"># open code directory</span></div><div class="line">$ <span class="built_in">cd</span> node-image-previewer-uploader</div><div class="line"><span class="comment"># install node dependencies</span></div><div class="line">$ npm install</div><div class="line"><span class="comment"># run the server</span></div><div class="line">$ node server.js</div></pre></td></tr></table></figure>
+<h4 id="File-Structure"><a href="#File-Structure" class="headerlink" title="File Structure"></a>File Structure</h4><ul>
+<li><strong>server.js</strong> is Node server, which contains routes and main logic of back end</li>
+<li><strong>.env</strong> stores environmenal variable while developing. A node module called <code>dotenv</code> can be used to load variables in <code>.env</code> file to global variable <code>process</code></li>
+<li><strong>package.json</strong> contains information of this project and dependencies</li>
+<li><strong>/public</strong> contains javascript, css, fonts and images, which will be used in front end</li>
+<li><strong>/views</strong> contains HTML templates</li>
+<li><strong>/uploads</strong> stores uploaded images</li>
+</ul>
+<blockquote>
+<p>Written with <a href="https://stackedit.io/" target="_blank" rel="external">StackEdit</a>.</p>
+</blockquote>
 
-<!-- Step 1: Create the containing elements. -->
-
-<div id="embed-api-auth-container"></div>
-<div id="chart-container"></div>
-<div id="view-selector-container"></div>
-
-<!-- Step 2: Load the library. -->
-
-<script>
-(function(w,d,s,g,js,fjs){
-  g=w.gapi||(w.gapi={});g.analytics={q:[],ready:function(cb){this.q.push(cb)}};
-  js=d.createElement(s);fjs=d.getElementsByTagName(s)[0];
-  js.src='https://apis.google.com/js/platform.js';
-  fjs.parentNode.insertBefore(js,fjs);js.onload=function(){g.load('analytics')};
-}(window,document,'script'));
-</script>
-
-<script>
-
-gapi.analytics.ready(function() {
-
-  /**
-   * Authorize the user immediately if the user has already granted access.
-   * If no access has been created, render an authorize button inside the
-   * element with the ID "embed-api-auth-container".
-   */
-  gapi.analytics.auth.authorize({
-    container: 'embed-api-auth-container',
-    clientid: '568143776140-67iusjugtvnm8svcjqaai22h7dpprfrh.apps.googleusercontent.com'
-  });
-
-
-  /**
-   * Create a new ViewSelector instance to be rendered inside of an
-   * element with the id "view-selector-container".
-   */
-  var viewSelector = new gapi.analytics.ViewSelector({
-    container: 'view-selector-container'
-  });
-
-  // Render the view selector to the page.
-  viewSelector.execute();
-
-
-  /**
-   * Create a new DataChart instance with the given query parameters
-   * and Google chart options. It will be rendered inside an element
-   * with the id "chart-container".
-   */
-  var dataChart = new gapi.analytics.googleCharts.DataChart({
-    query: {
-      metrics: 'ga:sessions',
-      dimensions: 'ga:date',
-      'start-date': '30daysAgo',
-      'end-date': 'today'
-    },
-    chart: {
-      container: 'chart-container',
-      type: 'LINE',
-      options: {
-        width: '100%'
-      }
-    }
-  });
-
-
-  /**
-   * Render the dataChart on the page whenever a new view is selected.
-   */
-  viewSelector.on('change', function(ids) {
-    dataChart.set({query: {ids: ids}}).execute();
-  });
-
-});
-</script>
-</body>
-</html>
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xiangxianzui.github.io/ga.html" data-id="ciy03ph9700007gr7qht974us" class="article-share-link">Share</a>
+      <a data-url="https://xiangxianzui.github.io/2017/01/Upload-image-to-a-Node-JS-server/" data-id="ciy03phel00097gr7e0w8f36z" class="article-share-link">Share</a>
       
-        <a href="https://xiangxianzui.github.io/ga.html#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="https://xiangxianzui.github.io/2017/01/Upload-image-to-a-Node-JS-server/#disqus_thread" class="article-comment-link">Comments</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-JS/">Node.JS</a></li></ul>
+
     </footer>
   </div>
   
     
+<nav id="article-nav">
+  
+  
+    <a href="/2017/01/LeetCode-Convert-a-Number-to-Hexadecimal/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">LeetCode: Convert a Number to Hexadecimal</div>
+    </a>
+  
+</nav>
+
   
 </article>
 
@@ -346,7 +264,7 @@ gapi.analytics.ready(function() {
 <script>
   var disqus_shortname = 'xiangxianzui';
   
-  var disqus_url = 'https://xiangxianzui.github.io/ga.html';
+  var disqus_url = 'https://xiangxianzui.github.io/2017/01/Upload-image-to-a-Node-JS-server/';
   
   (function(){
     var dsq = document.createElement('script');

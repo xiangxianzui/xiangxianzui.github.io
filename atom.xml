@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://xiangxianzui.github.io/"/>
-  <updated>2017-01-12T12:56:44.492Z</updated>
+  <updated>2017-01-16T13:07:45.072Z</updated>
   <id>https://xiangxianzui.github.io/</id>
   
   <author>
@@ -14,6 +14,47 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Upload image to a Node.JS server</title>
+    <link href="https://xiangxianzui.github.io/2017/01/Upload-image-to-a-Node-JS-server/"/>
+    <id>https://xiangxianzui.github.io/2017/01/Upload-image-to-a-Node-JS-server/</id>
+    <published>2017-01-16T11:10:26.000Z</published>
+    <updated>2017-01-16T13:07:45.072Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Recently, I came up with a problem that I need to upload images to a Node server and display the image instantly. &lt;/p&gt;
+&lt;p&gt;Generally, firs
+    
+    </summary>
+    
+      <category term="Guides" scheme="https://xiangxianzui.github.io/categories/Guides/"/>
+    
+    
+      <category term="Node.JS" scheme="https://xiangxianzui.github.io/tags/Node-JS/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LeetCode: Convert a Number to Hexadecimal</title>
+    <link href="https://xiangxianzui.github.io/2017/01/LeetCode-Convert-a-Number-to-Hexadecimal/"/>
+    <id>https://xiangxianzui.github.io/2017/01/LeetCode-Convert-a-Number-to-Hexadecimal/</id>
+    <published>2017-01-13T05:11:02.000Z</published>
+    <updated>2017-01-13T05:11:41.622Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="https://xiangxianzui.github.io/categories/LeetCode/"/>
+    
+    
+      <category term="algorithm" scheme="https://xiangxianzui.github.io/tags/algorithm/"/>
+    
+      <category term="Bit Manipulation" scheme="https://xiangxianzui.github.io/tags/Bit-Manipulation/"/>
+    
+  </entry>
   
   <entry>
     <title>LeetCode: Binary Watch</title>

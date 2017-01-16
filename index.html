@@ -89,6 +89,111 @@ ga('send', 'pageview');
       <div class="outer">
         <section id="main">
   
+    <article id="post-Upload-image-to-a-Node-JS-server" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/01/Upload-image-to-a-Node-JS-server/" class="article-date">
+  <time datetime="2017-01-16T11:10:26.000Z" itemprop="datePublished">2017-01-16</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Guides/">Guides</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/01/Upload-image-to-a-Node-JS-server/">Upload image to a Node.JS server</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Recently, I came up with a problem that I need to upload images to a Node server and display the image instantly. </p>
+<p>Generally, firstly I wrap the uploading image as a <a href="https://developer.mozilla.org/en-US/docs/Web/API/FormData" target="_blank" rel="external">FormData</a>. Then I use jquery <code>.ajax()</code> method to send <code>POST</code> request to the server. At server, <a href="https://github.com/felixge/node-formidable" target="_blank" rel="external">formidable</a> middleware is used to handle the uploading file. </p>
+<p>I write this post to keep a record of what I have done.</p>
+<p><strong>Note: A working demo is available in <a href="https://github.com/xiangxianzui/node-image-previewer-uploader" target="_blank" rel="external">github</a>.</strong></p>
+<p>The demo could be used like this:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># clone the repo to local machine</span></div><div class="line">$ git <span class="built_in">clone</span> https://github.com/xiangxianzui/node-image-previewer-uploader</div><div class="line"><span class="comment"># open code directory</span></div><div class="line">$ <span class="built_in">cd</span> node-image-previewer-uploader</div><div class="line"><span class="comment"># install node dependencies</span></div><div class="line">$ npm install</div><div class="line"><span class="comment"># run the server</span></div><div class="line">$ node server.js</div></pre></td></tr></table></figure>
+<h4 id="File-Structure"><a href="#File-Structure" class="headerlink" title="File Structure"></a>File Structure</h4><ul>
+<li><strong>server.js</strong> is Node server, which contains routes and main logic of back end</li>
+<li><strong>.env</strong> stores environmenal variable while developing. A node module called <code>dotenv</code> can be used to load variables in <code>.env</code> file to global variable <code>process</code></li>
+<li><strong>package.json</strong> contains information of this project and dependencies</li>
+<li><strong>/public</strong> contains javascript, css, fonts and images, which will be used in front end</li>
+<li><strong>/views</strong> contains HTML templates</li>
+<li><strong>/uploads</strong> stores uploaded images</li>
+</ul>
+<blockquote>
+<p>Written with <a href="https://stackedit.io/" target="_blank" rel="external">StackEdit</a>.</p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://xiangxianzui.github.io/2017/01/Upload-image-to-a-Node-JS-server/" data-id="ciy03phel00097gr7e0w8f36z" class="article-share-link">Share</a>
+      
+        <a href="https://xiangxianzui.github.io/2017/01/Upload-image-to-a-Node-JS-server/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-JS/">Node.JS</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-LeetCode-Convert-a-Number-to-Hexadecimal" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/01/LeetCode-Convert-a-Number-to-Hexadecimal/" class="article-date">
+  <time datetime="2017-01-13T05:11:02.000Z" itemprop="datePublished">2017-01-13</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/LeetCode/">LeetCode</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/01/LeetCode-Convert-a-Number-to-Hexadecimal/">LeetCode: Convert a Number to Hexadecimal</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://xiangxianzui.github.io/2017/01/LeetCode-Convert-a-Number-to-Hexadecimal/" data-id="ciy03phdy00047gr7et4dv91k" class="article-share-link">Share</a>
+      
+        <a href="https://xiangxianzui.github.io/2017/01/LeetCode-Convert-a-Number-to-Hexadecimal/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Bit-Manipulation/">Bit Manipulation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithm/">algorithm</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-LeetCode-Binary-Watch" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/01/LeetCode-Binary-Watch/" class="article-date">
@@ -151,7 +256,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xiangxianzui.github.io/2017/01/LeetCode-Binary-Watch/" data-id="cixue4kud0002r8r7u39uk75n" class="article-share-link">Share</a>
+      <a data-url="https://xiangxianzui.github.io/2017/01/LeetCode-Binary-Watch/" data-id="ciy03pher000f7gr7jv74xb5t" class="article-share-link">Share</a>
       
         <a href="https://xiangxianzui.github.io/2017/01/LeetCode-Binary-Watch/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -203,7 +308,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xiangxianzui.github.io/2017/01/LeetCode-Delete-Node-in-a-Linked-List/" data-id="cixue4kv20007r8r77799ag4y" class="article-share-link">Share</a>
+      <a data-url="https://xiangxianzui.github.io/2017/01/LeetCode-Delete-Node-in-a-Linked-List/" data-id="ciy03pheb00087gr728wqgfqt" class="article-share-link">Share</a>
       
         <a href="https://xiangxianzui.github.io/2017/01/LeetCode-Delete-Node-in-a-Linked-List/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -258,7 +363,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xiangxianzui.github.io/2017/01/LeetCode-Move-Zeroes/" data-id="cixue4kv40008r8r7jchtquaz" class="article-share-link">Share</a>
+      <a data-url="https://xiangxianzui.github.io/2017/01/LeetCode-Move-Zeroes/" data-id="ciy03phe900077gr76id3wp8a" class="article-share-link">Share</a>
       
         <a href="https://xiangxianzui.github.io/2017/01/LeetCode-Move-Zeroes/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -314,7 +419,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xiangxianzui.github.io/2017/01/LeetCode-Sum-of-Two-Integers/" data-id="cixue4kvb000cr8r7idt9x0m1" class="article-share-link">Share</a>
+      <a data-url="https://xiangxianzui.github.io/2017/01/LeetCode-Sum-of-Two-Integers/" data-id="ciy03pheo000d7gr7e39uakqh" class="article-share-link">Share</a>
       
         <a href="https://xiangxianzui.github.io/2017/01/LeetCode-Sum-of-Two-Integers/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -418,7 +523,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xiangxianzui.github.io/2017/01/Customize-hexo-blogs/" data-id="cixue4kum0004r8r7mg545hj1" class="article-share-link">Share</a>
+      <a data-url="https://xiangxianzui.github.io/2017/01/Customize-hexo-blogs/" data-id="ciy03phir00177gr7unayk19j" class="article-share-link">Share</a>
       
         <a href="https://xiangxianzui.github.io/2017/01/Customize-hexo-blogs/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -495,7 +600,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xiangxianzui.github.io/2017/01/Build-blogs-with-Hexo/" data-id="cixue4kv60009r8r7tj0op8yi" class="article-share-link">Share</a>
+      <a data-url="https://xiangxianzui.github.io/2017/01/Build-blogs-with-Hexo/" data-id="ciy03phdk00027gr7bj5mbg9r" class="article-share-link">Share</a>
       
         <a href="https://xiangxianzui.github.io/2017/01/Build-blogs-with-Hexo/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -521,6 +626,14 @@ ga('send', 'pageview');
       <ul>
         
           <li>
+            <a href="/2017/01/Upload-image-to-a-Node-JS-server/">Upload image to a Node.JS server</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/LeetCode-Convert-a-Number-to-Hexadecimal/">LeetCode: Convert a Number to Hexadecimal</a>
+          </li>
+        
+          <li>
             <a href="/2017/01/LeetCode-Binary-Watch/">LeetCode: Binary Watch</a>
           </li>
         
@@ -532,14 +645,6 @@ ga('send', 'pageview');
             <a href="/2017/01/LeetCode-Move-Zeroes/">LeetCode: Move Zeroes</a>
           </li>
         
-          <li>
-            <a href="/2017/01/LeetCode-Sum-of-Two-Integers/">LeetCode: Sum of Two Integers</a>
-          </li>
-        
-          <li>
-            <a href="/2017/01/Customize-hexo-blogs/">Customize hexo blogs</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -549,7 +654,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Guides/">Guides</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/LeetCode/">LeetCode</a><span class="category-list-count">4</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Guides/">Guides</a><span class="category-list-count">3</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/LeetCode/">LeetCode</a><span class="category-list-count">5</span></li></ul>
     </div>
   </div>
 
@@ -559,7 +664,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/Backtracking/" style="font-size: 10px;">Backtracking</a> <a href="/tags/Bit-Manipulation/" style="font-size: 10px;">Bit Manipulation</a> <a href="/tags/Hexo/" style="font-size: 15px;">Hexo</a> <a href="/tags/Linked-List/" style="font-size: 10px;">Linked List</a> <a href="/tags/algorithm/" style="font-size: 20px;">algorithm</a>
+      <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/Backtracking/" style="font-size: 10px;">Backtracking</a> <a href="/tags/Bit-Manipulation/" style="font-size: 15px;">Bit Manipulation</a> <a href="/tags/Hexo/" style="font-size: 15px;">Hexo</a> <a href="/tags/Linked-List/" style="font-size: 10px;">Linked List</a> <a href="/tags/Node-JS/" style="font-size: 10px;">Node.JS</a> <a href="/tags/algorithm/" style="font-size: 20px;">algorithm</a>
     </div>
   </div>
 
@@ -568,7 +673,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">6</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">8</span></li></ul>
     </div>
   </div>
 
