@@ -5,19 +5,19 @@
   
   <title>Upload image to a Node.JS server | Muser</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Recently, I came up with a problem that I need to upload images to a Node server and display the image instantly. 
-Generally, firstly I wrap the uploading image as a FormData. Then I use jquery .ajax(">
+  <meta name="description" content="Recently, I came up with a problem that I need to upload images to a Node server and display the image instantly. I write this post to keep a record of what I have done.
+Generally, firstly I wrap the">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Upload image to a Node.JS server">
 <meta property="og:url" content="https://xiangxianzui.github.io/2017/01/Upload-image-to-a-Node-JS-server/index.html">
 <meta property="og:site_name" content="Muser">
-<meta property="og:description" content="Recently, I came up with a problem that I need to upload images to a Node server and display the image instantly. 
-Generally, firstly I wrap the uploading image as a FormData. Then I use jquery .ajax(">
-<meta property="og:updated_time" content="2017-01-16T13:07:45.072Z">
+<meta property="og:description" content="Recently, I came up with a problem that I need to upload images to a Node server and display the image instantly. I write this post to keep a record of what I have done.
+Generally, firstly I wrap the">
+<meta property="og:updated_time" content="2017-01-19T02:40:55.360Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Upload image to a Node.JS server">
-<meta name="twitter:description" content="Recently, I came up with a problem that I need to upload images to a Node server and display the image instantly. 
-Generally, firstly I wrap the uploading image as a FormData. Then I use jquery .ajax(">
+<meta name="twitter:description" content="Recently, I came up with a problem that I need to upload images to a Node server and display the image instantly. I write this post to keep a record of what I have done.
+Generally, firstly I wrap the">
   
     <link rel="alternate" href="/atom.xml" title="Muser" type="application/atom+xml">
   
@@ -117,9 +117,13 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Recently, I came up with a problem that I need to upload images to a Node server and display the image instantly. </p>
-<p>Generally, firstly I wrap the uploading image as a <a href="https://developer.mozilla.org/en-US/docs/Web/API/FormData" target="_blank" rel="external">FormData</a>. Then I use jquery <code>.ajax()</code> method to send <code>POST</code> request to the server. At server, <a href="https://github.com/felixge/node-formidable" target="_blank" rel="external">formidable</a> middleware is used to handle the uploading file. </p>
-<p>I write this post to keep a record of what I have done.</p>
+        <p>Recently, I came up with a problem that I need to upload images to a Node server and display the image instantly. I write this post to keep a record of what I have done.</p>
+<p>Generally, firstly I wrap the uploading image as a <a href="https://developer.mozilla.org/en-US/docs/Web/API/FormData" target="_blank" rel="external">FormData</a>. </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#'upload[]' is the name attr of #upload-input</span></div><div class="line"><span class="comment">#append the selected file to formData obj</span></div><div class="line">formData.append(<span class="string">'upload[]'</span>, file, file.name);</div></pre></td></tr></table></figure>
+<p>Then I use jquery <code>.ajax()</code> method to send <code>POST</code> request to the server. </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#processData:false means to stop jquery from converting the formData object to string</span></div><div class="line"><span class="comment">#contentType:false means to tell jquery not to add a Content-Type header</span></div><div class="line">$.ajax(&#123;</div><div class="line">	url: <span class="string">'/upload'</span>,</div><div class="line">	<span class="built_in">type</span>: <span class="string">'POST'</span>,</div><div class="line">	data: formData,</div><div class="line">	processData: <span class="literal">false</span>,</div><div class="line">    contentType: <span class="literal">false</span>,</div><div class="line">	success: <span class="keyword">function</span>(data)&#123;</div><div class="line">		<span class="comment">#do something when success</span></div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<p>At server, <a href="https://github.com/felixge/node-formidable" target="_blank" rel="external">formidable</a> middleware is used to handle the uploading file. </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">app.post(<span class="string">'/upload'</span>, <span class="keyword">function</span>(req, res)&#123;</div><div class="line">  <span class="comment">#create an incoming form object</span></div><div class="line">  var form = new formidable.IncomingForm();</div><div class="line">  <span class="comment">#specify that we don't want user to upload multiple files at the same time; set true to allow.</span></div><div class="line">  form.multiples = <span class="literal">false</span>;</div><div class="line">  <span class="comment">#store uploads in /uploads directory</span></div><div class="line">  form.uploadDir = path.join(process.cwd(), <span class="string">'/uploads'</span>);</div><div class="line">  <span class="comment">#log any occured error</span></div><div class="line">  form.on(<span class="string">'error'</span>, <span class="keyword">function</span>(err)&#123;</div><div class="line">     console.log(<span class="string">'File Uploading Error: '</span>+err);</div><div class="line">  &#125;);</div><div class="line">  <span class="comment">#parse the incoming request containing form data</span></div><div class="line">  form.parse(req, <span class="keyword">function</span>(err, fields, files)&#123;</div><div class="line">	  var file = files[<span class="string">'upload[]'</span>];</div><div class="line">      <span class="comment">#rename the uploaded file as its origin name</span></div><div class="line">      fs.rename(file.path, path.join(form.uploadDir, file.name));</div><div class="line">      res.send(<span class="string">'success'</span>);</div><div class="line">  &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
 <p><strong>Note: A working demo is available in <a href="https://github.com/xiangxianzui/node-image-previewer-uploader" target="_blank" rel="external">github</a>.</strong></p>
 <p>The demo could be used like this:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># clone the repo to local machine</span></div><div class="line">$ git <span class="built_in">clone</span> https://github.com/xiangxianzui/node-image-previewer-uploader</div><div class="line"><span class="comment"># open code directory</span></div><div class="line">$ <span class="built_in">cd</span> node-image-previewer-uploader</div><div class="line"><span class="comment"># install node dependencies</span></div><div class="line">$ npm install</div><div class="line"><span class="comment"># run the server</span></div><div class="line">$ node server.js</div></pre></td></tr></table></figure>
@@ -138,7 +142,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xiangxianzui.github.io/2017/01/Upload-image-to-a-Node-JS-server/" data-id="ciy03phel00097gr7e0w8f36z" class="article-share-link">Share</a>
+      <a data-url="https://xiangxianzui.github.io/2017/01/Upload-image-to-a-Node-JS-server/" data-id="ciy3rwzht000et4r7i8kdhws3" class="article-share-link">Share</a>
       
         <a href="https://xiangxianzui.github.io/2017/01/Upload-image-to-a-Node-JS-server/#disqus_thread" class="article-comment-link">Comments</a>
       

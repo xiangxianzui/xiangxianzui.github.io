@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://xiangxianzui.github.io/"/>
-  <updated>2017-01-16T13:07:45.072Z</updated>
+  <updated>2017-01-19T02:40:55.360Z</updated>
   <id>https://xiangxianzui.github.io/</id>
   
   <author>
@@ -20,12 +20,11 @@
     <link href="https://xiangxianzui.github.io/2017/01/Upload-image-to-a-Node-JS-server/"/>
     <id>https://xiangxianzui.github.io/2017/01/Upload-image-to-a-Node-JS-server/</id>
     <published>2017-01-16T11:10:26.000Z</published>
-    <updated>2017-01-16T13:07:45.072Z</updated>
+    <updated>2017-01-19T02:40:55.360Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;Recently, I came up with a problem that I need to upload images to a Node server and display the image instantly. &lt;/p&gt;
-&lt;p&gt;Generally, firs
+      &lt;p&gt;Recently, I came up with a problem that I need to upload images to a Node server and display the image instantly. I write this post to ke
     
     </summary>
     
