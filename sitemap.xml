@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://xiangxianzui.github.io/projects/index.html</loc>
+    
+    <lastmod>2017-01-23T16:05:11.841Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://xiangxianzui.github.io/2017/01/Upload-image-to-a-Node-JS-server/</loc>
     
     <lastmod>2017-01-19T02:40:55.360Z</lastmod>
@@ -47,13 +54,6 @@
     <loc>https://xiangxianzui.github.io/2017/01/Customize-hexo-blogs/</loc>
     
     <lastmod>2017-01-09T13:54:46.993Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://xiangxianzui.github.io/projects/index.html</loc>
-    
-    <lastmod>2017-01-06T14:29:33.541Z</lastmod>
     
   </url>
   
