@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Learning LaTeX | Muser</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="Getting StartedLaTeX is a document preparation system for high-quality typesetting, which is often used for technical and scientific documents. 
+Let’s take an example first. Imagine you’re a writer, y">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Learning LaTeX">
+<meta property="og:url" content="https://xiangxianzui.github.io/2017/01/Learning-LaTeX/index.html">
+<meta property="og:site_name" content="Muser">
+<meta property="og:description" content="Getting StartedLaTeX is a document preparation system for high-quality typesetting, which is often used for technical and scientific documents. 
+Let’s take an example first. Imagine you’re a writer, y">
+<meta property="og:image" content="https://xiangxianzui.github.io/level-of-tex.png">
+<meta property="og:updated_time" content="2017-01-31T07:23:19.406Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Learning LaTeX">
+<meta name="twitter:description" content="Getting StartedLaTeX is a document preparation system for high-quality typesetting, which is often used for technical and scientific documents. 
+Let’s take an example first. Imagine you’re a writer, y">
+<meta name="twitter:image" content="https://xiangxianzui.github.io/level-of-tex.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Muser" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-89925013-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Muser</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Coding While Thinking</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/projects">Projects</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-google-analytic-link" class="nav-icon" href="/ga.html" title="Google Analytics"></a>
+        
+        
+          <a id="nav-sitemap-link" class="nav-icon" href="/sitemap.xml" title="Sitemap"></a>
+        
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://xiangxianzui.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Learning-LaTeX" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/01/Learning-LaTeX/" class="article-date">
+  <time datetime="2017-01-31T03:27:26.000Z" itemprop="datePublished">2017-01-31</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Guides/">Guides</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Learning LaTeX
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Getting-Started"><a href="#Getting-Started" class="headerlink" title="Getting Started"></a>Getting Started</h2><p><a href="http://www.latex-project.org/" target="_blank" rel="external">LaTeX</a> is a document preparation system for high-quality typesetting, which is often used for technical and scientific documents. </p>
+<p>Let’s take an example first. Imagine you’re a writer, you want to write a new article and you start typing words in computer. When you open Microsoft Word, you find that you have to decide the font type, font size, layout … What you’re doing is not writing, but designing, which is definitely beyond the work of a writer! Well, this is where LaTeX comes. The biggest benefit of LaTeX is that it encourages authors to concentrate more on the document content but less on the document appearance. It makes authors work more efficiently.</p>
+<p>As a beginner, I often get confused by many terms in TeX world. The following picture really helped me out.</p>
+<p><img src="level-of-tex.png" alt="Level of TeX"></p>
+<p>To make LaTeX run on your computer, you need to intall it first. There are many free software in various platforms. Choose the one which suits your operating system. I am using <a href="https://miktex.org/" target="_blank" rel="external">MiKTeX</a>, which is a Windows distribution.</p>
+<p>Next, I will go through two short, but powerful tutorials which could be accessed <a href="tutorial1.tex">here</a> and <a href="tutorial2.tex">here</a>. Paste each tutorial to <code>TexWorks</code> and press <code>CTRL + T</code> to view <code>PDF</code> result.</p>
+<h2 id="Tutorial-1"><a href="#Tutorial-1" class="headerlink" title="Tutorial 1"></a>Tutorial 1</h2><p>In tutorial1, the following knowledge could be concluded.</p>
+<ul>
+<li>Everything to the right of a  %  is a remark to you and is ignored by LaTeX.</li>
+<li>\section{Section Title} makes a section title</li>
+<li>\subsection{Subsection Title} makes a subsection title, and so as \subsubsection and \subsubsubsection …</li>
+<li>Words are separated by one or more spaces.  Paragraphs are separated by<br>one or more blank lines.  The output is not affected by adding extra<br>spaces or extra blank lines to the input file.</li>
+<li>Double quotes: ``quoted text’’</li>
+<li>Single quotes: `single-quoted text’</li>
+<li>Long dashes: like—this</li>
+<li>Emphasized text: \emph{this is emphasized}</li>
+<li>Bold text: \textbf{this is bold}</li>
+<li>The following seven are printed by typing a backslash in front of them:  \$  \&amp;  #  \%  _  {  and  }.</li>
+</ul>
+<h2 id="Tutorial-2"><a href="#Tutorial-2" class="headerlink" title="Tutorial 2"></a>Tutorial 2</h2><p>In tutorial2, the following knowledge could be concluded.</p>
+<ul>
+<li>\documentclass{article}: specifies the document class</li>
+<li>\title{An Example Document}: declares the document’s title</li>
+<li>\author{LesLie Lamport}: declares author name</li>
+<li>\date{January 31, 2017}: declares date, deleting this command will produce today’s date</li>
+<li>\maketitle: produces the title</li>
+<li>\newcommand{\ip}[2]{(#1, #2)}: defines new command with name ‘ip’ and two arguments</li>
+<li>\LaTeX: generates the LaTeX logo</li>
+<li><p>Quotes within quotes: </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">``\,`this&apos; is what I just wrote, not `that&apos;\,&apos;&apos; means &quot;&apos;this&apos; is what I just wrote, not &apos;that&apos;&quot;</div></pre></td></tr></table></figure>
+</li>
+<li><p>Intra word dash: intra-word (1 dash)</p>
+</li>
+<li>Medium dash: 1–2 (2 dashes)</li>
+<li>Long dash: like—this (3 dashes)</li>
+<li>Ellipsis: \ldots</li>
+<li>TeX ignores spaces after command names</li>
+<li><p>Emphasize long sentence: </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">\begin&#123;em&#125;</div><div class="line">  A long segment of text can also be emphasized </div><div class="line">  in this way.  Text within such a segment can be </div><div class="line">  given \emph&#123;additional&#125; emphasis.</div><div class="line">\end&#123;em&#125;</div></pre></td></tr></table></figure>
+</li>
+<li><p>Footnotes: Footnotes\footnote{This is an example of a footnote.} pose no problem.</p>
+</li>
+<li>$ … $  and  ( … )  are equivalent, both denote a mathematical symbol</li>
+<li>Itemize &amp; Enumerate: <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">\begin&#123;itemize&#125;</div><div class="line">  \item This is the first item of an itemized list.</div><div class="line">        Each item in the list is marked with a ``tick&apos;&apos;.</div><div class="line">        You don&apos;t have to worry about what kind of tick</div><div class="line">        mark is used.</div><div class="line"></div><div class="line">  \item This is the second item of the list.  It</div><div class="line">        contains another list nested inside it.  The inner</div><div class="line">        list is an \emph&#123;enumerated&#125; list.</div><div class="line">        \begin&#123;enumerate&#125;</div><div class="line">           \item This is the first item of an enumerated </div><div class="line">                 list that is nested within the itemized list.</div><div class="line"></div><div class="line">           \item This is the second item of the inner list.  </div><div class="line">                 \LaTeX\ allows you to nest lists deeper than </div><div class="line">                 you really should.</div><div class="line">        \end&#123;enumerate&#125;</div><div class="line">        This is the rest of the second item of the outer</div><div class="line">        list.  It is no more interesting than any other</div><div class="line">        part of the item.</div><div class="line">  \item This is the third item of the list.</div><div class="line">\end&#123;itemize&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<blockquote>
+<p>Written with <a href="https://stackedit.io/" target="_blank" rel="external">StackEdit</a>.</p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://xiangxianzui.github.io/2017/01/Learning-LaTeX/" data-id="ciyl376s5000270r7sqxjj2e3" class="article-share-link">Share</a>
+      
+        <a href="https://xiangxianzui.github.io/2017/01/Learning-LaTeX/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LaTex/">LaTex</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/01/Upload-image-to-a-Node-JS-server/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">Upload image to a Node.JS server</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/01/Learning-LaTeX/">Learning LaTeX</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/Upload-image-to-a-Node-JS-server/">Upload image to a Node.JS server</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/LeetCode-Convert-a-Number-to-Hexadecimal/">LeetCode: Convert a Number to Hexadecimal</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/LeetCode-Binary-Watch/">LeetCode: Binary Watch</a>
+          </li>
+        
+          <li>
+            <a href="/2017/01/LeetCode-Delete-Node-in-a-Linked-List/">LeetCode: Delete Node in a Linked List</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Guides/">Guides</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/LeetCode/">LeetCode</a><span class="category-list-count">5</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/Backtracking/" style="font-size: 10px;">Backtracking</a> <a href="/tags/Bit-Manipulation/" style="font-size: 15px;">Bit Manipulation</a> <a href="/tags/Hexo/" style="font-size: 15px;">Hexo</a> <a href="/tags/LaTex/" style="font-size: 10px;">LaTex</a> <a href="/tags/Linked-List/" style="font-size: 10px;">Linked List</a> <a href="/tags/Node-JS/" style="font-size: 10px;">Node.JS</a> <a href="/tags/algorithm/" style="font-size: 20px;">algorithm</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">9</span></li></ul>
+    </div>
+  </div>
+
+
+  
+</aside>
+        
+        <div id="right-bottom">
+	<a id="back-to-top" href='#main'><img style="width:50px; height:50px" src="http://www.clker.com/cliparts/8/7/Y/H/W/e/up-arrow-circle-hi.png"></a>
+</div>
+
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 xiangxianzui<br>
+      Github: <a href='https://github.com/xiangxianzui/xiangxianzui.github.io'>xiangxianzui</a><br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a><br>
+
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/projects" class="mobile-nav-link">Projects</a>
+  
+</nav>
+    
+<script>
+  var disqus_shortname = 'xiangxianzui';
+  
+  var disqus_url = 'https://xiangxianzui.github.io/2017/01/Learning-LaTeX/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
