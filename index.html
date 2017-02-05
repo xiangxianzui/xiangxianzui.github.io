@@ -89,6 +89,65 @@ ga('send', 'pageview');
       <div class="outer">
         <section id="main">
   
+    <article id="post-LeetCode-Coin-Change" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/02/LeetCode-Coin-Change/" class="article-date">
+  <time datetime="2017-02-05T03:58:29.000Z" itemprop="datePublished">2017-02-05</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/LeetCode/">LeetCode</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/LeetCode-Coin-Change/">LeetCode: Coin Change</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>You are given coins of different denominations and a total amount of money amount. Write a function to compute the fewest number of coins that you need to make up that amount. If that amount of money cannot be made up by any combination of the coins, return <code>-1</code>.</p>
+<p><strong>Example 1</strong>:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">coins = [1, 2, 5], amount = 11</div><div class="line">return 3 (11 = 5 + 5 + 1)</div></pre></td></tr></table></figure>
+<p><strong>Example 2</strong>:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">coins = [2], amount = 3</div><div class="line">return -1.</div></pre></td></tr></table></figure>
+<p><strong>Note</strong>: You may assume that you have an infinite number of each kind of coin.</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>This is a classic Dynamic Programming problem. Let’s take an example as usual. Given 3 types of coins with value <code>1</code>, <code>2</code>, <code>5</code> respectively, and the total money amount is <code>11</code>, try to select minimal number of coins to make up that amount.</p>
+<p>We denote that given money amount <code>s</code>, the number of coins being selected is <code>N(s)</code>. So the problem is to solve <code>N(11)</code>.</p>
+<p>At the beginning, it is easy to find that <code>N(0)=0</code>. Then,  if <code>s=1</code>, we can only select coin with value <code>1</code>, and we get <code>N(1)=1</code>. Then go to <code>s=2</code>. We can select coin with value <code>1</code> and value <code>2</code>. If select value <code>1</code>, the remaining amount is <code>1</code>, since we already know <code>N(1)=1</code>, so <code>N(2)=N(2-1)+1=2</code>; if select value <code>2</code>, the remaining amount is <code>0</code>, so <code>N(2)=N(2-2)+1=1</code>. The final <code>N(2)=min(2,1)=1</code>. Then we move on to <code>s=3</code>. We still can only select value <code>1</code> and value <code>2</code>. If select value <code>1</code>, <code>N(3)=N(3-1)+1=2</code>; if select value <code>2</code>, <code>N(3)=N(3-2)+1=2</code>. So the final <code>N(3)=min(2,2)=2</code>. We do this similarly until we reach <code>s=11</code>, and the answer is <code>N(11)=3</code>.</p>
+<p>From the above example, we can analyse this problem in a more general way. Given several types of coins with values <code>[V1, V2, ..., Vn]</code>, money amount <code>s</code>, and number of selected coins <code>N(s)</code>. If we already know <code>N(0), N(1), ..., N(s-1)</code>, we determine <code>N(s)</code> as <code>min{N(s-Vi)+1}</code>, where <code>1&lt;= i &lt;=n</code> and <code>Vi &lt;= s</code>. </p>
+<p>The java code could be like this:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">public class Solution &#123;</div><div class="line">    public int coinChange(int[] coins, int amount) &#123;</div><div class="line">        Map&lt;Integer,Integer&gt; map = new HashMap();</div><div class="line">        map.put(0, 0);</div><div class="line">        </div><div class="line">        int a = 1;</div><div class="line">        while(a&lt;=amount)&#123;</div><div class="line">            int min = Integer.MAX_VALUE;</div><div class="line">            boolean notPossible = true;</div><div class="line">            for(int i=0; i&lt;coins.length; i++)&#123;</div><div class="line">                if(a&gt;=coins[i])&#123;</div><div class="line">                    if(map.get(a-coins[i])!=-1)&#123;</div><div class="line">                        int temp = map.get(a-coins[i])+1;</div><div class="line">                        if(temp&lt;min)    min = temp;</div><div class="line">                        notPossible = false;</div><div class="line">                    &#125;</div><div class="line">                    </div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">            if(notPossible==true)   map.put(a,-1);</div><div class="line">            else&#123;</div><div class="line">                map.put(a,min);</div><div class="line">            &#125;</div><div class="line">            a++;</div><div class="line">        &#125;</div><div class="line">        return map.get(amount);</div><div class="line">        </div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>Written with <a href="https://stackedit.io/" target="_blank" rel="external">StackEdit</a>.</p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://xiangxianzui.github.io/2017/02/LeetCode-Coin-Change/" data-id="ciys9yy700004l8r7z5ydqlzk" class="article-share-link">Share</a>
+      
+        <a href="https://xiangxianzui.github.io/2017/02/LeetCode-Coin-Change/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Dynamic-Programming/">Dynamic Programming</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithm/">algorithm</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Learning-LaTeX" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/01/Learning-LaTeX/" class="article-date">
@@ -168,7 +227,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xiangxianzui.github.io/2017/01/Learning-LaTeX/" data-id="ciynwu2s10004ckr7rx2kj7wa" class="article-share-link">Share</a>
+      <a data-url="https://xiangxianzui.github.io/2017/01/Learning-LaTeX/" data-id="ciys9yy6r0002l8r7ucg91fvx" class="article-share-link">Share</a>
       
         <a href="https://xiangxianzui.github.io/2017/01/Learning-LaTeX/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -233,7 +292,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xiangxianzui.github.io/2017/01/Upload-image-to-a-Node-JS-server/" data-id="ciynwu2sv000dckr7ak84rto2" class="article-share-link">Share</a>
+      <a data-url="https://xiangxianzui.github.io/2017/01/Upload-image-to-a-Node-JS-server/" data-id="ciys9yy7v000fl8r7rksv6n1h" class="article-share-link">Share</a>
       
         <a href="https://xiangxianzui.github.io/2017/01/Upload-image-to-a-Node-JS-server/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -277,7 +336,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xiangxianzui.github.io/2017/01/LeetCode-Convert-a-Number-to-Hexadecimal/" data-id="ciynwu2sc0007ckr7wh5s9rq8" class="article-share-link">Share</a>
+      <a data-url="https://xiangxianzui.github.io/2017/01/LeetCode-Convert-a-Number-to-Hexadecimal/" data-id="ciys9yy7d0007l8r7135a5et7" class="article-share-link">Share</a>
       
         <a href="https://xiangxianzui.github.io/2017/01/LeetCode-Convert-a-Number-to-Hexadecimal/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -353,7 +412,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xiangxianzui.github.io/2017/01/LeetCode-Binary-Watch/" data-id="ciynwu2ui0014ckr79xe55k74" class="article-share-link">Share</a>
+      <a data-url="https://xiangxianzui.github.io/2017/01/LeetCode-Binary-Watch/" data-id="ciys9yy7m0009l8r7wvtlt4tw" class="article-share-link">Share</a>
       
         <a href="https://xiangxianzui.github.io/2017/01/LeetCode-Binary-Watch/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -405,7 +464,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xiangxianzui.github.io/2017/01/LeetCode-Delete-Node-in-a-Linked-List/" data-id="ciynwu2ug0013ckr79blqlhve" class="article-share-link">Share</a>
+      <a data-url="https://xiangxianzui.github.io/2017/01/LeetCode-Delete-Node-in-a-Linked-List/" data-id="ciys9yy9b001cl8r76qcsb96s" class="article-share-link">Share</a>
       
         <a href="https://xiangxianzui.github.io/2017/01/LeetCode-Delete-Node-in-a-Linked-List/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -460,7 +519,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xiangxianzui.github.io/2017/01/LeetCode-Move-Zeroes/" data-id="ciynwu2tl000yckr7zf7qksvy" class="article-share-link">Share</a>
+      <a data-url="https://xiangxianzui.github.io/2017/01/LeetCode-Move-Zeroes/" data-id="ciys9yy82000jl8r7e5kefdih" class="article-share-link">Share</a>
       
         <a href="https://xiangxianzui.github.io/2017/01/LeetCode-Move-Zeroes/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -516,7 +575,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xiangxianzui.github.io/2017/01/LeetCode-Sum-of-Two-Integers/" data-id="ciynwu2so0009ckr7kfm9wmu5" class="article-share-link">Share</a>
+      <a data-url="https://xiangxianzui.github.io/2017/01/LeetCode-Sum-of-Two-Integers/" data-id="ciys9yy7r000dl8r7to63rtm5" class="article-share-link">Share</a>
       
         <a href="https://xiangxianzui.github.io/2017/01/LeetCode-Sum-of-Two-Integers/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -620,7 +679,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xiangxianzui.github.io/2017/01/Customize-hexo-blogs/" data-id="ciynwu2ro0002ckr7ls30d7nv" class="article-share-link">Share</a>
+      <a data-url="https://xiangxianzui.github.io/2017/01/Customize-hexo-blogs/" data-id="ciys9yy7f0008l8r7noqm0kh5" class="article-share-link">Share</a>
       
         <a href="https://xiangxianzui.github.io/2017/01/Customize-hexo-blogs/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -697,7 +756,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xiangxianzui.github.io/2017/01/Build-blogs-with-Hexo/" data-id="ciynwu2si0008ckr7v7vtg4tk" class="article-share-link">Share</a>
+      <a data-url="https://xiangxianzui.github.io/2017/01/Build-blogs-with-Hexo/" data-id="ciys9yy99001bl8r79a0y3lsv" class="article-share-link">Share</a>
       
         <a href="https://xiangxianzui.github.io/2017/01/Build-blogs-with-Hexo/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -723,6 +782,10 @@ ga('send', 'pageview');
       <ul>
         
           <li>
+            <a href="/2017/02/LeetCode-Coin-Change/">LeetCode: Coin Change</a>
+          </li>
+        
+          <li>
             <a href="/2017/01/Learning-LaTeX/">Learning LaTeX</a>
           </li>
         
@@ -738,10 +801,6 @@ ga('send', 'pageview');
             <a href="/2017/01/LeetCode-Binary-Watch/">LeetCode: Binary Watch</a>
           </li>
         
-          <li>
-            <a href="/2017/01/LeetCode-Delete-Node-in-a-Linked-List/">LeetCode: Delete Node in a Linked List</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -751,7 +810,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Guides/">Guides</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/LeetCode/">LeetCode</a><span class="category-list-count">5</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Guides/">Guides</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/LeetCode/">LeetCode</a><span class="category-list-count">6</span></li></ul>
     </div>
   </div>
 
@@ -761,7 +820,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/Backtracking/" style="font-size: 10px;">Backtracking</a> <a href="/tags/Bit-Manipulation/" style="font-size: 15px;">Bit Manipulation</a> <a href="/tags/Hexo/" style="font-size: 15px;">Hexo</a> <a href="/tags/LaTex/" style="font-size: 10px;">LaTex</a> <a href="/tags/Linked-List/" style="font-size: 10px;">Linked List</a> <a href="/tags/Node-JS/" style="font-size: 10px;">Node.JS</a> <a href="/tags/algorithm/" style="font-size: 20px;">algorithm</a>
+      <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/Backtracking/" style="font-size: 10px;">Backtracking</a> <a href="/tags/Bit-Manipulation/" style="font-size: 15px;">Bit Manipulation</a> <a href="/tags/Dynamic-Programming/" style="font-size: 10px;">Dynamic Programming</a> <a href="/tags/Hexo/" style="font-size: 15px;">Hexo</a> <a href="/tags/LaTex/" style="font-size: 10px;">LaTex</a> <a href="/tags/Linked-List/" style="font-size: 10px;">Linked List</a> <a href="/tags/Node-JS/" style="font-size: 10px;">Node.JS</a> <a href="/tags/algorithm/" style="font-size: 20px;">algorithm</a>
     </div>
   </div>
 
@@ -770,7 +829,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">9</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 

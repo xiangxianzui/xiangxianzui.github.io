@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://xiangxianzui.github.io/"/>
-  <updated>2017-01-31T07:23:19.406Z</updated>
+  <updated>2017-02-05T05:50:57.150Z</updated>
   <id>https://xiangxianzui.github.io/</id>
   
   <author>
@@ -14,6 +14,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>LeetCode: Coin Change</title>
+    <link href="https://xiangxianzui.github.io/2017/02/LeetCode-Coin-Change/"/>
+    <id>https://xiangxianzui.github.io/2017/02/LeetCode-Coin-Change/</id>
+    <published>2017-02-05T03:58:29.000Z</published>
+    <updated>2017-02-05T05:50:57.150Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Problem&quot;&gt;&lt;a href=&quot;#Problem&quot; class=&quot;headerlink&quot; title=&quot;Problem&quot;&gt;&lt;/a&gt;Problem&lt;/h2&gt;&lt;p&gt;You are given coins of different denominations and
+    
+    </summary>
+    
+      <category term="LeetCode" scheme="https://xiangxianzui.github.io/categories/LeetCode/"/>
+    
+    
+      <category term="algorithm" scheme="https://xiangxianzui.github.io/tags/algorithm/"/>
+    
+      <category term="Dynamic Programming" scheme="https://xiangxianzui.github.io/tags/Dynamic-Programming/"/>
+    
+  </entry>
   
   <entry>
     <title>Learning LaTeX</title>
