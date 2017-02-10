@@ -3,21 +3,22 @@
 <head>
   <meta charset="utf-8">
   
-  <title>LeetCode: Move Zeroes | Muser</title>
+  <title>Wechat development with NodeJS | Muser</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="ProblemGiven an array nums, write a function to move all 0’s to the end of it while maintaining the relative order of the non-zero elements.
-For example, given nums = [0, 1, 0, 3, 12], after calling y">
+  <meta name="description" content="I enjoyed the time with my family quite a lot during Chinese New Year. We made dumplings,  set off fireworks, watched Spring Festival Gala, and so on. However, happy time always runs fast. It’s time t">
 <meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode: Move Zeroes">
-<meta property="og:url" content="https://xiangxianzui.github.io/2017/01/LeetCode-Move-Zeroes/index.html">
+<meta property="og:title" content="Wechat development with NodeJS">
+<meta property="og:url" content="https://xiangxianzui.github.io/2017/02/Wechat-development-with-NodeJS/index.html">
 <meta property="og:site_name" content="Muser">
-<meta property="og:description" content="ProblemGiven an array nums, write a function to move all 0’s to the end of it while maintaining the relative order of the non-zero elements.
-For example, given nums = [0, 1, 0, 3, 12], after calling y">
-<meta property="og:updated_time" content="2017-01-12T05:52:18.754Z">
+<meta property="og:description" content="I enjoyed the time with my family quite a lot during Chinese New Year. We made dumplings,  set off fireworks, watched Spring Festival Gala, and so on. However, happy time always runs fast. It’s time t">
+<meta property="og:image" content="https://xiangxianzui.github.io/BAE-guide.png">
+<meta property="og:image" content="https://xiangxianzui.github.io/workflow.png">
+<meta property="og:image" content="https://xiangxianzui.github.io/config.png">
+<meta property="og:updated_time" content="2017-02-10T05:51:48.736Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode: Move Zeroes">
-<meta name="twitter:description" content="ProblemGiven an array nums, write a function to move all 0’s to the end of it while maintaining the relative order of the non-zero elements.
-For example, given nums = [0, 1, 0, 3, 12], after calling y">
+<meta name="twitter:title" content="Wechat development with NodeJS">
+<meta name="twitter:description" content="I enjoyed the time with my family quite a lot during Chinese New Year. We made dumplings,  set off fireworks, watched Spring Festival Gala, and so on. However, happy time always runs fast. It’s time t">
+<meta name="twitter:image" content="https://xiangxianzui.github.io/BAE-guide.png">
   
     <link rel="alternate" href="/atom.xml" title="Muser" type="application/atom+xml">
   
@@ -91,14 +92,14 @@ ga('send', 'pageview');
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-LeetCode-Move-Zeroes" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Wechat-development-with-NodeJS" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/01/LeetCode-Move-Zeroes/" class="article-date">
-  <time datetime="2017-01-12T02:14:39.000Z" itemprop="datePublished">2017-01-12</time>
+    <a href="/2017/02/Wechat-development-with-NodeJS/" class="article-date">
+  <time datetime="2017-02-09T15:30:48.000Z" itemprop="datePublished">2017-02-09</time>
 </a>
     
   <div class="article-category">
-    <a class="article-category-link" href="/categories/LeetCode/">LeetCode</a>
+    <a class="article-category-link" href="/categories/Guides/">Guides</a>
   </div>
 
   </div>
@@ -109,7 +110,7 @@ ga('send', 'pageview');
         
   
     <h1 class="article-title" itemprop="name">
-      LeetCode: Move Zeroes
+      Wechat development with NodeJS
     </h1>
   
 
@@ -117,14 +118,47 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>Given an array nums, write a function to move all 0’s to the end of it while maintaining the relative order of the non-zero elements.</p>
-<p>For example, given <code>nums = [0, 1, 0, 3, 12]</code>, after calling your function, <code>nums</code> should be <code>[1, 3, 12, 0, 0]</code>.</p>
-<p><strong>Note</strong>:<br>You must do this in-place without making a copy of the array.<br>Minimize the total number of operations.</p>
-<h2 id="Solution-1-–-59ms"><a href="#Solution-1-–-59ms" class="headerlink" title="Solution 1 – 59ms"></a>Solution 1 – 59ms</h2><p>Go through the array. If <code>ith</code> element is 0, then move all elements within [i+1,nums,length-1] one place ahead, and set the last element of the array to 0. To prevent endless loop when <code>nums=[0,0,...,0]</code>, set a variable <code>reapeatCount</code>.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">public void moveZeroes(int[] nums) &#123;</div><div class="line">    int repeatCount = 0;</div><div class="line">    for(int i=0; i&lt;nums.length; i++)&#123;</div><div class="line">        if(nums[i]==0)&#123;</div><div class="line">            for(int j=i; j&lt;nums.length-1; j++)&#123;</div><div class="line">                nums[j] = nums[j+1];</div><div class="line">            &#125;</div><div class="line">            nums[nums.length-1] = 0;</div><div class="line">            i--;</div><div class="line">            repeatCount++;</div><div class="line">        &#125;</div><div class="line">        if(repeatCount==nums.length)    break;</div><div class="line">            </div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="Solution-2-–-19ms"><a href="#Solution-2-–-19ms" class="headerlink" title="Solution 2 – 19ms"></a>Solution 2 – 19ms</h2><p>Go through the array. If <code>ith</code> element is 0, then find the first non-zero element within range [i+1,nums.length-1] and swap it with current element; if there is no such non-zero element, it means all non-zero elements are before zeroes – done! If current element is non-zero, just go on to the next.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">public void moveZeroes(int[] nums) &#123;</div><div class="line">    if(nums != null)&#123;</div><div class="line">        for(int i=0; i&lt;nums.length; i++)&#123;</div><div class="line">            if(nums[i]==0)&#123;</div><div class="line">                //find the first non-zero element within range [i+1,nums.length-1]</div><div class="line">                int firstNonZeroIdx = -1;</div><div class="line">                for(int j=i+1; j&lt;nums.length; j++)&#123;</div><div class="line">                    if(nums[j]!=0)&#123;</div><div class="line">                        firstNonZeroIdx = j;</div><div class="line">                        break;</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">                if(firstNonZeroIdx==-1) break;</div><div class="line">                else&#123;</div><div class="line">                    int temp = nums[i];</div><div class="line">                    nums[i] = nums[firstNonZeroIdx];</div><div class="line">                    nums[firstNonZeroIdx] = temp;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>Solution 2 is better than Solution 1. This is because in Solution 1, it is unnecessary to move all elements after a non-zero element one place ahead. </p>
+        <p>I enjoyed the time with my family quite a lot during Chinese New Year. We made dumplings,  set off fireworks, watched Spring Festival Gala, and so on. However, happy time always runs fast. It’s time to finish the holiday and get back to work : )</p>
+<p>Now, I have a wechat public account(subscription account), and what I want to achieve is to implement a simple chatting robot with the help of <a href="https://cloud.baidu.com/product/bae.html" target="_blank" rel="external">Baidu App Engine</a>.</p>
+<p>There are only 3 steps to go.</p>
+<h2 id="1-Create-Baidu-App-Engine"><a href="#1-Create-Baidu-App-Engine" class="headerlink" title="#1 Create Baidu App Engine"></a>#1 Create Baidu App Engine</h2><p>At first, I tried to use Heroku to host the server, but Heroku can’t pass the server url validation while configuring wechat public account. I guess the reason is that the IP of Heroku is in America, so I choose BAE as the server IP would be within mainland.</p>
+<p>Creating and managing a BAE app is concluded in this <a href="https://cloud.baidu.com/doc/BAE/GUIGettingStarted.html" target="_blank" rel="external">tutorial</a>. </p>
+<p><img src="BAE-guide.png" alt="guide for creating BAE"></p>
+<h2 id="2-Configure-wechat-public-account"><a href="#2-Configure-wechat-public-account" class="headerlink" title="#2 Configure wechat public account"></a>#2 Configure wechat public account</h2><p>Before configuring wechat public account, it is essential to understand the work flow among <strong>user</strong>, <strong>wechat server</strong>, and <strong>my own server</strong>. This picture demonstrates the work flow very well.</p>
+<p><img src="workflow.png" alt="workflow"></p>
+<p>This is to say, wechat server stands between my server and the user. All messages between user and my server should go through wechat server first. Thus, as the server side, we need to tell wechat server the address of my server. This is where the below configuration comes from.</p>
+<p><img src="config.png" alt="development configuration"></p>
+<p>In this picture, URL is the route to send and receive messages in my own server. Token is an identity to tell wechat server that <strong>this is me</strong>. The encoding key is a key to encrypt and decrypt messages, and it can be generated randomly.</p>
+<h2 id="3-Build-server-with-Node-js"><a href="#3-Build-server-with-Node-js" class="headerlink" title="#3 Build server with Node.js"></a>#3 Build server with Node.js</h2><p>Firstly, wechat server will validate my server via a <code>GET</code> request, which contains 4 parameters: </p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>signature</td>
+<td>encrypted signature</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>current time</td>
+</tr>
+<tr>
+<td>nonce</td>
+<td>random number</td>
+</tr>
+<tr>
+<td>echostr</td>
+<td>random string</td>
+</tr>
+</tbody>
+</table>
+<p>The signature is calculated by wechat server according to timestamp, nonce, and the specified token in last step. What should be done in my server is to calculate the signature again and compare it with the received one. If the two signatures are equal, the server should send the received <code>echostr</code> back to wechat server to tell that validation is success. If wechat server has not received the <code>echostr</code> or the received one is not correct, the valication is failed.</p>
+<p>If the validation is success, we can send and receive messages. This part is demonstrated in the <a href="http://mp.weixin.qq.com/wiki/17/f298879f8fb29ab98b2f2971d42552fd.html" target="_blank" rel="external">official documentation</a>.</p>
+<p><strong>Note</strong>: The code can be accessed at <a href="https://github.com/xiangxianzui/wechat-nodejs" target="_blank" rel="external">github</a>.</p>
 <blockquote>
 <p>Written with <a href="https://stackedit.io/" target="_blank" rel="external">StackEdit</a>.</p>
 </blockquote>
@@ -132,12 +166,12 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xiangxianzui.github.io/2017/01/LeetCode-Move-Zeroes/" data-id="ciyz523h5001hbwr7gfxbjk40" class="article-share-link">Share</a>
+      <a data-url="https://xiangxianzui.github.io/2017/02/Wechat-development-with-NodeJS/" data-id="ciyz523g9000jbwr7gmuoeged" class="article-share-link">Share</a>
       
-        <a href="https://xiangxianzui.github.io/2017/01/LeetCode-Move-Zeroes/#disqus_thread" class="article-comment-link">Comments</a>
+        <a href="https://xiangxianzui.github.io/2017/02/Wechat-development-with-NodeJS/#disqus_thread" class="article-comment-link">Comments</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Array/">Array</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithm/">algorithm</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/BAE/">BAE</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-JS/">Node.JS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/wechat/">wechat</a></li></ul>
 
     </footer>
   </div>
@@ -145,19 +179,10 @@ ga('send', 'pageview');
     
 <nav id="article-nav">
   
-    <a href="/2017/01/LeetCode-Delete-Node-in-a-Linked-List/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          LeetCode: Delete Node in a Linked List
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/01/LeetCode-Sum-of-Two-Integers/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2017/02/LeetCode-Coin-Change/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">LeetCode: Sum of Two Integers</div>
+      <div class="article-nav-title">LeetCode: Coin Change</div>
     </a>
   
 </nav>
@@ -267,7 +292,7 @@ ga('send', 'pageview');
 <script>
   var disqus_shortname = 'xiangxianzui';
   
-  var disqus_url = 'https://xiangxianzui.github.io/2017/01/LeetCode-Move-Zeroes/';
+  var disqus_url = 'https://xiangxianzui.github.io/2017/02/Wechat-development-with-NodeJS/';
   
   (function(){
     var dsq = document.createElement('script');

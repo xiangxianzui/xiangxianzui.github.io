@@ -89,6 +89,94 @@ ga('send', 'pageview');
       <div class="outer">
         <section id="main">
   
+    <article id="post-Wechat-development-with-NodeJS" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/02/Wechat-development-with-NodeJS/" class="article-date">
+  <time datetime="2017-02-09T15:30:48.000Z" itemprop="datePublished">2017-02-09</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Guides/">Guides</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/Wechat-development-with-NodeJS/">Wechat development with NodeJS</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>I enjoyed the time with my family quite a lot during Chinese New Year. We made dumplings,  set off fireworks, watched Spring Festival Gala, and so on. However, happy time always runs fast. It’s time to finish the holiday and get back to work : )</p>
+<p>Now, I have a wechat public account(subscription account), and what I want to achieve is to implement a simple chatting robot with the help of <a href="https://cloud.baidu.com/product/bae.html" target="_blank" rel="external">Baidu App Engine</a>.</p>
+<p>There are only 3 steps to go.</p>
+<h2 id="1-Create-Baidu-App-Engine"><a href="#1-Create-Baidu-App-Engine" class="headerlink" title="#1 Create Baidu App Engine"></a>#1 Create Baidu App Engine</h2><p>At first, I tried to use Heroku to host the server, but Heroku can’t pass the server url validation while configuring wechat public account. I guess the reason is that the IP of Heroku is in America, so I choose BAE as the server IP would be within mainland.</p>
+<p>Creating and managing a BAE app is concluded in this <a href="https://cloud.baidu.com/doc/BAE/GUIGettingStarted.html" target="_blank" rel="external">tutorial</a>. </p>
+<p><img src="BAE-guide.png" alt="guide for creating BAE"></p>
+<h2 id="2-Configure-wechat-public-account"><a href="#2-Configure-wechat-public-account" class="headerlink" title="#2 Configure wechat public account"></a>#2 Configure wechat public account</h2><p>Before configuring wechat public account, it is essential to understand the work flow among <strong>user</strong>, <strong>wechat server</strong>, and <strong>my own server</strong>. This picture demonstrates the work flow very well.</p>
+<p><img src="workflow.png" alt="workflow"></p>
+<p>This is to say, wechat server stands between my server and the user. All messages between user and my server should go through wechat server first. Thus, as the server side, we need to tell wechat server the address of my server. This is where the below configuration comes from.</p>
+<p><img src="config.png" alt="development configuration"></p>
+<p>In this picture, URL is the route to send and receive messages in my own server. Token is an identity to tell wechat server that <strong>this is me</strong>. The encoding key is a key to encrypt and decrypt messages, and it can be generated randomly.</p>
+<h2 id="3-Build-server-with-Node-js"><a href="#3-Build-server-with-Node-js" class="headerlink" title="#3 Build server with Node.js"></a>#3 Build server with Node.js</h2><p>Firstly, wechat server will validate my server via a <code>GET</code> request, which contains 4 parameters: </p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>signature</td>
+<td>encrypted signature</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>current time</td>
+</tr>
+<tr>
+<td>nonce</td>
+<td>random number</td>
+</tr>
+<tr>
+<td>echostr</td>
+<td>random string</td>
+</tr>
+</tbody>
+</table>
+<p>The signature is calculated by wechat server according to timestamp, nonce, and the specified token in last step. What should be done in my server is to calculate the signature again and compare it with the received one. If the two signatures are equal, the server should send the received <code>echostr</code> back to wechat server to tell that validation is success. If wechat server has not received the <code>echostr</code> or the received one is not correct, the valication is failed.</p>
+<p>If the validation is success, we can send and receive messages. This part is demonstrated in the <a href="http://mp.weixin.qq.com/wiki/17/f298879f8fb29ab98b2f2971d42552fd.html" target="_blank" rel="external">official documentation</a>.</p>
+<p><strong>Note</strong>: The code can be accessed at <a href="https://github.com/xiangxianzui/wechat-nodejs" target="_blank" rel="external">github</a>.</p>
+<blockquote>
+<p>Written with <a href="https://stackedit.io/" target="_blank" rel="external">StackEdit</a>.</p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://xiangxianzui.github.io/2017/02/Wechat-development-with-NodeJS/" data-id="ciyz523g9000jbwr7gmuoeged" class="article-share-link">Share</a>
+      
+        <a href="https://xiangxianzui.github.io/2017/02/Wechat-development-with-NodeJS/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/BAE/">BAE</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-JS/">Node.JS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/wechat/">wechat</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-LeetCode-Coin-Change" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/02/LeetCode-Coin-Change/" class="article-date">
@@ -134,7 +222,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xiangxianzui.github.io/2017/02/LeetCode-Coin-Change/" data-id="ciys9yy700004l8r7z5ydqlzk" class="article-share-link">Share</a>
+      <a data-url="https://xiangxianzui.github.io/2017/02/LeetCode-Coin-Change/" data-id="ciyz523g2000dbwr7atamw8re" class="article-share-link">Share</a>
       
         <a href="https://xiangxianzui.github.io/2017/02/LeetCode-Coin-Change/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -227,7 +315,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xiangxianzui.github.io/2017/01/Learning-LaTeX/" data-id="ciys9yy6r0002l8r7ucg91fvx" class="article-share-link">Share</a>
+      <a data-url="https://xiangxianzui.github.io/2017/01/Learning-LaTeX/" data-id="ciyz523h6001ibwr7xj3anhkb" class="article-share-link">Share</a>
       
         <a href="https://xiangxianzui.github.io/2017/01/Learning-LaTeX/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -292,7 +380,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xiangxianzui.github.io/2017/01/Upload-image-to-a-Node-JS-server/" data-id="ciys9yy7v000fl8r7rksv6n1h" class="article-share-link">Share</a>
+      <a data-url="https://xiangxianzui.github.io/2017/01/Upload-image-to-a-Node-JS-server/" data-id="ciyz523g6000fbwr7e1el5sj3" class="article-share-link">Share</a>
       
         <a href="https://xiangxianzui.github.io/2017/01/Upload-image-to-a-Node-JS-server/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -336,7 +424,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xiangxianzui.github.io/2017/01/LeetCode-Convert-a-Number-to-Hexadecimal/" data-id="ciys9yy7d0007l8r7135a5et7" class="article-share-link">Share</a>
+      <a data-url="https://xiangxianzui.github.io/2017/01/LeetCode-Convert-a-Number-to-Hexadecimal/" data-id="ciyz523fo0007bwr7vk4viy1g" class="article-share-link">Share</a>
       
         <a href="https://xiangxianzui.github.io/2017/01/LeetCode-Convert-a-Number-to-Hexadecimal/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -412,7 +500,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xiangxianzui.github.io/2017/01/LeetCode-Binary-Watch/" data-id="ciys9yy7m0009l8r7wvtlt4tw" class="article-share-link">Share</a>
+      <a data-url="https://xiangxianzui.github.io/2017/01/LeetCode-Binary-Watch/" data-id="ciyz523fp0008bwr7qgzmpx8g" class="article-share-link">Share</a>
       
         <a href="https://xiangxianzui.github.io/2017/01/LeetCode-Binary-Watch/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -464,7 +552,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xiangxianzui.github.io/2017/01/LeetCode-Delete-Node-in-a-Linked-List/" data-id="ciys9yy9b001cl8r76qcsb96s" class="article-share-link">Share</a>
+      <a data-url="https://xiangxianzui.github.io/2017/01/LeetCode-Delete-Node-in-a-Linked-List/" data-id="ciyz523ht001qbwr7n3yitq6p" class="article-share-link">Share</a>
       
         <a href="https://xiangxianzui.github.io/2017/01/LeetCode-Delete-Node-in-a-Linked-List/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -519,7 +607,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xiangxianzui.github.io/2017/01/LeetCode-Move-Zeroes/" data-id="ciys9yy82000jl8r7e5kefdih" class="article-share-link">Share</a>
+      <a data-url="https://xiangxianzui.github.io/2017/01/LeetCode-Move-Zeroes/" data-id="ciyz523h5001hbwr7gfxbjk40" class="article-share-link">Share</a>
       
         <a href="https://xiangxianzui.github.io/2017/01/LeetCode-Move-Zeroes/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -575,7 +663,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xiangxianzui.github.io/2017/01/LeetCode-Sum-of-Two-Integers/" data-id="ciys9yy7r000dl8r7to63rtm5" class="article-share-link">Share</a>
+      <a data-url="https://xiangxianzui.github.io/2017/01/LeetCode-Sum-of-Two-Integers/" data-id="ciyz523fv0009bwr75fpqzo8q" class="article-share-link">Share</a>
       
         <a href="https://xiangxianzui.github.io/2017/01/LeetCode-Sum-of-Two-Integers/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -679,7 +767,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xiangxianzui.github.io/2017/01/Customize-hexo-blogs/" data-id="ciys9yy7f0008l8r7noqm0kh5" class="article-share-link">Share</a>
+      <a data-url="https://xiangxianzui.github.io/2017/01/Customize-hexo-blogs/" data-id="ciyz523fd0004bwr7014z7pxv" class="article-share-link">Share</a>
       
         <a href="https://xiangxianzui.github.io/2017/01/Customize-hexo-blogs/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -693,84 +781,11 @@ ga('send', 'pageview');
 
 
   
-    <article id="post-Build-blogs-with-Hexo" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/01/Build-blogs-with-Hexo/" class="article-date">
-  <time datetime="2017-01-05T02:29:32.000Z" itemprop="datePublished">2017-01-05</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Guides/">Guides</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/Build-blogs-with-Hexo/">Build blogs with Hexo!</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to my blog! In this my very first post, I will record my experience of building this blog with the help of <a href="https://pages.github.com/" target="_blank" rel="external">Github Pages</a> and the amazing <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This not only keeps a record what I did, but also may help those who want to build a personal blog site. Ok, let’s get down to the business. </p>
-<h2 id="Prerequisite"><a href="#Prerequisite" class="headerlink" title="Prerequisite"></a>Prerequisite</h2><ul>
-<li>Node.js</li>
-<li>Git</li>
-</ul>
-<p>Node.js and Git should be installed properly on your machine.<br>If not, download <a href="https://nodejs.org/en/download/" target="_blank" rel="external">Node.js</a> and <a href="https://git-scm.com/downloads" target="_blank" rel="external">Git</a>, then choose the version you want.</p>
-<h2 id="Install-Hexo"><a href="#Install-Hexo" class="headerlink" title="Install Hexo"></a>Install Hexo</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install -g hexo-cli</div></pre></td></tr></table></figure>
-<h2 id="Set-up-Hexo"><a href="#Set-up-Hexo" class="headerlink" title="Set up Hexo"></a>Set up Hexo</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ hexo init [your-site-directory]</div><div class="line">$ <span class="built_in">cd</span> [your-site-directory]</div><div class="line">$ npm install</div></pre></td></tr></table></figure>
-<p>If [your-site-directory] is not specified, hexo will create the project in the current working directory.</p>
-<h2 id="Create-a-post"><a href="#Create-a-post" class="headerlink" title="Create a post"></a>Create a post</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new post [your-post-title]</div></pre></td></tr></table></figure>
-<p>Will find a new post is created in /source/_posts</p>
-<p>All posts created by hexo is written in Markdown. You can edit in favorite editor or I recommend to use this online editor – <a href="https://stackedit.io/" target="_blank" rel="external">StackEdit</a>.</p>
-<h2 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>This will create a /public folder in the root of your project, and it contains all static html, css, js, fonts, images, etc. </p>
-<h2 id="Run-hexo-server-locally"><a href="#Run-hexo-server-locally" class="headerlink" title="Run hexo server locally"></a>Run hexo server locally</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>The server will be running in <a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a> And this offers a convenient way for you to view what you have changed with the look of your website.</p>
-<h2 id="From-offline-to-online"><a href="#From-offline-to-online" class="headerlink" title="From offline to online"></a>From offline to online</h2><p>Hexo provides many ways to deploy the website to your real server. I choose to deploy to Github Pages.</p>
-<h4 id="Create-a-github-repository"><a href="#Create-a-github-repository" class="headerlink" title="Create a github repository"></a>Create a github repository</h4><p>Go to github and create a repository named: <code>[your-github-username]-github.io</code>, mine is <code>xiangxianzui.github.io</code>.</p>
-<p>Go to <em>settings</em> of created repository, pull down the page and you find:</p>
-<p><img src="hexo-1.png" alt="GitHub Page Setting"> </p>
-<p>Next, deploy a SSH key to this repository. This <a href="https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/" target="_blank" rel="external">article</a> is helpful.</p>
-<h4 id="Git-deploy-strategy-for-Hexo"><a href="#Git-deploy-strategy-for-Hexo" class="headerlink" title="Git deploy strategy for Hexo"></a>Git deploy strategy for Hexo</h4><p>Install the official git deploy strategy for hexo.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo-deployer-git --save</div></pre></td></tr></table></figure>
-<p>After that, edit deploy config in your <em>_config.yml</em> (located in project root).</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  <span class="built_in">type</span>: git</div><div class="line">  repo: [your-ssh-repo]</div><div class="line">  branch: master</div><div class="line">  message: <span class="string">"Site updated: &#123;&#123; now('YYYY-MM-DD HH:mm:ss') &#125;&#125;"</span></div></pre></td></tr></table></figure>
-<p>Then, deploy website to git repository</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p><strong>Note</strong>: If you are using Windows, it is recommended to run deploy command in Git Bash.</p>
-<h4 id="Take-off"><a href="#Take-off" class="headerlink" title="Take off!"></a>Take off!</h4><p>Browse <a href="https://[your-github-username].github.io/" target="_blank" rel="external">https://[your-github-username].github.io/</a> and enjoy your flight with Hexo!</p>
-<hr>
-<blockquote>
-<p>Written with <a href="https://stackedit.io/" target="_blank" rel="external">StackEdit</a>.</p>
-</blockquote>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://xiangxianzui.github.io/2017/01/Build-blogs-with-Hexo/" data-id="ciys9yy99001bl8r79a0y3lsv" class="article-share-link">Share</a>
-      
-        <a href="https://xiangxianzui.github.io/2017/01/Build-blogs-with-Hexo/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
 
 
-  
-
+  <nav id="page-nav">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">__('next') &raquo;</a>
+  </nav>
 </section>
         
           <aside id="sidebar">
@@ -780,6 +795,10 @@ ga('send', 'pageview');
     <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2017/02/Wechat-development-with-NodeJS/">Wechat development with NodeJS</a>
+          </li>
         
           <li>
             <a href="/2017/02/LeetCode-Coin-Change/">LeetCode: Coin Change</a>
@@ -797,10 +816,6 @@ ga('send', 'pageview');
             <a href="/2017/01/LeetCode-Convert-a-Number-to-Hexadecimal/">LeetCode: Convert a Number to Hexadecimal</a>
           </li>
         
-          <li>
-            <a href="/2017/01/LeetCode-Binary-Watch/">LeetCode: Binary Watch</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -810,7 +825,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Guides/">Guides</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/LeetCode/">LeetCode</a><span class="category-list-count">6</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Guides/">Guides</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/LeetCode/">LeetCode</a><span class="category-list-count">6</span></li></ul>
     </div>
   </div>
 
@@ -820,7 +835,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/Backtracking/" style="font-size: 10px;">Backtracking</a> <a href="/tags/Bit-Manipulation/" style="font-size: 15px;">Bit Manipulation</a> <a href="/tags/Dynamic-Programming/" style="font-size: 10px;">Dynamic Programming</a> <a href="/tags/Hexo/" style="font-size: 15px;">Hexo</a> <a href="/tags/LaTex/" style="font-size: 10px;">LaTex</a> <a href="/tags/Linked-List/" style="font-size: 10px;">Linked List</a> <a href="/tags/Node-JS/" style="font-size: 10px;">Node.JS</a> <a href="/tags/algorithm/" style="font-size: 20px;">algorithm</a>
+      <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/BAE/" style="font-size: 10px;">BAE</a> <a href="/tags/Backtracking/" style="font-size: 10px;">Backtracking</a> <a href="/tags/Bit-Manipulation/" style="font-size: 15px;">Bit Manipulation</a> <a href="/tags/Dynamic-Programming/" style="font-size: 10px;">Dynamic Programming</a> <a href="/tags/Hexo/" style="font-size: 15px;">Hexo</a> <a href="/tags/LaTex/" style="font-size: 10px;">LaTex</a> <a href="/tags/Linked-List/" style="font-size: 10px;">Linked List</a> <a href="/tags/Node-JS/" style="font-size: 15px;">Node.JS</a> <a href="/tags/algorithm/" style="font-size: 20px;">algorithm</a> <a href="/tags/wechat/" style="font-size: 10px;">wechat</a>
     </div>
   </div>
 
@@ -829,7 +844,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">9</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 
