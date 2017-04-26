@@ -89,6 +89,110 @@ ga('send', 'pageview');
       <div class="outer">
         <section id="main">
   
+    <article id="post-Customize-hexo-blogs" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/01/Customize-hexo-blogs/" class="article-date">
+  <time datetime="2017-01-05T03:37:09.000Z" itemprop="datePublished">2017-01-05</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Guides/">Guides</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/01/Customize-hexo-blogs/">Customize hexo blogs</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>In my previous <a href="https://xiangxianzui.github.io/2017/01/Build-blogs-with-Hexo/">post</a>, I introduced how to build personal blog site with the help of <a href="https://hexo.io" target="_blank" rel="external">Hexo</a> and <a href="https://pages.github.com/" target="_blank" rel="external">Github Pages</a>. Now it’s time to customize the hexo blog to show some personalities.</p>
+<h2 id="config-yml"><a href="#config-yml" class="headerlink" title="_config.yml"></a>_config.yml</h2><p><em>_config.yml</em> is the configuration file of your hexo blog (in project root dir).</p>
+<p>Hexo lets you define your site information, customize date/time format, pagination behaviour, language settings, etc. Most configs are not necessary, but it will make your site look more like <em>yours</em> if you specify them properly.</p>
+<p>Here is my site config:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Site</span></div><div class="line">title: Muser</div><div class="line">subtitle: Coding While Thinking</div><div class="line">description: thinking <span class="keyword">in</span> a different way</div><div class="line">author: xiangxianzui</div><div class="line">email: xiangxianzui@gmail.com</div></pre></td></tr></table></figure>
+<p>Url config: </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># URL</span></div><div class="line"><span class="comment">## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'</span></div><div class="line">url: https://xiangxianzui.github.io</div><div class="line">root: /</div><div class="line">permalink: :year/:month/:title/</div></pre></td></tr></table></figure>
+<h2 id="Tags-amp-Categories"><a href="#Tags-amp-Categories" class="headerlink" title="Tags &amp; Categories"></a>Tags &amp; Categories</h2><p>Tags and Categories can be defined in the front matter of every post you create. Front matter is in the very beginning of your post. You can define tags and categories like this:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">tags: [Hexo, node.js]</div><div class="line">categories: [Guides]</div></pre></td></tr></table></figure>
+<p>To delete a tag or category, firstly you need to delete it from the front matter of your post, then clean the hexo database (db.json in project root) and /public folder by typing:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#Delete database</span></div><div class="line"><span class="comment">#Delete public folder</span></div><div class="line">hexo clean</div></pre></td></tr></table></figure>
+<p>And then, regenerate the database and public folder by typing:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo generate</div></pre></td></tr></table></figure>
+<h2 id="Asset-Folders"><a href="#Asset-Folders" class="headerlink" title="Asset Folders"></a>Asset Folders</h2><p>As usual, you can reference online images in your markdown like this: <code>![image-title](http://some-image-site/some-image.png)</code>. But how to reference local images? Hexo gives you two options.</p>
+<p>The first is to create a global asset folder. For example, create /images folder in /source directory, and put all your images into it. Then, you can reference them in this way: <code>![image-title](/images/image.png)</code>.</p>
+<p>If you want to put your images according to post, which means one asset folder per post, you can set <code>post_asset_folder</code> to true in <em>_config.yml</em>. And when you <code>$ hexo new post [new-post]</code>, an asset folder will be created by hexo automatically.</p>
+<h2 id="Enabling-Comments"><a href="#Enabling-Comments" class="headerlink" title="Enabling Comments"></a>Enabling Comments</h2><p>The default theme (landscape) of Hexo already supports <a href="https://disqus.com/" target="_blank" rel="external">Disqus</a>. So, just go to Disqus, register an account, and click <em>install Disqus on site</em>. Follow the guideline, and specify a unique disqus shortname. After that, add this to your <em>_config.yml</em>.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Disqus comments</span></div><div class="line">disqus_shortname: [your-disqus-shortname]</div></pre></td></tr></table></figure>
+<h2 id="RSS-amp-Sitemap-plugin"><a href="#RSS-amp-Sitemap-plugin" class="headerlink" title="RSS &amp; Sitemap plugin"></a>RSS &amp; Sitemap plugin</h2><p>Use the official tool <em>hexo-generator-feed</em> to generate RSS feed. Firstly intall it:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo-generator-feed --save</div></pre></td></tr></table></figure>
+<p>Configure options in <em>_config.yml</em>:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># RSS feed</span></div><div class="line">feed:</div><div class="line">  <span class="built_in">type</span>: atom</div><div class="line">  path: atom.xml</div><div class="line">  <span class="built_in">limit</span>: 20</div><div class="line">  hub:</div><div class="line">  content:</div></pre></td></tr></table></figure>
+<ul>
+<li>type - Feed type. (atom/rss2)</li>
+<li>path - Feed path. (Default: atom.xml/rss2.xml)</li>
+<li>limit - Maximum number of posts in the feed (Use 0 or false to show<br>all posts)</li>
+<li>hub - URL of the PubSubHubbub hubs (Leave it empty if you don’t use<br>it)</li>
+<li>content - (optional) set to ‘true’ to include the contents of the<br>entire post in the feed.</li>
+</ul>
+<p>A <em>atom.xml</em> file will be generated automatically when you run <code>hexo generate</code>.</p>
+<p>To generate sitemap, use the official <a href="https://github.com/hexojs/hexo-generator-sitemap" target="_blank" rel="external">hexo-generator-sitemap</a> plugin. </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">A sitemap is a file <span class="built_in">where</span> you can list the web pages of your site to tell Google and other search engines about the organization of your site content. Search engine web crawlers like Googlebot <span class="built_in">read</span> this file to more intelligently crawl your site.</div></pre></td></tr></table></figure>
+<p>–From Google</p>
+<h2 id="Customize-default-theme"><a href="#Customize-default-theme" class="headerlink" title="Customize default theme"></a>Customize default theme</h2><h3 id="Add-icons-to-navigation-bar"><a href="#Add-icons-to-navigation-bar" class="headerlink" title="Add icons to navigation bar"></a>Add icons to navigation bar</h3><p>I will explain how to add icons to the navigation bar in the default theme.</p>
+<p>Open directory <code>/themes/landscape/source/css/_partial</code>, and find <code>header.styl</code>. Add following code:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">#nav-github-link</div><div class="line">  &amp;:before</div><div class="line">    content: &quot;\f09b&quot;</div></pre></td></tr></table></figure>
+<p>Then, open directory <code>/themes/landscape/layout/_partial</code>, find <code>header.ejs</code> and open it. Find the following section:</p>
+<p><img src="hexo-1.png" alt="Edit header.ejs"></p>
+<p><strong>Note:</strong> <code>theme</code> is a JavaScript object representation of the theme’s <code>_config.yml</code> </p>
+<p>Add the code from line 22 to 24 to your header.ejs.</p>
+<p>Finally, open <code>_config.yml</code> in <code>themes/landscape</code>, add code:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">github: [your-github-address]</div></pre></td></tr></table></figure>
+<p>It may looks like this:</p>
+<p><img src="hexo-2.png" alt="Edit _config.yml"></p>
+<p>Yess! Your navigation bar will look like this:</p>
+<p><img src="hexo-3.png" alt="new navigation bar"></p>
+<h3 id="Change-banner"><a href="#Change-banner" class="headerlink" title="Change banner"></a>Change banner</h3><p>In addition, you can change the banner of the page. The <em>banner.jpg</em> is in <code>/themes/landscape/source/css/images</code>, and you can replace it with your own.</p>
+<h3 id="Show-category-count"><a href="#Show-category-count" class="headerlink" title="Show category count"></a>Show category count</h3><p>Again, open the theme’s <code>_config.yml</code>, set <code>show_count</code> to <code>true</code>.</p>
+<p>Then, it will be looking like this:</p>
+<p><img src="hexo-4.png" alt="show category count"></p>
+<h2 id="Google-Analytics"><a href="#Google-Analytics" class="headerlink" title="Google Analytics"></a>Google Analytics</h2><p>Google Analytics tell the site owner about how many people have visited the website, how long they averagely stay and what kind of people visit (male or female? Asian or American?). It is a brilliant tool for site owners to grasp the whole picture.</p>
+<p>The default theme, Landscape, is already supporting Google Analytics. If you are using Landscape or another theme which supports Google Analytics,  you can simply add your Google Analytics tracking ID (get tracking ID <a href="https://support.google.com/analytics/answer/1008080?hl=en" target="_blank" rel="external">here</a>) to the theme’s <code>_config.yml</code> like this:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">google_analytics: [your-tracking-id]</div></pre></td></tr></table></figure>
+<p>If your theme does not support Google Analytics, check <a href="http://www.codeblocq.com/2015/12/Add-Google-Analytics-to-your-hexo-blog/" target="_blank" rel="external">this post</a>.</p>
+<p>Until now, you have enabled Google Analytics in your site, but the question is you can’t see it. To display the analytics from Google, you need to use Embed API. This <a href="https://developers.google.com/analytics/devguides/reporting/embed/v1/getting-started" target="_blank" rel="external">official guide</a> is very helpful. Go through the guide and you’ll make it!</p>
+<p>Mine is like this:</p>
+<p><img src="hexo-5.png" alt="diplay-google-analytics"></p>
+<blockquote>
+<p>Written with <a href="https://stackedit.io/" target="_blank" rel="external">StackEdit</a>.</p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://xiangxianzui.github.io/2017/01/Customize-hexo-blogs/" data-id="cj1z6cqqt0004gor7pfw4u2fj" class="article-share-link">Share</a>
+      
+        <a href="https://xiangxianzui.github.io/2017/01/Customize-hexo-blogs/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Build-blogs-with-Hexo" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/01/Build-blogs-with-Hexo/" class="article-date">
@@ -152,7 +256,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xiangxianzui.github.io/2017/01/Build-blogs-with-Hexo/" data-id="ciyz523f50002bwr7lrafl08q" class="article-share-link">Share</a>
+      <a data-url="https://xiangxianzui.github.io/2017/01/Build-blogs-with-Hexo/" data-id="cj1z6cqqf0002gor772pdau0x" class="article-share-link">Share</a>
       
         <a href="https://xiangxianzui.github.io/2017/01/Build-blogs-with-Hexo/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -182,6 +286,10 @@ ga('send', 'pageview');
       <ul>
         
           <li>
+            <a href="/2017/02/Sorting-Java-implementations/">Sorting &amp; Java implementations</a>
+          </li>
+        
+          <li>
             <a href="/2017/02/Wechat-development-with-NodeJS/">Wechat development with NodeJS</a>
           </li>
         
@@ -195,10 +303,6 @@ ga('send', 'pageview');
         
           <li>
             <a href="/2017/01/Upload-image-to-a-Node-JS-server/">Upload image to a Node.JS server</a>
-          </li>
-        
-          <li>
-            <a href="/2017/01/LeetCode-Convert-a-Number-to-Hexadecimal/">LeetCode: Convert a Number to Hexadecimal</a>
           </li>
         
       </ul>
@@ -229,7 +333,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">9</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 
