@@ -89,12 +89,102 @@ ga('send', 'pageview');
       <div class="outer">
         <section id="main">
   
+    <article id="post-Frequently-used-commands-in-Linux" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/05/Frequently-used-commands-in-Linux/" class="article-date">
+  <time datetime="2017-05-19T05:39:38.000Z" itemprop="datePublished">2017-05-19</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Interview/">Interview</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/05/Frequently-used-commands-in-Linux/">Frequently-used commands in Linux</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>This post concludes frequently-used commands in Linux, which might be functioning like a handy manual page for Linux commands.</p>
+<ul>
+<li>man</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ man [command] //manual page of [command]</div></pre></td></tr></table></figure>
+<ul>
+<li>ls</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ ls -a //display all files, including hidden files</div><div class="line">$ ls -l //list detailed information</div><div class="line">$ ls -r //list files according to name, in reversing order</div><div class="line">$ ls -i //view inode number</div></pre></td></tr></table></figure>
+<ul>
+<li>cat</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$ cat [filename] //print content of [filename]</div><div class="line">$ cat -n [filename] //print content as well as line number</div><div class="line">$ cat &gt; [filename] //create a new file and enter content from standard inputstream</div><div class="line">$ cat [file1] [file2] &gt; [file3] //concat contents in [file1] and [file2], and then write to [file3]</div><div class="line">$ cat [bigfile] | more //use pipeline and more to view [bigfile]</div><div class="line">$ cat &gt;&gt; [filename] //add content to the end of [filename]</div></pre></td></tr></table></figure>
+<ul>
+<li>mv</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ mv [oldname] [newname] //change file name</div><div class="line">$ mv [file] [directory] //move [file] to [directory]</div></pre></td></tr></table></figure>
+<ul>
+<li><p>rm</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ rm -i [file] //interactive mode, ask for confirmation before deleting</div><div class="line">$ rm -f [file] //force to delete</div><div class="line">$ rm -r [directory] //delete all sub-directories and files in [directory] recursively</div></pre></td></tr></table></figure>
+</li>
+<li><p>grep (global regular expression print)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
+</li>
+<li><p>find</p>
+</li>
+<li>chmod</li>
+<li>tar</li>
+<li>pwd</li>
+<li>diff</li>
+<li>file</li>
+<li>ps</li>
+<li>top</li>
+<li>kill</li>
+<li>more</li>
+<li>less</li>
+<li>uname</li>
+<li>netstat</li>
+</ul>
+<blockquote>
+<p>Written with <a href="https://stackedit.io/" target="_blank" rel="external">StackEdit</a>.</p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://xiangxianzui.github.io/2017/05/Frequently-used-commands-in-Linux/" data-id="cj2vilwe8000438r7cm8c05cp" class="article-share-link">Share</a>
+      
+        <a href="https://xiangxianzui.github.io/2017/05/Frequently-used-commands-in-Linux/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Sorting-Java-implementations" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/02/Sorting-Java-implementations/" class="article-date">
   <time datetime="2017-02-28T14:48:29.000Z" itemprop="datePublished">2017-02-28</time>
 </a>
     
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Interview/">Interview</a>
+  </div>
+
   </div>
   <div class="article-inner">
     
@@ -111,15 +201,21 @@ ga('send', 'pageview');
     
     <div class="article-entry" itemprop="articleBody">
       
-        
+        <p>Sorting is a hot and common subject which is frequently asked during an interviewing session. Although it is very easy for most software developers, I still want to take a detailed review on it such that some enhanced understandings could be made.</p>
+<blockquote>
+<p>Written with <a href="https://stackedit.io/" target="_blank" rel="external">StackEdit</a>.</p>
+</blockquote>
+
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xiangxianzui.github.io/2017/02/Sorting-Java-implementations/" data-id="cj21cr2zt000shsr7cfkglos3" class="article-share-link">Share</a>
+      <a data-url="https://xiangxianzui.github.io/2017/02/Sorting-Java-implementations/" data-id="cj2vilwfp000w38r728ym2d3p" class="article-share-link">Share</a>
       
         <a href="https://xiangxianzui.github.io/2017/02/Sorting-Java-implementations/#disqus_thread" class="article-comment-link">Comments</a>
       
       
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sorting/">Sorting</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithm/">algorithm</a></li></ul>
+
     </footer>
   </div>
   
@@ -201,7 +297,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xiangxianzui.github.io/2017/02/Wechat-development-with-NodeJS/" data-id="cj21cr30c0012hsr79qj80ck9" class="article-share-link">Share</a>
+      <a data-url="https://xiangxianzui.github.io/2017/02/Wechat-development-with-NodeJS/" data-id="cj2vilwfu000y38r7tb79s0g3" class="article-share-link">Share</a>
       
         <a href="https://xiangxianzui.github.io/2017/02/Wechat-development-with-NodeJS/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -260,7 +356,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xiangxianzui.github.io/2017/02/LeetCode-Coin-Change/" data-id="cj21cr2ym0007hsr7d2b1u83n" class="article-share-link">Share</a>
+      <a data-url="https://xiangxianzui.github.io/2017/02/LeetCode-Coin-Change/" data-id="cj2vilweu000d38r7wk6jat3v" class="article-share-link">Share</a>
       
         <a href="https://xiangxianzui.github.io/2017/02/LeetCode-Coin-Change/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -353,7 +449,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xiangxianzui.github.io/2017/01/Learning-LaTeX/" data-id="cj21cr2zl000phsr7bmrsal89" class="article-share-link">Share</a>
+      <a data-url="https://xiangxianzui.github.io/2017/01/Learning-LaTeX/" data-id="cj2vilweh000738r7n50r8t4e" class="article-share-link">Share</a>
       
         <a href="https://xiangxianzui.github.io/2017/01/Learning-LaTeX/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -418,7 +514,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xiangxianzui.github.io/2017/01/Upload-image-to-a-Node-JS-server/" data-id="cj21cr30m0016hsr7vl0cjyn7" class="article-share-link">Share</a>
+      <a data-url="https://xiangxianzui.github.io/2017/01/Upload-image-to-a-Node-JS-server/" data-id="cj2vilwfj000s38r7xpv32plv" class="article-share-link">Share</a>
       
         <a href="https://xiangxianzui.github.io/2017/01/Upload-image-to-a-Node-JS-server/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -462,7 +558,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xiangxianzui.github.io/2017/01/LeetCode-Convert-a-Number-to-Hexadecimal/" data-id="cj21cr2zi000nhsr7tlq52wu4" class="article-share-link">Share</a>
+      <a data-url="https://xiangxianzui.github.io/2017/01/LeetCode-Convert-a-Number-to-Hexadecimal/" data-id="cj2vilwf3000k38r7n7pbqbqt" class="article-share-link">Share</a>
       
         <a href="https://xiangxianzui.github.io/2017/01/LeetCode-Convert-a-Number-to-Hexadecimal/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -538,7 +634,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xiangxianzui.github.io/2017/01/LeetCode-Binary-Watch/" data-id="cj21cr2ye0004hsr7ywz2pnac" class="article-share-link">Share</a>
+      <a data-url="https://xiangxianzui.github.io/2017/01/LeetCode-Binary-Watch/" data-id="cj2vilweq000938r7udusc5u0" class="article-share-link">Share</a>
       
         <a href="https://xiangxianzui.github.io/2017/01/LeetCode-Binary-Watch/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -590,7 +686,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xiangxianzui.github.io/2017/01/LeetCode-Delete-Node-in-a-Linked-List/" data-id="cj21cr304000whsr7gab2o4yo" class="article-share-link">Share</a>
+      <a data-url="https://xiangxianzui.github.io/2017/01/LeetCode-Delete-Node-in-a-Linked-List/" data-id="cj2vilwew000g38r7nvdqifn6" class="article-share-link">Share</a>
       
         <a href="https://xiangxianzui.github.io/2017/01/LeetCode-Delete-Node-in-a-Linked-List/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -645,68 +741,12 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xiangxianzui.github.io/2017/01/LeetCode-Move-Zeroes/" data-id="cj21cr2zy000uhsr7o5jo4cgc" class="article-share-link">Share</a>
+      <a data-url="https://xiangxianzui.github.io/2017/01/LeetCode-Move-Zeroes/" data-id="cj2vilwf8000m38r7wyq6094k" class="article-share-link">Share</a>
       
         <a href="https://xiangxianzui.github.io/2017/01/LeetCode-Move-Zeroes/#disqus_thread" class="article-comment-link">Comments</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Array/">Array</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithm/">algorithm</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-LeetCode-Sum-of-Two-Integers" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/01/LeetCode-Sum-of-Two-Integers/" class="article-date">
-  <time datetime="2017-01-09T14:00:24.000Z" itemprop="datePublished">2017-01-09</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/LeetCode/">LeetCode</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/LeetCode-Sum-of-Two-Integers/">LeetCode: Sum of Two Integers</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Calculate the sum of two integers a and b, but you are not allowed to use the operator + and -.</div><div class="line"></div><div class="line">Example:</div><div class="line">Given a = 1 and b = 2, return 3.</div></pre></td></tr></table></figure>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>Think this problem with an example. </p>
-<p>Consider 15+9=24.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#XOR holds the remaining part of the result</span></div><div class="line">     00001111</div><div class="line">XOR  00001001</div><div class="line">-------------</div><div class="line">     00000110</div></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#AND holds the carry part of the result</span></div><div class="line">     00001111</div><div class="line">AND  00001001</div><div class="line">-------------</div><div class="line">     00001001</div></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># shift the carry to left for 1 place, and add with the remaining</span></div><div class="line">     00000110</div><div class="line"> +   00010010</div><div class="line">-------------</div><div class="line">     00011000</div></pre></td></tr></table></figure>
-<p>Thus, for any integer <code>a</code> and <code>b</code>, <code>a + b = a^b + (a&amp;b)&lt;&lt;1</code>. Because <code>+</code> operator is not allowed, we can regard <code>a^b</code> as new <code>a</code>, and <code>(a&amp;b)&lt;&lt;1</code> as new <code>b</code>. Repeat this until current carry is <code>0</code>.</p>
-<p>The java implementation is like this:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Java solution</span></div><div class="line">public class Solution &#123;</div><div class="line">    public int getSum(int a, int b) &#123;</div><div class="line">        <span class="keyword">if</span>(b==0)    <span class="built_in">return</span> a;</div><div class="line">        <span class="keyword">while</span>(b!=0)&#123;</div><div class="line">            int carry = (a&amp;b)&lt;&lt;1;</div><div class="line">            int remain = a^b;</div><div class="line">            b = carry;</div><div class="line">            a = remain;</div><div class="line">        &#125;</div><div class="line">        <span class="built_in">return</span> a;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<blockquote>
-<p>Written with <a href="https://stackedit.io/" target="_blank" rel="external">StackEdit</a>.</p>
-</blockquote>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://xiangxianzui.github.io/2017/01/LeetCode-Sum-of-Two-Integers/" data-id="cj21cr308000zhsr7mjb8k9aw" class="article-share-link">Share</a>
-      
-        <a href="https://xiangxianzui.github.io/2017/01/LeetCode-Sum-of-Two-Integers/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Bit-Manipulation/">Bit Manipulation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithm/">algorithm</a></li></ul>
 
     </footer>
   </div>
@@ -731,6 +771,10 @@ ga('send', 'pageview');
       <ul>
         
           <li>
+            <a href="/2017/05/Frequently-used-commands-in-Linux/">Frequently-used commands in Linux</a>
+          </li>
+        
+          <li>
             <a href="/2017/02/Sorting-Java-implementations/">Sorting &amp; Java implementations</a>
           </li>
         
@@ -746,10 +790,6 @@ ga('send', 'pageview');
             <a href="/2017/01/Learning-LaTeX/">Learning LaTeX</a>
           </li>
         
-          <li>
-            <a href="/2017/01/Upload-image-to-a-Node-JS-server/">Upload image to a Node.JS server</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -759,7 +799,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Guides/">Guides</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/LeetCode/">LeetCode</a><span class="category-list-count">6</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Guides/">Guides</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Interview/">Interview</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/LeetCode/">LeetCode</a><span class="category-list-count">6</span></li></ul>
     </div>
   </div>
 
@@ -769,7 +809,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/BAE/" style="font-size: 10px;">BAE</a> <a href="/tags/Backtracking/" style="font-size: 10px;">Backtracking</a> <a href="/tags/Bit-Manipulation/" style="font-size: 15px;">Bit Manipulation</a> <a href="/tags/Dynamic-Programming/" style="font-size: 10px;">Dynamic Programming</a> <a href="/tags/Hexo/" style="font-size: 15px;">Hexo</a> <a href="/tags/LaTex/" style="font-size: 10px;">LaTex</a> <a href="/tags/Linked-List/" style="font-size: 10px;">Linked List</a> <a href="/tags/Node-JS/" style="font-size: 15px;">Node.JS</a> <a href="/tags/algorithm/" style="font-size: 20px;">algorithm</a> <a href="/tags/wechat/" style="font-size: 10px;">wechat</a>
+      <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/BAE/" style="font-size: 10px;">BAE</a> <a href="/tags/Backtracking/" style="font-size: 10px;">Backtracking</a> <a href="/tags/Bit-Manipulation/" style="font-size: 15px;">Bit Manipulation</a> <a href="/tags/Dynamic-Programming/" style="font-size: 10px;">Dynamic Programming</a> <a href="/tags/Hexo/" style="font-size: 15px;">Hexo</a> <a href="/tags/Java/" style="font-size: 10px;">Java</a> <a href="/tags/LaTex/" style="font-size: 10px;">LaTex</a> <a href="/tags/Linked-List/" style="font-size: 10px;">Linked List</a> <a href="/tags/Linux/" style="font-size: 10px;">Linux</a> <a href="/tags/Node-JS/" style="font-size: 15px;">Node.JS</a> <a href="/tags/Sorting/" style="font-size: 10px;">Sorting</a> <a href="/tags/algorithm/" style="font-size: 20px;">algorithm</a> <a href="/tags/wechat/" style="font-size: 10px;">wechat</a>
     </div>
   </div>
 
@@ -778,7 +818,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">9</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 

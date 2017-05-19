@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://xiangxianzui.github.io/"/>
-  <updated>2017-02-28T14:48:29.231Z</updated>
+  <updated>2017-05-19T07:18:29.774Z</updated>
   <id>https://xiangxianzui.github.io/</id>
   
   <author>
@@ -16,16 +16,48 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Frequently-used commands in Linux</title>
+    <link href="https://xiangxianzui.github.io/2017/05/Frequently-used-commands-in-Linux/"/>
+    <id>https://xiangxianzui.github.io/2017/05/Frequently-used-commands-in-Linux/</id>
+    <published>2017-05-19T05:39:38.000Z</published>
+    <updated>2017-05-19T07:18:29.774Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;This post concludes frequently-used commands in Linux, which might be functioning like a handy manual page for Linux commands.&lt;/p&gt;
+&lt;ul&gt;
+&lt;
+    
+    </summary>
+    
+      <category term="Interview" scheme="https://xiangxianzui.github.io/categories/Interview/"/>
+    
+    
+      <category term="Linux" scheme="https://xiangxianzui.github.io/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Sorting &amp; Java implementations</title>
     <link href="https://xiangxianzui.github.io/2017/02/Sorting-Java-implementations/"/>
     <id>https://xiangxianzui.github.io/2017/02/Sorting-Java-implementations/</id>
     <published>2017-02-28T14:48:29.000Z</published>
-    <updated>2017-02-28T14:48:29.231Z</updated>
+    <updated>2017-05-19T05:34:29.057Z</updated>
     
     <summary type="html">
     
+      &lt;p&gt;Sorting is a hot and common subject which is frequently asked during an interviewing session. Although it is very easy for most software 
+    
     </summary>
     
+      <category term="Interview" scheme="https://xiangxianzui.github.io/categories/Interview/"/>
+    
+    
+      <category term="algorithm" scheme="https://xiangxianzui.github.io/tags/algorithm/"/>
+    
+      <category term="Java" scheme="https://xiangxianzui.github.io/tags/Java/"/>
+    
+      <category term="Sorting" scheme="https://xiangxianzui.github.io/tags/Sorting/"/>
     
   </entry>
   
