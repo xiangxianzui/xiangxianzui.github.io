@@ -133,27 +133,62 @@ ga('send', 'pageview');
 </ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ mv [oldname] [newname] //change file name</div><div class="line">$ mv [file] [directory] //move [file] to [directory]</div></pre></td></tr></table></figure>
 <ul>
-<li><p>rm</p>
+<li>rm</li>
+</ul>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ rm -i [file] //interactive mode, ask for confirmation before deleting</div><div class="line">$ rm -f [file] //force to delete</div><div class="line">$ rm -r [directory] //delete all sub-directories and files in [directory] recursively</div></pre></td></tr></table></figure>
-</li>
-<li><p>grep (global regular expression print)</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line"></div></pre></td></tr></table></figure>
-</li>
-<li><p>find</p>
-</li>
+<ul>
+<li>grep (global regular expression print)</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ grep [options] [PATTERN] [filename] //print contents which satisfy regular expression [PATTERN] in file [filename]</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[options] includes: -n (display line number); -i (ignore character case); -v (display contents which don&apos;t satisfy regular expression)</div></pre></td></tr></table></figure>
+<ul>
+<li>find</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ find [path] [options] [expression] //find files whose name satisfies regular expression [expression] in the specific path [path]</div><div class="line">e.g.: find . -name file.* //find files satisfying file.* in current directory</div><div class="line">e.g.: find ./dir -name *.txt //find txt files in sub-directory ./dir</div></pre></td></tr></table></figure>
+<ul>
 <li>chmod</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ chmod u+x [file] //grant the user with execution authority</div><div class="line">$ chmod a+r [file] //grant all users with reading authority</div><div class="line">$ chmod 777 [file] //grant u(user),g(group),o(other) with reading(1), writing(2) and executing(4) authority (7=1+2+4)</div></pre></td></tr></table></figure>
+<ul>
 <li>tar</li>
-<li>pwd</li>
-<li>diff</li>
-<li>file</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ tar -czvf some.tar.gz file1 file2 file3 //compress file1, file2 and file3 using gzip</div><div class="line">$ tar -xzvf some.tar.gz //uncompress some.tar.gz to current directory</div></pre></td></tr></table></figure>
+<ul>
+<li><p>pwd: print current working directory</p>
+</li>
+<li><p>diff</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ diff [file1] [file2] //compare two files and print differences</div></pre></td></tr></table></figure>
+<ul>
+<li>file: print the type of the file</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">e.g.: file test.txt</div><div class="line">e.g.: file [directory]</div></pre></td></tr></table></figure>
+<ul>
 <li>ps</li>
-<li>top</li>
-<li>kill</li>
-<li>more</li>
-<li>less</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ ps -a //display all processes, including other users&apos; processes</div><div class="line">$ ps -u //display processes belonging to current user</div><div class="line">$ ps -x //print complete information</div><div class="line">e.g.: ps aux | grep &quot;google&quot; //print all processes relevant to &quot;google&quot;</div></pre></td></tr></table></figure>
+<ul>
+<li><p>top: print processes in real time, similar to resources monitor in Windows</p>
+</li>
+<li><p>kill</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ kill -l //display all kill SIGNAL</div><div class="line">$ kill -9 [PID] //force to kill process [PID]</div><div class="line">$ kill -15 [PID] //kill process [PID] in a moderate way, which means reclaim resources of the process and then kill it</div><div class="line">$ kill [PID] //same with kill -15 [PID]</div></pre></td></tr></table></figure>
+<ul>
+<li>more/less</li>
+</ul>
+<p>In general, both more and less print contents of a file to the screen. But they offer different functions. This <a href="http://www.cnblogs.com/aijianshi/p/5750911.html" target="_blank" rel="external">article</a> is a good resource to understand them.</p>
+<ul>
 <li>uname</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ uname -a //check kernel version and name of the OS</div></pre></td></tr></table></figure>
+<ul>
 <li>netstat</li>
 </ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">$ netstat -a //display all possible columns</div><div class="line">$ netstat -t //display TCP-relevant only</div><div class="line">$ netstat -u //display UDP-relevant only</div><div class="line">$ netstat -n //display number rather than name</div><div class="line">$ netstat -l //display items which are in LISTEN status</div><div class="line">$ netstat -p //display program names and PID of the connection</div><div class="line">$ netstat -r //display kernel routing table</div><div class="line">$ netstat -i //display kernel interface table</div><div class="line">often used with grep:</div><div class="line">netstat -anp | grep python //view connections relevant to python</div><div class="line">netstat -anp | grep 8080 //view connections relevant to port 8080</div></pre></td></tr></table></figure>
+<p>To be continued…</p>
+<hr>
 <blockquote>
 <p>Written with <a href="https://stackedit.io/" target="_blank" rel="external">StackEdit</a>.</p>
 </blockquote>
@@ -161,7 +196,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xiangxianzui.github.io/2017/05/Frequently-used-commands-in-Linux/" data-id="cj2vilwe8000438r7cm8c05cp" class="article-share-link">Share</a>
+      <a data-url="https://xiangxianzui.github.io/2017/05/Frequently-used-commands-in-Linux/" data-id="cj2vkheol00089sr7cijry9pc" class="article-share-link">Share</a>
       
         <a href="https://xiangxianzui.github.io/2017/05/Frequently-used-commands-in-Linux/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -209,7 +244,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xiangxianzui.github.io/2017/02/Sorting-Java-implementations/" data-id="cj2vilwfp000w38r728ym2d3p" class="article-share-link">Share</a>
+      <a data-url="https://xiangxianzui.github.io/2017/02/Sorting-Java-implementations/" data-id="cj2vkhepg000r9sr7dmgsh8ei" class="article-share-link">Share</a>
       
         <a href="https://xiangxianzui.github.io/2017/02/Sorting-Java-implementations/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -297,7 +332,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xiangxianzui.github.io/2017/02/Wechat-development-with-NodeJS/" data-id="cj2vilwfu000y38r7tb79s0g3" class="article-share-link">Share</a>
+      <a data-url="https://xiangxianzui.github.io/2017/02/Wechat-development-with-NodeJS/" data-id="cj2vkhepp000w9sr7jowqsgt7" class="article-share-link">Share</a>
       
         <a href="https://xiangxianzui.github.io/2017/02/Wechat-development-with-NodeJS/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -356,7 +391,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xiangxianzui.github.io/2017/02/LeetCode-Coin-Change/" data-id="cj2vilweu000d38r7wk6jat3v" class="article-share-link">Share</a>
+      <a data-url="https://xiangxianzui.github.io/2017/02/LeetCode-Coin-Change/" data-id="cj2vkheor00099sr7z995p0t7" class="article-share-link">Share</a>
       
         <a href="https://xiangxianzui.github.io/2017/02/LeetCode-Coin-Change/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -449,7 +484,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xiangxianzui.github.io/2017/01/Learning-LaTeX/" data-id="cj2vilweh000738r7n50r8t4e" class="article-share-link">Share</a>
+      <a data-url="https://xiangxianzui.github.io/2017/01/Learning-LaTeX/" data-id="cj2vkheoj00079sr7fdquvrvr" class="article-share-link">Share</a>
       
         <a href="https://xiangxianzui.github.io/2017/01/Learning-LaTeX/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -514,7 +549,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xiangxianzui.github.io/2017/01/Upload-image-to-a-Node-JS-server/" data-id="cj2vilwfj000s38r7xpv32plv" class="article-share-link">Share</a>
+      <a data-url="https://xiangxianzui.github.io/2017/01/Upload-image-to-a-Node-JS-server/" data-id="cj2vkhepl000u9sr78xoivcui" class="article-share-link">Share</a>
       
         <a href="https://xiangxianzui.github.io/2017/01/Upload-image-to-a-Node-JS-server/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -558,7 +593,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xiangxianzui.github.io/2017/01/LeetCode-Convert-a-Number-to-Hexadecimal/" data-id="cj2vilwf3000k38r7n7pbqbqt" class="article-share-link">Share</a>
+      <a data-url="https://xiangxianzui.github.io/2017/01/LeetCode-Convert-a-Number-to-Hexadecimal/" data-id="cj2vkheoz000f9sr7hmfqvvze" class="article-share-link">Share</a>
       
         <a href="https://xiangxianzui.github.io/2017/01/LeetCode-Convert-a-Number-to-Hexadecimal/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -634,7 +669,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xiangxianzui.github.io/2017/01/LeetCode-Binary-Watch/" data-id="cj2vilweq000938r7udusc5u0" class="article-share-link">Share</a>
+      <a data-url="https://xiangxianzui.github.io/2017/01/LeetCode-Binary-Watch/" data-id="cj2vkheow000d9sr7gtaq8pus" class="article-share-link">Share</a>
       
         <a href="https://xiangxianzui.github.io/2017/01/LeetCode-Binary-Watch/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -686,7 +721,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xiangxianzui.github.io/2017/01/LeetCode-Delete-Node-in-a-Linked-List/" data-id="cj2vilwew000g38r7nvdqifn6" class="article-share-link">Share</a>
+      <a data-url="https://xiangxianzui.github.io/2017/01/LeetCode-Delete-Node-in-a-Linked-List/" data-id="cj2vkhep3000j9sr757oksxpu" class="article-share-link">Share</a>
       
         <a href="https://xiangxianzui.github.io/2017/01/LeetCode-Delete-Node-in-a-Linked-List/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -741,7 +776,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xiangxianzui.github.io/2017/01/LeetCode-Move-Zeroes/" data-id="cj2vilwf8000m38r7wyq6094k" class="article-share-link">Share</a>
+      <a data-url="https://xiangxianzui.github.io/2017/01/LeetCode-Move-Zeroes/" data-id="cj2vkhep7000l9sr7jvagxlkb" class="article-share-link">Share</a>
       
         <a href="https://xiangxianzui.github.io/2017/01/LeetCode-Move-Zeroes/#disqus_thread" class="article-comment-link">Comments</a>
       
