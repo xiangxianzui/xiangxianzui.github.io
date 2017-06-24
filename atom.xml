@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://xiangxianzui.github.io/"/>
-  <updated>2017-05-19T09:53:47.717Z</updated>
+  <updated>2017-06-24T09:37:46.490Z</updated>
   <id>https://xiangxianzui.github.io/</id>
   
   <author>
@@ -14,6 +14,68 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>实习：第二周整理</title>
+    <link href="https://xiangxianzui.github.io/2017/06/%E5%AE%9E%E4%B9%A0%EF%BC%9A%E7%AC%AC%E4%BA%8C%E5%91%A8%E6%95%B4%E7%90%86/"/>
+    <id>https://xiangxianzui.github.io/2017/06/实习：第二周整理/</id>
+    <published>2017-06-21T11:45:34.000Z</published>
+    <updated>2017-06-24T09:37:46.490Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;实习第二周，下面整理一下这周遇到的一些问题。&lt;/p&gt;
+&lt;h3 id=&quot;Linux下head-tail命令&quot;&gt;&lt;a href=&quot;#Linux下head-tail命令&quot; class=&quot;headerlink&quot; title=&quot;Linux下head/tail命令&quot;&gt;&lt;/a&gt;Linux
+    
+    </summary>
+    
+      <category term="Internship" scheme="https://xiangxianzui.github.io/categories/Internship/"/>
+    
+    
+      <category term="Linux" scheme="https://xiangxianzui.github.io/tags/Linux/"/>
+    
+      <category term="Ubuntu" scheme="https://xiangxianzui.github.io/tags/Ubuntu/"/>
+    
+      <category term="IDEA" scheme="https://xiangxianzui.github.io/tags/IDEA/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>实习：第一周整理</title>
+    <link href="https://xiangxianzui.github.io/2017/06/%E5%AE%9E%E4%B9%A0%EF%BC%9A%E7%AC%AC%E4%B8%80%E5%91%A8%E6%95%B4%E7%90%86/"/>
+    <id>https://xiangxianzui.github.io/2017/06/实习：第一周整理/</id>
+    <published>2017-06-17T07:19:09.000Z</published>
+    <updated>2017-06-17T07:55:35.006Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;实习第一周结束了，下面整理一下这周遇到的一些问题。(所有操作均在Ubuntu系统下完成)&lt;/p&gt;
+&lt;h3 id=&quot;IDE配置：Intellij-IDEA&quot;&gt;&lt;a href=&quot;#IDE配置：Intellij-IDEA&quot; class=&quot;headerlink&quot; title=&quot;ID
+    
+    </summary>
+    
+      <category term="Internship" scheme="https://xiangxianzui.github.io/categories/Internship/"/>
+    
+    
+      <category term="Java" scheme="https://xiangxianzui.github.io/tags/Java/"/>
+    
+      <category term="Ubuntu" scheme="https://xiangxianzui.github.io/tags/Ubuntu/"/>
+    
+      <category term="IDEA" scheme="https://xiangxianzui.github.io/tags/IDEA/"/>
+    
+      <category term="Maven" scheme="https://xiangxianzui.github.io/tags/Maven/"/>
+    
+      <category term="Git" scheme="https://xiangxianzui.github.io/tags/Git/"/>
+    
+      <category term="nginx" scheme="https://xiangxianzui.github.io/tags/nginx/"/>
+    
+      <category term="rsync" scheme="https://xiangxianzui.github.io/tags/rsync/"/>
+    
+      <category term="免跳板机" scheme="https://xiangxianzui.github.io/tags/%E5%85%8D%E8%B7%B3%E6%9D%BF%E6%9C%BA/"/>
+    
+      <category term="缺少动态库依赖" scheme="https://xiangxianzui.github.io/tags/%E7%BC%BA%E5%B0%91%E5%8A%A8%E6%80%81%E5%BA%93%E4%BE%9D%E8%B5%96/"/>
+    
+  </entry>
   
   <entry>
     <title>Frequently-used commands in Linux</title>

@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>实习：第二周整理 | Muser</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="实习第二周，下面整理一下这周遇到的一些问题。
+Linux下head/tail命令顾名思义，head 与 tail 是用来显示开头或结尾某个数量的文字区块，head 用来显示文件的开头至标准输出中，而 tail 当然就是看文件的结尾
+具体用法如下：
+123head -6 readme.txt # 显示文件的前6行tail -25 mail.txt # 显示文件的最后25行head -20 | tai">
+<meta property="og:type" content="article">
+<meta property="og:title" content="实习：第二周整理">
+<meta property="og:url" content="https://xiangxianzui.github.io/2017/06/实习：第二周整理/index.html">
+<meta property="og:site_name" content="Muser">
+<meta property="og:description" content="实习第二周，下面整理一下这周遇到的一些问题。
+Linux下head/tail命令顾名思义，head 与 tail 是用来显示开头或结尾某个数量的文字区块，head 用来显示文件的开头至标准输出中，而 tail 当然就是看文件的结尾
+具体用法如下：
+123head -6 readme.txt # 显示文件的前6行tail -25 mail.txt # 显示文件的最后25行head -20 | tai">
+<meta property="og:updated_time" content="2017-06-24T09:37:46.490Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="实习：第二周整理">
+<meta name="twitter:description" content="实习第二周，下面整理一下这周遇到的一些问题。
+Linux下head/tail命令顾名思义，head 与 tail 是用来显示开头或结尾某个数量的文字区块，head 用来显示文件的开头至标准输出中，而 tail 当然就是看文件的结尾
+具体用法如下：
+123head -6 readme.txt # 显示文件的前6行tail -25 mail.txt # 显示文件的最后25行head -20 | tai">
+  
+    <link rel="alternate" href="/atom.xml" title="Muser" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+<!-- Google Analytics -->
+<script type="text/javascript">
+(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-89925013-1', 'auto');
+ga('send', 'pageview');
+
+</script>
+<!-- End Google Analytics -->
+
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Muser</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Coding While Thinking</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+          <a class="main-nav-link" href="/projects">Projects</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-google-analytic-link" class="nav-icon" href="/ga.html" title="Google Analytics"></a>
+        
+        
+          <a id="nav-sitemap-link" class="nav-icon" href="/sitemap.xml" title="Sitemap"></a>
+        
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://xiangxianzui.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-实习：第二周整理" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/实习：第二周整理/" class="article-date">
+  <time datetime="2017-06-21T11:45:34.000Z" itemprop="datePublished">2017-06-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Internship/">Internship</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      实习：第二周整理
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>实习第二周，下面整理一下这周遇到的一些问题。</p>
+<h3 id="Linux下head-tail命令"><a href="#Linux下head-tail命令" class="headerlink" title="Linux下head/tail命令"></a>Linux下head/tail命令</h3><p>顾名思义，head 与 tail 是用来显示开头或结尾某个数量的文字区块，head 用来显示文件的开头至标准输出中，而 tail 当然就是看文件的结尾</p>
+<p>具体用法如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">head -6 readme.txt <span class="comment"># 显示文件的前6行</span></div><div class="line">tail -25 mail.txt <span class="comment"># 显示文件的最后25行</span></div><div class="line">head -20 | tail 10 <span class="comment"># 显示第11到第20行</span></div></pre></td></tr></table></figure>
+<p>另外，tail在查看log时特别有用<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">tail <span class="_">-f</span> /var/logs/error.log</div></pre></td></tr></table></figure></p>
+<p>参数-f使tail不停地去读最新的内容，这样有实时监视的效果</p>
+<h3 id="IDEA常用快捷键-to-be-continued…"><a href="#IDEA常用快捷键-to-be-continued…" class="headerlink" title="IDEA常用快捷键 (to be continued…)"></a>IDEA常用快捷键 (to be continued…)</h3><p>连按两次Shift：全局查找<br>Ctrl+W：选择单词、语句、行、函数<br>Ctrl+Shift+/：代码块注释<br>Alt+方向键：左右切换文件<br>Alt+Shift+F10：运行<br>Shift+F10：运行<br>Alt+Enter：自动修正<br>Alt+Insert：生成Constructor/Getter/Setter等<br>Ctrl+E：最近文件</p>
+<blockquote>
+<p>Written with <a href="https://stackedit.io/" target="_blank" rel="external">StackEdit</a>.</p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://xiangxianzui.github.io/2017/06/实习：第二周整理/" data-id="cj46xpsg30019pgr7vc2ux6z4" class="article-share-link">Share</a>
+      
+        <a href="https://xiangxianzui.github.io/2017/06/实习：第二周整理/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/IDEA/">IDEA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2017/06/实习：第一周整理/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">实习：第一周整理</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<section id="comments">
+  <div id="disqus_thread">
+    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+  </div>
+</section>
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/06/实习：第二周整理/">实习：第二周整理</a>
+          </li>
+        
+          <li>
+            <a href="/2017/06/实习：第一周整理/">实习：第一周整理</a>
+          </li>
+        
+          <li>
+            <a href="/2017/05/Frequently-used-commands-in-Linux/">Frequently-used commands in Linux</a>
+          </li>
+        
+          <li>
+            <a href="/2017/02/Sorting-Java-implementations/">Sorting &amp; Java implementations</a>
+          </li>
+        
+          <li>
+            <a href="/2017/02/Wechat-development-with-NodeJS/">Wechat development with NodeJS</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Categories</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Guides/">Guides</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Internship/">Internship</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Interview/">Interview</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/LeetCode/">LeetCode</a><span class="category-list-count">6</span></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/BAE/" style="font-size: 10px;">BAE</a> <a href="/tags/Backtracking/" style="font-size: 10px;">Backtracking</a> <a href="/tags/Bit-Manipulation/" style="font-size: 15px;">Bit Manipulation</a> <a href="/tags/Dynamic-Programming/" style="font-size: 10px;">Dynamic Programming</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Hexo/" style="font-size: 15px;">Hexo</a> <a href="/tags/IDEA/" style="font-size: 15px;">IDEA</a> <a href="/tags/Java/" style="font-size: 15px;">Java</a> <a href="/tags/LaTex/" style="font-size: 10px;">LaTex</a> <a href="/tags/Linked-List/" style="font-size: 10px;">Linked List</a> <a href="/tags/Linux/" style="font-size: 15px;">Linux</a> <a href="/tags/Maven/" style="font-size: 10px;">Maven</a> <a href="/tags/Node-JS/" style="font-size: 15px;">Node.JS</a> <a href="/tags/Sorting/" style="font-size: 10px;">Sorting</a> <a href="/tags/Ubuntu/" style="font-size: 15px;">Ubuntu</a> <a href="/tags/algorithm/" style="font-size: 20px;">algorithm</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/rsync/" style="font-size: 10px;">rsync</a> <a href="/tags/wechat/" style="font-size: 10px;">wechat</a> <a href="/tags/免跳板机/" style="font-size: 10px;">免跳板机</a> <a href="/tags/缺少动态库依赖/" style="font-size: 10px;">缺少动态库依赖</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">9</span></li></ul>
+    </div>
+  </div>
+
+
+  
+</aside>
+        
+        <div id="right-bottom">
+	<a id="back-to-top" href='#main'><img style="width:50px; height:50px" src="http://www.clker.com/cliparts/8/7/Y/H/W/e/up-arrow-circle-hi.png"></a>
+</div>
+
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 xiangxianzui<br>
+      Github: <a href='https://github.com/xiangxianzui/xiangxianzui.github.io'>xiangxianzui</a><br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a><br>
+
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+    <a href="/projects" class="mobile-nav-link">Projects</a>
+  
+</nav>
+    
+<script>
+  var disqus_shortname = 'xiangxianzui';
+  
+  var disqus_url = 'https://xiangxianzui.github.io/2017/06/实习：第二周整理/';
+  
+  (function(){
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
+</script>
+
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
