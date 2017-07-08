@@ -89,6 +89,108 @@ ga('send', 'pageview');
       <div class="outer">
         <section id="main">
   
+    <article id="post-实习：第四周整理" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/实习：第四周整理/" class="article-date">
+  <time datetime="2017-07-08T14:48:27.000Z" itemprop="datePublished">2017-07-08</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Internship/">Internship</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/实习：第四周整理/">实习：第四周整理</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="Linux命令之：more-or-less"><a href="#Linux命令之：more-or-less" class="headerlink" title="Linux命令之：more or less?"></a>Linux命令之：more or less?</h3><p>more 主要的作用是把输出结果显示在屏幕上，它会一屏停止一下，等待按空格键才继续往上卷。但是，如果看完了这页，想要回头看上一页，是不行的，必须从头再来！</p>
+<p>less 最主要是改进了more 不能回头看的问题。<br>除了能够随意上下翻页之外，less还提供了非常方便的搜索功能，这在查看很长的日志时是很有用的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">按h查看help</div><div class="line">按g直接跳到第一行</div><div class="line">按G直接跳到最后</div><div class="line">按/ search forward</div><div class="line">按? search backward</div></pre></td></tr></table></figure>
+<blockquote>
+<p>Written with <a href="https://stackedit.io/" target="_blank" rel="external">StackEdit</a>.</p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://xiangxianzui.github.io/2017/07/实习：第四周整理/" data-id="cj4ver4xw001a7asz9f0oezau" class="article-share-link">Share</a>
+      
+        <a href="https://xiangxianzui.github.io/2017/07/实习：第四周整理/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-实习：第三周整理" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/实习：第三周整理/" class="article-date">
+  <time datetime="2017-07-08T14:40:00.000Z" itemprop="datePublished">2017-07-08</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Internship/">Internship</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/实习：第三周整理/">实习：第三周整理</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>实习第三周，下面整理一下这周遇到的一些问题。</p>
+<h3 id="Ubuntu下快捷键-System-Settings-gt-keyboard编辑"><a href="#Ubuntu下快捷键-System-Settings-gt-keyboard编辑" class="headerlink" title="Ubuntu下快捷键(System Settings-&gt;keyboard编辑)"></a>Ubuntu下快捷键(System Settings-&gt;keyboard编辑)</h3><p>按住Super：查看所有快捷键<br>Super+方向键：切换工作区<br>Alt+F4：关闭当前窗口<br>Ctrl+PageDown/PageUp：切换终端Tab</p>
+<h3 id="Linux下添加软件的桌面快捷图标"><a href="#Linux下添加软件的桌面快捷图标" class="headerlink" title="Linux下添加软件的桌面快捷图标"></a>Linux下添加软件的桌面快捷图标</h3><p>以Intellij idea为例：<br>在桌面新建文档命名为：idea.desktop<br>内容为下：（Exec和Icon要用自己的路径）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">[Desktop Entry]</div><div class="line">Encoding=UTF-8</div><div class="line">Name=idea</div><div class="line">Comment=idea IDE</div><div class="line">Exec=/home/idea/bin/idea.sh</div><div class="line">Icon=/home/idea/bin/idea.png</div><div class="line">Terminal=<span class="literal">false</span></div><div class="line">Type=Application</div><div class="line">Categories=GNOME;Application;Development;</div><div class="line">StartupNotify=<span class="literal">true</span></div></pre></td></tr></table></figure>
+<p><strong>注意：将Name、Comment、Exec、Icon改成自己需要的东西</strong><br>这时双击idea.desktop，系统会提示“未信任的应用程序启动器”？<br>解决方法是：右键打开文件属性对话框，在权限页中，将“允许作为程序执行文件(E)”前的复选框选上，大功告成！<br>最后，将编辑好的idea.desktop文件拷贝到/usr/share/applications下面，这时候在dash下就能搜索到idea了。</p>
+<blockquote>
+<p>Written with <a href="https://stackedit.io/" target="_blank" rel="external">StackEdit</a>.</p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://xiangxianzui.github.io/2017/07/实习：第三周整理/" data-id="cj4ver4xq00117aszs8g6ei0r" class="article-share-link">Share</a>
+      
+        <a href="https://xiangxianzui.github.io/2017/07/实习：第三周整理/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Ubuntu/">Ubuntu</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-实习：第二周整理" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/06/实习：第二周整理/" class="article-date">
@@ -129,7 +231,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xiangxianzui.github.io/2017/06/实习：第二周整理/" data-id="cj4vd9s9n0013f0sz27dtout3" class="article-share-link">Share</a>
+      <a data-url="https://xiangxianzui.github.io/2017/06/实习：第二周整理/" data-id="cj4ver4xt00167aszr3j6yim4" class="article-share-link">Share</a>
       
         <a href="https://xiangxianzui.github.io/2017/06/实习：第二周整理/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -210,7 +312,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xiangxianzui.github.io/2017/06/实习：第一周整理/" data-id="cj4vd9s9l0010f0sz1ipaa4ch" class="article-share-link">Share</a>
+      <a data-url="https://xiangxianzui.github.io/2017/06/实习：第一周整理/" data-id="cj4ver4xs00137aszu12lzjkk" class="article-share-link">Share</a>
       
         <a href="https://xiangxianzui.github.io/2017/06/实习：第一周整理/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -302,7 +404,7 @@ ga('send', 'pageview');
 <ul>
 <li>ps</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ ps -a //display all processes, including other users&apos; processes</div><div class="line">$ ps -u //display processes belonging to current user</div><div class="line">$ ps -x //print complete information</div><div class="line">e.g.: ps aux | grep &quot;google&quot; //print all processes relevant to &quot;google&quot;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ ps -a //display all processes, including other users&apos; processes</div><div class="line">$ ps -u //display processes belonging to current user</div><div class="line">$ ps -x //print complete information</div><div class="line">$ ps -ef | grep tomcat //print all processes relevant to tomcat in standard way(more human-readable)</div><div class="line">e.g.: ps -aux | grep &quot;google&quot; //print all processes relevant to &quot;google&quot; in BSD style</div></pre></td></tr></table></figure>
 <ul>
 <li><p>top: print processes in real time, similar to resources monitor in Windows</p>
 </li>
@@ -321,7 +423,12 @@ ga('send', 'pageview');
 <ul>
 <li>netstat</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">$ netstat -a //display all possible columns</div><div class="line">$ netstat -t //display TCP-relevant only</div><div class="line">$ netstat -u //display UDP-relevant only</div><div class="line">$ netstat -n //display number rather than name</div><div class="line">$ netstat -l //display items which are in LISTEN status</div><div class="line">$ netstat -p //display program names and PID of the connection</div><div class="line">$ netstat -r //display kernel routing table</div><div class="line">$ netstat -i //display kernel interface table</div><div class="line">often used with grep:</div><div class="line">netstat -anp | grep python //view connections relevant to python</div><div class="line">netstat -anp | grep 8080 //view connections relevant to port 8080</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">$ netstat -a //display all possible columns</div><div class="line">$ netstat -t //display TCP-relevant only</div><div class="line">$ netstat -u //display UDP-relevant only</div><div class="line">$ netstat -n //display number rather than name</div><div class="line">$ netstat -l //display items which are in LISTEN status</div><div class="line">$ netstat -p //display program names and PID of the connection</div><div class="line">$ netstat</div><div class="line"> -r //display kernel routing table</div><div class="line">$ netstat -i //display kernel interface table</div><div class="line">often used with grep:</div><div class="line">netstat -anp | grep python //view connections relevant to python</div><div class="line">netstat -anp | grep 8080 //view connections relevant to port 8080</div></pre></td></tr></table></figure>
+<ul>
+<li>touch</li>
+</ul>
+<p>Update the access and modification times of each FILE to the current time. But it is used to create a new file frequently.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ touch [OPTION] [FILE] //change file timestamps.</div></pre></td></tr></table></figure>
 <p>To be continued…</p>
 <hr>
 <blockquote>
@@ -331,7 +438,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xiangxianzui.github.io/2017/05/Frequently-used-commands-in-Linux/" data-id="cj4vd9s8u0003f0sz5qc970ul" class="article-share-link">Share</a>
+      <a data-url="https://xiangxianzui.github.io/2017/05/Frequently-used-commands-in-Linux/" data-id="cj4ver4x100067asz1bmknld4" class="article-share-link">Share</a>
       
         <a href="https://xiangxianzui.github.io/2017/05/Frequently-used-commands-in-Linux/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -379,7 +486,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xiangxianzui.github.io/2017/02/Sorting-Java-implementations/" data-id="cj4vd9s9h000qf0szwa1z1q40" class="article-share-link">Share</a>
+      <a data-url="https://xiangxianzui.github.io/2017/02/Sorting-Java-implementations/" data-id="cj4ver4xk000q7aszvae2yzrj" class="article-share-link">Share</a>
       
         <a href="https://xiangxianzui.github.io/2017/02/Sorting-Java-implementations/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -467,7 +574,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xiangxianzui.github.io/2017/02/Wechat-development-with-NodeJS/" data-id="cj4vd9s9k000wf0sziy5s617m" class="article-share-link">Share</a>
+      <a data-url="https://xiangxianzui.github.io/2017/02/Wechat-development-with-NodeJS/" data-id="cj4ver4xn000x7aszhpzcfqks" class="article-share-link">Share</a>
       
         <a href="https://xiangxianzui.github.io/2017/02/Wechat-development-with-NodeJS/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -526,7 +633,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xiangxianzui.github.io/2017/02/LeetCode-Coin-Change/" data-id="cj4vd9s910008f0szu75hoxe9" class="article-share-link">Share</a>
+      <a data-url="https://xiangxianzui.github.io/2017/02/LeetCode-Coin-Change/" data-id="cj4ver4x400087aszz1ftzf20" class="article-share-link">Share</a>
       
         <a href="https://xiangxianzui.github.io/2017/02/LeetCode-Coin-Change/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -619,7 +726,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xiangxianzui.github.io/2017/01/Learning-LaTeX/" data-id="cj4vd9s97000ef0szv73sppd0" class="article-share-link">Share</a>
+      <a data-url="https://xiangxianzui.github.io/2017/01/Learning-LaTeX/" data-id="cj4ver4x200077asz83pemldd" class="article-share-link">Share</a>
       
         <a href="https://xiangxianzui.github.io/2017/01/Learning-LaTeX/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -684,132 +791,12 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xiangxianzui.github.io/2017/01/Upload-image-to-a-Node-JS-server/" data-id="cj4vd9s9i000uf0sz440gmg7z" class="article-share-link">Share</a>
+      <a data-url="https://xiangxianzui.github.io/2017/01/Upload-image-to-a-Node-JS-server/" data-id="cj4ver4xm000u7aszbaogmnkw" class="article-share-link">Share</a>
       
         <a href="https://xiangxianzui.github.io/2017/01/Upload-image-to-a-Node-JS-server/#disqus_thread" class="article-comment-link">Comments</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-JS/">Node.JS</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-LeetCode-Convert-a-Number-to-Hexadecimal" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/01/LeetCode-Convert-a-Number-to-Hexadecimal/" class="article-date">
-  <time datetime="2017-01-13T05:11:02.000Z" itemprop="datePublished">2017-01-13</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/LeetCode/">LeetCode</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/LeetCode-Convert-a-Number-to-Hexadecimal/">LeetCode: Convert a Number to Hexadecimal</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://xiangxianzui.github.io/2017/01/LeetCode-Convert-a-Number-to-Hexadecimal/" data-id="cj4vd9s95000cf0sz6ms2y6aj" class="article-share-link">Share</a>
-      
-        <a href="https://xiangxianzui.github.io/2017/01/LeetCode-Convert-a-Number-to-Hexadecimal/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Bit-Manipulation/">Bit Manipulation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithm/">algorithm</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-LeetCode-Binary-Watch" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/01/LeetCode-Binary-Watch/" class="article-date">
-  <time datetime="2017-01-12T05:43:05.000Z" itemprop="datePublished">2017-01-12</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/LeetCode/">LeetCode</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/LeetCode-Binary-Watch/">LeetCode: Binary Watch</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>A binary watch has 4 LEDs on the top which represent the <strong>hours (0-11)</strong>, and the 6 LEDs on the bottom represent the <strong>minutes (0-59)</strong>.</p>
-<p>Each LED represents a zero or one, with the least significant bit on the right.</p>
-<p><img src="Binary_clock_samui_moon.jpg" alt="Binary Watch"></p>
-<p>For example, the above binary watch reads “3:25”.</p>
-<p>Given a non-negative integer n which represents the number of LEDs that are currently on, return all possible times the watch could represent.</p>
-<p><strong>Example</strong>:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Input: n = 1</div><div class="line">Return: [&quot;1:00&quot;, &quot;2:00&quot;, &quot;4:00&quot;, &quot;8:00&quot;, &quot;0:01&quot;, &quot;0:02&quot;, &quot;0:04&quot;, &quot;0:08&quot;, &quot;0:16&quot;, &quot;0:32&quot;]</div></pre></td></tr></table></figure>
-<p><strong>Note</strong>:</p>
-<ul>
-<li>The order of output does not matter.</li>
-<li>The hour must not contain a leading zero, for example “01:00” is not<br>valid, it should be “1:00”.</li>
-<li>The minute must be consist of two digits and may contain a leading<br>zero, for example “10:2” is not valid, it should be “10:02”.</li>
-</ul>
-<h2 id="Solution-1"><a href="#Solution-1" class="headerlink" title="Solution 1"></a>Solution 1</h2><p>The following code goes through all possible times, and checks if the time has correct number of one-bit.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">public List&lt;String&gt; readBinaryWatch(int num) &#123;</div><div class="line">        List&lt;String&gt; result = new ArrayList();</div><div class="line">        for(int h=0; h&lt;12; h++)&#123;</div><div class="line">            for(int m=0; m&lt;60; m++)&#123;</div><div class="line">                if(Integer.bitCount(h) + Integer.bitCount(m) == num)&#123;</div><div class="line">                    result.add(String.format(&quot;%d:%02d&quot;, h, m));</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        return result;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
-<p><strong>Note</strong>:<br><code>Integer.bitCount(N)</code> returns the number of one-bits in the two’s complement binary representation of the specified int value N.</p>
-<h2 id="Solution-2"><a href="#Solution-2" class="headerlink" title="Solution 2"></a>Solution 2</h2><p>The following code describes the framework of the solution:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">int[] hours = new int[] &#123;8,4,2,1&#125;;</div><div class="line">int[] minutes = new int[] &#123;32,16,8,4,2,1&#125;;</div><div class="line">for(int i=0; i&lt;=nums; i++)&#123;</div><div class="line">	//select i elements from hours, add them to get the hour</div><div class="line">	//select (nums-i) elements from minutes, add them to get the minute</div><div class="line">	//then construct one possible time</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>Thus, the first thing we need to solve is <strong>how to select r elements from an array with n elements?</strong></p>
-<p>My idea is to permutate the array, and select the first r elements.</p>
-<p><strong>Example</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">array = [1,2,3]</div><div class="line">All permutations of the array are: [1,2,3], [1,3,2], [2,1,3], [2,3,1], [3,1,2], [3,2,1].</div><div class="line">If we select the first 2 elements, we will get [1,2], [1,3], [2,1], [2,3], [3,1], [3,2].</div><div class="line">[1,2] and [2,1] are same, so we need to remove duplicates.</div></pre></td></tr></table></figure>
-<p>The following code calculates all permutations of an array, select the first r elements of each permutation, and removes duplicates with the help of <code>HashSet</code>.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">public void permute(int[] nums, int start, int end, int r, Set&lt;List&lt;Integer&gt;&gt; results)&#123;</div><div class="line">    if(start==end)&#123;</div><div class="line">	    //do something with a permutation here</div><div class="line">	    List&lt;Integer&gt; result = new ArrayList();</div><div class="line">        for(int i=0; i&lt;r; i++)&#123;</div><div class="line">	        result.add(nums[i]);</div><div class="line">        &#125;</div><div class="line">        results.add(result);</div><div class="line">    &#125;</div><div class="line">        </div><div class="line">    for(int i=start; i&lt;=end; i++)&#123;</div><div class="line">	    //swap the current element with start element</div><div class="line">        int temp = nums[i];</div><div class="line">        nums[i] = nums[start];</div><div class="line">        nums[start] = temp;</div><div class="line">        //recursively permute all latter elements</div><div class="line">        permute(nums, start+1, end, r);</div><div class="line">        //after one permutation, swap back</div><div class="line">        temp = nums[i];</div><div class="line">        nums[i] = nums[start];</div><div class="line">        nums[start] = temp;   </div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>The above code is an important framework of <strong>permutation problems</strong>. It could be explained as: </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Let &#123;a,b,c&#125; denote all permutations of [a,b,c]</div><div class="line">then, &#123;a,b,c&#125; = a&#123;b,c&#125; + b&#123;a,c&#125; + c&#123;a,b&#125;</div><div class="line">and permute &#123;b,c&#125;, &#123;a,c&#125;, &#123;a,b&#125; recursively.</div></pre></td></tr></table></figure>
-<p>After solving <strong>selecting r elements from an array with n elements</strong>, we can move on to construct the time with the hour and minute we get.</p>
-<p>The complete code is as follows:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div></pre></td><td class="code"><pre><div class="line">public class Solution &#123;</div><div class="line">    public List&lt;String&gt; readBinaryWatch(int num) &#123;</div><div class="line">        List&lt;String&gt; result = new ArrayList();</div><div class="line">        int[] hours = new int[] &#123;8,4,2,1&#125;;</div><div class="line">        int[] minutes = new int[] &#123;32,16,8,4,2,1&#125;;</div><div class="line">        Set&lt;Integer&gt; selectedHours = new HashSet();</div><div class="line">        Set&lt;Integer&gt; selectedMinutes = new HashSet();</div><div class="line">        for(int i=0; i&lt;=num; i++)&#123;</div><div class="line">            if(i&lt;=4 &amp;&amp; num-i&lt;=6)&#123;</div><div class="line">                selectFromHours(hours, 0, hours.length-1, i, selectedHours);</div><div class="line">                selectFromMinutes(minutes, 0, minutes.length-1, num-i, selectedMinutes);</div><div class="line">                for(int h : selectedHours)&#123;</div><div class="line">                    for(int m : selectedMinutes)&#123;</div><div class="line">                        String m_str = (m&lt;10) ? (&quot;0&quot;+m) : (&quot;&quot;+m);</div><div class="line">                        result.add(h+&quot;:&quot;+m_str);</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">                selectedHours.clear();</div><div class="line">                selectedMinutes.clear();</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        return result;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    public void selectFromHours(int[] hours, int start, int end, int r, Set&lt;Integer&gt; selectedHours)&#123;</div><div class="line">        if(r==0)&#123;</div><div class="line">            selectedHours.add(0);</div><div class="line">            return;</div><div class="line">        &#125;</div><div class="line">        if(start==end)&#123;</div><div class="line">            int sum = 0;</div><div class="line">            for(int j=0; j&lt;r; j++)&#123;</div><div class="line">                sum += hours[j];</div><div class="line">            &#125;</div><div class="line">            if(sum&lt;=11)&#123;</div><div class="line">                selectedHours.add(sum);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        for(int i=start; i&lt;=end; i++)&#123;</div><div class="line">            int temp = hours[i];</div><div class="line">            hours[i] = hours[start];</div><div class="line">            hours[start] = temp;</div><div class="line">            selectFromHours(hours, start+1, end, r, selectedHours);</div><div class="line">            temp = hours[i];</div><div class="line">            hours[i] = hours[start];</div><div class="line">            hours[start] = temp;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    public void selectFromMinutes(int[] minutes, int start, int end, int r, Set&lt;Integer&gt; selectedMinutes)&#123;</div><div class="line">        if(r==0)&#123;</div><div class="line">            selectedMinutes.add(0);</div><div class="line">            return;</div><div class="line">        &#125;</div><div class="line">        if(start==end)&#123;</div><div class="line">            int sum = 0;</div><div class="line">            for(int j=0; j&lt;r; j++)&#123;</div><div class="line">                sum += minutes[j];</div><div class="line">            &#125;</div><div class="line">            if(sum&lt;=59)&#123;</div><div class="line">                selectedMinutes.add(sum);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        for(int i=start; i&lt;=end; i++)&#123;</div><div class="line">            int temp = minutes[i];</div><div class="line">            minutes[i] = minutes[start];</div><div class="line">            minutes[start] = temp;</div><div class="line">            selectFromMinutes(minutes, start+1, end, r, selectedMinutes);</div><div class="line">            temp = minutes[i];</div><div class="line">            minutes[i] = minutes[start];</div><div class="line">            minutes[start] = temp;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<blockquote>
-<p>Written with <a href="https://stackedit.io/" target="_blank" rel="external">StackEdit</a>.</p>
-</blockquote>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://xiangxianzui.github.io/2017/01/LeetCode-Binary-Watch/" data-id="cj4vd9s900007f0szz6f42nyj" class="article-share-link">Share</a>
-      
-        <a href="https://xiangxianzui.github.io/2017/01/LeetCode-Binary-Watch/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Backtracking/">Backtracking</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithm/">algorithm</a></li></ul>
 
     </footer>
   </div>
@@ -834,6 +821,14 @@ ga('send', 'pageview');
       <ul>
         
           <li>
+            <a href="/2017/07/实习：第四周整理/">实习：第四周整理</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/实习：第三周整理/">实习：第三周整理</a>
+          </li>
+        
+          <li>
             <a href="/2017/06/实习：第二周整理/">实习：第二周整理</a>
           </li>
         
@@ -845,14 +840,6 @@ ga('send', 'pageview');
             <a href="/2017/05/Frequently-used-commands-in-Linux/">Frequently-used commands in Linux</a>
           </li>
         
-          <li>
-            <a href="/2017/02/Sorting-Java-implementations/">Sorting &amp; Java implementations</a>
-          </li>
-        
-          <li>
-            <a href="/2017/02/Wechat-development-with-NodeJS/">Wechat development with NodeJS</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -862,7 +849,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Guides/">Guides</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Internship/">Internship</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Interview/">Interview</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/LeetCode/">LeetCode</a><span class="category-list-count">6</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Guides/">Guides</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Internship/">Internship</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Interview/">Interview</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/LeetCode/">LeetCode</a><span class="category-list-count">6</span></li></ul>
     </div>
   </div>
 
@@ -872,7 +859,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/BAE/" style="font-size: 10px;">BAE</a> <a href="/tags/Backtracking/" style="font-size: 10px;">Backtracking</a> <a href="/tags/Bit-Manipulation/" style="font-size: 15px;">Bit Manipulation</a> <a href="/tags/Dynamic-Programming/" style="font-size: 10px;">Dynamic Programming</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Hexo/" style="font-size: 15px;">Hexo</a> <a href="/tags/IDEA/" style="font-size: 15px;">IDEA</a> <a href="/tags/Java/" style="font-size: 15px;">Java</a> <a href="/tags/LaTex/" style="font-size: 10px;">LaTex</a> <a href="/tags/Linked-List/" style="font-size: 10px;">Linked List</a> <a href="/tags/Linux/" style="font-size: 15px;">Linux</a> <a href="/tags/Maven/" style="font-size: 10px;">Maven</a> <a href="/tags/Node-JS/" style="font-size: 15px;">Node.JS</a> <a href="/tags/Sorting/" style="font-size: 10px;">Sorting</a> <a href="/tags/Ubuntu/" style="font-size: 15px;">Ubuntu</a> <a href="/tags/algorithm/" style="font-size: 20px;">algorithm</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/rsync/" style="font-size: 10px;">rsync</a> <a href="/tags/wechat/" style="font-size: 10px;">wechat</a> <a href="/tags/免跳板机/" style="font-size: 10px;">免跳板机</a> <a href="/tags/缺少动态库依赖/" style="font-size: 10px;">缺少动态库依赖</a>
+      <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/BAE/" style="font-size: 10px;">BAE</a> <a href="/tags/Backtracking/" style="font-size: 10px;">Backtracking</a> <a href="/tags/Bit-Manipulation/" style="font-size: 13.33px;">Bit Manipulation</a> <a href="/tags/Dynamic-Programming/" style="font-size: 10px;">Dynamic Programming</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Hexo/" style="font-size: 13.33px;">Hexo</a> <a href="/tags/IDEA/" style="font-size: 13.33px;">IDEA</a> <a href="/tags/Java/" style="font-size: 13.33px;">Java</a> <a href="/tags/LaTex/" style="font-size: 10px;">LaTex</a> <a href="/tags/Linked-List/" style="font-size: 10px;">Linked List</a> <a href="/tags/Linux/" style="font-size: 16.67px;">Linux</a> <a href="/tags/Maven/" style="font-size: 10px;">Maven</a> <a href="/tags/Node-JS/" style="font-size: 13.33px;">Node.JS</a> <a href="/tags/Sorting/" style="font-size: 10px;">Sorting</a> <a href="/tags/Ubuntu/" style="font-size: 16.67px;">Ubuntu</a> <a href="/tags/algorithm/" style="font-size: 20px;">algorithm</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/rsync/" style="font-size: 10px;">rsync</a> <a href="/tags/wechat/" style="font-size: 10px;">wechat</a> <a href="/tags/免跳板机/" style="font-size: 10px;">免跳板机</a> <a href="/tags/缺少动态库依赖/" style="font-size: 10px;">缺少动态库依赖</a>
     </div>
   </div>
 
@@ -881,7 +868,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">9</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 

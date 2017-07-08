@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://xiangxianzui.github.io/"/>
-  <updated>2017-06-24T09:37:46.490Z</updated>
+  <updated>2017-07-08T14:50:17.709Z</updated>
   <id>https://xiangxianzui.github.io/</id>
   
   <author>
@@ -14,6 +14,51 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>实习：第四周整理</title>
+    <link href="https://xiangxianzui.github.io/2017/07/%E5%AE%9E%E4%B9%A0%EF%BC%9A%E7%AC%AC%E5%9B%9B%E5%91%A8%E6%95%B4%E7%90%86/"/>
+    <id>https://xiangxianzui.github.io/2017/07/实习：第四周整理/</id>
+    <published>2017-07-08T14:48:27.000Z</published>
+    <updated>2017-07-08T14:50:17.709Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;Linux命令之：more-or-less&quot;&gt;&lt;a href=&quot;#Linux命令之：more-or-less&quot; class=&quot;headerlink&quot; title=&quot;Linux命令之：more or less?&quot;&gt;&lt;/a&gt;Linux命令之：more or less?
+    
+    </summary>
+    
+      <category term="Internship" scheme="https://xiangxianzui.github.io/categories/Internship/"/>
+    
+    
+      <category term="Linux" scheme="https://xiangxianzui.github.io/tags/Linux/"/>
+    
+      <category term="Ubuntu" scheme="https://xiangxianzui.github.io/tags/Ubuntu/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>实习：第三周整理</title>
+    <link href="https://xiangxianzui.github.io/2017/07/%E5%AE%9E%E4%B9%A0%EF%BC%9A%E7%AC%AC%E4%B8%89%E5%91%A8%E6%95%B4%E7%90%86/"/>
+    <id>https://xiangxianzui.github.io/2017/07/实习：第三周整理/</id>
+    <published>2017-07-08T14:40:00.000Z</published>
+    <updated>2017-07-08T14:47:03.825Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;实习第三周，下面整理一下这周遇到的一些问题。&lt;/p&gt;
+&lt;h3 id=&quot;Ubuntu下快捷键-System-Settings-gt-keyboard编辑&quot;&gt;&lt;a href=&quot;#Ubuntu下快捷键-System-Settings-gt-keyboard编辑&quot; class=&quot;h
+    
+    </summary>
+    
+      <category term="Internship" scheme="https://xiangxianzui.github.io/categories/Internship/"/>
+    
+    
+      <category term="Linux" scheme="https://xiangxianzui.github.io/tags/Linux/"/>
+    
+      <category term="Ubuntu" scheme="https://xiangxianzui.github.io/tags/Ubuntu/"/>
+    
+  </entry>
   
   <entry>
     <title>实习：第二周整理</title>
@@ -82,7 +127,7 @@
     <link href="https://xiangxianzui.github.io/2017/05/Frequently-used-commands-in-Linux/"/>
     <id>https://xiangxianzui.github.io/2017/05/Frequently-used-commands-in-Linux/</id>
     <published>2017-05-19T05:39:38.000Z</published>
-    <updated>2017-05-19T09:53:47.717Z</updated>
+    <updated>2017-07-08T14:37:35.549Z</updated>
     
     <summary type="html">
     
