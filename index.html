@@ -89,6 +89,156 @@ ga('send', 'pageview');
       <div class="outer">
         <section id="main">
   
+    <article id="post-Perfect-Shell-zsh" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/Perfect-Shell-zsh/" class="article-date">
+  <time datetime="2017-07-11T13:15:11.000Z" itemprop="datePublished">2017-07-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Guides/">Guides</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/Perfect-Shell-zsh/">Perfect Shell: zsh</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Recently, I bought a new laptop : HP Omen II Pro. Guess what? It is a <strong>GAME LAPTOP</strong>!!! Well, I confess that I couldn’t wait to download GTA5 as soon as I got the laptop in my hands. But wait. I stopped myself from doing that. I <strong>HAD TO</strong> get into work. I had been working as an intern developer in Qunar for two weeks, and, my <strong>old, slow, dumb</strong> laptop really drives me crazy. I really want to kill its ass and throw it to the ground, but I didn’t do that hahaha. I uninstalled the Windows 10 and took a flight to <strong>Ubuntu</strong>. It is the first time that I use Ubuntu as a standalone OS in my laptop. Cheers! </p>
+<p>Well, come to the point. I am a <strong>“Ununtuer”</strong> from now on, so it’s time to get it up–try the <strong>perfect shell</strong> in the world–<strong>zsh</strong>!</p>
+<p><a href="https://zhuanlan.zhihu.com/p/19556676?columnSlug=mactalk" target="_blank" rel="external">https://zhuanlan.zhihu.com/p/19556676?columnSlug=mactalk</a></p>
+<p><a href="https://www.zhihu.com/question/21418449" target="_blank" rel="external">https://www.zhihu.com/question/21418449</a></p>
+<p><a href="http://blog.csdn.net/zxgdll/article/details/70858857" target="_blank" rel="external">http://blog.csdn.net/zxgdll/article/details/70858857</a></p>
+<p><a href="https://github.com/robbyrussell/oh-my-zsh" target="_blank" rel="external">https://github.com/robbyrussell/oh-my-zsh</a></p>
+<blockquote>
+<p>Written with <a href="https://stackedit.io/" target="_blank" rel="external">StackEdit</a>.</p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://xiangxianzui.github.io/2017/07/Perfect-Shell-zsh/" data-id="cj552v5bi000rqusz78uphwor" class="article-share-link">Share</a>
+      
+        <a href="https://xiangxianzui.github.io/2017/07/Perfect-Shell-zsh/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/oh-my-zsh/">oh-my-zsh</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/zsh/">zsh</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-实习：第五周整理" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/07/实习：第五周整理/" class="article-date">
+  <time datetime="2017-07-11T01:53:18.000Z" itemprop="datePublished">2017-07-11</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Internship/">Internship</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/07/实习：第五周整理/">实习：第五周整理</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>实习第五周。这周的主要工作内容是协助开发和QA跑case，由于最近我所在的组任务不多，大家的工作主要是修修补补，或者是增加一些小功能。实习了一个多月，目前为止收获最大的地方就是更加熟悉了Linux开发，这点能从我最近写的实习总结中看出来。</p>
+<p>周四，leader让我把在线航空公司常见的接口错误统计出来，也就是把航司的错误从日志中搂出来，需要写shell脚本来实现，简单记录一下。</p>
+<p>先上脚本：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#! /bin/bash</span></div><div class="line"></div><div class="line">atnodes <span class="string">'zgrep -o " Code=\"\\w\&#123;3,\&#125;\" " &#123;logname&#125;.log.2017-07-0[8-9]-*.gz '</span> &#123;hostname1&#125;[3-4] &#123;hostname2&#125;[3-6] &gt; icaair_provider.log</div><div class="line"></div><div class="line">gawk <span class="string">'&#123; print $2 &#125;'</span> icaair_provider.log | gawk -F <span class="string">'='</span> <span class="string">'&#123; print $2 &#125;'</span> | sort &gt; icaair_provider.code</div><div class="line"></div><div class="line">cat icaair_provider.code | uniq -c</div></pre></td></tr></table></figure>
+<p>atnodes 把{hostname1}[3-4] {hostname2}[3-6]这些机器上的日志全都取出来，当然要通过zgrep正则表达式的过滤，不然日志太多，最后把得到的日志写到文件icaair_provider.log里。</p>
+<p>awk是一个强大的文本分析工具，它把文件逐行读入，按照分隔符(默认空格)将每行切片，然后再对切开的部分进行各种分析处理，非常适合处理日志数据。具体见<a href="http://www.cnblogs.com/ggjucheng/archive/2013/01/13/2858470.html" target="_blank" rel="external">这篇文章</a>。总之第二行就是根据第一步得到的文件icaair_provider.log切分日志，得到想要的那一列，然后用sort排序，最后写入文件icaair_provider.code里。</p>
+<p>最后一行，用uniq统计在icaair_provider.code中的所有错误出现的次数。</p>
+<p><strong>Note:</strong><br>这里我要说的是写正则表达式需要注意的问题。首先看看<a href="https://en.wikipedia.org/wiki/Regular_expression" target="_blank" rel="external">维基百科</a>是怎么描述正则表达式的。</p>
+<p><img src="hexo-1.png" alt="regular expression"></p>
+<p>总结起来就是，正则表达式是一个美国数学家搞出来的一门语言，也可以说是一门科学。你想啊，它能被称作是科学，一定是严谨的正确的不容质疑的，但是它偏偏有两套标准，也可以叫两套语法，分别是POSIX standard和Perl syntax。这两套语法都是对的，按照任何一个语法写出来的正则都是对的。重点是最后一句话，很多编程语言提供对正则表达式的支持，或者内置，或者通过引用包。举个例子来讲，上帝说，人要住在房子里，于是给出房子的定义：能遮风挡雨抵挡野兽的建筑就是房子。虽然有了房子的定义，但是不够具体，于是上帝手下的两个天使开始制定标准，也就是POSIX和Perl。至于编程语言就是建房子的工人，它按照制定的标准实现了正则表达式，但是每个编程语言实现正则的方式方法不尽相同。</p>
+<p>理解了这点就明白了为什么我在<a href="http://regexr.com/" target="_blank" rel="external">http://regexr.com/</a> 上写的正则明明是对的为啥放在java里或者shell里就不好使了。<a href="http://regexr.com/" target="_blank" rel="external">http://regexr.com/</a> 是对正则标准的检查，它不是language-specific的。</p>
+<hr>
+<p>最后记录一段脚本，功能是统计file2中的每行在file1中出现的次数。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#! /bin/bash</span></div><div class="line"><span class="keyword">if</span> [ <span class="variable">$#</span> <span class="_">-lt</span> 2 ]</div><div class="line"><span class="keyword">then</span></div><div class="line"><span class="built_in">echo</span> <span class="string">"Usage:<span class="variable">$0</span> args error"</span></div><div class="line"><span class="built_in">exit</span> 0</div><div class="line"></div><div class="line"><span class="comment">#get the first file</span></div><div class="line">file1=<span class="variable">$1</span></div><div class="line"><span class="comment">#get the second file</span></div><div class="line">file2=<span class="variable">$2</span></div><div class="line"><span class="keyword">while</span> <span class="built_in">read</span> myline</div><div class="line"><span class="keyword">do</span></div><div class="line">grep -E -o <span class="string">"<span class="variable">$&#123;myline&#125;</span>"</span> <span class="variable">$file1</span> | awk <span class="string">' &#123; count[$0]++ &#125; </span></div><div class="line">END&#123;printf("%-20s%s\n","Word","Count");</div><div class="line">for(word in count)</div><div class="line">&#123;printf("%-20s\t%s\n",word,count[word])&#125;</div><div class="line">&#125;'</div><div class="line"><span class="keyword">done</span> &lt; <span class="variable">$2</span></div></pre></td></tr></table></figure>
+<hr>
+<p>最后的最后，总结bash脚本里面大于/等于…关键词:</p>
+<table>
+<thead>
+<tr>
+<th>Item</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-eq</td>
+<td>等于</td>
+</tr>
+<tr>
+<td>-ne</td>
+<td>不等于</td>
+</tr>
+<tr>
+<td>-le</td>
+<td>小于等于</td>
+</tr>
+<tr>
+<td>-ge</td>
+<td>大于等于</td>
+</tr>
+<tr>
+<td>-lt</td>
+<td>小于</td>
+</tr>
+<tr>
+<td>-gt</td>
+<td>大于</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>Written with <a href="https://stackedit.io/" target="_blank" rel="external">StackEdit</a>.</p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://xiangxianzui.github.io/2017/07/实习：第五周整理/" data-id="cj552v5bz001fquszny1udc42" class="article-share-link">Share</a>
+      
+        <a href="https://xiangxianzui.github.io/2017/07/实习：第五周整理/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bash/">bash</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/正则表达式/">正则表达式</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-实习：第四周整理" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/07/实习：第四周整理/" class="article-date">
@@ -125,7 +275,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xiangxianzui.github.io/2017/07/实习：第四周整理/" data-id="cj4w6sp420037pvszz70j36ly" class="article-share-link">Share</a>
+      <a data-url="https://xiangxianzui.github.io/2017/07/实习：第四周整理/" data-id="cj552v5c1001iquszxeev4s46" class="article-share-link">Share</a>
       
         <a href="https://xiangxianzui.github.io/2017/07/实习：第四周整理/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -177,7 +327,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xiangxianzui.github.io/2017/07/实习：第三周整理/" data-id="cj4w6sp4c003bpvszwqbjddno" class="article-share-link">Share</a>
+      <a data-url="https://xiangxianzui.github.io/2017/07/实习：第三周整理/" data-id="cj552v5bv0017qusz8xaz1eqe" class="article-share-link">Share</a>
       
         <a href="https://xiangxianzui.github.io/2017/07/实习：第三周整理/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -231,7 +381,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xiangxianzui.github.io/2017/06/实习：第二周整理/" data-id="cj4w6sp3a000zpvsz5s7slw7d" class="article-share-link">Share</a>
+      <a data-url="https://xiangxianzui.github.io/2017/06/实习：第二周整理/" data-id="cj552v5bw001bquszv9uf8uvw" class="article-share-link">Share</a>
       
         <a href="https://xiangxianzui.github.io/2017/06/实习：第二周整理/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -312,7 +462,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xiangxianzui.github.io/2017/06/实习：第一周整理/" data-id="cj4w6sp38000vpvszj4ymet8g" class="article-share-link">Share</a>
+      <a data-url="https://xiangxianzui.github.io/2017/06/实习：第一周整理/" data-id="cj552v5bt0014quszxbz4ibms" class="article-share-link">Share</a>
       
         <a href="https://xiangxianzui.github.io/2017/06/实习：第一周整理/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -438,7 +588,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xiangxianzui.github.io/2017/05/Frequently-used-commands-in-Linux/" data-id="cj4w6sp3c0012pvszq3du9thv" class="article-share-link">Share</a>
+      <a data-url="https://xiangxianzui.github.io/2017/05/Frequently-used-commands-in-Linux/" data-id="cj552v5b20007qusz8kxupdgv" class="article-share-link">Share</a>
       
         <a href="https://xiangxianzui.github.io/2017/05/Frequently-used-commands-in-Linux/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -486,7 +636,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xiangxianzui.github.io/2017/02/Sorting-Java-implementations/" data-id="cj4w6sp30000opvszcu4191u1" class="article-share-link">Share</a>
+      <a data-url="https://xiangxianzui.github.io/2017/02/Sorting-Java-implementations/" data-id="cj552v5bk000vquszozuniab0" class="article-share-link">Share</a>
       
         <a href="https://xiangxianzui.github.io/2017/02/Sorting-Java-implementations/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -574,7 +724,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xiangxianzui.github.io/2017/02/Wechat-development-with-NodeJS/" data-id="cj4w6sp37000upvszmavnfvd0" class="article-share-link">Share</a>
+      <a data-url="https://xiangxianzui.github.io/2017/02/Wechat-development-with-NodeJS/" data-id="cj552v5bs0012quszmc52v3t0" class="article-share-link">Share</a>
       
         <a href="https://xiangxianzui.github.io/2017/02/Wechat-development-with-NodeJS/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -633,170 +783,12 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xiangxianzui.github.io/2017/02/LeetCode-Coin-Change/" data-id="cj4w6sp2j0009pvszknpzge2q" class="article-share-link">Share</a>
+      <a data-url="https://xiangxianzui.github.io/2017/02/LeetCode-Coin-Change/" data-id="cj552v5b8000dqusz2zn66ypv" class="article-share-link">Share</a>
       
         <a href="https://xiangxianzui.github.io/2017/02/LeetCode-Coin-Change/#disqus_thread" class="article-comment-link">Comments</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Dynamic-Programming/">Dynamic Programming</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithm/">algorithm</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Learning-LaTeX" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/01/Learning-LaTeX/" class="article-date">
-  <time datetime="2017-01-31T03:27:26.000Z" itemprop="datePublished">2017-01-31</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Guides/">Guides</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/Learning-LaTeX/">Learning LaTeX</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Getting-Started"><a href="#Getting-Started" class="headerlink" title="Getting Started"></a>Getting Started</h2><p><a href="http://www.latex-project.org/" target="_blank" rel="external">LaTeX</a> is a document preparation system for high-quality typesetting, which is often used for technical and scientific documents. </p>
-<p>Let’s take an example first. Imagine you’re a writer, you want to write a new article and you start typing words in computer. When you open Microsoft Word, you find that you have to decide the font type, font size, layout … What you’re doing is not writing, but designing, which is definitely beyond the work of a writer! Well, this is where LaTeX comes. The biggest benefit of LaTeX is that it encourages authors to concentrate more on the document content but less on the document appearance. It makes authors work more efficiently.</p>
-<p>As a beginner, I often get confused by many terms in TeX world. The following picture really helped me out.</p>
-<p><img src="level-of-tex.png" alt="Level of TeX"></p>
-<p>To make LaTeX run on your computer, you need to intall it first. There are many free software in various platforms. Choose the one which suits your operating system. I am using <a href="https://miktex.org/" target="_blank" rel="external">MiKTeX</a>, which is a Windows distribution.</p>
-<p>Next, I will go through two short, but powerful tutorials which could be accessed <a href="tutorial1.tex">here</a> and <a href="tutorial2.tex">here</a>. Paste each tutorial to <code>TexWorks</code> and press <code>CTRL + T</code> to view <code>PDF</code> result.</p>
-<h2 id="Tutorial-1"><a href="#Tutorial-1" class="headerlink" title="Tutorial 1"></a>Tutorial 1</h2><p>In tutorial1, the following knowledge could be concluded.</p>
-<ul>
-<li>Everything to the right of a  %  is a remark to you and is ignored by LaTeX.</li>
-<li>\section{Section Title} makes a section title</li>
-<li>\subsection{Subsection Title} makes a subsection title, and so as \subsubsection and \subsubsubsection …</li>
-<li>Words are separated by one or more spaces.  Paragraphs are separated by<br>one or more blank lines.  The output is not affected by adding extra<br>spaces or extra blank lines to the input file.</li>
-<li>Double quotes: ``quoted text’’</li>
-<li>Single quotes: `single-quoted text’</li>
-<li>Long dashes: like—this</li>
-<li>Emphasized text: \emph{this is emphasized}</li>
-<li>Bold text: \textbf{this is bold}</li>
-<li>The following seven are printed by typing a backslash in front of them:  \$  \&amp;  #  \%  _  {  and  }.</li>
-</ul>
-<h2 id="Tutorial-2"><a href="#Tutorial-2" class="headerlink" title="Tutorial 2"></a>Tutorial 2</h2><p>In tutorial2, the following knowledge could be concluded.</p>
-<ul>
-<li>\documentclass{article}: specifies the document class</li>
-<li>\title{An Example Document}: declares the document’s title</li>
-<li>\author{LesLie Lamport}: declares author name</li>
-<li>\date{January 31, 2017}: declares date, deleting this command will produce today’s date</li>
-<li>\maketitle: produces the title</li>
-<li>\newcommand{\ip}[2]{(#1, #2)}: defines new command with name ‘ip’ and two arguments</li>
-<li>\LaTeX: generates the LaTeX logo</li>
-<li><p>Quotes within quotes: </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">``\,`this&apos; is what I just wrote, not `that&apos;\,&apos;&apos; means &quot;&apos;this&apos; is what I just wrote, not &apos;that&apos;&quot;</div></pre></td></tr></table></figure>
-</li>
-<li><p>Intra word dash: intra-word (1 dash)</p>
-</li>
-<li>Medium dash: 1–2 (2 dashes)</li>
-<li>Long dash: like—this (3 dashes)</li>
-<li>Ellipsis: \ldots</li>
-<li>TeX ignores spaces after command names</li>
-<li><p>Emphasize long sentence: </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">\begin&#123;em&#125;</div><div class="line">  A long segment of text can also be emphasized </div><div class="line">  in this way.  Text within such a segment can be </div><div class="line">  given \emph&#123;additional&#125; emphasis.</div><div class="line">\end&#123;em&#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p>Footnotes: Footnotes\footnote{This is an example of a footnote.} pose no problem.</p>
-</li>
-<li>$ … $  and  ( … )  are equivalent, both denote a mathematical symbol</li>
-<li>Itemize &amp; Enumerate: <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">\begin&#123;itemize&#125;</div><div class="line">  \item This is the first item of an itemized list.</div><div class="line">        Each item in the list is marked with a ``tick&apos;&apos;.</div><div class="line">        You don&apos;t have to worry about what kind of tick</div><div class="line">        mark is used.</div><div class="line"></div><div class="line">  \item This is the second item of the list.  It</div><div class="line">        contains another list nested inside it.  The inner</div><div class="line">        list is an \emph&#123;enumerated&#125; list.</div><div class="line">        \begin&#123;enumerate&#125;</div><div class="line">           \item This is the first item of an enumerated </div><div class="line">                 list that is nested within the itemized list.</div><div class="line"></div><div class="line">           \item This is the second item of the inner list.  </div><div class="line">                 \LaTeX\ allows you to nest lists deeper than </div><div class="line">                 you really should.</div><div class="line">        \end&#123;enumerate&#125;</div><div class="line">        This is the rest of the second item of the outer</div><div class="line">        list.  It is no more interesting than any other</div><div class="line">        part of the item.</div><div class="line">  \item This is the third item of the list.</div><div class="line">\end&#123;itemize&#125;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<blockquote>
-<p>Written with <a href="https://stackedit.io/" target="_blank" rel="external">StackEdit</a>.</p>
-</blockquote>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://xiangxianzui.github.io/2017/01/Learning-LaTeX/" data-id="cj4w6sp2f0007pvszmlwvjt3r" class="article-share-link">Share</a>
-      
-        <a href="https://xiangxianzui.github.io/2017/01/Learning-LaTeX/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/LaTex/">LaTex</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Upload-image-to-a-Node-JS-server" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/01/Upload-image-to-a-Node-JS-server/" class="article-date">
-  <time datetime="2017-01-16T11:10:26.000Z" itemprop="datePublished">2017-01-16</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Guides/">Guides</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/Upload-image-to-a-Node-JS-server/">Upload image to a Node.JS server</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Recently, I came up with a problem that I need to upload images to a Node server and display the image instantly. I write this post to keep a record of what I have done.</p>
-<p>Generally, firstly I wrap the uploading image as a <a href="https://developer.mozilla.org/en-US/docs/Web/API/FormData" target="_blank" rel="external">FormData</a>. </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#'upload[]' is the name attr of #upload-input</span></div><div class="line"><span class="comment">#append the selected file to formData obj</span></div><div class="line">formData.append(<span class="string">'upload[]'</span>, file, file.name);</div></pre></td></tr></table></figure>
-<p>Then I use jquery <code>.ajax()</code> method to send <code>POST</code> request to the server. </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#processData:false means to stop jquery from converting the formData object to string</span></div><div class="line"><span class="comment">#contentType:false means to tell jquery not to add a Content-Type header</span></div><div class="line">$.ajax(&#123;</div><div class="line">	url: <span class="string">'/upload'</span>,</div><div class="line">	<span class="built_in">type</span>: <span class="string">'POST'</span>,</div><div class="line">	data: formData,</div><div class="line">	processData: <span class="literal">false</span>,</div><div class="line">    contentType: <span class="literal">false</span>,</div><div class="line">	success: <span class="keyword">function</span>(data)&#123;</div><div class="line">		<span class="comment">#do something when success</span></div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p>At server, <a href="https://github.com/felixge/node-formidable" target="_blank" rel="external">formidable</a> middleware is used to handle the uploading file. </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">app.post(<span class="string">'/upload'</span>, <span class="keyword">function</span>(req, res)&#123;</div><div class="line">  <span class="comment">#create an incoming form object</span></div><div class="line">  var form = new formidable.IncomingForm();</div><div class="line">  <span class="comment">#specify that we don't want user to upload multiple files at the same time; set true to allow.</span></div><div class="line">  form.multiples = <span class="literal">false</span>;</div><div class="line">  <span class="comment">#store uploads in /uploads directory</span></div><div class="line">  form.uploadDir = path.join(process.cwd(), <span class="string">'/uploads'</span>);</div><div class="line">  <span class="comment">#log any occured error</span></div><div class="line">  form.on(<span class="string">'error'</span>, <span class="keyword">function</span>(err)&#123;</div><div class="line">     console.log(<span class="string">'File Uploading Error: '</span>+err);</div><div class="line">  &#125;);</div><div class="line">  <span class="comment">#parse the incoming request containing form data</span></div><div class="line">  form.parse(req, <span class="keyword">function</span>(err, fields, files)&#123;</div><div class="line">	  var file = files[<span class="string">'upload[]'</span>];</div><div class="line">      <span class="comment">#rename the uploaded file as its origin name</span></div><div class="line">      fs.rename(file.path, path.join(form.uploadDir, file.name));</div><div class="line">      res.send(<span class="string">'success'</span>);</div><div class="line">  &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p><strong>Note: A working demo is available in <a href="https://github.com/xiangxianzui/node-image-previewer-uploader" target="_blank" rel="external">github</a>.</strong></p>
-<p>The demo could be used like this:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># clone the repo to local machine</span></div><div class="line">$ git <span class="built_in">clone</span> https://github.com/xiangxianzui/node-image-previewer-uploader</div><div class="line"><span class="comment"># open code directory</span></div><div class="line">$ <span class="built_in">cd</span> node-image-previewer-uploader</div><div class="line"><span class="comment"># install node dependencies</span></div><div class="line">$ npm install</div><div class="line"><span class="comment"># run the server</span></div><div class="line">$ node server.js</div></pre></td></tr></table></figure>
-<h4 id="File-Structure"><a href="#File-Structure" class="headerlink" title="File Structure"></a>File Structure</h4><ul>
-<li><strong>server.js</strong> is Node server, which contains routes and main logic of back end</li>
-<li><strong>.env</strong> stores environmenal variable while developing. A node module called <code>dotenv</code> can be used to load variables in <code>.env</code> file to global variable <code>process</code></li>
-<li><strong>package.json</strong> contains information of this project and dependencies</li>
-<li><strong>/public</strong> contains javascript, css, fonts and images, which will be used in front end</li>
-<li><strong>/views</strong> contains HTML templates</li>
-<li><strong>/uploads</strong> stores uploaded images</li>
-</ul>
-<blockquote>
-<p>Written with <a href="https://stackedit.io/" target="_blank" rel="external">StackEdit</a>.</p>
-</blockquote>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://xiangxianzui.github.io/2017/01/Upload-image-to-a-Node-JS-server/" data-id="cj4w6sp33000rpvsz6cjkzcd4" class="article-share-link">Share</a>
-      
-        <a href="https://xiangxianzui.github.io/2017/01/Upload-image-to-a-Node-JS-server/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-JS/">Node.JS</a></li></ul>
 
     </footer>
   </div>
@@ -827,6 +819,14 @@ ga('send', 'pageview');
       <ul>
         
           <li>
+            <a href="/2017/07/Perfect-Shell-zsh/">Perfect Shell: zsh</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/实习：第五周整理/">实习：第五周整理</a>
+          </li>
+        
+          <li>
             <a href="/2017/07/实习：第四周整理/">实习：第四周整理</a>
           </li>
         
@@ -838,14 +838,6 @@ ga('send', 'pageview');
             <a href="/2017/06/实习：第二周整理/">实习：第二周整理</a>
           </li>
         
-          <li>
-            <a href="/2017/06/实习：第一周整理/">实习：第一周整理</a>
-          </li>
-        
-          <li>
-            <a href="/2017/05/Frequently-used-commands-in-Linux/">Frequently-used commands in Linux</a>
-          </li>
-        
       </ul>
     </div>
   </div>
@@ -855,7 +847,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Guides/">Guides</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Internship/">Internship</a><span class="category-list-count">4</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Interview/">Interview</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/LeetCode/">LeetCode</a><span class="category-list-count">6</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Guides/">Guides</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Internship/">Internship</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Interview/">Interview</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/LeetCode/">LeetCode</a><span class="category-list-count">6</span></li></ul>
     </div>
   </div>
 
@@ -865,7 +857,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/BAE/" style="font-size: 10px;">BAE</a> <a href="/tags/Backtracking/" style="font-size: 10px;">Backtracking</a> <a href="/tags/Bit-Manipulation/" style="font-size: 13.33px;">Bit Manipulation</a> <a href="/tags/Dynamic-Programming/" style="font-size: 10px;">Dynamic Programming</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Hexo/" style="font-size: 13.33px;">Hexo</a> <a href="/tags/IDEA/" style="font-size: 13.33px;">IDEA</a> <a href="/tags/Java/" style="font-size: 13.33px;">Java</a> <a href="/tags/LaTex/" style="font-size: 10px;">LaTex</a> <a href="/tags/Linked-List/" style="font-size: 10px;">Linked List</a> <a href="/tags/Linux/" style="font-size: 16.67px;">Linux</a> <a href="/tags/Maven/" style="font-size: 10px;">Maven</a> <a href="/tags/Node-JS/" style="font-size: 13.33px;">Node.JS</a> <a href="/tags/Sorting/" style="font-size: 10px;">Sorting</a> <a href="/tags/Ubuntu/" style="font-size: 16.67px;">Ubuntu</a> <a href="/tags/algorithm/" style="font-size: 20px;">algorithm</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/rsync/" style="font-size: 10px;">rsync</a> <a href="/tags/wechat/" style="font-size: 10px;">wechat</a> <a href="/tags/免跳板机/" style="font-size: 10px;">免跳板机</a> <a href="/tags/缺少动态库依赖/" style="font-size: 10px;">缺少动态库依赖</a>
+      <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/BAE/" style="font-size: 10px;">BAE</a> <a href="/tags/Backtracking/" style="font-size: 10px;">Backtracking</a> <a href="/tags/Bit-Manipulation/" style="font-size: 12.5px;">Bit Manipulation</a> <a href="/tags/Dynamic-Programming/" style="font-size: 10px;">Dynamic Programming</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Hexo/" style="font-size: 12.5px;">Hexo</a> <a href="/tags/IDEA/" style="font-size: 12.5px;">IDEA</a> <a href="/tags/Java/" style="font-size: 12.5px;">Java</a> <a href="/tags/LaTex/" style="font-size: 10px;">LaTex</a> <a href="/tags/Linked-List/" style="font-size: 10px;">Linked List</a> <a href="/tags/Linux/" style="font-size: 17.5px;">Linux</a> <a href="/tags/Maven/" style="font-size: 10px;">Maven</a> <a href="/tags/Node-JS/" style="font-size: 12.5px;">Node.JS</a> <a href="/tags/Sorting/" style="font-size: 10px;">Sorting</a> <a href="/tags/Ubuntu/" style="font-size: 15px;">Ubuntu</a> <a href="/tags/algorithm/" style="font-size: 20px;">algorithm</a> <a href="/tags/bash/" style="font-size: 10px;">bash</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/oh-my-zsh/" style="font-size: 10px;">oh-my-zsh</a> <a href="/tags/rsync/" style="font-size: 10px;">rsync</a> <a href="/tags/wechat/" style="font-size: 10px;">wechat</a> <a href="/tags/zsh/" style="font-size: 10px;">zsh</a> <a href="/tags/免跳板机/" style="font-size: 10px;">免跳板机</a> <a href="/tags/正则表达式/" style="font-size: 10px;">正则表达式</a> <a href="/tags/缺少动态库依赖/" style="font-size: 10px;">缺少动态库依赖</a>
     </div>
   </div>
 
@@ -874,7 +866,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">9</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 

@@ -3,19 +3,17 @@
 <head>
   <meta charset="utf-8">
   
-  <title>LeetCode: Move Zeroes | Muser</title>
+  <title>Tag: oh-my-zsh | Muser</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="ProblemGiven an array nums, write a function to move all 0’s to the end of it while maintaining the relative order of the non-zero elements. For example, given nums = [0, 1, 0, 3, 12], after calling y">
-<meta name="keywords" content="algorithm,Array">
-<meta property="og:type" content="article">
-<meta property="og:title" content="LeetCode: Move Zeroes">
-<meta property="og:url" content="https://xiangxianzui.github.io/2017/01/LeetCode-Move-Zeroes/index.html">
+  <meta name="description" content="thinking in a different way">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Muser">
+<meta property="og:url" content="https://xiangxianzui.github.io/tags/oh-my-zsh/index.html">
 <meta property="og:site_name" content="Muser">
-<meta property="og:description" content="ProblemGiven an array nums, write a function to move all 0’s to the end of it while maintaining the relative order of the non-zero elements. For example, given nums = [0, 1, 0, 3, 12], after calling y">
-<meta property="og:updated_time" content="2017-01-12T05:52:18.754Z">
+<meta property="og:description" content="thinking in a different way">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="LeetCode: Move Zeroes">
-<meta name="twitter:description" content="ProblemGiven an array nums, write a function to move all 0’s to the end of it while maintaining the relative order of the non-zero elements. For example, given nums = [0, 1, 0, 3, 12], after calling y">
+<meta name="twitter:title" content="Muser">
+<meta name="twitter:description" content="thinking in a different way">
   
     <link rel="alternate" href="/atom.xml" title="Muser" type="application/atom+xml">
   
@@ -89,86 +87,40 @@ ga('send', 'pageview');
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-LeetCode-Move-Zeroes" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/01/LeetCode-Move-Zeroes/" class="article-date">
-  <time datetime="2017-01-12T02:14:39.000Z" itemprop="datePublished">2017-01-12</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/LeetCode/">LeetCode</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
+        <section id="main">
   
-    <h1 class="article-title" itemprop="name">
-      LeetCode: Move Zeroes
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2017" class="archive-year">2017</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2017/07/Perfect-Shell-zsh/" class="archive-article-date">
+  <time datetime="2017-07-11T13:15:11.000Z" itemprop="datePublished">Jul 11</time>
+</a>
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2017/07/Perfect-Shell-zsh/">Perfect Shell: zsh</a>
     </h1>
   
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>Given an array nums, write a function to move all 0’s to the end of it while maintaining the relative order of the non-zero elements.</p>
-<p>For example, given <code>nums = [0, 1, 0, 3, 12]</code>, after calling your function, <code>nums</code> should be <code>[1, 3, 12, 0, 0]</code>.</p>
-<p><strong>Note</strong>:<br>You must do this in-place without making a copy of the array.<br>Minimize the total number of operations.</p>
-<h2 id="Solution-1-–-59ms"><a href="#Solution-1-–-59ms" class="headerlink" title="Solution 1 – 59ms"></a>Solution 1 – 59ms</h2><p>Go through the array. If <code>ith</code> element is 0, then move all elements within [i+1,nums,length-1] one place ahead, and set the last element of the array to 0. To prevent endless loop when <code>nums=[0,0,...,0]</code>, set a variable <code>reapeatCount</code>.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">public void moveZeroes(int[] nums) &#123;</div><div class="line">    int repeatCount = 0;</div><div class="line">    for(int i=0; i&lt;nums.length; i++)&#123;</div><div class="line">        if(nums[i]==0)&#123;</div><div class="line">            for(int j=i; j&lt;nums.length-1; j++)&#123;</div><div class="line">                nums[j] = nums[j+1];</div><div class="line">            &#125;</div><div class="line">            nums[nums.length-1] = 0;</div><div class="line">            i--;</div><div class="line">            repeatCount++;</div><div class="line">        &#125;</div><div class="line">        if(repeatCount==nums.length)    break;</div><div class="line">            </div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="Solution-2-–-19ms"><a href="#Solution-2-–-19ms" class="headerlink" title="Solution 2 – 19ms"></a>Solution 2 – 19ms</h2><p>Go through the array. If <code>ith</code> element is 0, then find the first non-zero element within range [i+1,nums.length-1] and swap it with current element; if there is no such non-zero element, it means all non-zero elements are before zeroes – done! If current element is non-zero, just go on to the next.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">public void moveZeroes(int[] nums) &#123;</div><div class="line">    if(nums != null)&#123;</div><div class="line">        for(int i=0; i&lt;nums.length; i++)&#123;</div><div class="line">            if(nums[i]==0)&#123;</div><div class="line">                //find the first non-zero element within range [i+1,nums.length-1]</div><div class="line">                int firstNonZeroIdx = -1;</div><div class="line">                for(int j=i+1; j&lt;nums.length; j++)&#123;</div><div class="line">                    if(nums[j]!=0)&#123;</div><div class="line">                        firstNonZeroIdx = j;</div><div class="line">                        break;</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">                if(firstNonZeroIdx==-1) break;</div><div class="line">                else&#123;</div><div class="line">                    int temp = nums[i];</div><div class="line">                    nums[i] = nums[firstNonZeroIdx];</div><div class="line">                    nums[firstNonZeroIdx] = temp;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>Solution 2 is better than Solution 1. This is because in Solution 1, it is unnecessary to move all elements after a non-zero element one place ahead. </p>
-<blockquote>
-<p>Written with <a href="https://stackedit.io/" target="_blank" rel="external">StackEdit</a>.</p>
-</blockquote>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://xiangxianzui.github.io/2017/01/LeetCode-Move-Zeroes/" data-id="cj552v5bf000mqusz18xwvnn0" class="article-share-link">Share</a>
-      
-        <a href="https://xiangxianzui.github.io/2017/01/LeetCode-Move-Zeroes/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Array/">Array</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithm/">algorithm</a></li></ul>
-
-    </footer>
+    </header>
   </div>
-  
-    
-<nav id="article-nav">
-  
-    <a href="/2017/01/LeetCode-Delete-Node-in-a-Linked-List/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Newer</strong>
-      <div class="article-nav-title">
-        
-          LeetCode: Delete Node in a Linked List
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2017/01/LeetCode-Sum-of-Two-Integers/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">LeetCode: Sum of Two Integers</div>
-    </a>
-  
-</nav>
-
-  
 </article>
+  
+  
+    </div></section>
+  
 
-
-<section id="comments">
-  <div id="disqus_thread">
-    <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-  </div>
-</section>
 </section>
         
           <aside id="sidebar">
@@ -271,13 +223,11 @@ ga('send', 'pageview');
 <script>
   var disqus_shortname = 'xiangxianzui';
   
-  var disqus_url = 'https://xiangxianzui.github.io/2017/01/LeetCode-Move-Zeroes/';
-  
   (function(){
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    dsq.src = '//' + disqus_shortname + '.disqus.com/count.js';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>
