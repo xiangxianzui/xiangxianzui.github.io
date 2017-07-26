@@ -89,6 +89,327 @@ ga('send', 'pageview');
       <div class="outer">
         <section id="main">
   
+    <article id="post-Frequently-used-commands-in-Linux" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/05/Frequently-used-commands-in-Linux/" class="article-date">
+  <time datetime="2017-05-19T05:39:38.000Z" itemprop="datePublished">2017-05-19</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Interview/">Interview</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/05/Frequently-used-commands-in-Linux/">Frequently-used commands in Linux</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>This post concludes frequently-used commands in Linux, which might be functioning like a handy manual page for Linux commands.</p>
+<ul>
+<li>man</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ man [command] //manual page of [command]</div></pre></td></tr></table></figure>
+<ul>
+<li>ls</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ ls -a //display all files, including hidden files</div><div class="line">$ ls -l //list detailed information</div><div class="line">$ ls -r //list files according to name, in reversing order</div><div class="line">$ ls -i //view inode number</div></pre></td></tr></table></figure>
+<ul>
+<li>cat</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$ cat [filename] //print content of [filename]</div><div class="line">$ cat -n [filename] //print content as well as line number</div><div class="line">$ cat &gt; [filename] //create a new file and enter content from standard inputstream</div><div class="line">$ cat [file1] [file2] &gt; [file3] //concat contents in [file1] and [file2], and then write to [file3]</div><div class="line">$ cat [bigfile] | more //use pipeline and more to view [bigfile]</div><div class="line">$ cat &gt;&gt; [filename] //add content to the end of [filename]</div></pre></td></tr></table></figure>
+<ul>
+<li>mv</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ mv [oldname] [newname] //change file name</div><div class="line">$ mv [file] [directory] //move [file] to [directory]</div></pre></td></tr></table></figure>
+<ul>
+<li>rm</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ rm -i [file] //interactive mode, ask for confirmation before deleting</div><div class="line">$ rm -f [file] //force to delete</div><div class="line">$ rm -r [directory] //delete all sub-directories and files in [directory] recursively</div></pre></td></tr></table></figure>
+<ul>
+<li>grep (global regular expression print)</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ grep [options] [PATTERN] [filename] //print contents which satisfy regular expression [PATTERN] in file [filename]</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[options] includes: -n (display line number); -i (ignore character case); -v (display contents which don&apos;t satisfy regular expression)</div></pre></td></tr></table></figure>
+<ul>
+<li>find</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ find [path] [options] [expression] //find files whose name satisfies regular expression [expression] in the specific path [path]</div><div class="line">e.g.: find . -name file.* //find files satisfying file.* in current directory</div><div class="line">e.g.: find ./dir -name *.txt //find txt files in sub-directory ./dir</div></pre></td></tr></table></figure>
+<ul>
+<li>chmod</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ chmod u+x [file] //grant the user with execution authority</div><div class="line">$ chmod a+r [file] //grant all users with reading authority</div><div class="line">$ chmod 777 [file] //grant u(user),g(group),o(other) with reading(1), writing(2) and executing(4) authority (7=1+2+4)</div></pre></td></tr></table></figure>
+<ul>
+<li>tar</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ tar -czvf some.tar.gz file1 file2 file3 //compress file1, file2 and file3 using gzip</div><div class="line">$ tar -xzvf some.tar.gz //uncompress some.tar.gz to current directory</div></pre></td></tr></table></figure>
+<ul>
+<li><p>pwd: print current working directory</p>
+</li>
+<li><p>diff</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ diff [file1] [file2] //compare two files and print differences</div></pre></td></tr></table></figure>
+<ul>
+<li>file: print the type of the file</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">e.g.: file test.txt</div><div class="line">e.g.: file [directory]</div></pre></td></tr></table></figure>
+<ul>
+<li>ps</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ ps -a //display all processes, including other users&apos; processes</div><div class="line">$ ps -u //display processes belonging to current user</div><div class="line">$ ps -x //print complete information</div><div class="line">$ ps -ef | grep tomcat //print all processes relevant to tomcat in standard way(more human-readable)</div><div class="line">e.g.: ps -aux | grep &quot;google&quot; //print all processes relevant to &quot;google&quot; in BSD style</div></pre></td></tr></table></figure>
+<ul>
+<li><p>top: print processes in real time, similar to resources monitor in Windows</p>
+</li>
+<li><p>kill</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ kill -l //display all kill SIGNAL</div><div class="line">$ kill -9 [PID] //force to kill process [PID]</div><div class="line">$ kill -15 [PID] //kill process [PID] in a moderate way, which means reclaim resources of the process and then kill it</div><div class="line">$ kill [PID] //same with kill -15 [PID]</div></pre></td></tr></table></figure>
+<ul>
+<li>more/less</li>
+</ul>
+<p>In general, both more and less print contents of a file to the screen. But they offer different functions. This <a href="http://www.cnblogs.com/aijianshi/p/5750911.html" target="_blank" rel="external">article</a> is a good resource to understand them.</p>
+<ul>
+<li>uname</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ uname -a //check kernel version and name of the OS</div></pre></td></tr></table></figure>
+<ul>
+<li>netstat</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">$ netstat -a //display all possible columns</div><div class="line">$ netstat -t //display TCP-relevant only</div><div class="line">$ netstat -u //display UDP-relevant only</div><div class="line">$ netstat -n //display number rather than name</div><div class="line">$ netstat -l //display items which are in LISTEN status</div><div class="line">$ netstat -p //display program names and PID of the connection</div><div class="line">$ netstat</div><div class="line"> -r //display kernel routing table</div><div class="line">$ netstat -i //display kernel interface table</div><div class="line">often used with grep:</div><div class="line">netstat -anp | grep python //view connections relevant to python</div><div class="line">netstat -anp | grep 8080 //view connections relevant to port 8080</div></pre></td></tr></table></figure>
+<ul>
+<li>touch</li>
+</ul>
+<p>Update the access and modification times of each FILE to the current time. But it is used to create a new file frequently.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ touch [OPTION] [FILE] //change file timestamps.</div></pre></td></tr></table></figure>
+<p>To be continued…</p>
+<hr>
+<blockquote>
+<p>Written with <a href="https://stackedit.io/" target="_blank" rel="external">StackEdit</a>.</p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://xiangxianzui.github.io/2017/05/Frequently-used-commands-in-Linux/" data-id="cj5kgbvzd000fs5szz93bo1g4" class="article-share-link">Share</a>
+      
+        <a href="https://xiangxianzui.github.io/2017/05/Frequently-used-commands-in-Linux/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Linux/">Linux</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Sorting-Java-implementations" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/02/Sorting-Java-implementations/" class="article-date">
+  <time datetime="2017-02-28T14:48:29.000Z" itemprop="datePublished">2017-02-28</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Interview/">Interview</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/Sorting-Java-implementations/">Sorting &amp; Java implementations</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Sorting is a hot and common subject which is frequently asked during an interviewing session. Although it is very easy for most software developers, I still want to take a detailed review on it such that some enhanced understandings could be made.</p>
+<blockquote>
+<p>Written with <a href="https://stackedit.io/" target="_blank" rel="external">StackEdit</a>.</p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://xiangxianzui.github.io/2017/02/Sorting-Java-implementations/" data-id="cj5kgbvzw0010s5sz4aa8k4ao" class="article-share-link">Share</a>
+      
+        <a href="https://xiangxianzui.github.io/2017/02/Sorting-Java-implementations/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Java/">Java</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Sorting/">Sorting</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithm/">algorithm</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-Wechat-development-with-NodeJS" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/02/Wechat-development-with-NodeJS/" class="article-date">
+  <time datetime="2017-02-09T15:30:48.000Z" itemprop="datePublished">2017-02-09</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/Guides/">Guides</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/Wechat-development-with-NodeJS/">Wechat development with NodeJS</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>I enjoyed the time with my family quite a lot during Chinese New Year. We made dumplings,  set off fireworks, watched Spring Festival Gala, and so on. However, happy time always runs fast. It’s time to finish the holiday and get back to work : )</p>
+<p>Now, I have a wechat public account(subscription account), and what I want to achieve is to implement a simple chatting robot with the help of <a href="https://cloud.baidu.com/product/bae.html" target="_blank" rel="external">Baidu App Engine</a>.</p>
+<p>There are only 3 steps to go.</p>
+<h2 id="1-Create-Baidu-App-Engine"><a href="#1-Create-Baidu-App-Engine" class="headerlink" title="#1 Create Baidu App Engine"></a>#1 Create Baidu App Engine</h2><p>At first, I tried to use Heroku to host the server, but Heroku can’t pass the server url validation while configuring wechat public account. I guess the reason is that the IP of Heroku is in America, so I choose BAE as the server IP would be within mainland.</p>
+<p>Creating and managing a BAE app is concluded in this <a href="https://cloud.baidu.com/doc/BAE/GUIGettingStarted.html" target="_blank" rel="external">tutorial</a>. </p>
+<p><img src="BAE-guide.png" alt="guide for creating BAE"></p>
+<h2 id="2-Configure-wechat-public-account"><a href="#2-Configure-wechat-public-account" class="headerlink" title="#2 Configure wechat public account"></a>#2 Configure wechat public account</h2><p>Before configuring wechat public account, it is essential to understand the work flow among <strong>user</strong>, <strong>wechat server</strong>, and <strong>my own server</strong>. This picture demonstrates the work flow very well.</p>
+<p><img src="workflow.png" alt="workflow"></p>
+<p>This is to say, wechat server stands between my server and the user. All messages between user and my server should go through wechat server first. Thus, as the server side, we need to tell wechat server the address of my server. This is where the below configuration comes from.</p>
+<p><img src="config.png" alt="development configuration"></p>
+<p>In this picture, URL is the route to send and receive messages in my own server. Token is an identity to tell wechat server that <strong>this is me</strong>. The encoding key is a key to encrypt and decrypt messages, and it can be generated randomly.</p>
+<h2 id="3-Build-server-with-Node-js"><a href="#3-Build-server-with-Node-js" class="headerlink" title="#3 Build server with Node.js"></a>#3 Build server with Node.js</h2><p>Firstly, wechat server will validate my server via a <code>GET</code> request, which contains 4 parameters: </p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>signature</td>
+<td>encrypted signature</td>
+</tr>
+<tr>
+<td>timestamp</td>
+<td>current time</td>
+</tr>
+<tr>
+<td>nonce</td>
+<td>random number</td>
+</tr>
+<tr>
+<td>echostr</td>
+<td>random string</td>
+</tr>
+</tbody>
+</table>
+<p>The signature is calculated by wechat server according to timestamp, nonce, and the specified token in last step. What should be done in my server is to calculate the signature again and compare it with the received one. If the two signatures are equal, the server should send the received <code>echostr</code> back to wechat server to tell that validation is success. If wechat server has not received the <code>echostr</code> or the received one is not correct, the valication is failed.</p>
+<p>If the validation is success, we can send and receive messages. This part is demonstrated in the <a href="http://mp.weixin.qq.com/wiki/17/f298879f8fb29ab98b2f2971d42552fd.html" target="_blank" rel="external">official documentation</a>.</p>
+<p><strong>Note</strong>: The code can be accessed at <a href="https://github.com/xiangxianzui/wechat-nodejs" target="_blank" rel="external">github</a>.</p>
+<blockquote>
+<p>Written with <a href="https://stackedit.io/" target="_blank" rel="external">StackEdit</a>.</p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://xiangxianzui.github.io/2017/02/Wechat-development-with-NodeJS/" data-id="cj5kgbvzz0017s5szhswsk5vu" class="article-share-link">Share</a>
+      
+        <a href="https://xiangxianzui.github.io/2017/02/Wechat-development-with-NodeJS/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/BAE/">BAE</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Node-JS/">Node.JS</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/wechat/">wechat</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-LeetCode-Coin-Change" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/02/LeetCode-Coin-Change/" class="article-date">
+  <time datetime="2017-02-05T03:58:29.000Z" itemprop="datePublished">2017-02-05</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/LeetCode/">LeetCode</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/02/LeetCode-Coin-Change/">LeetCode: Coin Change</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>You are given coins of different denominations and a total amount of money amount. Write a function to compute the fewest number of coins that you need to make up that amount. If that amount of money cannot be made up by any combination of the coins, return <code>-1</code>.</p>
+<p><strong>Example 1</strong>:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">coins = [1, 2, 5], amount = 11</div><div class="line">return 3 (11 = 5 + 5 + 1)</div></pre></td></tr></table></figure>
+<p><strong>Example 2</strong>:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">coins = [2], amount = 3</div><div class="line">return -1.</div></pre></td></tr></table></figure>
+<p><strong>Note</strong>: You may assume that you have an infinite number of each kind of coin.</p>
+<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>This is a classic Dynamic Programming problem. Let’s take an example as usual. Given 3 types of coins with value <code>1</code>, <code>2</code>, <code>5</code> respectively, and the total money amount is <code>11</code>, try to select minimal number of coins to make up that amount.</p>
+<p>We denote that given money amount <code>s</code>, the number of coins being selected is <code>N(s)</code>. So the problem is to solve <code>N(11)</code>.</p>
+<p>At the beginning, it is easy to find that <code>N(0)=0</code>. Then,  if <code>s=1</code>, we can only select coin with value <code>1</code>, and we get <code>N(1)=1</code>. Then go to <code>s=2</code>. We can select coin with value <code>1</code> and value <code>2</code>. If select value <code>1</code>, the remaining amount is <code>1</code>, since we already know <code>N(1)=1</code>, so <code>N(2)=N(2-1)+1=2</code>; if select value <code>2</code>, the remaining amount is <code>0</code>, so <code>N(2)=N(2-2)+1=1</code>. The final <code>N(2)=min(2,1)=1</code>. Then we move on to <code>s=3</code>. We still can only select value <code>1</code> and value <code>2</code>. If select value <code>1</code>, <code>N(3)=N(3-1)+1=2</code>; if select value <code>2</code>, <code>N(3)=N(3-2)+1=2</code>. So the final <code>N(3)=min(2,2)=2</code>. We do this similarly until we reach <code>s=11</code>, and the answer is <code>N(11)=3</code>.</p>
+<p>From the above example, we can analyse this problem in a more general way. Given several types of coins with values <code>[V1, V2, ..., Vn]</code>, money amount <code>s</code>, and number of selected coins <code>N(s)</code>. If we already know <code>N(0), N(1), ..., N(s-1)</code>, we determine <code>N(s)</code> as <code>min{N(s-Vi)+1}</code>, where <code>1&lt;= i &lt;=n</code> and <code>Vi &lt;= s</code>. </p>
+<p>The java code could be like this:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">public class Solution &#123;</div><div class="line">    public int coinChange(int[] coins, int amount) &#123;</div><div class="line">        Map&lt;Integer,Integer&gt; map = new HashMap();</div><div class="line">        map.put(0, 0);</div><div class="line">        </div><div class="line">        int a = 1;</div><div class="line">        while(a&lt;=amount)&#123;</div><div class="line">            int min = Integer.MAX_VALUE;</div><div class="line">            boolean notPossible = true;</div><div class="line">            for(int i=0; i&lt;coins.length; i++)&#123;</div><div class="line">                if(a&gt;=coins[i])&#123;</div><div class="line">                    if(map.get(a-coins[i])!=-1)&#123;</div><div class="line">                        int temp = map.get(a-coins[i])+1;</div><div class="line">                        if(temp&lt;min)    min = temp;</div><div class="line">                        notPossible = false;</div><div class="line">                    &#125;</div><div class="line">                    </div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">            if(notPossible==true)   map.put(a,-1);</div><div class="line">            else&#123;</div><div class="line">                map.put(a,min);</div><div class="line">            &#125;</div><div class="line">            a++;</div><div class="line">        &#125;</div><div class="line">        return map.get(amount);</div><div class="line">        </div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<blockquote>
+<p>Written with <a href="https://stackedit.io/" target="_blank" rel="external">StackEdit</a>.</p>
+</blockquote>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://xiangxianzui.github.io/2017/02/LeetCode-Coin-Change/" data-id="cj5kgbvz7000ds5szc4vfo0no" class="article-share-link">Share</a>
+      
+        <a href="https://xiangxianzui.github.io/2017/02/LeetCode-Coin-Change/#disqus_thread" class="article-comment-link">Comments</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Dynamic-Programming/">Dynamic Programming</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithm/">algorithm</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-Learning-LaTeX" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2017/01/Learning-LaTeX/" class="article-date">
@@ -168,7 +489,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xiangxianzui.github.io/2017/01/Learning-LaTeX/" data-id="cj552v5b50008quszoh006v7n" class="article-share-link">Share</a>
+      <a data-url="https://xiangxianzui.github.io/2017/01/Learning-LaTeX/" data-id="cj5kgbvz40008s5szno2ovet4" class="article-share-link">Share</a>
       
         <a href="https://xiangxianzui.github.io/2017/01/Learning-LaTeX/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -233,7 +554,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xiangxianzui.github.io/2017/01/Upload-image-to-a-Node-JS-server/" data-id="cj552v5bn000yqusz7uunwqqy" class="article-share-link">Share</a>
+      <a data-url="https://xiangxianzui.github.io/2017/01/Upload-image-to-a-Node-JS-server/" data-id="cj5kgbvzx0013s5sz5snb7lcm" class="article-share-link">Share</a>
       
         <a href="https://xiangxianzui.github.io/2017/01/Upload-image-to-a-Node-JS-server/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -277,7 +598,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xiangxianzui.github.io/2017/01/LeetCode-Convert-a-Number-to-Hexadecimal/" data-id="cj552v5bb000fquszb72ipssv" class="article-share-link">Share</a>
+      <a data-url="https://xiangxianzui.github.io/2017/01/LeetCode-Convert-a-Number-to-Hexadecimal/" data-id="cj5kgbvz40009s5sz8icxnmfi" class="article-share-link">Share</a>
       
         <a href="https://xiangxianzui.github.io/2017/01/LeetCode-Convert-a-Number-to-Hexadecimal/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -353,7 +674,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xiangxianzui.github.io/2017/01/LeetCode-Binary-Watch/" data-id="cj552v5b60009quszreekwds9" class="article-share-link">Share</a>
+      <a data-url="https://xiangxianzui.github.io/2017/01/LeetCode-Binary-Watch/" data-id="cj5kgbvzj000ms5szcjc9rx3j" class="article-share-link">Share</a>
       
         <a href="https://xiangxianzui.github.io/2017/01/LeetCode-Binary-Watch/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -405,7 +726,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xiangxianzui.github.io/2017/01/LeetCode-Delete-Node-in-a-Linked-List/" data-id="cj552v5bd000kqusziwh7aorx" class="article-share-link">Share</a>
+      <a data-url="https://xiangxianzui.github.io/2017/01/LeetCode-Delete-Node-in-a-Linked-List/" data-id="cj5kgbvzh000ks5szwwkz3f9u" class="article-share-link">Share</a>
       
         <a href="https://xiangxianzui.github.io/2017/01/LeetCode-Delete-Node-in-a-Linked-List/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -460,7 +781,7 @@ ga('send', 'pageview');
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://xiangxianzui.github.io/2017/01/LeetCode-Move-Zeroes/" data-id="cj552v5bf000mqusz18xwvnn0" class="article-share-link">Share</a>
+      <a data-url="https://xiangxianzui.github.io/2017/01/LeetCode-Move-Zeroes/" data-id="cj5kgbvzm000rs5sz34vly43t" class="article-share-link">Share</a>
       
         <a href="https://xiangxianzui.github.io/2017/01/LeetCode-Move-Zeroes/#disqus_thread" class="article-comment-link">Comments</a>
       
@@ -474,247 +795,10 @@ ga('send', 'pageview');
 
 
   
-    <article id="post-LeetCode-Sum-of-Two-Integers" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/01/LeetCode-Sum-of-Two-Integers/" class="article-date">
-  <time datetime="2017-01-09T14:00:24.000Z" itemprop="datePublished">2017-01-09</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/LeetCode/">LeetCode</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/LeetCode-Sum-of-Two-Integers/">LeetCode: Sum of Two Integers</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">Calculate the sum of two integers a and b, but you are not allowed to use the operator + and -.</div><div class="line"></div><div class="line">Example:</div><div class="line">Given a = 1 and b = 2, return 3.</div></pre></td></tr></table></figure>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>Think this problem with an example. </p>
-<p>Consider 15+9=24.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#XOR holds the remaining part of the result</span></div><div class="line">     00001111</div><div class="line">XOR  00001001</div><div class="line">-------------</div><div class="line">     00000110</div></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#AND holds the carry part of the result</span></div><div class="line">     00001111</div><div class="line">AND  00001001</div><div class="line">-------------</div><div class="line">     00001001</div></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># shift the carry to left for 1 place, and add with the remaining</span></div><div class="line">     00000110</div><div class="line"> +   00010010</div><div class="line">-------------</div><div class="line">     00011000</div></pre></td></tr></table></figure>
-<p>Thus, for any integer <code>a</code> and <code>b</code>, <code>a + b = a^b + (a&amp;b)&lt;&lt;1</code>. Because <code>+</code> operator is not allowed, we can regard <code>a^b</code> as new <code>a</code>, and <code>(a&amp;b)&lt;&lt;1</code> as new <code>b</code>. Repeat this until current carry is <code>0</code>.</p>
-<p>The java implementation is like this:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Java solution</span></div><div class="line">public class Solution &#123;</div><div class="line">    public int getSum(int a, int b) &#123;</div><div class="line">        <span class="keyword">if</span>(b==0)    <span class="built_in">return</span> a;</div><div class="line">        <span class="keyword">while</span>(b!=0)&#123;</div><div class="line">            int carry = (a&amp;b)&lt;&lt;1;</div><div class="line">            int remain = a^b;</div><div class="line">            b = carry;</div><div class="line">            a = remain;</div><div class="line">        &#125;</div><div class="line">        <span class="built_in">return</span> a;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<blockquote>
-<p>Written with <a href="https://stackedit.io/" target="_blank" rel="external">StackEdit</a>.</p>
-</blockquote>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://xiangxianzui.github.io/2017/01/LeetCode-Sum-of-Two-Integers/" data-id="cj552v5bh000pqusz0fz49jdk" class="article-share-link">Share</a>
-      
-        <a href="https://xiangxianzui.github.io/2017/01/LeetCode-Sum-of-Two-Integers/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Bit-Manipulation/">Bit Manipulation</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/algorithm/">algorithm</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Customize-hexo-blogs" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/01/Customize-hexo-blogs/" class="article-date">
-  <time datetime="2017-01-05T03:37:09.000Z" itemprop="datePublished">2017-01-05</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Guides/">Guides</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/Customize-hexo-blogs/">Customize hexo blogs</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>In my previous <a href="https://xiangxianzui.github.io/2017/01/Build-blogs-with-Hexo/">post</a>, I introduced how to build personal blog site with the help of <a href="https://hexo.io" target="_blank" rel="external">Hexo</a> and <a href="https://pages.github.com/" target="_blank" rel="external">Github Pages</a>. Now it’s time to customize the hexo blog to show some personalities.</p>
-<h2 id="config-yml"><a href="#config-yml" class="headerlink" title="_config.yml"></a>_config.yml</h2><p><em>_config.yml</em> is the configuration file of your hexo blog (in project root dir).</p>
-<p>Hexo lets you define your site information, customize date/time format, pagination behaviour, language settings, etc. Most configs are not necessary, but it will make your site look more like <em>yours</em> if you specify them properly.</p>
-<p>Here is my site config:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Site</span></div><div class="line">title: Muser</div><div class="line">subtitle: Coding While Thinking</div><div class="line">description: thinking <span class="keyword">in</span> a different way</div><div class="line">author: xiangxianzui</div><div class="line">email: xiangxianzui@gmail.com</div></pre></td></tr></table></figure>
-<p>Url config: </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># URL</span></div><div class="line"><span class="comment">## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'</span></div><div class="line">url: https://xiangxianzui.github.io</div><div class="line">root: /</div><div class="line">permalink: :year/:month/:title/</div></pre></td></tr></table></figure>
-<h2 id="Tags-amp-Categories"><a href="#Tags-amp-Categories" class="headerlink" title="Tags &amp; Categories"></a>Tags &amp; Categories</h2><p>Tags and Categories can be defined in the front matter of every post you create. Front matter is in the very beginning of your post. You can define tags and categories like this:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">tags: [Hexo, node.js]</div><div class="line">categories: [Guides]</div></pre></td></tr></table></figure>
-<p>To delete a tag or category, firstly you need to delete it from the front matter of your post, then clean the hexo database (db.json in project root) and /public folder by typing:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#Delete database</span></div><div class="line"><span class="comment">#Delete public folder</span></div><div class="line">hexo clean</div></pre></td></tr></table></figure>
-<p>And then, regenerate the database and public folder by typing:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">hexo generate</div></pre></td></tr></table></figure>
-<h2 id="Asset-Folders"><a href="#Asset-Folders" class="headerlink" title="Asset Folders"></a>Asset Folders</h2><p>As usual, you can reference online images in your markdown like this: <code>![image-title](http://some-image-site/some-image.png)</code>. But how to reference local images? Hexo gives you two options.</p>
-<p>The first is to create a global asset folder. For example, create /images folder in /source directory, and put all your images into it. Then, you can reference them in this way: <code>![image-title](/images/image.png)</code>.</p>
-<p>If you want to put your images according to post, which means one asset folder per post, you can set <code>post_asset_folder</code> to true in <em>_config.yml</em>. And when you <code>$ hexo new post [new-post]</code>, an asset folder will be created by hexo automatically.</p>
-<h2 id="Enabling-Comments"><a href="#Enabling-Comments" class="headerlink" title="Enabling Comments"></a>Enabling Comments</h2><p>The default theme (landscape) of Hexo already supports <a href="https://disqus.com/" target="_blank" rel="external">Disqus</a>. So, just go to Disqus, register an account, and click <em>install Disqus on site</em>. Follow the guideline, and specify a unique disqus shortname. After that, add this to your <em>_config.yml</em>.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Disqus comments</span></div><div class="line">disqus_shortname: [your-disqus-shortname]</div></pre></td></tr></table></figure>
-<h2 id="RSS-amp-Sitemap-plugin"><a href="#RSS-amp-Sitemap-plugin" class="headerlink" title="RSS &amp; Sitemap plugin"></a>RSS &amp; Sitemap plugin</h2><p>Use the official tool <em>hexo-generator-feed</em> to generate RSS feed. Firstly intall it:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo-generator-feed --save</div></pre></td></tr></table></figure>
-<p>Configure options in <em>_config.yml</em>:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># RSS feed</span></div><div class="line">feed:</div><div class="line">  <span class="built_in">type</span>: atom</div><div class="line">  path: atom.xml</div><div class="line">  <span class="built_in">limit</span>: 20</div><div class="line">  hub:</div><div class="line">  content:</div></pre></td></tr></table></figure>
-<ul>
-<li>type - Feed type. (atom/rss2)</li>
-<li>path - Feed path. (Default: atom.xml/rss2.xml)</li>
-<li>limit - Maximum number of posts in the feed (Use 0 or false to show<br>all posts)</li>
-<li>hub - URL of the PubSubHubbub hubs (Leave it empty if you don’t use<br>it)</li>
-<li>content - (optional) set to ‘true’ to include the contents of the<br>entire post in the feed.</li>
-</ul>
-<p>A <em>atom.xml</em> file will be generated automatically when you run <code>hexo generate</code>.</p>
-<p>To generate sitemap, use the official <a href="https://github.com/hexojs/hexo-generator-sitemap" target="_blank" rel="external">hexo-generator-sitemap</a> plugin. </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">A sitemap is a file <span class="built_in">where</span> you can list the web pages of your site to tell Google and other search engines about the organization of your site content. Search engine web crawlers like Googlebot <span class="built_in">read</span> this file to more intelligently crawl your site.</div></pre></td></tr></table></figure>
-<p>–From Google</p>
-<h2 id="Customize-default-theme"><a href="#Customize-default-theme" class="headerlink" title="Customize default theme"></a>Customize default theme</h2><h3 id="Add-icons-to-navigation-bar"><a href="#Add-icons-to-navigation-bar" class="headerlink" title="Add icons to navigation bar"></a>Add icons to navigation bar</h3><p>I will explain how to add icons to the navigation bar in the default theme.</p>
-<p>Open directory <code>/themes/landscape/source/css/_partial</code>, and find <code>header.styl</code>. Add following code:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">#nav-github-link</div><div class="line">  &amp;:before</div><div class="line">    content: &quot;\f09b&quot;</div></pre></td></tr></table></figure>
-<p>Then, open directory <code>/themes/landscape/layout/_partial</code>, find <code>header.ejs</code> and open it. Find the following section:</p>
-<p><img src="hexo-1.png" alt="Edit header.ejs"></p>
-<p><strong>Note:</strong> <code>theme</code> is a JavaScript object representation of the theme’s <code>_config.yml</code> </p>
-<p>Add the code from line 22 to 24 to your header.ejs.</p>
-<p>Finally, open <code>_config.yml</code> in <code>themes/landscape</code>, add code:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">github: [your-github-address]</div></pre></td></tr></table></figure>
-<p>It may looks like this:</p>
-<p><img src="hexo-2.png" alt="Edit _config.yml"></p>
-<p>Yess! Your navigation bar will look like this:</p>
-<p><img src="hexo-3.png" alt="new navigation bar"></p>
-<h3 id="Change-banner"><a href="#Change-banner" class="headerlink" title="Change banner"></a>Change banner</h3><p>In addition, you can change the banner of the page. The <em>banner.jpg</em> is in <code>/themes/landscape/source/css/images</code>, and you can replace it with your own.</p>
-<h3 id="Show-category-count"><a href="#Show-category-count" class="headerlink" title="Show category count"></a>Show category count</h3><p>Again, open the theme’s <code>_config.yml</code>, set <code>show_count</code> to <code>true</code>.</p>
-<p>Then, it will be looking like this:</p>
-<p><img src="hexo-4.png" alt="show category count"></p>
-<h2 id="Google-Analytics"><a href="#Google-Analytics" class="headerlink" title="Google Analytics"></a>Google Analytics</h2><p>Google Analytics tell the site owner about how many people have visited the website, how long they averagely stay and what kind of people visit (male or female? Asian or American?). It is a brilliant tool for site owners to grasp the whole picture.</p>
-<p>The default theme, Landscape, is already supporting Google Analytics. If you are using Landscape or another theme which supports Google Analytics,  you can simply add your Google Analytics tracking ID (get tracking ID <a href="https://support.google.com/analytics/answer/1008080?hl=en" target="_blank" rel="external">here</a>) to the theme’s <code>_config.yml</code> like this:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">google_analytics: [your-tracking-id]</div></pre></td></tr></table></figure>
-<p>If your theme does not support Google Analytics, check <a href="http://www.codeblocq.com/2015/12/Add-Google-Analytics-to-your-hexo-blog/" target="_blank" rel="external">this post</a>.</p>
-<p>Until now, you have enabled Google Analytics in your site, but the question is you can’t see it. To display the analytics from Google, you need to use Embed API. This <a href="https://developers.google.com/analytics/devguides/reporting/embed/v1/getting-started" target="_blank" rel="external">official guide</a> is very helpful. Go through the guide and you’ll make it!</p>
-<p>Mine is like this:</p>
-<p><img src="hexo-5.png" alt="diplay-google-analytics"></p>
-<blockquote>
-<p>Written with <a href="https://stackedit.io/" target="_blank" rel="external">StackEdit</a>.</p>
-</blockquote>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://xiangxianzui.github.io/2017/01/Customize-hexo-blogs/" data-id="cj552v5ax0004qusz6uasy454" class="article-share-link">Share</a>
-      
-        <a href="https://xiangxianzui.github.io/2017/01/Customize-hexo-blogs/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-Build-blogs-with-Hexo" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2017/01/Build-blogs-with-Hexo/" class="article-date">
-  <time datetime="2017-01-05T02:29:32.000Z" itemprop="datePublished">2017-01-05</time>
-</a>
-    
-  <div class="article-category">
-    <a class="article-category-link" href="/categories/Guides/">Guides</a>
-  </div>
-
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2017/01/Build-blogs-with-Hexo/">Build blogs with Hexo!</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to my blog! In this my very first post, I will record my experience of building this blog with the help of <a href="https://pages.github.com/" target="_blank" rel="external">Github Pages</a> and the amazing <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This not only keeps a record of what I did, but also may help those who want to build a personal blog site. Ok, let’s get down to the business. </p>
-<h2 id="Prerequisite"><a href="#Prerequisite" class="headerlink" title="Prerequisite"></a>Prerequisite</h2><ul>
-<li>Node.js</li>
-<li>Git</li>
-</ul>
-<p>Node.js and Git should be installed properly on your machine.<br>If not, download <a href="https://nodejs.org/en/download/" target="_blank" rel="external">Node.js</a> and <a href="https://git-scm.com/downloads" target="_blank" rel="external">Git</a>, then choose the version you want.</p>
-<h2 id="Install-Hexo"><a href="#Install-Hexo" class="headerlink" title="Install Hexo"></a>Install Hexo</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install -g hexo-cli</div></pre></td></tr></table></figure>
-<h2 id="Set-up-Hexo"><a href="#Set-up-Hexo" class="headerlink" title="Set up Hexo"></a>Set up Hexo</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ hexo init [your-site-directory]</div><div class="line">$ <span class="built_in">cd</span> [your-site-directory]</div><div class="line">$ npm install</div></pre></td></tr></table></figure>
-<p>If [your-site-directory] is not specified, hexo will create the project in the current working directory.</p>
-<h2 id="Create-a-post"><a href="#Create-a-post" class="headerlink" title="Create a post"></a>Create a post</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new post [your-post-title]</div></pre></td></tr></table></figure>
-<p>Will find a new post is created in /source/_posts</p>
-<p>All posts created by hexo is written in Markdown. You can edit in favorite editor or I recommend to use this online editor – <a href="https://stackedit.io/" target="_blank" rel="external">StackEdit</a>.</p>
-<h2 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>This will create a /public folder in the root of your project, and it contains all static html, css, js, fonts, images, etc. </p>
-<h2 id="Run-hexo-server-locally"><a href="#Run-hexo-server-locally" class="headerlink" title="Run hexo server locally"></a>Run hexo server locally</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>The server will be running in <a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a> And this offers a convenient way for you to view what you have changed with the look of your website.</p>
-<h2 id="From-offline-to-online"><a href="#From-offline-to-online" class="headerlink" title="From offline to online"></a>From offline to online</h2><p>Hexo provides many ways to deploy the website to your real server. I choose to deploy to Github Pages.</p>
-<h4 id="Create-a-github-repository"><a href="#Create-a-github-repository" class="headerlink" title="Create a github repository"></a>Create a github repository</h4><p>Go to github and create a repository named: <code>[your-github-username]-github.io</code>, mine is <code>xiangxianzui.github.io</code>.</p>
-<p>Go to <em>settings</em> of created repository, pull down the page and you find:</p>
-<p><img src="hexo-1.png" alt="GitHub Page Setting"> </p>
-<p>Next, deploy a SSH key to this repository. This <a href="https://help.github.com/articles/adding-a-new-ssh-key-to-your-github-account/" target="_blank" rel="external">article</a> is helpful.</p>
-<h4 id="Git-deploy-strategy-for-Hexo"><a href="#Git-deploy-strategy-for-Hexo" class="headerlink" title="Git deploy strategy for Hexo"></a>Git deploy strategy for Hexo</h4><p>Install the official git deploy strategy for hexo.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo-deployer-git --save</div></pre></td></tr></table></figure>
-<p>After that, edit deploy config in your <em>_config.yml</em> (located in project root).</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  <span class="built_in">type</span>: git</div><div class="line">  repo: [your-ssh-repo]</div><div class="line">  branch: master</div><div class="line">  message: <span class="string">"Site updated: &#123;&#123; now('YYYY-MM-DD HH:mm:ss') &#125;&#125;"</span></div></pre></td></tr></table></figure>
-<p>Then, deploy website to git repository</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p><strong>Note</strong>: If you are using Windows, it is recommended to run deploy command in Git Bash.</p>
-<h4 id="Take-off"><a href="#Take-off" class="headerlink" title="Take off!"></a>Take off!</h4><p>Browse <a href="https://[your-github-username].github.io/" target="_blank" rel="external">https://[your-github-username].github.io/</a> and enjoy your flight with Hexo!</p>
-<hr>
-<blockquote>
-<p>Written with <a href="https://stackedit.io/" target="_blank" rel="external">StackEdit</a>.</p>
-</blockquote>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://xiangxianzui.github.io/2017/01/Build-blogs-with-Hexo/" data-id="cj552v5ar0002quszlrzu8z0b" class="article-share-link">Share</a>
-      
-        <a href="https://xiangxianzui.github.io/2017/01/Build-blogs-with-Hexo/#disqus_thread" class="article-comment-link">Comments</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
 
 
   <nav id="page-nav">
-    <a class="extend prev" rel="prev" href="/">&laquo; __('prev')</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    <a class="extend prev" rel="prev" href="/">&laquo; __('prev')</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/">__('next') &raquo;</a>
   </nav>
 </section>
         
@@ -733,23 +817,23 @@ ga('send', 'pageview');
       <ul>
         
           <li>
+            <a href="/2017/07/Linux窗口管理终极解决方案-tmux/">Linux窗口管理终极解决方案:tmux</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/实习：第六周整理/">实习：第六周整理</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/ELK搭建实时日志分析系统/">ELK搭建实时日志分析系统</a>
+          </li>
+        
+          <li>
+            <a href="/2017/07/转载-JVM监控命令详解/">(转载)JVM监控命令详解</a>
+          </li>
+        
+          <li>
             <a href="/2017/07/Perfect-Shell-zsh/">Perfect Shell: zsh</a>
-          </li>
-        
-          <li>
-            <a href="/2017/07/实习：第五周整理/">实习：第五周整理</a>
-          </li>
-        
-          <li>
-            <a href="/2017/07/实习：第四周整理/">实习：第四周整理</a>
-          </li>
-        
-          <li>
-            <a href="/2017/07/实习：第三周整理/">实习：第三周整理</a>
-          </li>
-        
-          <li>
-            <a href="/2017/06/实习：第二周整理/">实习：第二周整理</a>
           </li>
         
       </ul>
@@ -761,7 +845,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Guides/">Guides</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Internship/">Internship</a><span class="category-list-count">5</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Interview/">Interview</a><span class="category-list-count">2</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/LeetCode/">LeetCode</a><span class="category-list-count">6</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Guides/">Guides</a><span class="category-list-count">8</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Internship/">Internship</a><span class="category-list-count">6</span></li><li class="category-list-item"><a class="category-list-link" href="/categories/Interview/">Interview</a><span class="category-list-count">3</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Interview/Guides/">Guides</a><span class="category-list-count">1</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/Interview/Guides/转载/">转载</a><span class="category-list-count">1</span></li></ul></li></ul></li><li class="category-list-item"><a class="category-list-link" href="/categories/LeetCode/">LeetCode</a><span class="category-list-count">6</span></li></ul>
     </div>
   </div>
 
@@ -771,7 +855,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/BAE/" style="font-size: 10px;">BAE</a> <a href="/tags/Backtracking/" style="font-size: 10px;">Backtracking</a> <a href="/tags/Bit-Manipulation/" style="font-size: 12.5px;">Bit Manipulation</a> <a href="/tags/Dynamic-Programming/" style="font-size: 10px;">Dynamic Programming</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Hexo/" style="font-size: 12.5px;">Hexo</a> <a href="/tags/IDEA/" style="font-size: 12.5px;">IDEA</a> <a href="/tags/Java/" style="font-size: 12.5px;">Java</a> <a href="/tags/LaTex/" style="font-size: 10px;">LaTex</a> <a href="/tags/Linked-List/" style="font-size: 10px;">Linked List</a> <a href="/tags/Linux/" style="font-size: 17.5px;">Linux</a> <a href="/tags/Maven/" style="font-size: 10px;">Maven</a> <a href="/tags/Node-JS/" style="font-size: 12.5px;">Node.JS</a> <a href="/tags/Sorting/" style="font-size: 10px;">Sorting</a> <a href="/tags/Ubuntu/" style="font-size: 15px;">Ubuntu</a> <a href="/tags/algorithm/" style="font-size: 20px;">algorithm</a> <a href="/tags/bash/" style="font-size: 10px;">bash</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/oh-my-zsh/" style="font-size: 10px;">oh-my-zsh</a> <a href="/tags/rsync/" style="font-size: 10px;">rsync</a> <a href="/tags/wechat/" style="font-size: 10px;">wechat</a> <a href="/tags/zsh/" style="font-size: 10px;">zsh</a> <a href="/tags/免跳板机/" style="font-size: 10px;">免跳板机</a> <a href="/tags/正则表达式/" style="font-size: 10px;">正则表达式</a> <a href="/tags/缺少动态库依赖/" style="font-size: 10px;">缺少动态库依赖</a>
+      <a href="/tags/Array/" style="font-size: 10px;">Array</a> <a href="/tags/BAE/" style="font-size: 10px;">BAE</a> <a href="/tags/Backtracking/" style="font-size: 10px;">Backtracking</a> <a href="/tags/Bit-Manipulation/" style="font-size: 13.33px;">Bit Manipulation</a> <a href="/tags/Dynamic-Programming/" style="font-size: 10px;">Dynamic Programming</a> <a href="/tags/ELK/" style="font-size: 10px;">ELK</a> <a href="/tags/ElasticSearch/" style="font-size: 10px;">ElasticSearch</a> <a href="/tags/Git/" style="font-size: 10px;">Git</a> <a href="/tags/Hexo/" style="font-size: 13.33px;">Hexo</a> <a href="/tags/IDEA/" style="font-size: 13.33px;">IDEA</a> <a href="/tags/JVM/" style="font-size: 10px;">JVM</a> <a href="/tags/Java/" style="font-size: 13.33px;">Java</a> <a href="/tags/Kibana/" style="font-size: 10px;">Kibana</a> <a href="/tags/LaTex/" style="font-size: 10px;">LaTex</a> <a href="/tags/Linked-List/" style="font-size: 10px;">Linked List</a> <a href="/tags/Linux/" style="font-size: 20px;">Linux</a> <a href="/tags/Logstash/" style="font-size: 10px;">Logstash</a> <a href="/tags/Maven/" style="font-size: 10px;">Maven</a> <a href="/tags/Node-JS/" style="font-size: 13.33px;">Node.JS</a> <a href="/tags/Sorting/" style="font-size: 10px;">Sorting</a> <a href="/tags/Ubuntu/" style="font-size: 16.67px;">Ubuntu</a> <a href="/tags/algorithm/" style="font-size: 20px;">algorithm</a> <a href="/tags/bash/" style="font-size: 10px;">bash</a> <a href="/tags/nginx/" style="font-size: 10px;">nginx</a> <a href="/tags/oh-my-zsh/" style="font-size: 10px;">oh-my-zsh</a> <a href="/tags/rsync/" style="font-size: 10px;">rsync</a> <a href="/tags/tmux/" style="font-size: 10px;">tmux</a> <a href="/tags/wechat/" style="font-size: 10px;">wechat</a> <a href="/tags/zsh/" style="font-size: 10px;">zsh</a> <a href="/tags/免跳板机/" style="font-size: 10px;">免跳板机</a> <a href="/tags/正则表达式/" style="font-size: 10px;">正则表达式</a> <a href="/tags/窗口管理/" style="font-size: 10px;">窗口管理</a> <a href="/tags/缺少动态库依赖/" style="font-size: 10px;">缺少动态库依赖</a>
     </div>
   </div>
 
@@ -780,7 +864,7 @@ ga('send', 'pageview');
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">9</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/07/">July 2017</a><span class="archive-list-count">8</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/06/">June 2017</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/05/">May 2017</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/02/">February 2017</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/01/">January 2017</a><span class="archive-list-count">9</span></li></ul>
     </div>
   </div>
 
