@@ -14,6 +14,13 @@
 
 
 
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
 
 
 
@@ -99,7 +106,7 @@
     root: '/',
     scheme: 'Muse',
     version: '5.1.3',
-    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":true},
     fancybox: true,
     tabs: true,
     motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
@@ -112,7 +119,7 @@
       apiKey: '304502cbd81590137ae69166c42f1ffd',
       indexName: 'hexo_blog',
       hits: {"per_page":10},
-      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"No results found for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
     }
   };
 </script>
@@ -231,17 +238,7 @@
           </a>
         </li>
       
-        
-        <li class="menu-item menu-item-schedule">
-          <a href="/schedule/" rel="section">
-            
-              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br />
-            
-            Schedule
-          </a>
-        </li>
-      
-
+<!--
       
         <li class="menu-item menu-item-search">
           
@@ -254,6 +251,7 @@
           </a>
         </li>
       
+-->
     </ul>
   
 
@@ -312,7 +310,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://xiangxianzui.github.io/2017/05/Frequently-used-commands-in-Linux/">
+    <link itemprop="mainEntityOfPage" href="https://xiangxianzui.github.io/2017/07/实习：第五周整理/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Muser">
@@ -331,7 +329,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/05/Frequently-used-commands-in-Linux/" itemprop="url">Frequently-used commands in Linux</a></h1>
+                <a class="post-title-link" href="/2017/07/实习：第五周整理/" itemprop="url">实习：第五周整理</a></h1>
         
 
         <div class="post-meta">
@@ -343,8 +341,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-19T13:39:38+08:00">
-                2017-05-19
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-11T09:53:18+08:00">
+                2017-07-11
               </time>
             
 
@@ -366,8 +364,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Interview/" itemprop="url" rel="index">
-                    <span itemprop="name">Interview</span>
+                  <a href="/categories/Internship/" itemprop="url" rel="index">
+                    <span itemprop="name">Internship</span>
                   </a>
                 </span>
 
@@ -379,6 +377,17 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/07/实习：第五周整理/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/07/实习：第五周整理/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -386,6 +395,25 @@
 
           
 
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  890
+                </span>
+              
+
+              
+
+              
+            </div>
           
 
           
@@ -405,415 +433,56 @@
       
         
           
-            <p>This post concludes frequently-used commands in Linux, which might be functioning like a handy manual page for Linux commands.</p>
-<ul>
-<li>man</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ man [command] //manual page of [command]</div></pre></td></tr></table></figure>
-<ul>
-<li>ls</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ ls -a //display all files, including hidden files</div><div class="line">$ ls -l //list detailed information</div><div class="line">$ ls -r //list files according to name, in reversing order</div><div class="line">$ ls -i //view inode number</div></pre></td></tr></table></figure>
-<ul>
-<li>cat</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$ cat [filename] //print content of [filename]</div><div class="line">$ cat -n [filename] //print content as well as line number</div><div class="line">$ cat &gt; [filename] //create a new file and enter content from standard inputstream</div><div class="line">$ cat [file1] [file2] &gt; [file3] //concat contents in [file1] and [file2], and then write to [file3]</div><div class="line">$ cat [bigfile] | more //use pipeline and more to view [bigfile]</div><div class="line">$ cat &gt;&gt; [filename] //add content to the end of [filename]</div></pre></td></tr></table></figure>
-<ul>
-<li>mv</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ mv [oldname] [newname] //change file name</div><div class="line">$ mv [file] [directory] //move [file] to [directory]</div></pre></td></tr></table></figure>
-<ul>
-<li>rm</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ rm -i [file] //interactive mode, ask for confirmation before deleting</div><div class="line">$ rm -f [file] //force to delete</div><div class="line">$ rm -r [directory] //delete all sub-directories and files in [directory] recursively</div></pre></td></tr></table></figure>
-<ul>
-<li>grep (global regular expression print)</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ grep [options] [PATTERN] [filename] //print contents which satisfy regular expression [PATTERN] in file [filename]</div></pre></td></tr></table></figure>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[options] includes: -n (display line number); -i (ignore character case); -v (display contents which don&apos;t satisfy regular expression)</div></pre></td></tr></table></figure>
-<ul>
-<li>find</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ find [path] [options] [expression] //find files whose name satisfies regular expression [expression] in the specific path [path]</div><div class="line">e.g.: find . -name file.* //find files satisfying file.* in current directory</div><div class="line">e.g.: find ./dir -name *.txt //find txt files in sub-directory ./dir</div></pre></td></tr></table></figure>
-<ul>
-<li>chmod</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ chmod u+x [file] //grant the user with execution authority</div><div class="line">$ chmod a+r [file] //grant all users with reading authority</div><div class="line">$ chmod 777 [file] //grant u(user),g(group),o(other) with reading(1), writing(2) and executing(4) authority (7=1+2+4)</div></pre></td></tr></table></figure>
-<ul>
-<li>tar</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ tar -czvf some.tar.gz file1 file2 file3 //compress file1, file2 and file3 using gzip</div><div class="line">$ tar -xzvf some.tar.gz //uncompress some.tar.gz to current directory</div></pre></td></tr></table></figure>
-<ul>
-<li><p>pwd: print current working directory</p>
-</li>
-<li><p>diff</p>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ diff [file1] [file2] //compare two files and print differences</div></pre></td></tr></table></figure>
-<ul>
-<li>file: print the type of the file</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">e.g.: file test.txt</div><div class="line">e.g.: file [directory]</div></pre></td></tr></table></figure>
-<ul>
-<li>ps</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$ ps -a //display all processes, including other users&apos; processes</div><div class="line">$ ps -u //display processes belonging to current user</div><div class="line">$ ps -x //print complete information</div><div class="line">$ ps -ef | grep tomcat //print all processes relevant to tomcat in standard way(more human-readable)</div><div class="line">e.g.: ps -aux | grep &quot;google&quot; //print all processes relevant to &quot;google&quot; in BSD style</div></pre></td></tr></table></figure>
-<ul>
-<li><p>top: print processes in real time, similar to resources monitor in Windows</p>
-</li>
-<li><p>kill</p>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$ kill -l //display all kill SIGNAL</div><div class="line">$ kill -9 [PID] //force to kill process [PID]</div><div class="line">$ kill -15 [PID] //kill process [PID] in a moderate way, which means reclaim resources of the process and then kill it</div><div class="line">$ kill [PID] //same with kill -15 [PID]</div></pre></td></tr></table></figure>
-<ul>
-<li>more/less</li>
-</ul>
-<p>In general, both more and less print contents of a file to the screen. But they offer different functions. This <a href="http://www.cnblogs.com/aijianshi/p/5750911.html" target="_blank" rel="external">article</a> is a good resource to understand them.</p>
-<ul>
-<li>uname</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ uname -a //check kernel version and name of the OS</div></pre></td></tr></table></figure>
-<ul>
-<li>netstat</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">$ netstat -a //display all possible columns</div><div class="line">$ netstat -t //display TCP-relevant only</div><div class="line">$ netstat -u //display UDP-relevant only</div><div class="line">$ netstat -n //display number rather than name</div><div class="line">$ netstat -l //display items which are in LISTEN status</div><div class="line">$ netstat -p //display program names and PID of the connection</div><div class="line">$ netstat</div><div class="line"> -r //display kernel routing table</div><div class="line">$ netstat -i //display kernel interface table</div><div class="line">often used with grep:</div><div class="line">netstat -anp | grep python //view connections relevant to python</div><div class="line">netstat -anp | grep 8080 //view connections relevant to port 8080</div></pre></td></tr></table></figure>
-<ul>
-<li>touch</li>
-</ul>
-<p>Update the access and modification times of each FILE to the current time. But it is used to create a new file frequently.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ touch [OPTION] [FILE] //change file timestamps.</div></pre></td></tr></table></figure>
-<p>To be continued…</p>
+            <p>实习第五周。这周的主要工作内容是协助开发和QA跑case，由于最近我所在的组任务不多，大家的工作主要是修修补补，或者是增加一些小功能。实习了一个多月，目前为止收获最大的地方就是更加熟悉了Linux开发，这点能从我最近写的实习总结中看出来。</p>
+<p>周四，leader让我把在线航空公司常见的接口错误统计出来，也就是把航司的错误从日志中搂出来，需要写shell脚本来实现，简单记录一下。</p>
+<p>先上脚本：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#! /bin/bash</span></div><div class="line"></div><div class="line">atnodes <span class="string">'zgrep -o " Code=\"\\w\&#123;3,\&#125;\" " &#123;logname&#125;.log.2017-07-0[8-9]-*.gz '</span> &#123;hostname1&#125;[3-4] &#123;hostname2&#125;[3-6] &gt; icaair_provider.log</div><div class="line"></div><div class="line">gawk <span class="string">'&#123; print $2 &#125;'</span> icaair_provider.log | gawk -F <span class="string">'='</span> <span class="string">'&#123; print $2 &#125;'</span> | sort &gt; icaair_provider.code</div><div class="line"></div><div class="line">cat icaair_provider.code | uniq -c</div></pre></td></tr></table></figure>
+<p>atnodes 把{hostname1}[3-4] {hostname2}[3-6]这些机器上的日志全都取出来，当然要通过zgrep正则表达式的过滤，不然日志太多，最后把得到的日志写到文件icaair_provider.log里。</p>
+<p>awk是一个强大的文本分析工具，它把文件逐行读入，按照分隔符(默认空格)将每行切片，然后再对切开的部分进行各种分析处理，非常适合处理日志数据。具体见<a href="http://www.cnblogs.com/ggjucheng/archive/2013/01/13/2858470.html" target="_blank" rel="external">这篇文章</a>。总之第二行就是根据第一步得到的文件icaair_provider.log切分日志，得到想要的那一列，然后用sort排序，最后写入文件icaair_provider.code里。</p>
+<p>最后一行，用uniq统计在icaair_provider.code中的所有错误出现的次数。</p>
+<p><strong>Note:</strong><br>这里我要说的是写正则表达式需要注意的问题。首先看看<a href="https://en.wikipedia.org/wiki/Regular_expression" target="_blank" rel="external">维基百科</a>是怎么描述正则表达式的。</p>
+<p><img src="hexo-1.png" alt="regular expression"></p>
+<p>总结起来就是，正则表达式是一个美国数学家搞出来的一门语言，也可以说是一门科学。你想啊，它能被称作是科学，一定是严谨的正确的不容质疑的，但是它偏偏有两套标准，也可以叫两套语法，分别是POSIX standard和Perl syntax。这两套语法都是对的，按照任何一个语法写出来的正则都是对的。重点是最后一句话，很多编程语言提供对正则表达式的支持，或者内置，或者通过引用包。举个例子来讲，上帝说，人要住在房子里，于是给出房子的定义：能遮风挡雨抵挡野兽的建筑就是房子。虽然有了房子的定义，但是不够具体，于是上帝手下的两个天使开始制定标准，也就是POSIX和Perl。至于编程语言就是建房子的工人，它按照制定的标准实现了正则表达式，但是每个编程语言实现正则的方式方法不尽相同。</p>
+<p>理解了这点就明白了为什么我在<a href="http://regexr.com/" target="_blank" rel="external">http://regexr.com/</a> 上写的正则明明是对的为啥放在java里或者shell里就不好使了。<a href="http://regexr.com/" target="_blank" rel="external">http://regexr.com/</a> 是对正则标准的检查，它不是language-specific的。</p>
 <hr>
-<blockquote>
-<p>Written with <a href="https://stackedit.io/" target="_blank" rel="external">StackEdit</a>.</p>
-</blockquote>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://xiangxianzui.github.io/2017/02/Sorting-Java-implementations/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Muser">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Muser">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/02/Sorting-Java-implementations/" itemprop="url">Sorting & Java implementations</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-28T22:48:29+08:00">
-                2017-02-28
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Interview/" itemprop="url" rel="index">
-                    <span itemprop="name">Interview</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Sorting is a hot and common subject which is frequently asked during an interviewing session. Although it is very easy for most software developers, I still want to take a detailed review on it such that some enhanced understandings could be made.</p>
-<blockquote>
-<p>Written with <a href="https://stackedit.io/" target="_blank" rel="external">StackEdit</a>.</p>
-</blockquote>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://xiangxianzui.github.io/2017/02/Wechat-development-with-NodeJS/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Muser">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Muser">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/02/Wechat-development-with-NodeJS/" itemprop="url">Wechat development with NodeJS</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-09T23:30:48+08:00">
-                2017-02-09
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Guides/" itemprop="url" rel="index">
-                    <span itemprop="name">Guides</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>I enjoyed the time with my family quite a lot during Chinese New Year. We made dumplings,  set off fireworks, watched Spring Festival Gala, and so on. However, happy time always runs fast. It’s time to finish the holiday and get back to work : )</p>
-<p>Now, I have a wechat public account(subscription account), and what I want to achieve is to implement a simple chatting robot with the help of <a href="https://cloud.baidu.com/product/bae.html" target="_blank" rel="external">Baidu App Engine</a>.</p>
-<p>There are only 3 steps to go.</p>
-<h2 id="1-Create-Baidu-App-Engine"><a href="#1-Create-Baidu-App-Engine" class="headerlink" title="#1 Create Baidu App Engine"></a>#1 Create Baidu App Engine</h2><p>At first, I tried to use Heroku to host the server, but Heroku can’t pass the server url validation while configuring wechat public account. I guess the reason is that the IP of Heroku is in America, so I choose BAE as the server IP would be within mainland.</p>
-<p>Creating and managing a BAE app is concluded in this <a href="https://cloud.baidu.com/doc/BAE/GUIGettingStarted.html" target="_blank" rel="external">tutorial</a>. </p>
-<p><img src="BAE-guide.png" alt="guide for creating BAE"></p>
-<h2 id="2-Configure-wechat-public-account"><a href="#2-Configure-wechat-public-account" class="headerlink" title="#2 Configure wechat public account"></a>#2 Configure wechat public account</h2><p>Before configuring wechat public account, it is essential to understand the work flow among <strong>user</strong>, <strong>wechat server</strong>, and <strong>my own server</strong>. This picture demonstrates the work flow very well.</p>
-<p><img src="workflow.png" alt="workflow"></p>
-<p>This is to say, wechat server stands between my server and the user. All messages between user and my server should go through wechat server first. Thus, as the server side, we need to tell wechat server the address of my server. This is where the below configuration comes from.</p>
-<p><img src="config.png" alt="development configuration"></p>
-<p>In this picture, URL is the route to send and receive messages in my own server. Token is an identity to tell wechat server that <strong>this is me</strong>. The encoding key is a key to encrypt and decrypt messages, and it can be generated randomly.</p>
-<h2 id="3-Build-server-with-Node-js"><a href="#3-Build-server-with-Node-js" class="headerlink" title="#3 Build server with Node.js"></a>#3 Build server with Node.js</h2><p>Firstly, wechat server will validate my server via a <code>GET</code> request, which contains 4 parameters: </p>
+<p>最后记录一段脚本，功能是统计file2中的每行在file1中出现的次数。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#! /bin/bash</span></div><div class="line"><span class="keyword">if</span> [ <span class="variable">$#</span> <span class="_">-lt</span> 2 ]</div><div class="line"><span class="keyword">then</span></div><div class="line"><span class="built_in">echo</span> <span class="string">"Usage:<span class="variable">$0</span> args error"</span></div><div class="line"><span class="built_in">exit</span> 0</div><div class="line"></div><div class="line"><span class="comment">#get the first file</span></div><div class="line">file1=<span class="variable">$1</span></div><div class="line"><span class="comment">#get the second file</span></div><div class="line">file2=<span class="variable">$2</span></div><div class="line"><span class="keyword">while</span> <span class="built_in">read</span> myline</div><div class="line"><span class="keyword">do</span></div><div class="line">grep -E -o <span class="string">"<span class="variable">$&#123;myline&#125;</span>"</span> <span class="variable">$file1</span> | awk <span class="string">' &#123; count[$0]++ &#125; </span></div><div class="line">END&#123;printf("%-20s%s\n","Word","Count");</div><div class="line">for(word in count)</div><div class="line">&#123;printf("%-20s\t%s\n",word,count[word])&#125;</div><div class="line">&#125;'</div><div class="line"><span class="keyword">done</span> &lt; <span class="variable">$2</span></div></pre></td></tr></table></figure>
+<hr>
+<p>最后的最后，总结bash脚本里面大于/等于…关键词:</p>
 <table>
 <thead>
 <tr>
-<th>Parameter</th>
-<th>Description</th>
+<th>Item</th>
+<th>Value</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td>signature</td>
-<td>encrypted signature</td>
+<td>-eq</td>
+<td>等于</td>
 </tr>
 <tr>
-<td>timestamp</td>
-<td>current time</td>
+<td>-ne</td>
+<td>不等于</td>
 </tr>
 <tr>
-<td>nonce</td>
-<td>random number</td>
+<td>-le</td>
+<td>小于等于</td>
 </tr>
 <tr>
-<td>echostr</td>
-<td>random string</td>
+<td>-ge</td>
+<td>大于等于</td>
+</tr>
+<tr>
+<td>-lt</td>
+<td>小于</td>
+</tr>
+<tr>
+<td>-gt</td>
+<td>大于</td>
 </tr>
 </tbody>
 </table>
-<p>The signature is calculated by wechat server according to timestamp, nonce, and the specified token in last step. What should be done in my server is to calculate the signature again and compare it with the received one. If the two signatures are equal, the server should send the received <code>echostr</code> back to wechat server to tell that validation is success. If wechat server has not received the <code>echostr</code> or the received one is not correct, the valication is failed.</p>
-<p>If the validation is success, we can send and receive messages. This part is demonstrated in the <a href="http://mp.weixin.qq.com/wiki/17/f298879f8fb29ab98b2f2971d42552fd.html" target="_blank" rel="external">official documentation</a>.</p>
-<p><strong>Note</strong>: The code can be accessed at <a href="https://github.com/xiangxianzui/wechat-nodejs" target="_blank" rel="external">github</a>.</p>
 <blockquote>
 <p>Written with <a href="https://stackedit.io/" target="_blank" rel="external">StackEdit</a>.</p>
 </blockquote>
@@ -865,7 +534,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://xiangxianzui.github.io/2017/02/LeetCode-Coin-Change/">
+    <link itemprop="mainEntityOfPage" href="https://xiangxianzui.github.io/2017/07/实习：第四周整理/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Muser">
@@ -884,7 +553,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/02/LeetCode-Coin-Change/" itemprop="url">LeetCode: Coin Change</a></h1>
+                <a class="post-title-link" href="/2017/07/实习：第四周整理/" itemprop="url">实习：第四周整理</a></h1>
         
 
         <div class="post-meta">
@@ -896,8 +565,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-02-05T11:58:29+08:00">
-                2017-02-05
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-08T22:48:27+08:00">
+                2017-07-08
               </time>
             
 
@@ -919,8 +588,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/LeetCode/" itemprop="url" rel="index">
-                    <span itemprop="name">LeetCode</span>
+                  <a href="/categories/Internship/" itemprop="url" rel="index">
+                    <span itemprop="name">Internship</span>
                   </a>
                 </span>
 
@@ -932,6 +601,17 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/07/实习：第四周整理/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/07/实习：第四周整理/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -939,6 +619,25 @@
 
           
 
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  159
+                </span>
+              
+
+              
+
+              
+            </div>
           
 
           
@@ -958,18 +657,9 @@
       
         
           
-            <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>You are given coins of different denominations and a total amount of money amount. Write a function to compute the fewest number of coins that you need to make up that amount. If that amount of money cannot be made up by any combination of the coins, return <code>-1</code>.</p>
-<p><strong>Example 1</strong>:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">coins = [1, 2, 5], amount = 11</div><div class="line">return 3 (11 = 5 + 5 + 1)</div></pre></td></tr></table></figure>
-<p><strong>Example 2</strong>:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">coins = [2], amount = 3</div><div class="line">return -1.</div></pre></td></tr></table></figure>
-<p><strong>Note</strong>: You may assume that you have an infinite number of each kind of coin.</p>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>This is a classic Dynamic Programming problem. Let’s take an example as usual. Given 3 types of coins with value <code>1</code>, <code>2</code>, <code>5</code> respectively, and the total money amount is <code>11</code>, try to select minimal number of coins to make up that amount.</p>
-<p>We denote that given money amount <code>s</code>, the number of coins being selected is <code>N(s)</code>. So the problem is to solve <code>N(11)</code>.</p>
-<p>At the beginning, it is easy to find that <code>N(0)=0</code>. Then,  if <code>s=1</code>, we can only select coin with value <code>1</code>, and we get <code>N(1)=1</code>. Then go to <code>s=2</code>. We can select coin with value <code>1</code> and value <code>2</code>. If select value <code>1</code>, the remaining amount is <code>1</code>, since we already know <code>N(1)=1</code>, so <code>N(2)=N(2-1)+1=2</code>; if select value <code>2</code>, the remaining amount is <code>0</code>, so <code>N(2)=N(2-2)+1=1</code>. The final <code>N(2)=min(2,1)=1</code>. Then we move on to <code>s=3</code>. We still can only select value <code>1</code> and value <code>2</code>. If select value <code>1</code>, <code>N(3)=N(3-1)+1=2</code>; if select value <code>2</code>, <code>N(3)=N(3-2)+1=2</code>. So the final <code>N(3)=min(2,2)=2</code>. We do this similarly until we reach <code>s=11</code>, and the answer is <code>N(11)=3</code>.</p>
-<p>From the above example, we can analyse this problem in a more general way. Given several types of coins with values <code>[V1, V2, ..., Vn]</code>, money amount <code>s</code>, and number of selected coins <code>N(s)</code>. If we already know <code>N(0), N(1), ..., N(s-1)</code>, we determine <code>N(s)</code> as <code>min{N(s-Vi)+1}</code>, where <code>1&lt;= i &lt;=n</code> and <code>Vi &lt;= s</code>. </p>
-<p>The java code could be like this:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div></pre></td><td class="code"><pre><div class="line">public class Solution &#123;</div><div class="line">    public int coinChange(int[] coins, int amount) &#123;</div><div class="line">        Map&lt;Integer,Integer&gt; map = new HashMap();</div><div class="line">        map.put(0, 0);</div><div class="line">        </div><div class="line">        int a = 1;</div><div class="line">        while(a&lt;=amount)&#123;</div><div class="line">            int min = Integer.MAX_VALUE;</div><div class="line">            boolean notPossible = true;</div><div class="line">            for(int i=0; i&lt;coins.length; i++)&#123;</div><div class="line">                if(a&gt;=coins[i])&#123;</div><div class="line">                    if(map.get(a-coins[i])!=-1)&#123;</div><div class="line">                        int temp = map.get(a-coins[i])+1;</div><div class="line">                        if(temp&lt;min)    min = temp;</div><div class="line">                        notPossible = false;</div><div class="line">                    &#125;</div><div class="line">                    </div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">            if(notPossible==true)   map.put(a,-1);</div><div class="line">            else&#123;</div><div class="line">                map.put(a,min);</div><div class="line">            &#125;</div><div class="line">            a++;</div><div class="line">        &#125;</div><div class="line">        return map.get(amount);</div><div class="line">        </div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+            <h3 id="Linux命令之：more-or-less"><a href="#Linux命令之：more-or-less" class="headerlink" title="Linux命令之：more or less?"></a>Linux命令之：more or less?</h3><p>more 主要的作用是把输出结果显示在屏幕上，它会一屏停止一下，等待按空格键才继续往上卷。但是，如果看完了这页，想要回头看上一页，是不行的，必须从头再来！</p>
+<p>less 最主要是改进了more 不能回头看的问题。<br>除了能够随意上下翻页之外，less还提供了非常方便的搜索功能，这在查看很长的日志时是很有用的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">按h查看help</div><div class="line">按g直接跳到第一行</div><div class="line">按G直接跳到最后</div><div class="line">按/ search forward</div><div class="line">按? search backward</div></pre></td></tr></table></figure>
 <blockquote>
 <p>Written with <a href="https://stackedit.io/" target="_blank" rel="external">StackEdit</a>.</p>
 </blockquote>
@@ -1021,7 +711,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://xiangxianzui.github.io/2017/01/Learning-LaTeX/">
+    <link itemprop="mainEntityOfPage" href="https://xiangxianzui.github.io/2017/07/实习：第三周整理/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Muser">
@@ -1040,7 +730,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/01/Learning-LaTeX/" itemprop="url">Learning LaTeX</a></h1>
+                <a class="post-title-link" href="/2017/07/实习：第三周整理/" itemprop="url">实习：第三周整理</a></h1>
         
 
         <div class="post-meta">
@@ -1052,8 +742,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-31T11:27:26+08:00">
-                2017-01-31
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-08T22:40:00+08:00">
+                2017-07-08
               </time>
             
 
@@ -1075,8 +765,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Guides/" itemprop="url" rel="index">
-                    <span itemprop="name">Guides</span>
+                  <a href="/categories/Internship/" itemprop="url" rel="index">
+                    <span itemprop="name">Internship</span>
                   </a>
                 </span>
 
@@ -1088,6 +778,17 @@
 
           
             
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/07/实习：第三周整理/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/07/实习：第三周整理/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
           
 
           
@@ -1095,6 +796,25 @@
 
           
 
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  250
+                </span>
+              
+
+              
+
+              
+            </div>
           
 
           
@@ -1114,829 +834,400 @@
       
         
           
-            <h2 id="Getting-Started"><a href="#Getting-Started" class="headerlink" title="Getting Started"></a>Getting Started</h2><p><a href="http://www.latex-project.org/" target="_blank" rel="external">LaTeX</a> is a document preparation system for high-quality typesetting, which is often used for technical and scientific documents. </p>
-<p>Let’s take an example first. Imagine you’re a writer, you want to write a new article and you start typing words in computer. When you open Microsoft Word, you find that you have to decide the font type, font size, layout … What you’re doing is not writing, but designing, which is definitely beyond the work of a writer! Well, this is where LaTeX comes. The biggest benefit of LaTeX is that it encourages authors to concentrate more on the document content but less on the document appearance. It makes authors work more efficiently.</p>
-<p>As a beginner, I often get confused by many terms in TeX world. The following picture really helped me out.</p>
-<p><img src="level-of-tex.png" alt="Level of TeX"></p>
-<p>To make LaTeX run on your computer, you need to intall it first. There are many free software in various platforms. Choose the one which suits your operating system. I am using <a href="https://miktex.org/" target="_blank" rel="external">MiKTeX</a>, which is a Windows distribution.</p>
-<p>Next, I will go through two short, but powerful tutorials which could be accessed <a href="tutorial1.tex">here</a> and <a href="tutorial2.tex">here</a>. Paste each tutorial to <code>TexWorks</code> and press <code>CTRL + T</code> to view <code>PDF</code> result.</p>
-<h2 id="Tutorial-1"><a href="#Tutorial-1" class="headerlink" title="Tutorial 1"></a>Tutorial 1</h2><p>In tutorial1, the following knowledge could be concluded.</p>
+            <p>实习第三周，下面整理一下这周遇到的一些问题。</p>
+<h3 id="Ubuntu下快捷键-System-Settings-gt-keyboard编辑"><a href="#Ubuntu下快捷键-System-Settings-gt-keyboard编辑" class="headerlink" title="Ubuntu下快捷键(System Settings-&gt;keyboard编辑)"></a>Ubuntu下快捷键(System Settings-&gt;keyboard编辑)</h3><p>按住Super：查看所有快捷键<br>Super+方向键：切换工作区<br>Alt+F4：关闭当前窗口<br>Ctrl+PageDown/PageUp：切换终端Tab</p>
+<h3 id="Linux下添加软件的桌面快捷图标"><a href="#Linux下添加软件的桌面快捷图标" class="headerlink" title="Linux下添加软件的桌面快捷图标"></a>Linux下添加软件的桌面快捷图标</h3><p>以Intellij idea为例：<br>在桌面新建文档命名为：idea.desktop<br>内容为下：（Exec和Icon要用自己的路径）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">[Desktop Entry]</div><div class="line">Encoding=UTF-8</div><div class="line">Name=idea</div><div class="line">Comment=idea IDE</div><div class="line">Exec=/home/idea/bin/idea.sh</div><div class="line">Icon=/home/idea/bin/idea.png</div><div class="line">Terminal=<span class="literal">false</span></div><div class="line">Type=Application</div><div class="line">Categories=GNOME;Application;Development;</div><div class="line">StartupNotify=<span class="literal">true</span></div></pre></td></tr></table></figure>
+<p><strong>注意：将Name、Comment、Exec、Icon改成自己需要的东西</strong><br>这时双击idea.desktop，系统会提示“未信任的应用程序启动器”？<br>解决方法是：右键打开文件属性对话框，在权限页中，将“允许作为程序执行文件(E)”前的复选框选上，大功告成！<br>最后，将编辑好的idea.desktop文件拷贝到/usr/share/applications下面，这时候在dash下就能搜索到idea了。</p>
+<blockquote>
+<p>Written with <a href="https://stackedit.io/" target="_blank" rel="external">StackEdit</a>.</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xiangxianzui.github.io/2017/06/实习：第二周整理/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Muser">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Muser">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/实习：第二周整理/" itemprop="url">实习：第二周整理</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-21T19:45:34+08:00">
+                2017-06-21
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Internship/" itemprop="url" rel="index">
+                    <span itemprop="name">Internship</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/06/实习：第二周整理/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/06/实习：第二周整理/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  240
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>实习第二周，下面整理一下这周遇到的一些问题。</p>
+<h3 id="Linux下head-tail命令"><a href="#Linux下head-tail命令" class="headerlink" title="Linux下head/tail命令"></a>Linux下head/tail命令</h3><p>顾名思义，head 与 tail 是用来显示开头或结尾某个数量的文字区块，head 用来显示文件的开头至标准输出中，而 tail 当然就是看文件的结尾</p>
+<p>具体用法如下：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">head -6 readme.txt <span class="comment"># 显示文件的前6行</span></div><div class="line">tail -25 mail.txt <span class="comment"># 显示文件的最后25行</span></div><div class="line">head -20 | tail 10 <span class="comment"># 显示第11到第20行</span></div></pre></td></tr></table></figure>
+<p>另外，tail在查看log时特别有用<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">tail <span class="_">-f</span> /var/logs/error.log</div></pre></td></tr></table></figure></p>
+<p>参数-f使tail不停地去读最新的内容，这样有实时监视的效果</p>
+<h3 id="IDEA常用快捷键-to-be-continued…"><a href="#IDEA常用快捷键-to-be-continued…" class="headerlink" title="IDEA常用快捷键 (to be continued…)"></a>IDEA常用快捷键 (to be continued…)</h3><p>连按两次Shift：全局查找<br>Ctrl+W：选择单词、语句、行、函数<br>Ctrl+Shift+/：代码块注释<br>Alt+方向键：左右切换文件<br>Alt+Shift+F10：运行<br>Shift+F10：运行<br>Alt+Enter：自动修正<br>Alt+Insert：生成Constructor/Getter/Setter等<br>Ctrl+E：最近文件</p>
+<blockquote>
+<p>Written with <a href="https://stackedit.io/" target="_blank" rel="external">StackEdit</a>.</p>
+</blockquote>
+
+          
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xiangxianzui.github.io/2017/06/实习：第一周整理/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Muser">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Muser">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/06/实习：第一周整理/" itemprop="url">实习：第一周整理</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-17T15:19:09+08:00">
+                2017-06-17
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Internship/" itemprop="url" rel="index">
+                    <span itemprop="name">Internship</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2017/06/实习：第一周整理/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count"
+                        data-disqus-identifier="2017/06/实习：第一周整理/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count in article&#58;</span>
+                
+                <span title="Words count in article">
+                  1,528
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>实习第一周结束了，下面整理一下这周遇到的一些问题。(所有操作均在Ubuntu系统下完成)</p>
+<h3 id="IDE配置：Intellij-IDEA"><a href="#IDE配置：Intellij-IDEA" class="headerlink" title="IDE配置：Intellij IDEA"></a>IDE配置：Intellij IDEA</h3><p>下载Ultimate版，下面网址生成license<br>生成各种软件注册码：<a href="http://www.98key.com" target="_blank" rel="external">http://www.98key.com</a></p>
+<h3 id="Java环境配置"><a href="#Java环境配置" class="headerlink" title="Java环境配置"></a>Java环境配置</h3><p>官网下载jdk，解压到目录 /usr/lib/jdk1.7<br>将以下内容添加到/etc/profile文件结尾：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">export</span> JAVA_HOME=/home/q/java/jdk1.7.x</div><div class="line"><span class="built_in">export</span> CLASSPATH=.:<span class="variable">$JAVA_HOME</span>/lib/dt.jar:<span class="variable">$JAVA_HOME</span>/lib/tools.jar</div><div class="line"><span class="built_in">export</span> PATH=<span class="variable">$JAVA_HOME</span>/bin:<span class="variable">$PATH</span></div></pre></td></tr></table></figure>
+<p>更新配置文件，执行：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">source</span> /etc/profile</div></pre></td></tr></table></figure></p>
+<p>测试java是否运行正常：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">echo</span> <span class="variable">$JAVA_HOME</span></div><div class="line">java -version</div></pre></td></tr></table></figure></p>
+<h3 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h3><p>用命令“git –version”查看是否已安装，且版本为1.9.5或更高。若没安装或版本太低：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install git-core git-gui git-doc gitk</div></pre></td></tr></table></figure></p>
+<p>再用“git –version”查一下，如果安装的不是1.9.5版本，那是不是你的ubuntu太老了？试试下面的方法：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo add-apt-repository ppa:git-core/ppa</div><div class="line">sudo apt-get update</div><div class="line">sudo apt-get install git</div></pre></td></tr></table></figure></p>
+<p>add-apt-repository 是由 python-software-properties 这个工具包提供的，如果使用 add-apt-repository显示“command not found”需要安装python-software-properties<br>安装方法：<br>1.首先需要安装software-properties-common<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install software-properties-common</div></pre></td></tr></table></figure></p>
+<p>2.然后安装python-software-properties<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install python-software-properties</div></pre></td></tr></table></figure></p>
+<h3 id="生成SSH-key"><a href="#生成SSH-key" class="headerlink" title="生成SSH key"></a>生成SSH key</h3><p>参考<a href="https://help.github.com/articles/connecting-to-github-with-ssh/" target="_blank" rel="external">https://help.github.com/articles/connecting-to-github-with-ssh/</a></p>
+<h3 id="安装Maven"><a href="#安装Maven" class="headerlink" title="安装Maven"></a>安装Maven</h3><p>Maven是跨平台的，可以在任何一种主流的操作系统上运行，下面在基于Unix系统上安装Maven</p>
+<h4 id="1-检查JDK的安装-参照Java环境配置"><a href="#1-检查JDK的安装-参照Java环境配置" class="headerlink" title="(1)检查JDK的安装,参照Java环境配置"></a>(1)检查JDK的安装,参照Java环境配置</h4><h4 id="2-本地安装"><a href="#2-本地安装" class="headerlink" title="(2)本地安装"></a>(2)本地安装</h4><p> 下载压缩包，以版本3.0.5为例，解压缩到/usr/bin/apache-maven-3.0.5<br> 虽然直接使用该目录配置环境变量之后就能使用Maven了，但推荐做法是，在安装目录旁平行地创建一个符号链接，以方便日后的升级：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ln <span class="_">-s</span> apache-maven-3.0.5 apache-maven</div></pre></td></tr></table></figure></p>
+<p>设置环境变量M2_HOME，指向符号链接apache-maven，并且把Maven安装目录下的bin/文件夹添加到系统环境变量PATH中去。<br>修改文件 /etc/profile，添加两行：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">export</span> M2_HOME=/usr/bin/apache-maven</div><div class="line"><span class="built_in">export</span> PATH=<span class="variable">$PATH</span>:<span class="variable">$M2_HOME</span>/bin</div></pre></td></tr></table></figure></p>
+<p>别忘了<code>source /etc/profile</code>使配置生效。<br>检查Maven安装:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">echo</span> <span class="variable">$M2_HOME</span></div><div class="line">mvn -v</div></pre></td></tr></table></figure></p>
+<h4 id="3-Maven版本的更改"><a href="#3-Maven版本的更改" class="headerlink" title="(3)Maven版本的更改"></a>(3)Maven版本的更改</h4><p>在基于Unix的系统上，可以利用符号链接这一工具来简化Maven的升级或降级，不必像在Windows上那样，每次更改版本都必须更新环境变量。<br>假设需要升级到新的Maven 3.1版本，将安装包解压到与前一版本平行的目录下，然后更新符号链接指向3.1版的目录便可：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">rm apache-maven</div><div class="line">ln <span class="_">-s</span> apache-maven-3.1 apache-maven</div></pre></td></tr></table></figure></p>
+<p>这样可以方便地切换到Maven的任意版本，切换完成后运行<code>mvn -v</code>进行检查。</p>
+<h3 id="ssh免跳板机登录开发机"><a href="#ssh免跳板机登录开发机" class="headerlink" title="ssh免跳板机登录开发机"></a>ssh免跳板机登录开发机</h3><p>企业为了服务器的安全，通常所有的ssh连接都是通过跳板机来完成，比便于对ssh连接进行验证和管理。跳板机通常至少配两块网卡，一个连接外网，用以对目标服务器远程登录及维护；另一个连接内网，便于内部网络的管理、控制和保护。通过网关服务提供从内网到外网、或从外网到内网的特殊协议路由服务。</p>
+<p>在企业内部，ssh登录开发机需要首先登录对应的跳板机，这样对于开发人员来说比较麻烦，因此可以设置免跳板机登录开发机，即只需第一次通过跳板机登录，以后可以直接登录开发机。</p>
+<p>以下操作的前提是可以从本地登录跳板机，同时可以从跳板机登录开发机。</p>
 <ul>
-<li>Everything to the right of a  %  is a remark to you and is ignored by LaTeX.</li>
-<li>\section{Section Title} makes a section title</li>
-<li>\subsection{Subsection Title} makes a subsection title, and so as \subsubsection and \subsubsubsection …</li>
-<li>Words are separated by one or more spaces.  Paragraphs are separated by<br>one or more blank lines.  The output is not affected by adding extra<br>spaces or extra blank lines to the input file.</li>
-<li>Double quotes: ``quoted text’’</li>
-<li>Single quotes: `single-quoted text’</li>
-<li>Long dashes: like—this</li>
-<li>Emphasized text: \emph{this is emphasized}</li>
-<li>Bold text: \textbf{this is bold}</li>
-<li>The following seven are printed by typing a backslash in front of them:  \$  \&amp;  #  \%  _  {  and  }.</li>
+<li>获取私钥<br>将跳板机上的私钥复制到本机，在<strong>本机</strong>上输入：<br><code>mkdir -p ~/.ssh/persist</code><br><code>scp [用户名]@[跳板机主机名]:~/.ssh/id_rsa ~/.ssh/id_rsa_[机房名]</code></li>
+<li>修改 ~/.ssh/config 文件<br>如果没有该文件就创建一个：<code>sudo touch ~/.ssh/config</code><br>然后拷贝下面内容到config文件中</li>
 </ul>
-<h2 id="Tutorial-2"><a href="#Tutorial-2" class="headerlink" title="Tutorial 2"></a>Tutorial 2</h2><p>In tutorial2, the following knowledge could be concluded.</p>
-<ul>
-<li>\documentclass{article}: specifies the document class</li>
-<li>\title{An Example Document}: declares the document’s title</li>
-<li>\author{LesLie Lamport}: declares author name</li>
-<li>\date{January 31, 2017}: declares date, deleting this command will produce today’s date</li>
-<li>\maketitle: produces the title</li>
-<li>\newcommand{\ip}[2]{(#1, #2)}: defines new command with name ‘ip’ and two arguments</li>
-<li>\LaTeX: generates the LaTeX logo</li>
-<li><p>Quotes within quotes: </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">``\,`this&apos; is what I just wrote, not `that&apos;\,&apos;&apos; means &quot;&apos;this&apos; is what I just wrote, not &apos;that&apos;&quot;</div></pre></td></tr></table></figure>
-</li>
-<li><p>Intra word dash: intra-word (1 dash)</p>
-</li>
-<li>Medium dash: 1–2 (2 dashes)</li>
-<li>Long dash: like—this (3 dashes)</li>
-<li>Ellipsis: \ldots</li>
-<li>TeX ignores spaces after command names</li>
-<li><p>Emphasize long sentence: </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">\begin&#123;em&#125;</div><div class="line">  A long segment of text can also be emphasized </div><div class="line">  in this way.  Text within such a segment can be </div><div class="line">  given \emph&#123;additional&#125; emphasis.</div><div class="line">\end&#123;em&#125;</div></pre></td></tr></table></figure>
-</li>
-<li><p>Footnotes: Footnotes\footnote{This is an example of a footnote.} pose no problem.</p>
-</li>
-<li>$ … $  and  ( … )  are equivalent, both denote a mathematical symbol</li>
-<li>Itemize &amp; Enumerate: <figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">\begin&#123;itemize&#125;</div><div class="line">  \item This is the first item of an itemized list.</div><div class="line">        Each item in the list is marked with a ``tick&apos;&apos;.</div><div class="line">        You don&apos;t have to worry about what kind of tick</div><div class="line">        mark is used.</div><div class="line"></div><div class="line">  \item This is the second item of the list.  It</div><div class="line">        contains another list nested inside it.  The inner</div><div class="line">        list is an \emph&#123;enumerated&#125; list.</div><div class="line">        \begin&#123;enumerate&#125;</div><div class="line">           \item This is the first item of an enumerated </div><div class="line">                 list that is nested within the itemized list.</div><div class="line"></div><div class="line">           \item This is the second item of the inner list.  </div><div class="line">                 \LaTeX\ allows you to nest lists deeper than </div><div class="line">                 you really should.</div><div class="line">        \end&#123;enumerate&#125;</div><div class="line">        This is the rest of the second item of the outer</div><div class="line">        list.  It is no more interesting than any other</div><div class="line">        part of the item.</div><div class="line">  \item This is the third item of the list.</div><div class="line">\end&#123;itemize&#125;</div></pre></td></tr></table></figure>
-</li>
-</ul>
-<blockquote>
-<p>Written with <a href="https://stackedit.io/" target="_blank" rel="external">StackEdit</a>.</p>
-</blockquote>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://xiangxianzui.github.io/2017/01/Upload-image-to-a-Node-JS-server/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Muser">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Muser">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/01/Upload-image-to-a-Node-JS-server/" itemprop="url">Upload image to a Node.JS server</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-16T19:10:26+08:00">
-                2017-01-16
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Guides/" itemprop="url" rel="index">
-                    <span itemprop="name">Guides</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Recently, I came up with a problem that I need to upload images to a Node server and display the image instantly. I write this post to keep a record of what I have done.</p>
-<p>Generally, firstly I wrap the uploading image as a <a href="https://developer.mozilla.org/en-US/docs/Web/API/FormData" target="_blank" rel="external">FormData</a>. </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#'upload[]' is the name attr of #upload-input</span></div><div class="line"><span class="comment">#append the selected file to formData obj</span></div><div class="line">formData.append(<span class="string">'upload[]'</span>, file, file.name);</div></pre></td></tr></table></figure>
-<p>Then I use jquery <code>.ajax()</code> method to send <code>POST</code> request to the server. </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">#processData:false means to stop jquery from converting the formData object to string</span></div><div class="line"><span class="comment">#contentType:false means to tell jquery not to add a Content-Type header</span></div><div class="line">$.ajax(&#123;</div><div class="line">	url: <span class="string">'/upload'</span>,</div><div class="line">	<span class="built_in">type</span>: <span class="string">'POST'</span>,</div><div class="line">	data: formData,</div><div class="line">	processData: <span class="literal">false</span>,</div><div class="line">    contentType: <span class="literal">false</span>,</div><div class="line">	success: <span class="keyword">function</span>(data)&#123;</div><div class="line">		<span class="comment">#do something when success</span></div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p>At server, <a href="https://github.com/felixge/node-formidable" target="_blank" rel="external">formidable</a> middleware is used to handle the uploading file. </p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line">app.post(<span class="string">'/upload'</span>, <span class="keyword">function</span>(req, res)&#123;</div><div class="line">  <span class="comment">#create an incoming form object</span></div><div class="line">  var form = new formidable.IncomingForm();</div><div class="line">  <span class="comment">#specify that we don't want user to upload multiple files at the same time; set true to allow.</span></div><div class="line">  form.multiples = <span class="literal">false</span>;</div><div class="line">  <span class="comment">#store uploads in /uploads directory</span></div><div class="line">  form.uploadDir = path.join(process.cwd(), <span class="string">'/uploads'</span>);</div><div class="line">  <span class="comment">#log any occured error</span></div><div class="line">  form.on(<span class="string">'error'</span>, <span class="keyword">function</span>(err)&#123;</div><div class="line">     console.log(<span class="string">'File Uploading Error: '</span>+err);</div><div class="line">  &#125;);</div><div class="line">  <span class="comment">#parse the incoming request containing form data</span></div><div class="line">  form.parse(req, <span class="keyword">function</span>(err, fields, files)&#123;</div><div class="line">	  var file = files[<span class="string">'upload[]'</span>];</div><div class="line">      <span class="comment">#rename the uploaded file as its origin name</span></div><div class="line">      fs.rename(file.path, path.join(form.uploadDir, file.name));</div><div class="line">      res.send(<span class="string">'success'</span>);</div><div class="line">  &#125;);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
-<p><strong>Note: A working demo is available in <a href="https://github.com/xiangxianzui/node-image-previewer-uploader" target="_blank" rel="external">github</a>.</strong></p>
-<p>The demo could be used like this:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># clone the repo to local machine</span></div><div class="line">$ git <span class="built_in">clone</span> https://github.com/xiangxianzui/node-image-previewer-uploader</div><div class="line"><span class="comment"># open code directory</span></div><div class="line">$ <span class="built_in">cd</span> node-image-previewer-uploader</div><div class="line"><span class="comment"># install node dependencies</span></div><div class="line">$ npm install</div><div class="line"><span class="comment"># run the server</span></div><div class="line">$ node server.js</div></pre></td></tr></table></figure>
-<h4 id="File-Structure"><a href="#File-Structure" class="headerlink" title="File Structure"></a>File Structure</h4><ul>
-<li><strong>server.js</strong> is Node server, which contains routes and main logic of back end</li>
-<li><strong>.env</strong> stores environmenal variable while developing. A node module called <code>dotenv</code> can be used to load variables in <code>.env</code> file to global variable <code>process</code></li>
-<li><strong>package.json</strong> contains information of this project and dependencies</li>
-<li><strong>/public</strong> contains javascript, css, fonts and images, which will be used in front end</li>
-<li><strong>/views</strong> contains HTML templates</li>
-<li><strong>/uploads</strong> stores uploaded images</li>
-</ul>
-<blockquote>
-<p>Written with <a href="https://stackedit.io/" target="_blank" rel="external">StackEdit</a>.</p>
-</blockquote>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://xiangxianzui.github.io/2017/01/LeetCode-Convert-a-Number-to-Hexadecimal/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Muser">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Muser">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/01/LeetCode-Convert-a-Number-to-Hexadecimal/" itemprop="url">LeetCode: Convert a Number to Hexadecimal</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-13T13:11:02+08:00">
-                2017-01-13
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/LeetCode/" itemprop="url" rel="index">
-                    <span itemprop="name">LeetCode</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://xiangxianzui.github.io/2017/01/LeetCode-Binary-Watch/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Muser">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Muser">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/01/LeetCode-Binary-Watch/" itemprop="url">LeetCode: Binary Watch</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-12T13:43:05+08:00">
-                2017-01-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/LeetCode/" itemprop="url" rel="index">
-                    <span itemprop="name">LeetCode</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>A binary watch has 4 LEDs on the top which represent the <strong>hours (0-11)</strong>, and the 6 LEDs on the bottom represent the <strong>minutes (0-59)</strong>.</p>
-<p>Each LED represents a zero or one, with the least significant bit on the right.</p>
-<p><img src="Binary_clock_samui_moon.jpg" alt="Binary Watch"></p>
-<p>For example, the above binary watch reads “3:25”.</p>
-<p>Given a non-negative integer n which represents the number of LEDs that are currently on, return all possible times the watch could represent.</p>
-<p><strong>Example</strong>:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Input: n = 1</div><div class="line">Return: [&quot;1:00&quot;, &quot;2:00&quot;, &quot;4:00&quot;, &quot;8:00&quot;, &quot;0:01&quot;, &quot;0:02&quot;, &quot;0:04&quot;, &quot;0:08&quot;, &quot;0:16&quot;, &quot;0:32&quot;]</div></pre></td></tr></table></figure>
-<p><strong>Note</strong>:</p>
-<ul>
-<li>The order of output does not matter.</li>
-<li>The hour must not contain a leading zero, for example “01:00” is not<br>valid, it should be “1:00”.</li>
-<li>The minute must be consist of two digits and may contain a leading<br>zero, for example “10:2” is not valid, it should be “10:02”.</li>
-</ul>
-<h2 id="Solution-1"><a href="#Solution-1" class="headerlink" title="Solution 1"></a>Solution 1</h2><p>The following code goes through all possible times, and checks if the time has correct number of one-bit.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">public List&lt;String&gt; readBinaryWatch(int num) &#123;</div><div class="line">        List&lt;String&gt; result = new ArrayList();</div><div class="line">        for(int h=0; h&lt;12; h++)&#123;</div><div class="line">            for(int m=0; m&lt;60; m++)&#123;</div><div class="line">                if(Integer.bitCount(h) + Integer.bitCount(m) == num)&#123;</div><div class="line">                    result.add(String.format(&quot;%d:%02d&quot;, h, m));</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        return result;</div><div class="line">    &#125;</div></pre></td></tr></table></figure>
-<p><strong>Note</strong>:<br><code>Integer.bitCount(N)</code> returns the number of one-bits in the two’s complement binary representation of the specified int value N.</p>
-<h2 id="Solution-2"><a href="#Solution-2" class="headerlink" title="Solution 2"></a>Solution 2</h2><p>The following code describes the framework of the solution:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">int[] hours = new int[] &#123;8,4,2,1&#125;;</div><div class="line">int[] minutes = new int[] &#123;32,16,8,4,2,1&#125;;</div><div class="line">for(int i=0; i&lt;=nums; i++)&#123;</div><div class="line">	//select i elements from hours, add them to get the hour</div><div class="line">	//select (nums-i) elements from minutes, add them to get the minute</div><div class="line">	//then construct one possible time</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>Thus, the first thing we need to solve is <strong>how to select r elements from an array with n elements?</strong></p>
-<p>My idea is to permutate the array, and select the first r elements.</p>
-<p><strong>Example</strong></p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">array = [1,2,3]</div><div class="line">All permutations of the array are: [1,2,3], [1,3,2], [2,1,3], [2,3,1], [3,1,2], [3,2,1].</div><div class="line">If we select the first 2 elements, we will get [1,2], [1,3], [2,1], [2,3], [3,1], [3,2].</div><div class="line">[1,2] and [2,1] are same, so we need to remove duplicates.</div></pre></td></tr></table></figure>
-<p>The following code calculates all permutations of an array, select the first r elements of each permutation, and removes duplicates with the help of <code>HashSet</code>.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line">public void permute(int[] nums, int start, int end, int r, Set&lt;List&lt;Integer&gt;&gt; results)&#123;</div><div class="line">    if(start==end)&#123;</div><div class="line">	    //do something with a permutation here</div><div class="line">	    List&lt;Integer&gt; result = new ArrayList();</div><div class="line">        for(int i=0; i&lt;r; i++)&#123;</div><div class="line">	        result.add(nums[i]);</div><div class="line">        &#125;</div><div class="line">        results.add(result);</div><div class="line">    &#125;</div><div class="line">        </div><div class="line">    for(int i=start; i&lt;=end; i++)&#123;</div><div class="line">	    //swap the current element with start element</div><div class="line">        int temp = nums[i];</div><div class="line">        nums[i] = nums[start];</div><div class="line">        nums[start] = temp;</div><div class="line">        //recursively permute all latter elements</div><div class="line">        permute(nums, start+1, end, r);</div><div class="line">        //after one permutation, swap back</div><div class="line">        temp = nums[i];</div><div class="line">        nums[i] = nums[start];</div><div class="line">        nums[start] = temp;   </div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>The above code is an important framework of <strong>permutation problems</strong>. It could be explained as: </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">Let &#123;a,b,c&#125; denote all permutations of [a,b,c]</div><div class="line">then, &#123;a,b,c&#125; = a&#123;b,c&#125; + b&#123;a,c&#125; + c&#123;a,b&#125;</div><div class="line">and permute &#123;b,c&#125;, &#123;a,c&#125;, &#123;a,b&#125; recursively.</div></pre></td></tr></table></figure>
-<p>After solving <strong>selecting r elements from an array with n elements</strong>, we can move on to construct the time with the hour and minute we get.</p>
-<p>The complete code is as follows:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div><div class="line">63</div><div class="line">64</div><div class="line">65</div><div class="line">66</div><div class="line">67</div><div class="line">68</div><div class="line">69</div><div class="line">70</div><div class="line">71</div><div class="line">72</div><div class="line">73</div><div class="line">74</div><div class="line">75</div><div class="line">76</div><div class="line">77</div></pre></td><td class="code"><pre><div class="line">public class Solution &#123;</div><div class="line">    public List&lt;String&gt; readBinaryWatch(int num) &#123;</div><div class="line">        List&lt;String&gt; result = new ArrayList();</div><div class="line">        int[] hours = new int[] &#123;8,4,2,1&#125;;</div><div class="line">        int[] minutes = new int[] &#123;32,16,8,4,2,1&#125;;</div><div class="line">        Set&lt;Integer&gt; selectedHours = new HashSet();</div><div class="line">        Set&lt;Integer&gt; selectedMinutes = new HashSet();</div><div class="line">        for(int i=0; i&lt;=num; i++)&#123;</div><div class="line">            if(i&lt;=4 &amp;&amp; num-i&lt;=6)&#123;</div><div class="line">                selectFromHours(hours, 0, hours.length-1, i, selectedHours);</div><div class="line">                selectFromMinutes(minutes, 0, minutes.length-1, num-i, selectedMinutes);</div><div class="line">                for(int h : selectedHours)&#123;</div><div class="line">                    for(int m : selectedMinutes)&#123;</div><div class="line">                        String m_str = (m&lt;10) ? (&quot;0&quot;+m) : (&quot;&quot;+m);</div><div class="line">                        result.add(h+&quot;:&quot;+m_str);</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">                selectedHours.clear();</div><div class="line">                selectedMinutes.clear();</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        return result;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    public void selectFromHours(int[] hours, int start, int end, int r, Set&lt;Integer&gt; selectedHours)&#123;</div><div class="line">        if(r==0)&#123;</div><div class="line">            selectedHours.add(0);</div><div class="line">            return;</div><div class="line">        &#125;</div><div class="line">        if(start==end)&#123;</div><div class="line">            int sum = 0;</div><div class="line">            for(int j=0; j&lt;r; j++)&#123;</div><div class="line">                sum += hours[j];</div><div class="line">            &#125;</div><div class="line">            if(sum&lt;=11)&#123;</div><div class="line">                selectedHours.add(sum);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        for(int i=start; i&lt;=end; i++)&#123;</div><div class="line">            int temp = hours[i];</div><div class="line">            hours[i] = hours[start];</div><div class="line">            hours[start] = temp;</div><div class="line">            selectFromHours(hours, start+1, end, r, selectedHours);</div><div class="line">            temp = hours[i];</div><div class="line">            hours[i] = hours[start];</div><div class="line">            hours[start] = temp;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    </div><div class="line">    public void selectFromMinutes(int[] minutes, int start, int end, int r, Set&lt;Integer&gt; selectedMinutes)&#123;</div><div class="line">        if(r==0)&#123;</div><div class="line">            selectedMinutes.add(0);</div><div class="line">            return;</div><div class="line">        &#125;</div><div class="line">        if(start==end)&#123;</div><div class="line">            int sum = 0;</div><div class="line">            for(int j=0; j&lt;r; j++)&#123;</div><div class="line">                sum += minutes[j];</div><div class="line">            &#125;</div><div class="line">            if(sum&lt;=59)&#123;</div><div class="line">                selectedMinutes.add(sum);</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        for(int i=start; i&lt;=end; i++)&#123;</div><div class="line">            int temp = minutes[i];</div><div class="line">            minutes[i] = minutes[start];</div><div class="line">            minutes[start] = temp;</div><div class="line">            selectFromMinutes(minutes, start+1, end, r, selectedMinutes);</div><div class="line">            temp = minutes[i];</div><div class="line">            minutes[i] = minutes[start];</div><div class="line">            minutes[start] = temp;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<blockquote>
-<p>Written with <a href="https://stackedit.io/" target="_blank" rel="external">StackEdit</a>.</p>
-</blockquote>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://xiangxianzui.github.io/2017/01/LeetCode-Delete-Node-in-a-Linked-List/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Muser">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Muser">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/01/LeetCode-Delete-Node-in-a-Linked-List/" itemprop="url">LeetCode: Delete Node in a Linked List</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-12T11:27:07+08:00">
-                2017-01-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/LeetCode/" itemprop="url" rel="index">
-                    <span itemprop="name">LeetCode</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>Write a function to delete a node (except the tail) in a singly linked list, given only access to that node.</p>
-<p>Supposed the linked list is <code>1 -&gt; 2 -&gt; 3 -&gt; 4</code> and you are given the third node with value <code>3</code>, the linked list should become <code>1 -&gt; 2 -&gt; 4</code> after calling your function.</p>
-<h2 id="Solution"><a href="#Solution" class="headerlink" title="Solution"></a>Solution</h2><p>The solution is a little tricky. Normally, when we delete a node from a linked list, we should know the previous node of the one we want to delete. However, at this time, we only have access to the node to be deleted. So, we have to “<strong>sacrifice</strong>“ the next node! Here is the java code:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">public class Solution &#123;</div><div class="line">    public void deleteNode(ListNode node) &#123;</div><div class="line">        if(node!=null)&#123;</div><div class="line">            node.val = node.next.val;</div><div class="line">            node.next = node.next.next;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>This problem is quite easy, but tricky. I just want to record this trick to guarantee I won’t forget it someday :)</p>
-<blockquote>
-<p>Written with <a href="https://stackedit.io/" target="_blank" rel="external">StackEdit</a>.</p>
-</blockquote>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://xiangxianzui.github.io/2017/01/LeetCode-Move-Zeroes/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Muser">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Muser">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/01/LeetCode-Move-Zeroes/" itemprop="url">LeetCode: Move Zeroes</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-01-12T10:14:39+08:00">
-                2017-01-12
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/LeetCode/" itemprop="url" rel="index">
-                    <span itemprop="name">LeetCode</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <h2 id="Problem"><a href="#Problem" class="headerlink" title="Problem"></a>Problem</h2><p>Given an array nums, write a function to move all 0’s to the end of it while maintaining the relative order of the non-zero elements.</p>
-<p>For example, given <code>nums = [0, 1, 0, 3, 12]</code>, after calling your function, <code>nums</code> should be <code>[1, 3, 12, 0, 0]</code>.</p>
-<p><strong>Note</strong>:<br>You must do this in-place without making a copy of the array.<br>Minimize the total number of operations.</p>
-<h2 id="Solution-1-–-59ms"><a href="#Solution-1-–-59ms" class="headerlink" title="Solution 1 – 59ms"></a>Solution 1 – 59ms</h2><p>Go through the array. If <code>ith</code> element is 0, then move all elements within [i+1,nums,length-1] one place ahead, and set the last element of the array to 0. To prevent endless loop when <code>nums=[0,0,...,0]</code>, set a variable <code>reapeatCount</code>.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line">public void moveZeroes(int[] nums) &#123;</div><div class="line">    int repeatCount = 0;</div><div class="line">    for(int i=0; i&lt;nums.length; i++)&#123;</div><div class="line">        if(nums[i]==0)&#123;</div><div class="line">            for(int j=i; j&lt;nums.length-1; j++)&#123;</div><div class="line">                nums[j] = nums[j+1];</div><div class="line">            &#125;</div><div class="line">            nums[nums.length-1] = 0;</div><div class="line">            i--;</div><div class="line">            repeatCount++;</div><div class="line">        &#125;</div><div class="line">        if(repeatCount==nums.length)    break;</div><div class="line">            </div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="Solution-2-–-19ms"><a href="#Solution-2-–-19ms" class="headerlink" title="Solution 2 – 19ms"></a>Solution 2 – 19ms</h2><p>Go through the array. If <code>ith</code> element is 0, then find the first non-zero element within range [i+1,nums.length-1] and swap it with current element; if there is no such non-zero element, it means all non-zero elements are before zeroes – done! If current element is non-zero, just go on to the next.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">public void moveZeroes(int[] nums) &#123;</div><div class="line">    if(nums != null)&#123;</div><div class="line">        for(int i=0; i&lt;nums.length; i++)&#123;</div><div class="line">            if(nums[i]==0)&#123;</div><div class="line">                //find the first non-zero element within range [i+1,nums.length-1]</div><div class="line">                int firstNonZeroIdx = -1;</div><div class="line">                for(int j=i+1; j&lt;nums.length; j++)&#123;</div><div class="line">                    if(nums[j]!=0)&#123;</div><div class="line">                        firstNonZeroIdx = j;</div><div class="line">                        break;</div><div class="line">                    &#125;</div><div class="line">                &#125;</div><div class="line">                if(firstNonZeroIdx==-1) break;</div><div class="line">                else&#123;</div><div class="line">                    int temp = nums[i];</div><div class="line">                    nums[i] = nums[firstNonZeroIdx];</div><div class="line">                    nums[firstNonZeroIdx] = temp;</div><div class="line">                &#125;</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>Solution 2 is better than Solution 1. This is because in Solution 1, it is unnecessary to move all elements after a non-zero element one place ahead. </p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 将[机房名]、[跳板机主机名]、[用户名]替换成各自实际的名字</span></div><div class="line"><span class="comment"># gateway servers</span></div><div class="line">Host [机房名]</div><div class="line">    Hostname [跳板机主机名]</div><div class="line"></div><div class="line"><span class="comment"># server</span></div><div class="line">Host *.[机房名]</div><div class="line">    ProxyCommand ssh [机房名] <span class="built_in">exec</span> nc %h %p 2&gt;/dev/null</div><div class="line">    IdentityFile ~/.ssh/id_rsa_[机房名]</div><div class="line"></div><div class="line">Host *</div><div class="line">     User [用户名] <span class="comment"># 你的本机的用户名如果和服务器上面的不一致，那需要配置这个，如果一致可以不用配置</span></div><div class="line">     ServerAliveInterval 30</div><div class="line">     ControlMaster auto</div><div class="line">     ControlPath ~/.ssh/persist/master-%r@%h:%p</div><div class="line">     ControlPersist yes</div><div class="line"><span class="comment"># 如果有多个机房的机器需要添加在这个文件中继续添加即可</span></div><div class="line"><span class="comment"># gateway servers</span></div><div class="line">Host [机房名]</div><div class="line">    Hostname [跳板机主机名]</div><div class="line"></div><div class="line"><span class="comment"># server</span></div><div class="line">Host *.[机房名]</div><div class="line">    ProxyCommand ssh [机房名] <span class="built_in">exec</span> nc %h %p 2&gt;/dev/null</div><div class="line">    IdentityFile ~/.ssh/id_rsa_[机房名]</div><div class="line"></div><div class="line">Host *</div><div class="line">     User [用户名]</div><div class="line">     ServerAliveInterval 30</div><div class="line">     ControlMaster auto</div><div class="line">     ControlPath ~/.ssh/persist/master-%r@%h:%p</div><div class="line">     ControlPersist yes</div></pre></td></tr></table></figure>
+<p>设置完成后，打开终端输入<code>ssh [开发机主机名]</code>，就可以直接登录了。</p>
+<h3 id="nginx-搭建"><a href="#nginx-搭建" class="headerlink" title="nginx 搭建"></a>nginx 搭建</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 安装</span></div><div class="line">wget http://openresty.org/download/ngx_openresty-1.4.3.6.tar.gz</div><div class="line">sudo yum -y install gcc make readline-devel pcre-devel openssl-devel</div><div class="line">tar xzvf ngx_openresty-1.4.3.6.tar.gz</div><div class="line"><span class="built_in">cd</span> ngx_openresty-1.4.3.6</div><div class="line">./configure --with-luajit --with-http_iconv_module</div><div class="line">sudo gmake</div><div class="line">sudo gmake install</div></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 启动</span></div><div class="line">sudo /usr/<span class="built_in">local</span>/openresty/nginx/sbin/nginx</div><div class="line"><span class="comment"># 重启</span></div><div class="line">sudo /usr/<span class="built_in">local</span>/openresty/nginx/sbin/nginx <span class="_">-s</span> reload</div></pre></td></tr></table></figure>
+<h3 id="rsync的配置和使用"><a href="#rsync的配置和使用" class="headerlink" title="rsync的配置和使用"></a>rsync的配置和使用</h3><p>rsync实现网站的备份，文件的同步，不同系统的文件的同步，如果是windows的话，需要windows版本cwrsync</p>
+<p>配置参考<a href="http://blog.csdn.net/peisl/article/details/6931088" target="_blank" rel="external">http://blog.csdn.net/peisl/article/details/6931088</a></p>
+<p>上传：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rsync -rzcv --chmod=<span class="string">"a=rX,u+w"</span> --exclude=.svn --rsync-path=<span class="string">"sudo rsync"</span> [FILENAME] [YOUR_HOST_NAME]:[YOUR_DIR_PATH]</div></pre></td></tr></table></figure></p>
+<p>下载：别忘了后面有一个点(.)<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">rsync -rzcv --chmod=<span class="string">"a=rX,u+w"</span> --exclude=.svn --rsync-path=<span class="string">"sudo rsync"</span> [YOUR_HOST_NAME]:[YOUR_DIR_PATH] .</div></pre></td></tr></table></figure></p>
+<h3 id="apt-file命令"><a href="#apt-file命令" class="headerlink" title="apt-file命令"></a>apt-file命令</h3><p>在Linux系统中安装软件时，常常会遇到缺少动态库依赖的问题，可以使用apt-file命令查看动态库所在的包，然后安装对应的包就可以了。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install apt-file <span class="comment">#没有apt-file就安装一个</span></div><div class="line">sudo apt-file update</div><div class="line">sudo apt-file search libgstreamer-0.10.so.0 <span class="comment">#查找动态库所在的包</span></div><div class="line">sudo apt-get install libgstreamer-plugins-base0.10-0 <span class="comment">#安装这个依赖包</span></div></pre></td></tr></table></figure>
 <blockquote>
 <p>Written with <a href="https://stackedit.io/" target="_blank" rel="external">StackEdit</a>.</p>
 </blockquote>
@@ -1979,7 +1270,7 @@
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/3/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -2003,6 +1294,8 @@
   </div>
 
   <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
     
     <div class="sidebar-inner">
 
@@ -2068,6 +1361,21 @@
             </div>
           
 
+  
+  
+    <div class="feed-link motion-element">
+      
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i>
+            
+            Search
+          </a>
+    </div>
+  
+
+
           <div class="links-of-author motion-element">
             
               
@@ -2113,7 +1421,7 @@
       <div class="footer-inner">
         <div class="copyright">&copy; <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
-    <i class="fa fa-user"></i>
+    <i class="fa fa-star"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Muser</span>
 
@@ -2129,7 +1437,7 @@
 
 
 
-  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.3</div>
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a></div>
 
 
 
@@ -2234,14 +1542,26 @@
 
   
 
+    
+      <script id="dsq-count-scr" src="https://xiangxianzui.disqus.com/count.js" async></script>
+    
+
+    
+
+  
 
 
+
+
+	
 
 
 
 
 
   
+
+
 
 
 
