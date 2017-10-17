@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://xiangxianzui.github.io/about/index.html</loc>
+    
+    <lastmod>2017-10-17T14:41:32.021Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://xiangxianzui.github.io/2017/07/Linux%E7%AA%97%E5%8F%A3%E7%AE%A1%E7%90%86%E7%BB%88%E6%9E%81%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88-tmux/</loc>
     
     <lastmod>2017-10-16T12:02:55.272Z</lastmod>
@@ -26,13 +33,6 @@
     <loc>https://xiangxianzui.github.io/tags/index.html</loc>
     
     <lastmod>2017-10-16T03:06:58.592Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://xiangxianzui.github.io/about/index.html</loc>
-    
-    <lastmod>2017-10-16T02:55:23.496Z</lastmod>
     
   </url>
   
