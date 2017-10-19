@@ -12,6 +12,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
 
+<script>
+    (function(){
+        if(''){
+            if (prompt('Enter password please') !== ''){
+                alert('Bad password!');
+                history.back();
+            }
+        }
+    })();
+</script>
 
 
   
@@ -75,7 +85,7 @@
 
 
 
-  <meta name="keywords" content="Linux,Ubuntu,IDEA," />
+  <meta name="keywords" content="Linux,Ubuntu,SonarLint," />
 
 
 
@@ -88,17 +98,17 @@
 
 
 
-<meta name="description" content="实习第二周，下面整理一下这周遇到的一些问题。 Linux下head/tail命令顾名思义，head 与 tail 是用来显示开头或结尾某个数量的文字区块，head 用来显示文件的开头至标准输出中，而 tail 当然就是看文件的结尾 具体用法如下： 123head -6 readme.txt # 显示文件的前6行tail -25 mail.txt # 显示文件的最后25行head -20 | tai">
-<meta name="keywords" content="Linux,Ubuntu,IDEA">
+<meta name="description" content="Linux命令之：more or less?more 主要的作用是把输出结果显示在屏幕上，它会一屏停止一下，等待按空格键才继续往上卷。但是，如果看完了这页，想要回头看上一页，是不行的，必须从头再来！ less 最主要是改进了more 不能回头看的问题。除了能够随意上下翻页之外，less还提供了非常方便的搜索功能，这在查看很长的日志时是很有用的。 12345按h查看help按g直接跳到第一行按G直接">
+<meta name="keywords" content="Linux,Ubuntu,SonarLint">
 <meta property="og:type" content="article">
-<meta property="og:title" content="实习：第二周整理">
-<meta property="og:url" content="https://xiangxianzui.github.io/2017/06/实习：第二周整理/index.html">
+<meta property="og:title" content="实习整理(四)">
+<meta property="og:url" content="https://xiangxianzui.github.io/2017/07/实习整理-四/index.html">
 <meta property="og:site_name" content="Muser">
-<meta property="og:description" content="实习第二周，下面整理一下这周遇到的一些问题。 Linux下head/tail命令顾名思义，head 与 tail 是用来显示开头或结尾某个数量的文字区块，head 用来显示文件的开头至标准输出中，而 tail 当然就是看文件的结尾 具体用法如下： 123head -6 readme.txt # 显示文件的前6行tail -25 mail.txt # 显示文件的最后25行head -20 | tai">
-<meta property="og:updated_time" content="2017-06-24T09:37:46.490Z">
+<meta property="og:description" content="Linux命令之：more or less?more 主要的作用是把输出结果显示在屏幕上，它会一屏停止一下，等待按空格键才继续往上卷。但是，如果看完了这页，想要回头看上一页，是不行的，必须从头再来！ less 最主要是改进了more 不能回头看的问题。除了能够随意上下翻页之外，less还提供了非常方便的搜索功能，这在查看很长的日志时是很有用的。 12345按h查看help按g直接跳到第一行按G直接">
+<meta property="og:updated_time" content="2017-10-19T06:19:24.804Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="实习：第二周整理">
-<meta name="twitter:description" content="实习第二周，下面整理一下这周遇到的一些问题。 Linux下head/tail命令顾名思义，head 与 tail 是用来显示开头或结尾某个数量的文字区块，head 用来显示文件的开头至标准输出中，而 tail 当然就是看文件的结尾 具体用法如下： 123head -6 readme.txt # 显示文件的前6行tail -25 mail.txt # 显示文件的最后25行head -20 | tai">
+<meta name="twitter:title" content="实习整理(四)">
+<meta name="twitter:description" content="Linux命令之：more or less?more 主要的作用是把输出结果显示在屏幕上，它会一屏停止一下，等待按空格键才继续往上卷。但是，如果看完了这页，想要回头看上一页，是不行的，必须从头再来！ less 最主要是改进了more 不能回头看的问题。除了能够随意上下翻页之外，less还提供了非常方便的搜索功能，这在查看很长的日志时是很有用的。 12345按h查看help按g直接跳到第一行按G直接">
 
 
 
@@ -128,13 +138,13 @@
 
 
 
-  <link rel="canonical" href="https://xiangxianzui.github.io/2017/06/实习：第二周整理/"/>
+  <link rel="canonical" href="https://xiangxianzui.github.io/2017/07/实习整理-四/"/>
 
 
 
 
 
-  <title>实习：第二周整理 | Muser</title>
+  <title>实习整理(四) | Muser</title>
   
 
 
@@ -311,7 +321,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://xiangxianzui.github.io/2017/06/实习：第二周整理/">
+    <link itemprop="mainEntityOfPage" href="https://xiangxianzui.github.io/2017/07/实习整理-四/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Muser">
@@ -328,7 +338,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">实习：第二周整理</h1>
+          <h1 class="post-title" itemprop="name headline">实习整理(四)</h1>
         
 
         <div class="post-meta">
@@ -340,13 +350,25 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-06-21T19:45:34+08:00">
-                2017-06-21
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-08T22:48:27+08:00">
+                2017-07-08
               </time>
             
 
             
+              <span class="post-meta-divider">|</span>
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Last modified&#58;</span>
+              
+              <time title="Last modified" itemprop="dateModified" datetime="2017-10-19T14:19:24+08:00">
+                2017-10-19
+              </time>
             
           </span>
 
@@ -394,7 +416,7 @@
                   <span class="post-meta-item-text">Words count&#58;</span>
                 
                 <span title="Words count">
-                  240
+                  353
                 </span>
               
 
@@ -419,13 +441,12 @@
       
 
       
-        <p>实习第二周，下面整理一下这周遇到的一些问题。</p>
-<h3 id="Linux下head-tail命令"><a href="#Linux下head-tail命令" class="headerlink" title="Linux下head/tail命令"></a>Linux下head/tail命令</h3><p>顾名思义，head 与 tail 是用来显示开头或结尾某个数量的文字区块，head 用来显示文件的开头至标准输出中，而 tail 当然就是看文件的结尾</p>
-<p>具体用法如下：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">head -6 readme.txt <span class="comment"># 显示文件的前6行</span></div><div class="line">tail -25 mail.txt <span class="comment"># 显示文件的最后25行</span></div><div class="line">head -20 | tail 10 <span class="comment"># 显示第11到第20行</span></div></pre></td></tr></table></figure>
-<p>另外，tail在查看log时特别有用<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">tail <span class="_">-f</span> /var/logs/error.log</div></pre></td></tr></table></figure></p>
-<p>参数-f使tail不停地去读最新的内容，这样有实时监视的效果</p>
-<h3 id="IDEA常用快捷键-to-be-continued…"><a href="#IDEA常用快捷键-to-be-continued…" class="headerlink" title="IDEA常用快捷键 (to be continued…)"></a>IDEA常用快捷键 (to be continued…)</h3><p>连按两次Shift：全局查找<br>Ctrl+W：选择单词、语句、行、函数<br>Ctrl+Shift+/：代码块注释<br>Alt+方向键：左右切换文件<br>Alt+Shift+F10：运行<br>Shift+F10：运行<br>Alt+Enter：自动修正<br>Alt+Insert：生成Constructor/Getter/Setter等<br>Ctrl+E：最近文件</p>
+        <h3 id="Linux命令之：more-or-less"><a href="#Linux命令之：more-or-less" class="headerlink" title="Linux命令之：more or less?"></a>Linux命令之：more or less?</h3><p>more 主要的作用是把输出结果显示在屏幕上，它会一屏停止一下，等待按空格键才继续往上卷。但是，如果看完了这页，想要回头看上一页，是不行的，必须从头再来！</p>
+<p>less 最主要是改进了more 不能回头看的问题。<br>除了能够随意上下翻页之外，less还提供了非常方便的搜索功能，这在查看很长的日志时是很有用的。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">按h查看help</div><div class="line">按g直接跳到第一行</div><div class="line">按G直接跳到最后</div><div class="line">按/ search forward</div><div class="line">按? search backward</div></pre></td></tr></table></figure>
+<h3 id="IDEA集成SonarLint检查代码bug"><a href="#IDEA集成SonarLint检查代码bug" class="headerlink" title="IDEA集成SonarLint检查代码bug"></a>IDEA集成SonarLint检查代码bug</h3><p>Sonar是一款代码检查工具，可以从七个维度检查代码问题：不遵循代码标准，潜在的缺陷，糟糕的复杂度分布，重复，注释不足或者过多，缺乏单元测试，糟糕的设计。<br>而SonarLint是一个IDEA插件，为开发人员提供实时的代码质量检查，尽早发现问题，有助于提高项目质量。</p>
+<p>IDEA集成SonarLint的具体方法参加下面文章：<br><a href="http://www.cnblogs.com/0201zcr/p/6722932.html" target="_blank" rel="external">http://www.cnblogs.com/0201zcr/p/6722932.html</a></p>
+<h3 id="Ubuntu下sublime-text无法输入中文问题"><a href="#Ubuntu下sublime-text无法输入中文问题" class="headerlink" title="Ubuntu下sublime text无法输入中文问题"></a>Ubuntu下sublime text无法输入中文问题</h3><p>在Ubuntu下安装了sublime text，发现无法输入中文，上网搜索发现很多人遇到了这个问题，于是照搬照抄，参考下面文章：<br><a href="https://www.sinosky.org/linux-sublime-text-fcitx.html" target="_blank" rel="external">https://www.sinosky.org/linux-sublime-text-fcitx.html</a></p>
 <blockquote>
 <p>Written with <a href="https://stackedit.io/" target="_blank" rel="external">StackEdit</a>.</p>
 </blockquote>
@@ -473,7 +494,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>Post link:</strong>
-    <a href="https://xiangxianzui.github.io/2017/06/实习：第二周整理/" title="实习：第二周整理">https://xiangxianzui.github.io/2017/06/实习：第二周整理/</a>
+    <a href="https://xiangxianzui.github.io/2017/07/实习整理-四/" title="实习整理(四)">https://xiangxianzui.github.io/2017/07/实习整理-四/</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice: </strong>
@@ -492,7 +513,7 @@
           
             <a href="/tags/Ubuntu/" rel="tag"># Ubuntu</a>
           
-            <a href="/tags/IDEA/" rel="tag"># IDEA</a>
+            <a href="/tags/SonarLint/" rel="tag"># SonarLint</a>
           
         </div>
       
@@ -505,8 +526,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/06/实习：第一周整理/" rel="next" title="实习：第一周整理">
-                <i class="fa fa-chevron-left"></i> 实习：第一周整理
+              <a href="/2017/07/实习整理-三/" rel="next" title="实习整理(三)">
+                <i class="fa fa-chevron-left"></i> 实习整理(三)
               </a>
             
           </div>
@@ -515,8 +536,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/07/实习：第三周整理/" rel="prev" title="实习：第三周整理">
-                实习：第三周整理 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/07/实习整理-五/" rel="prev" title="实习整理(五)">
+                实习整理(五) <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -607,7 +628,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-count">27</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -618,7 +639,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -629,7 +650,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-count">39</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -700,7 +721,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Linux下head-tail命令"><span class="nav-number">1.</span> <span class="nav-text">Linux下head/tail命令</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IDEA常用快捷键-to-be-continued…"><span class="nav-number">2.</span> <span class="nav-text">IDEA常用快捷键 (to be continued…)</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Linux命令之：more-or-less"><span class="nav-number">1.</span> <span class="nav-text">Linux命令之：more or less?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IDEA集成SonarLint检查代码bug"><span class="nav-number">2.</span> <span class="nav-text">IDEA集成SonarLint检查代码bug</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Ubuntu下sublime-text无法输入中文问题"><span class="nav-number">3.</span> <span class="nav-text">Ubuntu下sublime text无法输入中文问题</span></a></li></ol></div>
             
 
           </div>
@@ -720,7 +741,9 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2017</span>
+        
+
+<div class="copyright">&copy; <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
     <i class="fa fa-star"></i>
   </span>
@@ -743,7 +766,24 @@
 
 
 
+
+
         
+
+<div class="busuanzi-count">
+  <script async src="/lib/busuanzi/busuanzi.pure.mini.js"></script>
+
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
 
 
 
@@ -852,9 +892,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://xiangxianzui.github.io/2017/06/实习：第二周整理/';
-          this.page.identifier = '2017/06/实习：第二周整理/';
-          this.page.title = '实习：第二周整理';
+          this.page.url = 'https://xiangxianzui.github.io/2017/07/实习整理-四/';
+          this.page.identifier = '2017/07/实习整理-四/';
+          this.page.title = '实习整理(四)';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://xiangxianzui.disqus.com/embed.js';

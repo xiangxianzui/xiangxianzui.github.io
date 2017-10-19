@@ -12,6 +12,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
 
+<script>
+    (function(){
+        if(''){
+            if (prompt('Enter password please') !== ''){
+                alert('Bad password!');
+                history.back();
+            }
+        }
+    })();
+</script>
 
 
   
@@ -75,7 +85,7 @@
 
 
 
-  <meta name="keywords" content="Linux,tmux,窗口管理," />
+  <meta name="keywords" content="Linux,tools,tmux,窗口管理," />
 
 
 
@@ -89,13 +99,13 @@
 
 
 <meta name="description" content="http://blog.csdn.net/robertbaker/article/details/42172203 http://blog.jobbole.com/87584/  Written with StackEdit.">
-<meta name="keywords" content="Linux,tmux,窗口管理">
+<meta name="keywords" content="Linux,tools,tmux,窗口管理">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux窗口管理终极解决方案:tmux">
 <meta property="og:url" content="https://xiangxianzui.github.io/2017/07/Linux窗口管理终极解决方案-tmux/index.html">
 <meta property="og:site_name" content="Muser">
 <meta property="og:description" content="http://blog.csdn.net/robertbaker/article/details/42172203 http://blog.jobbole.com/87584/  Written with StackEdit.">
-<meta property="og:updated_time" content="2017-10-16T12:02:55.272Z">
+<meta property="og:updated_time" content="2017-10-19T06:26:54.524Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux窗口管理终极解决方案:tmux">
 <meta name="twitter:description" content="http://blog.csdn.net/robertbaker/article/details/42172203 http://blog.jobbole.com/87584/  Written with StackEdit.">
@@ -346,7 +356,19 @@
             
 
             
+              <span class="post-meta-divider">|</span>
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Last modified&#58;</span>
+              
+              <time title="Last modified" itemprop="dateModified" datetime="2017-10-19T14:26:54+08:00">
+                2017-10-19
+              </time>
             
           </span>
 
@@ -485,6 +507,8 @@
           
             <a href="/tags/Linux/" rel="tag"># Linux</a>
           
+            <a href="/tags/tools/" rel="tag"># tools</a>
+          
             <a href="/tags/tmux/" rel="tag"># tmux</a>
           
             <a href="/tags/窗口管理/" rel="tag"># 窗口管理</a>
@@ -500,8 +524,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/07/实习：第六周整理/" rel="next" title="实习：第六周整理">
-                <i class="fa fa-chevron-left"></i> 实习：第六周整理
+              <a href="/2017/07/ELK搭建实时日志分析系统/" rel="next" title="ELK搭建实时日志分析系统">
+                <i class="fa fa-chevron-left"></i> ELK搭建实时日志分析系统
               </a>
             
           </div>
@@ -509,6 +533,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/10/Linux查找文件/" rel="prev" title="Linux查找文件">
+                Linux查找文件 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -589,7 +617,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-count">27</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -600,7 +628,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -611,7 +639,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-count">39</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -686,7 +714,9 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2017</span>
+        
+
+<div class="copyright">&copy; <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
     <i class="fa fa-star"></i>
   </span>
@@ -709,7 +739,24 @@
 
 
 
+
+
         
+
+<div class="busuanzi-count">
+  <script async src="/lib/busuanzi/busuanzi.pure.mini.js"></script>
+
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
 
 
 

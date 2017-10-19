@@ -12,6 +12,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
 
+<script>
+    (function(){
+        if(''){
+            if (prompt('Enter password please') !== ''){
+                alert('Bad password!');
+                history.back();
+            }
+        }
+    })();
+</script>
 
 
   
@@ -75,7 +85,7 @@
 
 
 
-  <meta name="keywords" content="Java,Ubuntu,IDEA,Maven,Git,nginx,rsync,免跳板机,缺少动态库依赖," />
+  <meta name="keywords" content="Java,nginx,Ubuntu,IDEA,Maven,Git,rsync,免跳板机,缺少动态库依赖," />
 
 
 
@@ -89,15 +99,15 @@
 
 
 <meta name="description" content="实习第一周结束了，下面整理一下这周遇到的一些问题。(所有操作均在Ubuntu系统下完成) IDE配置：Intellij IDEA下载Ultimate版，下面网址生成license生成各种软件注册码：http://www.98key.com Java环境配置官网下载jdk，解压到目录 /usr/lib/jdk1.7将以下内容添加到/etc/profile文件结尾： 123export JAVA_HO">
-<meta name="keywords" content="Java,Ubuntu,IDEA,Maven,Git,nginx,rsync,免跳板机,缺少动态库依赖">
+<meta name="keywords" content="Java,nginx,Ubuntu,IDEA,Maven,Git,rsync,免跳板机,缺少动态库依赖">
 <meta property="og:type" content="article">
-<meta property="og:title" content="实习：第一周整理">
-<meta property="og:url" content="https://xiangxianzui.github.io/2017/06/实习：第一周整理/index.html">
+<meta property="og:title" content="实习整理(一)">
+<meta property="og:url" content="https://xiangxianzui.github.io/2017/06/实习整理-一/index.html">
 <meta property="og:site_name" content="Muser">
 <meta property="og:description" content="实习第一周结束了，下面整理一下这周遇到的一些问题。(所有操作均在Ubuntu系统下完成) IDE配置：Intellij IDEA下载Ultimate版，下面网址生成license生成各种软件注册码：http://www.98key.com Java环境配置官网下载jdk，解压到目录 /usr/lib/jdk1.7将以下内容添加到/etc/profile文件结尾： 123export JAVA_HO">
-<meta property="og:updated_time" content="2017-06-17T07:55:35.006Z">
+<meta property="og:updated_time" content="2017-10-19T06:01:49.452Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="实习：第一周整理">
+<meta name="twitter:title" content="实习整理(一)">
 <meta name="twitter:description" content="实习第一周结束了，下面整理一下这周遇到的一些问题。(所有操作均在Ubuntu系统下完成) IDE配置：Intellij IDEA下载Ultimate版，下面网址生成license生成各种软件注册码：http://www.98key.com Java环境配置官网下载jdk，解压到目录 /usr/lib/jdk1.7将以下内容添加到/etc/profile文件结尾： 123export JAVA_HO">
 
 
@@ -128,13 +138,13 @@
 
 
 
-  <link rel="canonical" href="https://xiangxianzui.github.io/2017/06/实习：第一周整理/"/>
+  <link rel="canonical" href="https://xiangxianzui.github.io/2017/06/实习整理-一/"/>
 
 
 
 
 
-  <title>实习：第一周整理 | Muser</title>
+  <title>实习整理(一) | Muser</title>
   
 
 
@@ -311,7 +321,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://xiangxianzui.github.io/2017/06/实习：第一周整理/">
+    <link itemprop="mainEntityOfPage" href="https://xiangxianzui.github.io/2017/06/实习整理-一/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Muser">
@@ -328,7 +338,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">实习：第一周整理</h1>
+          <h1 class="post-title" itemprop="name headline">实习整理(一)</h1>
         
 
         <div class="post-meta">
@@ -346,7 +356,19 @@
             
 
             
+              <span class="post-meta-divider">|</span>
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Last modified&#58;</span>
+              
+              <time title="Last modified" itemprop="dateModified" datetime="2017-10-19T14:01:49+08:00">
+                2017-10-19
+              </time>
             
           </span>
 
@@ -500,7 +522,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>Post link:</strong>
-    <a href="https://xiangxianzui.github.io/2017/06/实习：第一周整理/" title="实习：第一周整理">https://xiangxianzui.github.io/2017/06/实习：第一周整理/</a>
+    <a href="https://xiangxianzui.github.io/2017/06/实习整理-一/" title="实习整理(一)">https://xiangxianzui.github.io/2017/06/实习整理-一/</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice: </strong>
@@ -517,6 +539,8 @@
           
             <a href="/tags/Java/" rel="tag"># Java</a>
           
+            <a href="/tags/nginx/" rel="tag"># nginx</a>
+          
             <a href="/tags/Ubuntu/" rel="tag"># Ubuntu</a>
           
             <a href="/tags/IDEA/" rel="tag"># IDEA</a>
@@ -524,8 +548,6 @@
             <a href="/tags/Maven/" rel="tag"># Maven</a>
           
             <a href="/tags/Git/" rel="tag"># Git</a>
-          
-            <a href="/tags/nginx/" rel="tag"># nginx</a>
           
             <a href="/tags/rsync/" rel="tag"># rsync</a>
           
@@ -554,8 +576,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/06/实习：第二周整理/" rel="prev" title="实习：第二周整理">
-                实习：第二周整理 <i class="fa fa-chevron-right"></i>
+              <a href="/2017/06/实习整理-二/" rel="prev" title="实习整理(二)">
+                实习整理(二) <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -646,7 +668,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-count">27</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -657,7 +679,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -668,7 +690,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-count">39</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -759,7 +781,9 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2017</span>
+        
+
+<div class="copyright">&copy; <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
     <i class="fa fa-star"></i>
   </span>
@@ -782,7 +806,24 @@
 
 
 
+
+
         
+
+<div class="busuanzi-count">
+  <script async src="/lib/busuanzi/busuanzi.pure.mini.js"></script>
+
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
 
 
 
@@ -891,9 +932,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://xiangxianzui.github.io/2017/06/实习：第一周整理/';
-          this.page.identifier = '2017/06/实习：第一周整理/';
-          this.page.title = '实习：第一周整理';
+          this.page.url = 'https://xiangxianzui.github.io/2017/06/实习整理-一/';
+          this.page.identifier = '2017/06/实习整理-一/';
+          this.page.title = '实习整理(一)';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://xiangxianzui.disqus.com/embed.js';

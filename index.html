@@ -12,6 +12,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 <meta name="theme-color" content="#222">
 
+<script>
+    (function(){
+        if(''){
+            if (prompt('Enter password please') !== ''){
+                alert('Bad password!');
+                history.back();
+            }
+        }
+    })();
+</script>
 
 
   
@@ -310,7 +320,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://xiangxianzui.github.io/2017/07/Linux窗口管理终极解决方案-tmux/">
+    <link itemprop="mainEntityOfPage" href="https://xiangxianzui.github.io/2017/10/转载-一致性哈希/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Muser">
@@ -329,7 +339,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/07/Linux窗口管理终极解决方案-tmux/" itemprop="url">Linux窗口管理终极解决方案:tmux</a></h1>
+                <a class="post-title-link" href="/2017/10/转载-一致性哈希/" itemprop="url">(转载)一致性哈希</a></h1>
         
 
         <div class="post-meta">
@@ -341,13 +351,25 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-25T22:27:13+08:00">
-                2017-07-25
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-19T19:31:12+08:00">
+                2017-10-19
               </time>
             
 
             
+              <span class="post-meta-divider">|</span>
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Last modified&#58;</span>
+              
+              <time title="Last modified" itemprop="dateModified" datetime="2017-10-19T20:00:27+08:00">
+                2017-10-19
+              </time>
             
           </span>
 
@@ -364,8 +386,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Guides/" itemprop="url" rel="index">
-                    <span itemprop="name">Guides</span>
+                  <a href="/categories/Work/" itemprop="url" rel="index">
+                    <span itemprop="name">Work</span>
                   </a>
                 </span>
 
@@ -395,7 +417,7 @@
                   <span class="post-meta-item-text">Words count&#58;</span>
                 
                 <span title="Words count">
-                  16
+                  1,998
                 </span>
               
 
@@ -422,13 +444,19 @@
       
         
           
-            <p><a href="http://blog.csdn.net/robertbaker/article/details/42172203" target="_blank" rel="external">http://blog.csdn.net/robertbaker/article/details/42172203</a></p>
-<p><a href="http://blog.jobbole.com/87584/" target="_blank" rel="external">http://blog.jobbole.com/87584/</a></p>
-<blockquote>
-<p>Written with <a href="https://stackedit.io/" target="_blank" rel="external">StackEdit</a>.</p>
-</blockquote>
-
           
+原文: http://blog.csdn.net/cywosp/article/details/23397179
+
+一致性哈希算法在1997年由麻省理工学院提出的一种分布式哈希（DHT）实现算法，设计目标是为了解决因特网中的热点(Hot spot)问题，初衷和CARP十分类似。一致性哈希修正了CARP使用的简 单哈希算法带来的问题，使得分布式哈希（DHT）可以在P2P环境中真正得到应用。 
+一致性hash算法提出了在动态变化的Cache环境中，判定哈希算法好坏的四个定义：1、平衡性(Balance)：平衡性是指哈希的结果能够尽可能分布到所有的缓冲中去，这样可以使得所有的缓冲空间都得到利用。很多哈希算法都能够满足这一条件。2、单调性(Monotonicity)：单调性是指如果已经有一些内容通过哈希分派到了相应的缓冲中，又有新的缓冲加入到系统中。哈希的结果应能够保证原有已分配的内容可以被映射到原有的或者新的缓冲中去，而不会被映射到旧的缓冲集合中的其他缓冲区。3、分散性(Spread)：在分布式环境中，终端有可能看不到所有的缓冲，而是只能看到其中的一
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/10/转载-一致性哈希/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -475,7 +503,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://xiangxianzui.github.io/2017/07/实习：第六周整理/">
+    <link itemprop="mainEntityOfPage" href="https://xiangxianzui.github.io/2017/10/Shell脚本流程控制/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Muser">
@@ -494,7 +522,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/07/实习：第六周整理/" itemprop="url">实习：第六周整理</a></h1>
+                <a class="post-title-link" href="/2017/10/Shell脚本流程控制/" itemprop="url">Shell脚本流程控制</a></h1>
         
 
         <div class="post-meta">
@@ -506,13 +534,384 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-25T20:47:24+08:00">
-                2017-07-25
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-19T18:52:50+08:00">
+                2017-10-19
               </time>
             
 
             
+              <span class="post-meta-divider">|</span>
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Last modified&#58;</span>
+              
+              <time title="Last modified" itemprop="dateModified" datetime="2017-10-19T18:54:16+08:00">
+                2017-10-19
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Work/" itemprop="url" rel="index">
+                    <span itemprop="name">Work</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count&#58;</span>
+                
+                <span title="Words count">
+                  370
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          if-else123456789101112#! /bin/sha=1if [ $1=$a ]then echo "you input 1"elif [ $1=2 ]then echo "you input 2"else #do nothing echo " you input $1"fi
+如果某个条件下的执行体为空, 就不能写这个条件，否则会报错； [ ] 两边一定要加空格, 否则会报错；注意: 实际上这里的[]是test命令的一种形式, [是系统的一个内置命令,存在路径是/bin/[,它是调用test命令的标识, 右中括号是关闭条件判断的标识。
+switch123456789101112#! /bin/shinput=$1case $input in        1 | 0)        str="一or零";;        2)        str="二";;        3)        str="三";;        *)        str=$input;;esac
+case 1 | 0代表逻辑或;;;相当于其它语言中
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/10/Shell脚本流程控制/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xiangxianzui.github.io/2017/10/nginx配置样例/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Muser">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Muser">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/10/nginx配置样例/" itemprop="url">nginx配置样例</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-19T16:54:57+08:00">
+                2017-10-19
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Last modified&#58;</span>
+              
+              <time title="Last modified" itemprop="dateModified" datetime="2017-10-19T20:20:42+08:00">
+                2017-10-19
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Work/" itemprop="url" rel="index">
+                    <span itemprop="name">Work</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count&#58;</span>
+                
+                <span title="Words count">
+                  157
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          <p>nginx配置样例，详情请阅读全文。</p>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/10/nginx配置样例/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xiangxianzui.github.io/2017/10/实习整理-六/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Muser">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Muser">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/10/实习整理-六/" itemprop="url">实习整理(六)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-19T15:55:59+08:00">
+                2017-10-19
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Last modified&#58;</span>
+              
+              <time title="Last modified" itemprop="dateModified" datetime="2017-10-19T19:10:35+08:00">
+                2017-10-19
+              </time>
             
           </span>
 
@@ -560,7 +959,7 @@
                   <span class="post-meta-item-text">Words count&#58;</span>
                 
                 <span title="Words count">
-                  3
+                  1,627
                 </span>
               
 
@@ -587,11 +986,22 @@
       
         
           
-            <blockquote>
-<p>Written with <a href="https://stackedit.io/" target="_blank" rel="external">StackEdit</a>.</p>
-</blockquote>
+          查看当前运行了多少个tomcat实例：ps -ef | grep -v grep | grep -c tomcat
+ps -ef | grep -v grep | grep tomcat | wc
 
-          
+定时任务crond：crond是linux系统用来定期执行命令或指定程序任务的一种服务或软件。一般情况下，我们安装完ubuntu操作系统之后，默认便会启动Crond任务调度服务。Crond服务会定期（默认每分钟检查一次）检查系统中是否有要执行的任务工作。如果有，便会根据其预先设定的定时任务规则自动执行该定时任务工作。这个Crond定时任务服务就相当于我们早上使用的闹钟一样。
+在/etc目录下，有系统自带的定时任务脚本，可以参考学习
+﻿crontab -e 编辑定时任务，每一个用户会有不同的定时任务
+在线生成cron表达式：http://cron.qqe2.com/
+﻿crontab命令的功能是在一定的时间间隔调度一些命令的执行。在/etc目录下有一个crontab文件，这里存放有系统运行的一些调度程序。每个用户可以建立自己的调度crontab。cro
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/10/实习整理-六/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -638,7 +1048,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://xiangxianzui.github.io/2017/07/ELK搭建实时日志分析系统/">
+    <link itemprop="mainEntityOfPage" href="https://xiangxianzui.github.io/2017/10/Linux查找文件/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Muser">
@@ -657,7 +1067,7 @@
         
           <h1 class="post-title" itemprop="name headline">
                 
-                <a class="post-title-link" href="/2017/07/ELK搭建实时日志分析系统/" itemprop="url">ELK搭建实时日志分析系统</a></h1>
+                <a class="post-title-link" href="/2017/10/Linux查找文件/" itemprop="url">Linux查找文件</a></h1>
         
 
         <div class="post-meta">
@@ -669,13 +1079,25 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-25T20:35:04+08:00">
-                2017-07-25
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-19T15:42:24+08:00">
+                2017-10-19
               </time>
             
 
             
+              <span class="post-meta-divider">|</span>
+            
 
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Last modified&#58;</span>
+              
+              <time title="Last modified" itemprop="dateModified" datetime="2017-10-19T16:16:36+08:00">
+                2017-10-19
+              </time>
             
           </span>
 
@@ -692,8 +1114,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Guides/" itemprop="url" rel="index">
-                    <span itemprop="name">Guides</span>
+                  <a href="/categories/Work/" itemprop="url" rel="index">
+                    <span itemprop="name">Work</span>
                   </a>
                 </span>
 
@@ -723,7 +1145,7 @@
                   <span class="post-meta-item-text">Words count&#58;</span>
                 
                 <span title="Words count">
-                  1,544
+                  583
                 </span>
               
 
@@ -750,393 +1172,18 @@
       
         
           
-            <p>日志主要包括系统日志、应用程序日志和安全日志。系统运维和开发人员可以通过日志了解服务器软硬件信息、检查配置过程中的错误及错误发生的原因。经常分析日志可以了解服务器的负荷，性能安全性，从而及时采取措施纠正错误。</p>
-<p>通常，日志被分散的储存不同的设备上。如果你管理数十上百台服务器，你还在使用依次登录每台机器的传统方法查阅日志。这样是不是感觉很繁琐和效率低下。当务之急我们使用集中化的日志管理，例如：开源的syslog，将所有服务器上的日志收集汇总。</p>
-<p>集中化管理日志后，日志的统计和检索又成为一件比较麻烦的事情，一般我们使用grep、awk和wc等Linux命令能实现检索和统计，但是对于要求更高的查询、排序和统计等要求和庞大的机器数量依然使用这样的方法难免有点力不从心。</p>
-<p>开源实时日志分析ELK平台能够完美的解决我们上述的问题，ELK由ElasticSearch、Logstash和Kiabana三个开源工具组成。官方网站：<a href="https://www.elastic.co/products" target="_blank" rel="external">https://www.elastic.co/products</a></p>
-<ul>
-<li><p>Elasticsearch是个开源分布式搜索引擎，它的特点有：分布式，零配置，自动发现，索引自动分片，索引副本机制，restful风格接口，多数据源，自动搜索负载等。</p>
-</li>
-<li><p>Logstash是一个完全开源的工具，他可以对你的日志进行收集、过滤，并将其存储供以后使用（如，搜索）。</p>
-</li>
-<li><p>Kibana 也是一个开源和免费的工具，它Kibana可以为 Logstash 和 ElasticSearch 提供的日志分析友好的<br>Web 界面，可以帮助您汇总、分析和搜索重要数据日志。</p>
-</li>
-</ul>
-<blockquote>
-<p>以上摘自：<a href="http://baidu.blog.51cto.com/71938/1676798" target="_blank" rel="external">http://baidu.blog.51cto.com/71938/1676798</a></p>
-</blockquote>
-<p>ELK是目前比较流行的日志分析框架，很多公司都在使用，今天想着自己搭建一个自己的实时日志分析平台。</p>
-<p><img src="ELK原理.png" alt="ELK原理"></p>
-<p>如图所示，AppServer产生原始Log，Logstash收集Log，并根据定义的filter对Log进行自定义解析，并存放到ElasticSearch集群中，而Kibana则从ES集群中查询数据生成图表，最终呈现给Browser。</p>
-<h4 id="安装环境："><a href="#安装环境：" class="headerlink" title="安装环境："></a><strong>安装环境：</strong></h4><p>ElasticSearch: 5.5.0<br>Logstash: 5.5.0<br>Kibana: 5.5.0<br>Java: &gt;=1.8<br>ELK下载：<a href="https://www.elastic.co/downloads/" target="_blank" rel="external">https://www.elastic.co/downloads/</a></p>
-<h4 id="ElasticSearch"><a href="#ElasticSearch" class="headerlink" title="ElasticSearch:"></a><strong>ElasticSearch:</strong></h4><p>安装好ElasticSearch后，编辑配置文件：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> elasticsearch-5.5.0</div><div class="line">vim config/elasticsearch.yml</div></pre></td></tr></table></figure>
-<p>修改为：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># Use a descriptive name for your cluster:</span></div><div class="line">cluster.name: es_cluster</div><div class="line"><span class="comment"># Use a descriptive name for the node:</span></div><div class="line">node.name: node-0</div><div class="line"><span class="comment"># Path to directory where to store the data (separate multiple locations by comma):</span></div><div class="line">path.data: /home/wanghao/work/elasticsearch-5.5.0/data</div><div class="line"><span class="comment"># Path to log files:</span></div><div class="line">path.logs: /home/wanghao/work/elasticsearch-5.5.0/logs</div><div class="line"><span class="comment"># Set the bind address to a specific IP (IPv4 or IPv6):</span></div><div class="line">network.host: localhost <span class="comment">#我这里设置成localhost,实际的话可以是ES的IP地址</span></div><div class="line"><span class="comment"># Set a custom port for HTTP:</span></div><div class="line">network.port: 9200</div></pre></td></tr></table></figure></p>
-<p>其他选项保持默认，然后启动elasticsearch:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./bin/elasticsearch</div></pre></td></tr></table></figure></p>
-<p>或者使用后台进程的方式启动elasticsearch:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./bin/elasticsearch &amp;</div></pre></td></tr></table></figure></p>
-<p><img src="elasticsearch_01.png" alt="启动ElasticSearch"></p>
-<p>ES集群中的节点是通过<a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/modules-transport.html" target="_blank" rel="external">Transport</a>模块来实现相互通信的，从图中可以看到，node-0节点与ES集群中其它节点的通信端口为9300。另外，节点通过<a href="https://www.elastic.co/guide/en/elasticsearch/reference/current/modules-http.html" target="_blank" rel="external">HTTP</a>模块来暴露它的REST API，端口为9200。</p>
-<p>打开localhost:9200，会看到配置的cluster_name和node name，以及安装的ES的版本等信息：</p>
-<p><img src="elasticsearch_02.png" alt="访问localhost:9200"></p>
-<p><strong>安装ElasticSearch-Head</strong></p>
-<p>ElasticSearch-Head是一个用浏览器跟ES集群交互的插件，可以查看集群状态、集群的doc内容、执行搜索和普通的Rest请求等，安装可参考官网：<a href="https://github.com/mobz/elasticsearch-head" target="_blank" rel="external">https://github.com/mobz/elasticsearch-head</a></p>
-<p>需要注意的是，对于Elasticsearch 5.x， 通过插件安装ElasticSearch-Head不再被支持，需要单独安装。方法如下：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">git <span class="built_in">clone</span> git://github.com/mobz/elasticsearch-head.git</div><div class="line"><span class="built_in">cd</span> elasticsearch-head</div><div class="line">npm install</div><div class="line">npm run start</div></pre></td></tr></table></figure>
-<p>最后浏览器打开<a href="http://localhost:9100" target="_blank" rel="external">http://localhost:9100</a></p>
-<h4 id="Logstash"><a href="#Logstash" class="headerlink" title="Logstash:"></a><strong>Logstash:</strong></h4><p><img src="Logstash原理.png" alt="Logstash原理"></p>
-<p>Logstash实质上是一个日志<strong>收集器</strong>，需要为它指定Input和Output，可以有多个Input和Output。举个例子，比如我们需要把Java代码里Log4j的日志放到ElasticSearch中，那么Input就是Log4j，Output就是ES集群。Filter就是定义放到ElasticSearch中的日志是什么格式的/有哪些字段，具体使用见另一篇博文：实习第六周整理。</p>
-<p>安装Logstash之后,编辑配置:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">cd</span> logstash-5.5.0</div><div class="line">vim config/<span class="built_in">log</span>4j_to_es.conf</div></pre></td></tr></table></figure></p>
-<p>这里新建了一个配置文件,内容如下:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># For detail structure of this file</span></div><div class="line"><span class="comment"># Set: https://www.elastic.co/guide/en/logstash/current/configuration-file-structure.html</span></div><div class="line">input &#123;</div><div class="line">  <span class="comment"># For detail config for log4j as input, </span></div><div class="line">  <span class="comment"># See: https://www.elastic.co/guide/en/logstash/current/plugins-inputs-log4j.html</span></div><div class="line">  <span class="built_in">log</span>4j &#123;</div><div class="line">    mode =&gt; <span class="string">"server"</span></div><div class="line">    host =&gt; <span class="string">"localhost"</span></div><div class="line">    port =&gt; 4567</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line">filter &#123;</div><div class="line">  <span class="comment">#Only matched data are send to output.</span></div><div class="line">&#125;</div><div class="line">output &#123;</div><div class="line">  <span class="comment"># For detail config for elasticsearch as output, </span></div><div class="line">  <span class="comment"># See: https://www.elastic.co/guide/en/logstash/current/plugins-outputs-elasticsearch.html</span></div><div class="line">  elasticsearch &#123;</div><div class="line">    action =&gt; <span class="string">"index"</span>          <span class="comment">#The operation on ES</span></div><div class="line">    hosts  =&gt; <span class="string">"localhost:9200"</span>   <span class="comment">#ElasticSearch host, can be array.</span></div><div class="line">    index  =&gt; <span class="string">"applog"</span>         <span class="comment">#The index to write data to.</span></div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>启动Logstash,用-f指定配置文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">./bin/logstash <span class="_">-f</span> config/<span class="built_in">log</span>4j_to_es.conf</div></pre></td></tr></table></figure></p>
-<p>Logstash配置和启动完毕</p>
-<h4 id="Log4j生成日志"><a href="#Log4j生成日志" class="headerlink" title="Log4j生成日志:"></a><strong>Log4j生成日志:</strong></h4><p>收集器有了(Logstash),收集后放在哪里也清楚了(ES),但是还没有日志…所以现在需要有一个程序产生日志,这里就用Log4j</p>
-<p>建立Maven工程,并在pom.xml中添加log4j依赖:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">&lt;dependency&gt;</div><div class="line">    &lt;groupId&gt;<span class="built_in">log</span>4j&lt;/groupId&gt;</div><div class="line">    &lt;artifactId&gt;<span class="built_in">log</span>4j&lt;/artifactId&gt;</div><div class="line">    &lt;version&gt;1.2.17&lt;/version&gt;</div><div class="line">&lt;/dependency&gt;</div></pre></td></tr></table></figure></p>
-<p>使用log4j需要配置log4j.properties<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">log</span>4j.rootLogger=INFO,console</div><div class="line"></div><div class="line"><span class="comment"># for package com.demo.elk, log would be sent to socket appender.</span></div><div class="line"><span class="built_in">log</span>4j.logger.com.demo.elk=DEBUG, socket</div><div class="line"></div><div class="line"><span class="comment"># appender socket</span></div><div class="line"><span class="built_in">log</span>4j.appender.socket=org.apache.log4j.net.SocketAppender</div><div class="line"><span class="built_in">log</span>4j.appender.socket.Port=4567</div><div class="line"><span class="built_in">log</span>4j.appender.socket.RemoteHost=localhost</div><div class="line"><span class="built_in">log</span>4j.appender.socket.layout=org.apache.log4j.PatternLayout</div><div class="line"><span class="built_in">log</span>4j.appender.socket.layout.ConversionPattern=%d [%-5p] [%l] %m%n</div><div class="line"><span class="built_in">log</span>4j.appender.socket.ReconnectionDelay=10000</div><div class="line"></div><div class="line"><span class="comment"># appender console</span></div><div class="line"><span class="built_in">log</span>4j.appender.console=org.apache.log4j.ConsoleAppender</div><div class="line"><span class="built_in">log</span>4j.appender.console.target=System.out</div><div class="line"><span class="built_in">log</span>4j.appender.console.layout=org.apache.log4j.PatternLayout</div><div class="line"><span class="built_in">log</span>4j.appender.console.layout.ConversionPattern=%d [%-5p] [%l] %m%n</div></pre></td></tr></table></figure></p>
-<p>这里配置了log4j的两个appender:SocketAppender和ConsoleAppender。 Log4j通过socket与运行在localhost:4567的Logstash实例通信,将日志传输过去。</p>
-<p>下面是产生日志的代码,使用PropertyConfigurator显式地加载log4j.properties<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">public class Application &#123;</div><div class="line">    private static final Logger LOGGER = Logger.getLogger(Application.class);</div><div class="line">    public static void main(String[] args) throws Exception &#123;</div><div class="line">        PropertyConfigurator.configure(<span class="string">"log4j.properties"</span>);</div><div class="line">        <span class="keyword">for</span> (int i = 0; i &lt; 10; i++) &#123;</div><div class="line">            LOGGER.error(<span class="string">"Info log ["</span> + i + <span class="string">"]."</span>);</div><div class="line">            Thread.sleep(500);</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>除了将log4j作为Logstash的Input,Logstash还支持很多Input Plugins,详见<a href="https://www.elastic.co/guide/en/logstash/current/input-plugins.html" target="_blank" rel="external">https://www.elastic.co/guide/en/logstash/current/input-plugins.html</a></p>
-<p><a href="https://my.oschina.net/itblog/blog/547250" target="_blank" rel="external">https://my.oschina.net/itblog/blog/547250</a></p>
-<blockquote>
-<p>Written with <a href="https://stackedit.io/" target="_blank" rel="external">StackEdit</a>.</p>
-</blockquote>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://xiangxianzui.github.io/2017/07/转载-JVM监控命令详解/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Muser">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Muser">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/07/转载-JVM监控命令详解/" itemprop="url">(转载)JVM监控命令详解</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-17T21:58:07+08:00">
-                2017-07-17
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Interview/" itemprop="url" rel="index">
-                    <span itemprop="name">Interview</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count&#58;</span>
-                
-                <span title="Words count">
-                  53
-                </span>
-              
-
-              
-
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p><a href="http://learnworld.iteye.com/blog/1381949" target="_blank" rel="external">http://learnworld.iteye.com/blog/1381949</a></p>
-<p><a href="http://www.cnblogs.com/rainy-shurun/p/5732341.html" target="_blank" rel="external">http://www.cnblogs.com/rainy-shurun/p/5732341.html</a></p>
-<h3 id="IDEA集成SonarLint检查代码bug"><a href="#IDEA集成SonarLint检查代码bug" class="headerlink" title="IDEA集成SonarLint检查代码bug"></a>IDEA集成SonarLint检查代码bug</h3><p><a href="http://www.cnblogs.com/0201zcr/p/6722932.html" target="_blank" rel="external">http://www.cnblogs.com/0201zcr/p/6722932.html</a></p>
-<h3 id="Ubuntu下sublime-text无法输入中文问题"><a href="#Ubuntu下sublime-text无法输入中文问题" class="headerlink" title="Ubuntu下sublime text无法输入中文问题"></a>Ubuntu下sublime text无法输入中文问题</h3><p><a href="https://www.sinosky.org/linux-sublime-text-fcitx.html" target="_blank" rel="external">https://www.sinosky.org/linux-sublime-text-fcitx.html</a></p>
-<blockquote>
-<p>Written with <a href="https://stackedit.io/" target="_blank" rel="external">StackEdit</a>.</p>
-</blockquote>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://xiangxianzui.github.io/2017/07/Perfect-Shell-zsh/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Muser">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Muser">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/07/Perfect-Shell-zsh/" itemprop="url">Perfect Shell: zsh</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-11T21:15:11+08:00">
-                2017-07-11
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Guides/" itemprop="url" rel="index">
-                    <span itemprop="name">Guides</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count&#58;</span>
-                
-                <span title="Words count">
-                  183
-                </span>
-              
-
-              
-
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Recently, I bought a new laptop : HP Omen II Pro. Guess what? It is a <strong>GAME LAPTOP</strong>!!! Well, I confess that I couldn’t wait to download GTA5 as soon as I got the laptop in my hands. But wait. I stopped myself from doing that. I <strong>HAD TO</strong> get into work. I had been working as an intern developer in Qunar for two weeks, and, my <strong>old, slow, dumb</strong> laptop really drives me crazy. I really want to kill its ass and throw it to the ground, but I didn’t do that hahaha. I uninstalled the Windows 10 and took a flight to <strong>Ubuntu</strong>. It is the first time that I use Ubuntu as a standalone OS in my laptop. Cheers! </p>
-<p>Well, come to the point. I am a <strong>“Ununtuer”</strong> from now on, so it’s time to get it up–try the <strong>perfect shell</strong> in the world–<strong>zsh</strong>!</p>
-<p><a href="https://zhuanlan.zhihu.com/p/19556676?columnSlug=mactalk" target="_blank" rel="external">https://zhuanlan.zhihu.com/p/19556676?columnSlug=mactalk</a></p>
-<p><a href="https://www.zhihu.com/question/21418449" target="_blank" rel="external">https://www.zhihu.com/question/21418449</a></p>
-<p><a href="http://blog.csdn.net/zxgdll/article/details/70858857" target="_blank" rel="external">http://blog.csdn.net/zxgdll/article/details/70858857</a></p>
-<p><a href="https://github.com/robbyrussell/oh-my-zsh" target="_blank" rel="external">https://github.com/robbyrussell/oh-my-zsh</a></p>
-<blockquote>
-<p>Written with <a href="https://stackedit.io/" target="_blank" rel="external">StackEdit</a>.</p>
-</blockquote>
-
-          
+          Linux下查找文件通常可以用which，whereis，locate和find命令，下面总结它们各自的用法和区别。
+whichwhich 用来查找可执行文件的绝对路径。which只能用来查找PATH环境变量中出现的路径下的可执行文件。当查找的文件在PATH变量中并没有时，就会报错。
+whereis 和 locatewhereis 通过预先生成的一个文件列表库去查找跟给出的文件名相关的文件。locate 类似于whereis，也是通过查找预先生成的文件列表库来告诉用户要查找的文件在哪里。后边直接跟文件名。
+findfind 语法： find [路径] [参数]常用的参数-atime +n ：访问或执行时间大于n天的文件-ctime +n ：写入、更改inode属性（例如更改所有者、权限或者连接）时间大于n天的文件-mtime +n ：写入时间大于n天的文件-name expression ：根据正则表达式查找文件     e.g.  find . -name “*p.java” 在当前目录查找以p结尾的java文件-type type ：通过文件
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/10/Linux查找文件/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1174,7 +1221,7 @@
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/5/">5</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/6/">6</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1226,7 +1273,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">23</span>
+                  <span class="site-state-item-count">27</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1237,7 +1284,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-count">5</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -1248,7 +1295,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">34</span>
+                  <span class="site-state-item-count">39</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -1323,7 +1370,9 @@
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2017</span>
+        
+
+<div class="copyright">&copy; <span itemprop="copyrightYear">2017</span>
   <span class="with-love">
     <i class="fa fa-star"></i>
   </span>
@@ -1346,7 +1395,24 @@
 
 
 
+
+
         
+
+<div class="busuanzi-count">
+  <script async src="/lib/busuanzi/busuanzi.pure.mini.js"></script>
+
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
 
 
 
