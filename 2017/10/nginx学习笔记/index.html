@@ -85,7 +85,7 @@
 
 
 
-  <meta name="keywords" content="Linux,Shell," />
+  <meta name="keywords" content="nginx,Keepalived,高可用," />
 
 
 
@@ -98,19 +98,21 @@
 
 
 
-<meta name="description" content="此篇为Shell脚本的学习笔记，方便用到的时候查阅。 shell中的命令不一定要用绝对路径，比如 /bin/pwd 和 pwd 均可Linux在以下几个目录下存放命令： /bin、/sbin、/usr/bin、/usr/sbin这几个目录的区别如下：  /bin 是系统的一些指令。bin为binary的简写主要放置一些系统的必备执行档例如:cat、cp、chmod df、dmesg、gzip、ki">
-<meta name="keywords" content="Linux,Shell">
+<meta name="description" content="Nginx + Keepalived实现高可用Keepalived简介Keepalived是一个高性能的服务器高可用或热备解决方案，Keepalived主要来防止服务器单点故障的发生，可以通过与Nginx的配合实现web服务端的高可用。Keepalived以VRRP协议为实现基础，用VRRP协议来实现高可用性(HA)。VRRP(Virtual Router Redundancy Protocol)">
+<meta name="keywords" content="nginx,Keepalived,高可用">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Shell脚本学习">
-<meta property="og:url" content="https://xiangxianzui.github.io/2017/10/Shell脚本学习/index.html">
+<meta property="og:title" content="nginx学习笔记">
+<meta property="og:url" content="https://xiangxianzui.github.io/2017/10/nginx学习笔记/index.html">
 <meta property="og:site_name" content="Muser">
-<meta property="og:description" content="此篇为Shell脚本的学习笔记，方便用到的时候查阅。 shell中的命令不一定要用绝对路径，比如 /bin/pwd 和 pwd 均可Linux在以下几个目录下存放命令： /bin、/sbin、/usr/bin、/usr/sbin这几个目录的区别如下：  /bin 是系统的一些指令。bin为binary的简写主要放置一些系统的必备执行档例如:cat、cp、chmod df、dmesg、gzip、ki">
-<meta property="og:image" content="https://xiangxianzui.github.io/2017/10/Shell脚本学习/双引号和单引号的区别.png">
-<meta property="og:updated_time" content="2017-10-20T15:54:56.543Z">
+<meta property="og:description" content="Nginx + Keepalived实现高可用Keepalived简介Keepalived是一个高性能的服务器高可用或热备解决方案，Keepalived主要来防止服务器单点故障的发生，可以通过与Nginx的配合实现web服务端的高可用。Keepalived以VRRP协议为实现基础，用VRRP协议来实现高可用性(HA)。VRRP(Virtual Router Redundancy Protocol)">
+<meta property="og:image" content="https://xiangxianzui.github.io/2017/10/nginx学习笔记/使用Keepalived实现Nginx高可用.png">
+<meta property="og:image" content="https://xiangxianzui.github.io/2017/10/nginx学习笔记/Keepalived原理图.png">
+<meta property="og:image" content="https://xiangxianzui.github.io/2017/10/nginx学习笔记/Keepalived原理图.png">
+<meta property="og:updated_time" content="2017-10-21T13:15:58.757Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Shell脚本学习">
-<meta name="twitter:description" content="此篇为Shell脚本的学习笔记，方便用到的时候查阅。 shell中的命令不一定要用绝对路径，比如 /bin/pwd 和 pwd 均可Linux在以下几个目录下存放命令： /bin、/sbin、/usr/bin、/usr/sbin这几个目录的区别如下：  /bin 是系统的一些指令。bin为binary的简写主要放置一些系统的必备执行档例如:cat、cp、chmod df、dmesg、gzip、ki">
-<meta name="twitter:image" content="https://xiangxianzui.github.io/2017/10/Shell脚本学习/双引号和单引号的区别.png">
+<meta name="twitter:title" content="nginx学习笔记">
+<meta name="twitter:description" content="Nginx + Keepalived实现高可用Keepalived简介Keepalived是一个高性能的服务器高可用或热备解决方案，Keepalived主要来防止服务器单点故障的发生，可以通过与Nginx的配合实现web服务端的高可用。Keepalived以VRRP协议为实现基础，用VRRP协议来实现高可用性(HA)。VRRP(Virtual Router Redundancy Protocol)">
+<meta name="twitter:image" content="https://xiangxianzui.github.io/2017/10/nginx学习笔记/使用Keepalived实现Nginx高可用.png">
 
 
 
@@ -140,13 +142,13 @@
 
 
 
-  <link rel="canonical" href="https://xiangxianzui.github.io/2017/10/Shell脚本学习/"/>
+  <link rel="canonical" href="https://xiangxianzui.github.io/2017/10/nginx学习笔记/"/>
 
 
 
 
 
-  <title>Shell脚本学习 | Muser</title>
+  <title>nginx学习笔记 | Muser</title>
   
 
 
@@ -323,7 +325,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://xiangxianzui.github.io/2017/10/Shell脚本学习/">
+    <link itemprop="mainEntityOfPage" href="https://xiangxianzui.github.io/2017/10/nginx学习笔记/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Muser">
@@ -340,7 +342,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Shell脚本学习</h1>
+          <h1 class="post-title" itemprop="name headline">nginx学习笔记</h1>
         
 
         <div class="post-meta">
@@ -352,8 +354,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-20T19:19:28+08:00">
-                2017-10-20
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-21T14:07:35+08:00">
+                2017-10-21
               </time>
             
 
@@ -368,8 +370,8 @@
               
                 <span class="post-meta-item-text">Last modified&#58;</span>
               
-              <time title="Last modified" itemprop="dateModified" datetime="2017-10-20T23:54:56+08:00">
-                2017-10-20
+              <time title="Last modified" itemprop="dateModified" datetime="2017-10-21T21:15:58+08:00">
+                2017-10-21
               </time>
             
           </span>
@@ -387,8 +389,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Work/" itemprop="url" rel="index">
-                    <span itemprop="name">Work</span>
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
                   </a>
                 </span>
 
@@ -423,7 +425,7 @@
                   <span class="post-meta-item-text">Words count&#58;</span>
                 
                 <span title="Words count">
-                  937
+                  1,591
                 </span>
               
 
@@ -448,44 +450,21 @@
       
 
       
-        <p>此篇为Shell脚本的学习笔记，方便用到的时候查阅。</p>
-<h3 id="shell中的命令不一定要用绝对路径，比如-bin-pwd-和-pwd-均可"><a href="#shell中的命令不一定要用绝对路径，比如-bin-pwd-和-pwd-均可" class="headerlink" title="shell中的命令不一定要用绝对路径，比如 /bin/pwd 和 pwd 均可"></a>shell中的命令不一定要用绝对路径，比如 /bin/pwd 和 pwd 均可</h3><h3 id="Linux在以下几个目录下存放命令：-bin、-sbin、-usr-bin、-usr-sbin"><a href="#Linux在以下几个目录下存放命令：-bin、-sbin、-usr-bin、-usr-sbin" class="headerlink" title="Linux在以下几个目录下存放命令： /bin、/sbin、/usr/bin、/usr/sbin"></a>Linux在以下几个目录下存放命令： /bin、/sbin、/usr/bin、/usr/sbin</h3><p>这几个目录的区别如下：</p>
-<ul>
-<li>/bin 是系统的一些指令。bin为binary的简写主要放置一些系统的必备执行档例如:cat、cp、chmod df、dmesg、gzip、kill、ls、mkdir、more、mount、rm、su、tar等。</li>
-<li>/sbin 一般是指超级用户指令。主要放置一些系统管理的必备程式例如:cfdisk、dhcpcd、dump、e2fsck、fdisk、halt、ifconfig、ifup、 ifdown、init、insmod、lilo、lsmod、mke2fs、modprobe、quotacheck、reboot、rmmod、 runlevel、shutdown等。</li>
-<li>/usr/bin 是你在后期安装的一些软件的运行脚本。主要放置一些应用软体工具的必备执行档例如c++、g++、gcc、chdrv、diff、dig、du、eject、elm、free、gnome<em>、 gzip、htpasswd、kfm、ktop、last、less、locale、m4、make、man、mcopy、ncftp、 newaliases、nslookup passwd、quota、smb</em>、wget等。</li>
-<li>/usr/sbin 放置一些用户安装的系统管理的必备程式例如:dhcpd、httpd、imap、in.*d、inetd、lpd、named、netconfig、nmbd、samba、sendmail、squid、swap、tcpd、tcpdump等。</li>
-</ul>
-<p>如果新装的系统，运行一些很正常的诸如：shutdown，fdisk的命令时，悍然提示：bash:command not found。那么首先就要考虑root 的$PATH里是否已经包含了这些环境变量。<br>可以查看PATH，如果是：PATH=$PATH:$HOME/bin则需要添加成如下：<br><code>PATH=$PATH:$HOME/bin:/sbin:/usr/bin:/usr/sbin</code></p>
-<blockquote>
-<p>摘自<a href="http://blog.csdn.net/kkdelta/article/details/7708250" target="_blank" rel="external">http://blog.csdn.net/kkdelta/article/details/7708250</a></p>
-</blockquote>
-<h3 id="vim下的字符串替换："><a href="#vim下的字符串替换：" class="headerlink" title="vim下的字符串替换："></a>vim下的字符串替换：</h3><p>%s/old/new  把每一行中的第一个old替换成new<br>%s/old/new/g  把每一行中的所有old替换成new<br>如果在要被替换的字符串中出现分隔符/，那么可以用加号+代替/     比如：%s+/test/file1.info+/test/file1.java/g  就是把每一行中的所有/test/file1.info替换成/test/file1.java</p>
-<h3 id="Shell中有两类变量：临时变量和永久变量"><a href="#Shell中有两类变量：临时变量和永久变量" class="headerlink" title="Shell中有两类变量：临时变量和永久变量"></a>Shell中有两类变量：临时变量和永久变量</h3><p>临时变量是Shell程序内部定义的，适用范围仅限于定义它的程序，包括用户自定义变量、位置变量。<br>永久变量是环境变量，使用范围为Linux系统。<br>set命令输出系统中的所有环境变量，unset命令删除指定的变量</p>
-<h3 id="Shell中的特殊变量："><a href="#Shell中的特殊变量：" class="headerlink" title="Shell中的特殊变量："></a>Shell中的特殊变量：</h3><ul>
-<li>$*  这个程序中的所有参数</li>
-<li>$#  这个程序的参数个数</li>
-<li>$$  这个程序的PID</li>
-<li>$!  执行上一个后台命令的PID</li>
-<li>$?  执行上一个命令的返回值</li>
-<li>$(0-9)  显示位置变量</li>
-</ul>
-<h3 id="Shell中双引号和单引号的区别："><a href="#Shell中双引号和单引号的区别：" class="headerlink" title="Shell中双引号和单引号的区别："></a>Shell中双引号和单引号的区别：</h3><p>shell会把双引号里的变量值打印出来，而单引号不会去翻译变量，直接所见即所得。<br><img src="双引号和单引号的区别.png" alt="双引号和单引号的区别" title="双引号和单引号的区别"></p>
-<h3 id="命令替换符号"><a href="#命令替换符号" class="headerlink" title="命令替换符号``"></a>命令替换符号``</h3><p>``不是单引号，在键盘中的数字1之前<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#!/bin/sh</span></div><div class="line">DATE=`/bin/date +%Y%m%d`</div><div class="line"><span class="built_in">echo</span> <span class="string">"TODAY IS <span class="variable">$DATE</span>"</span></div></pre></td></tr></table></figure></p>
-<p>输出<code>TODAY IS 20171020</code><br>``里面是命令执行的结果</p>
-<h3 id="test条件控制语句"><a href="#test条件控制语句" class="headerlink" title="test条件控制语句"></a>test条件控制语句</h3><ul>
-<li>test -d file    指定文件是否是目录</li>
-<li>test -f file    指定文件是否是常规文件</li>
-<li>test -x file    文件是否可执行</li>
-<li>test -r file    文件是否可读</li>
-<li>test -w file    文件是否可写</li>
-<li>test -a file    文件是否存在</li>
-<li>test -s file    文件大小是否非0</li>
-</ul>
-<p>test条件控制语句可以简写为[]的形式<br>比如：<code>if test -d file.txt</code>等价于<code>if [ -d file.txt ]</code><br>注意空格：if’空格’[‘空格’-d file.txt’空格’]</p>
-<h3 id="Shell中用-a表示逻辑与，用-o表示逻辑或"><a href="#Shell中用-a表示逻辑与，用-o表示逻辑或" class="headerlink" title="Shell中用-a表示逻辑与，用-o表示逻辑或"></a>Shell中用-a表示逻辑与，用-o表示逻辑或</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#!/bin/sh</span></div><div class="line"><span class="comment"># read variables from keyboard</span></div><div class="line"><span class="built_in">read</span> a b c</div><div class="line"><span class="keyword">if</span> [ <span class="variable">$a</span> <span class="_">-eq</span> <span class="variable">$b</span> <span class="_">-a</span> <span class="variable">$b</span> <span class="_">-ne</span> <span class="variable">$c</span> -o <span class="variable">$c</span> -le <span class="variable">$a</span> ]</div><div class="line"><span class="keyword">then</span>	<span class="built_in">echo</span> <span class="string">"success"</span></div><div class="line"><span class="keyword">else</span>	<span class="built_in">echo</span> <span class="string">"fail"</span></div><div class="line"><span class="keyword">fi</span></div></pre></td></tr></table></figure>
-<h3 id="sh-x表示以debug的方式执行脚本，方便debug"><a href="#sh-x表示以debug的方式执行脚本，方便debug" class="headerlink" title="sh -x表示以debug的方式执行脚本，方便debug"></a>sh -x表示以debug的方式执行脚本，方便debug</h3><p><code>-x xtrace        Write each command to standard error (preceded by a ‘+ ’) before it is executed.  Useful for debugging.</code></p>
-<h3 id="Shell脚本的流程控制"><a href="#Shell脚本的流程控制" class="headerlink" title="Shell脚本的流程控制"></a>Shell脚本的流程控制</h3><p>参见另一篇博文：<a href="https://xiangxianzui.github.io/2017/10/Shell%E8%84%9A%E6%9C%AC%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/">Shell脚本流程控制</a></p>
+        <h2 id="Nginx-Keepalived实现高可用"><a href="#Nginx-Keepalived实现高可用" class="headerlink" title="Nginx + Keepalived实现高可用"></a>Nginx + Keepalived实现高可用</h2><h3 id="Keepalived简介"><a href="#Keepalived简介" class="headerlink" title="Keepalived简介"></a>Keepalived简介</h3><p>Keepalived是一个高性能的服务器高可用或热备解决方案，Keepalived主要来防止服务器单点故障的发生，可以通过与Nginx的配合实现web服务端的高可用。<br>Keepalived以VRRP协议为实现基础，用VRRP协议来实现高可用性(HA)。VRRP(Virtual Router Redundancy Protocol)协议是用于实现路由器冗余的协议，VRRP协议将两台或多台路由器设备虚拟成一个设备，对外提供虚拟路由器IP(一个或多个)，如下图所示：</p>
+<p><img src="使用Keepalived实现Nginx高可用.png" alt="使用Keepalived实现Nginx高可用" title="使用Keepalived实现Nginx高可用"></p>
+<p>Keepalived不仅能实现Nginx的高可用，还能实现Redis, Mysql等服务集群的高可用</p>
+<h3 id="VRRP工作机制"><a href="#VRRP工作机制" class="headerlink" title="VRRP工作机制"></a>VRRP工作机制</h3><p>在一个VRRP虚拟路由器中，有多台物理的VRRP路由器，但是这多台的物理的机器并不能同时工作，而是由一台称为MASTER的负责路由工作，其它的都是BACKUP，MASTER并非一成不变，VRRP让每个VRRP路由器参与竞选，最终获胜的就是MASTER。MASTER拥有一些特权，比如，拥有虚拟路由器的IP地址，我们的主机就是用这个IP地址作为静态路由的。拥有特权的MASTER要负责转发发送给网关地址的包和响应ARP请求。</p>
+<p>VRRP通过竞选协议来实现虚拟路由器的功能，所有的协议报文都是通过IP多播(multicast)包(多播地址224.0.0.18)形式发送的。虚拟路由器由VRID(范围0-255)和一组IP地址组成，对外表现为一个周知的MAC地址。所以，在一个虚拟路由 器中，不管谁是MASTER，对外都是相同的MAC和IP(称之为VIP)。客户端主机并不需要因为MASTER的改变而修改自己的路由配置，对客户端来说，这种主从的切换是透明的。</p>
+<p>在一个虚拟路由器中，只有作为MASTER的VRRP路由器会一直发送VRRP通告信息(VRRPAdvertisement message)，BACKUP不会抢占MASTER，除非它的优先级(priority)更高。当MASTER不可用时(BACKUP收不到通告信息)， 多台BACKUP中优先级最高的这台会被抢占为MASTER。这种抢占是非常快速的(&lt;1s)，以保证服务的连续性。由于安全性考虑，VRRP包使用了加密协议进行加密。</p>
+<h3 id="Keepalived工作原理"><a href="#Keepalived工作原理" class="headerlink" title="Keepalived工作原理"></a>Keepalived工作原理</h3><p><img src="Keepalived原理图.png" alt="Keepalived原理图" title="Keepalived原理图"></p>
+<p>上图显示了一个应用场景，Keepalived虚拟出一个虚拟设备，该设备对外暴露IP；有两个nginx提供反向代理和负载均衡服务；在每台nginx服务器的物理机上都运行Keepalived服务。<br>我们假设nginx1是主节点，叫做MASTER；nginx2是备份节点，叫做BACKUP。</p>
+<p>下面分别是Keepalived在MASTER和BACKUP的配置文件，读懂了配置文件也就大致清楚了Keepalived的工作原理。</p>
+<p>首先是MASTER节点：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line">! Configuration File for keepalived</div><div class="line"></div><div class="line">global_defs &#123;</div><div class="line">   router_id nginx1 ##标识节点的字符串，通常为hostname</div><div class="line">&#125;</div><div class="line"> ## keepalived 会定时执行脚本并且对脚本的执行结果进行分析，动态调整vrrp_instance的优先级。</div><div class="line"> ##这里的权重weight 是与下面的优先级priority有关，如果执行了一次检查脚本成功，则权重会-20，也就是由100 - 20 变成了80，</div><div class="line"> ##Master 的优先级为80 就低于了Backup的优先级90，那么会进行自动的主备切换。</div><div class="line"> ##如果脚本执行结果为0并且weight配置的值大于0，则优先级会相应增加。</div><div class="line"> ##如果脚本执行结果不为0 并且weight配置的值小于0，则优先级会相应减少。</div><div class="line">vrrp_script chk_nginx &#123;</div><div class="line">    script &quot;/etc/keepalived/nginx_check.sh&quot; ##执行脚本位置</div><div class="line">    interval 2 ##检测时间间隔2s</div><div class="line">    weight -20 ## 如果条件成立则权重减20（-20）</div><div class="line">&#125;</div><div class="line"> ## 定义虚拟路由 VI_1为自定义标识。</div><div class="line">vrrp_instance VI_1 &#123;</div><div class="line">    state MASTER   ## 主节点为MASTER，备份节点为BACKUP</div><div class="line">    ## 绑定虚拟IP的网络接口（网卡），与本机IP地址所在的网络接口相同（我这里是eth0）</div><div class="line">    interface eth0  </div><div class="line">    virtual_router_id 100  ## 虚拟路由ID号，同一个 vrrp_instance,MASTER 和 BACKUP 的 virtual_router_id 是一致的,同时在整个 vrrp 内是唯一的。</div><div class="line">    mcast_src_ip 192.168.1.172  ## 本机ip地址</div><div class="line">    priority 100  ##优先级配置（0-254的值）</div><div class="line">    Nopreempt  ## </div><div class="line">    advert_int 1 ## 组播信息发送间隔，两个节点必须配置一致，默认1s</div><div class="line">    authentication &#123;  </div><div class="line">        auth_type PASS</div><div class="line">        auth_pass mypassword ## 同一个vrrp_instance中MASTER 与 BACKUP 使用相同的密码才能正常通信。</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    track_script &#123;</div><div class="line">        chk_nginx</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    virtual_ipaddress &#123;</div><div class="line">        192.168.1.170 ## 虚拟ip(vip)，可以指定多个</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>然后是BACKUP节点：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">! Configuration File for keepalived</div><div class="line"></div><div class="line">global_defs &#123;</div><div class="line">   router_id nginx2</div><div class="line">&#125;</div><div class="line"></div><div class="line">vrrp_script chk_nginx &#123;</div><div class="line">    script &quot;/etc/keepalived/nginx_check.sh&quot;</div><div class="line">    interval 2</div><div class="line">    weight -20</div><div class="line">&#125;</div><div class="line">vrrp_instance VI_1 &#123;</div><div class="line">    state BACKUP</div><div class="line">    interface eth0</div><div class="line">    virtual_router_id 100 ##必须与MASTER一致</div><div class="line">    mcast_src_ip 192.168.1.173</div><div class="line">    priority 90 ##优先级配置</div><div class="line">    advert_int 1</div><div class="line">    authentication &#123;</div><div class="line">        auth_type PASS</div><div class="line">        auth_pass mypassword</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    track_script &#123;</div><div class="line">        chk_nginx</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    virtual_ipaddress &#123;</div><div class="line">        192.168.1.170</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>最后是nginx_check.sh脚本：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#!/bin/bash</span></div><div class="line">A=`ps -C nginx –no-header |wc <span class="_">-l</span>`</div><div class="line"><span class="keyword">if</span> [ <span class="variable">$A</span> <span class="_">-eq</span> 0 ];<span class="keyword">then</span></div><div class="line">    /usr/<span class="built_in">local</span>/nginx/sbin/nginx</div><div class="line">    sleep 2</div><div class="line">    <span class="keyword">if</span> [ `ps -C nginx --no-header |wc <span class="_">-l</span>` <span class="_">-eq</span> 0 ];<span class="keyword">then</span></div><div class="line">        killall keepalived</div><div class="line">    <span class="keyword">fi</span></div><div class="line"><span class="keyword">fi</span></div></pre></td></tr></table></figure></p>
+<p>再来看一遍这张图：<br><img src="Keepalived原理图.png" alt="Keepalived原理图" title="初始时刻MASTER的优先级是100，BACKUP是90"></p>
+<p>初始时刻MASTER的优先级是100，BACKUP是90，因此Keepalived会把到来的请求打到优先级大的机器上，也就是打到MASTER上。与此同时，Keepalived会每隔2秒执行一次指定的脚本，即nginx_check.sh脚本，这个脚本首先计算机器中nginx进程的数量，如果数量等于0，说明这台物理机上nginx挂掉了，那么尝试启动nginx，休眠2秒钟之后，再次统计nginx进程数量，如果数量依然是0，说明启动nginx不成功，那么就把该物理机上的Keepalived服务杀掉。如果MASTER上的nginx挂掉且启动失败，那么根据配置文件中的weight值是-20，把MASTER的priority值减去20结果等于80。根据VRRP协议，MASTER要定时向所有BACKUP发送VRRP通告信息，由于MASTER上的Keepalived服务被杀掉了，无法发送VRRP通告，收不到通告的BACKUP会接管虚拟IP，也就是实现了主从切换，在这里就是由nginx2取代了nginx1。</p>
+<h3 id="最后一点说明"><a href="#最后一点说明" class="headerlink" title="最后一点说明"></a>最后一点说明</h3><p>Keepalived还可以实现mysql，redis等集群的高可用，配置与nginx类似，不同的是执行的脚本不同。比如mysql，每隔2秒执行一次mysql_check.sh脚本，脚本的大致流程就是检查mysql服务是否挂掉了，挂掉了就尝试启动，启动不了就杀掉Keepalived服务，根据VRRP协议实现主从切换，都是类似的。</p>
 
       
     </div>
@@ -530,7 +509,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>Post link:</strong>
-    <a href="https://xiangxianzui.github.io/2017/10/Shell脚本学习/" title="Shell脚本学习">https://xiangxianzui.github.io/2017/10/Shell脚本学习/</a>
+    <a href="https://xiangxianzui.github.io/2017/10/nginx学习笔记/" title="nginx学习笔记">https://xiangxianzui.github.io/2017/10/nginx学习笔记/</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice: </strong>
@@ -545,9 +524,11 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Linux/" rel="tag"><i class="fa fa-tags"></i> Linux</a>
+            <a href="/tags/nginx/" rel="tag"><i class="fa fa-tags"></i> nginx</a>
           
-            <a href="/tags/Shell/" rel="tag"><i class="fa fa-tags"></i> Shell</a>
+            <a href="/tags/Keepalived/" rel="tag"><i class="fa fa-tags"></i> Keepalived</a>
+          
+            <a href="/tags/高可用/" rel="tag"><i class="fa fa-tags"></i> 高可用</a>
           
         </div>
       
@@ -560,8 +541,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/10/关于Bloom-Filter/" rel="next" title="关于Bloom Filter">
-                <i class="fa fa-chevron-left"></i> 关于Bloom Filter
+              <a href="/2017/10/Shell脚本学习笔记/" rel="next" title="Shell脚本学习笔记">
+                <i class="fa fa-chevron-left"></i> Shell脚本学习笔记
               </a>
             
           </div>
@@ -658,7 +639,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">29</span>
+                  <span class="site-state-item-count">30</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -669,7 +650,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">categories</span>
                 </a>
               </div>
@@ -680,7 +661,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">40</span>
+                  <span class="site-state-item-count">42</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -751,7 +732,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#shell中的命令不一定要用绝对路径，比如-bin-pwd-和-pwd-均可"><span class="nav-number">1.</span> <span class="nav-text">shell中的命令不一定要用绝对路径，比如 /bin/pwd 和 pwd 均可</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Linux在以下几个目录下存放命令：-bin、-sbin、-usr-bin、-usr-sbin"><span class="nav-number">2.</span> <span class="nav-text">Linux在以下几个目录下存放命令： /bin、/sbin、/usr/bin、/usr/sbin</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vim下的字符串替换："><span class="nav-number">3.</span> <span class="nav-text">vim下的字符串替换：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Shell中有两类变量：临时变量和永久变量"><span class="nav-number">4.</span> <span class="nav-text">Shell中有两类变量：临时变量和永久变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Shell中的特殊变量："><span class="nav-number">5.</span> <span class="nav-text">Shell中的特殊变量：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Shell中双引号和单引号的区别："><span class="nav-number">6.</span> <span class="nav-text">Shell中双引号和单引号的区别：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#命令替换符号"><span class="nav-number">7.</span> <span class="nav-text">命令替换符号``</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#test条件控制语句"><span class="nav-number">8.</span> <span class="nav-text">test条件控制语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Shell中用-a表示逻辑与，用-o表示逻辑或"><span class="nav-number">9.</span> <span class="nav-text">Shell中用-a表示逻辑与，用-o表示逻辑或</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sh-x表示以debug的方式执行脚本，方便debug"><span class="nav-number">10.</span> <span class="nav-text">sh -x表示以debug的方式执行脚本，方便debug</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Shell脚本的流程控制"><span class="nav-number">11.</span> <span class="nav-text">Shell脚本的流程控制</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Nginx-Keepalived实现高可用"><span class="nav-number">1.</span> <span class="nav-text">Nginx + Keepalived实现高可用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Keepalived简介"><span class="nav-number">1.1.</span> <span class="nav-text">Keepalived简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#VRRP工作机制"><span class="nav-number">1.2.</span> <span class="nav-text">VRRP工作机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Keepalived工作原理"><span class="nav-number">1.3.</span> <span class="nav-text">Keepalived工作原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最后一点说明"><span class="nav-number">1.4.</span> <span class="nav-text">最后一点说明</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -786,7 +767,7 @@
     
       <span class="post-meta-item-text">Site words count&#58;</span>
     
-    <span title="Site words count">16.3k</span>
+    <span title="Site words count">17.9k</span>
   
 </div>
 
@@ -936,9 +917,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://xiangxianzui.github.io/2017/10/Shell脚本学习/';
-          this.page.identifier = '2017/10/Shell脚本学习/';
-          this.page.title = 'Shell脚本学习';
+          this.page.url = 'https://xiangxianzui.github.io/2017/10/nginx学习笔记/';
+          this.page.identifier = '2017/10/nginx学习笔记/';
+          this.page.title = 'nginx学习笔记';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://xiangxianzui.disqus.com/embed.js';
