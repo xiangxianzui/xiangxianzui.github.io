@@ -108,7 +108,7 @@
 <meta property="og:image" content="https://xiangxianzui.github.io/2017/10/nginx学习笔记/使用Keepalived实现Nginx高可用.png">
 <meta property="og:image" content="https://xiangxianzui.github.io/2017/10/nginx学习笔记/Keepalived原理图.png">
 <meta property="og:image" content="https://xiangxianzui.github.io/2017/10/nginx学习笔记/Keepalived原理图.png">
-<meta property="og:updated_time" content="2017-10-21T13:15:58.757Z">
+<meta property="og:updated_time" content="2017-10-21T16:08:45.456Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="nginx学习笔记">
 <meta name="twitter:description" content="Nginx + Keepalived实现高可用Keepalived简介Keepalived是一个高性能的服务器高可用或热备解决方案，Keepalived主要来防止服务器单点故障的发生，可以通过与Nginx的配合实现web服务端的高可用。Keepalived以VRRP协议为实现基础，用VRRP协议来实现高可用性(HA)。VRRP(Virtual Router Redundancy Protocol)">
@@ -370,8 +370,8 @@
               
                 <span class="post-meta-item-text">Last modified&#58;</span>
               
-              <time title="Last modified" itemprop="dateModified" datetime="2017-10-21T21:15:58+08:00">
-                2017-10-21
+              <time title="Last modified" itemprop="dateModified" datetime="2017-10-22T00:08:45+08:00">
+                2017-10-22
               </time>
             
           </span>
@@ -425,7 +425,7 @@
                   <span class="post-meta-item-text">Words count&#58;</span>
                 
                 <span title="Words count">
-                  1,591
+                  1,614
                 </span>
               
 
@@ -459,12 +459,12 @@
 <h3 id="Keepalived工作原理"><a href="#Keepalived工作原理" class="headerlink" title="Keepalived工作原理"></a>Keepalived工作原理</h3><p><img src="Keepalived原理图.png" alt="Keepalived原理图" title="Keepalived原理图"></p>
 <p>上图显示了一个应用场景，Keepalived虚拟出一个虚拟设备，该设备对外暴露IP；有两个nginx提供反向代理和负载均衡服务；在每台nginx服务器的物理机上都运行Keepalived服务。<br>我们假设nginx1是主节点，叫做MASTER；nginx2是备份节点，叫做BACKUP。</p>
 <p>下面分别是Keepalived在MASTER和BACKUP的配置文件，读懂了配置文件也就大致清楚了Keepalived的工作原理。</p>
-<p>首先是MASTER节点：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line">! Configuration File for keepalived</div><div class="line"></div><div class="line">global_defs &#123;</div><div class="line">   router_id nginx1 ##标识节点的字符串，通常为hostname</div><div class="line">&#125;</div><div class="line"> ## keepalived 会定时执行脚本并且对脚本的执行结果进行分析，动态调整vrrp_instance的优先级。</div><div class="line"> ##这里的权重weight 是与下面的优先级priority有关，如果执行了一次检查脚本成功，则权重会-20，也就是由100 - 20 变成了80，</div><div class="line"> ##Master 的优先级为80 就低于了Backup的优先级90，那么会进行自动的主备切换。</div><div class="line"> ##如果脚本执行结果为0并且weight配置的值大于0，则优先级会相应增加。</div><div class="line"> ##如果脚本执行结果不为0 并且weight配置的值小于0，则优先级会相应减少。</div><div class="line">vrrp_script chk_nginx &#123;</div><div class="line">    script &quot;/etc/keepalived/nginx_check.sh&quot; ##执行脚本位置</div><div class="line">    interval 2 ##检测时间间隔2s</div><div class="line">    weight -20 ## 如果条件成立则权重减20（-20）</div><div class="line">&#125;</div><div class="line"> ## 定义虚拟路由 VI_1为自定义标识。</div><div class="line">vrrp_instance VI_1 &#123;</div><div class="line">    state MASTER   ## 主节点为MASTER，备份节点为BACKUP</div><div class="line">    ## 绑定虚拟IP的网络接口（网卡），与本机IP地址所在的网络接口相同（我这里是eth0）</div><div class="line">    interface eth0  </div><div class="line">    virtual_router_id 100  ## 虚拟路由ID号，同一个 vrrp_instance,MASTER 和 BACKUP 的 virtual_router_id 是一致的,同时在整个 vrrp 内是唯一的。</div><div class="line">    mcast_src_ip 192.168.1.172  ## 本机ip地址</div><div class="line">    priority 100  ##优先级配置（0-254的值）</div><div class="line">    Nopreempt  ## </div><div class="line">    advert_int 1 ## 组播信息发送间隔，两个节点必须配置一致，默认1s</div><div class="line">    authentication &#123;  </div><div class="line">        auth_type PASS</div><div class="line">        auth_pass mypassword ## 同一个vrrp_instance中MASTER 与 BACKUP 使用相同的密码才能正常通信。</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    track_script &#123;</div><div class="line">        chk_nginx</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    virtual_ipaddress &#123;</div><div class="line">        192.168.1.170 ## 虚拟ip(vip)，可以指定多个</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>首先是MASTER节点：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div></pre></td><td class="code"><pre><div class="line">! Configuration File for keepalived</div><div class="line"></div><div class="line">global_defs &#123;</div><div class="line">   router_id nginx1 ##标识节点的字符串，通常为hostname</div><div class="line">&#125;</div><div class="line"> ## keepalived 会定时执行脚本并且对脚本的执行结果进行分析，动态调整vrrp_instance的优先级。</div><div class="line"> ##这里的权重weight 是与下面的优先级priority有关，如果执行了一次检查脚本成功，则权重会-20，也就是由100 - 20 变成了80，</div><div class="line"> ##Master 的优先级为80 就低于了Backup的优先级90，那么会进行自动的主备切换。</div><div class="line"> ##如果脚本执行结果为0并且weight配置的值大于0，则优先级会相应增加。</div><div class="line"> ##如果脚本执行结果不为0 并且weight配置的值小于0，则优先级会相应减少。</div><div class="line">vrrp_script chk_nginx &#123;</div><div class="line">    script &quot;/etc/keepalived/nginx_check.sh&quot; ##执行脚本位置</div><div class="line">    interval 2 ##检测时间间隔2s</div><div class="line">    weight -20 ## 如果条件成立则权重减20（-20）</div><div class="line">&#125;</div><div class="line"> ## 定义虚拟路由 VI_1为自定义标识。</div><div class="line">vrrp_instance VI_1 &#123;</div><div class="line">    state MASTER   ## 主节点为MASTER，备份节点为BACKUP</div><div class="line">    ## 绑定虚拟IP的网络接口（网卡），与本机IP地址所在的网络接口相同（我这里是eth0）</div><div class="line">    interface eth0  </div><div class="line">    virtual_router_id 100  ## 虚拟路由ID号，同一个 vrrp_instance,MASTER 和 BACKUP 的 virtual_router_id 是一致的,同时在整个 vrrp 内是唯一的。</div><div class="line">    mcast_src_ip 192.168.1.172  ## 本机ip地址</div><div class="line">    priority 100  ##优先级配置（0-254的值）</div><div class="line">    Nopreempt  ##不主动抢占资源，只在MASTER这台优先级高的设置，BACKUP不设置</div><div class="line">    advert_int 1 ## 组播信息发送间隔，两个节点必须配置一致，默认1s</div><div class="line">    authentication &#123;  </div><div class="line">        auth_type PASS</div><div class="line">        auth_pass mypassword ## 同一个vrrp_instance中MASTER 与 BACKUP 使用相同的密码才能正常通信。</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    track_script &#123;</div><div class="line">        chk_nginx</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    virtual_ipaddress &#123;</div><div class="line">        192.168.1.170 ## 虚拟ip(vip)，可以指定多个</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>然后是BACKUP节点：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div></pre></td><td class="code"><pre><div class="line">! Configuration File for keepalived</div><div class="line"></div><div class="line">global_defs &#123;</div><div class="line">   router_id nginx2</div><div class="line">&#125;</div><div class="line"></div><div class="line">vrrp_script chk_nginx &#123;</div><div class="line">    script &quot;/etc/keepalived/nginx_check.sh&quot;</div><div class="line">    interval 2</div><div class="line">    weight -20</div><div class="line">&#125;</div><div class="line">vrrp_instance VI_1 &#123;</div><div class="line">    state BACKUP</div><div class="line">    interface eth0</div><div class="line">    virtual_router_id 100 ##必须与MASTER一致</div><div class="line">    mcast_src_ip 192.168.1.173</div><div class="line">    priority 90 ##优先级配置</div><div class="line">    advert_int 1</div><div class="line">    authentication &#123;</div><div class="line">        auth_type PASS</div><div class="line">        auth_pass mypassword</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    track_script &#123;</div><div class="line">        chk_nginx</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    virtual_ipaddress &#123;</div><div class="line">        192.168.1.170</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>最后是nginx_check.sh脚本：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#!/bin/bash</span></div><div class="line">A=`ps -C nginx –no-header |wc <span class="_">-l</span>`</div><div class="line"><span class="keyword">if</span> [ <span class="variable">$A</span> <span class="_">-eq</span> 0 ];<span class="keyword">then</span></div><div class="line">    /usr/<span class="built_in">local</span>/nginx/sbin/nginx</div><div class="line">    sleep 2</div><div class="line">    <span class="keyword">if</span> [ `ps -C nginx --no-header |wc <span class="_">-l</span>` <span class="_">-eq</span> 0 ];<span class="keyword">then</span></div><div class="line">        killall keepalived</div><div class="line">    <span class="keyword">fi</span></div><div class="line"><span class="keyword">fi</span></div></pre></td></tr></table></figure></p>
 <p>再来看一遍这张图：<br><img src="Keepalived原理图.png" alt="Keepalived原理图" title="初始时刻MASTER的优先级是100，BACKUP是90"></p>
 <p>初始时刻MASTER的优先级是100，BACKUP是90，因此Keepalived会把到来的请求打到优先级大的机器上，也就是打到MASTER上。与此同时，Keepalived会每隔2秒执行一次指定的脚本，即nginx_check.sh脚本，这个脚本首先计算机器中nginx进程的数量，如果数量等于0，说明这台物理机上nginx挂掉了，那么尝试启动nginx，休眠2秒钟之后，再次统计nginx进程数量，如果数量依然是0，说明启动nginx不成功，那么就把该物理机上的Keepalived服务杀掉。如果MASTER上的nginx挂掉且启动失败，那么根据配置文件中的weight值是-20，把MASTER的priority值减去20结果等于80。根据VRRP协议，MASTER要定时向所有BACKUP发送VRRP通告信息，由于MASTER上的Keepalived服务被杀掉了，无法发送VRRP通告，收不到通告的BACKUP会接管虚拟IP，也就是实现了主从切换，在这里就是由nginx2取代了nginx1。</p>
-<h3 id="最后一点说明"><a href="#最后一点说明" class="headerlink" title="最后一点说明"></a>最后一点说明</h3><p>Keepalived还可以实现mysql，redis等集群的高可用，配置与nginx类似，不同的是执行的脚本不同。比如mysql，每隔2秒执行一次mysql_check.sh脚本，脚本的大致流程就是检查mysql服务是否挂掉了，挂掉了就尝试启动，启动不了就杀掉Keepalived服务，根据VRRP协议实现主从切换，都是类似的。</p>
+<h3 id="最后说明一点"><a href="#最后说明一点" class="headerlink" title="最后说明一点"></a>最后说明一点</h3><p>Keepalived还可以实现mysql，redis等集群的高可用，配置与nginx类似，不同的是执行的脚本不同。比如mysql，每隔2秒执行一次mysql_check.sh脚本，脚本的大致流程就是检查mysql服务是否挂掉了，挂掉了就尝试启动，启动不了就杀掉Keepalived服务，根据VRRP协议实现主从切换，都是类似的。</p>
 
       
     </div>
@@ -550,6 +550,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/10/Socket编程学习笔记/" rel="prev" title="Socket编程学习笔记">
+                Socket编程学习笔记 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -639,7 +643,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">30</span>
+                  <span class="site-state-item-count">31</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -661,7 +665,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">42</span>
+                  <span class="site-state-item-count">43</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -732,7 +736,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Nginx-Keepalived实现高可用"><span class="nav-number">1.</span> <span class="nav-text">Nginx + Keepalived实现高可用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Keepalived简介"><span class="nav-number">1.1.</span> <span class="nav-text">Keepalived简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#VRRP工作机制"><span class="nav-number">1.2.</span> <span class="nav-text">VRRP工作机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Keepalived工作原理"><span class="nav-number">1.3.</span> <span class="nav-text">Keepalived工作原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最后一点说明"><span class="nav-number">1.4.</span> <span class="nav-text">最后一点说明</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Nginx-Keepalived实现高可用"><span class="nav-number">1.</span> <span class="nav-text">Nginx + Keepalived实现高可用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Keepalived简介"><span class="nav-number">1.1.</span> <span class="nav-text">Keepalived简介</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#VRRP工作机制"><span class="nav-number">1.2.</span> <span class="nav-text">VRRP工作机制</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Keepalived工作原理"><span class="nav-number">1.3.</span> <span class="nav-text">Keepalived工作原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#最后说明一点"><span class="nav-number">1.4.</span> <span class="nav-text">最后说明一点</span></a></li></ol></li></ol></div>
             
 
           </div>
