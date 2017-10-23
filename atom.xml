@@ -231,11 +231,11 @@
     
       <category term="Linux" scheme="https://xiangxianzui.github.io/tags/Linux/"/>
     
-      <category term="tools" scheme="https://xiangxianzui.github.io/tags/tools/"/>
-    
       <category term="tmux" scheme="https://xiangxianzui.github.io/tags/tmux/"/>
     
       <category term="窗口管理" scheme="https://xiangxianzui.github.io/tags/%E7%AA%97%E5%8F%A3%E7%AE%A1%E7%90%86/"/>
+    
+      <category term="tools" scheme="https://xiangxianzui.github.io/tags/tools/"/>
     
   </entry>
   
@@ -305,11 +305,11 @@
     
       <category term="Linux" scheme="https://xiangxianzui.github.io/tags/Linux/"/>
     
+      <category term="tools" scheme="https://xiangxianzui.github.io/tags/tools/"/>
+    
       <category term="zsh" scheme="https://xiangxianzui.github.io/tags/zsh/"/>
     
       <category term="oh-my-zsh" scheme="https://xiangxianzui.github.io/tags/oh-my-zsh/"/>
-    
-      <category term="tools" scheme="https://xiangxianzui.github.io/tags/tools/"/>
     
   </entry>
   
