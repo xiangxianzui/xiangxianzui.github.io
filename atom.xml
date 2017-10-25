@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://xiangxianzui.github.io/"/>
-  <updated>2017-10-21T16:37:43.360Z</updated>
+  <updated>2017-10-25T13:16:32.382Z</updated>
   <id>https://xiangxianzui.github.io/</id>
   
   <author>
@@ -16,20 +16,96 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Socket编程学习笔记</title>
-    <link href="https://xiangxianzui.github.io/2017/10/Socket%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    <id>https://xiangxianzui.github.io/2017/10/Socket编程学习笔记/</id>
-    <published>2017-10-21T16:35:59.000Z</published>
-    <updated>2017-10-21T16:37:43.360Z</updated>
+    <title>NIO编程学习笔记(三)</title>
+    <link href="https://xiangxianzui.github.io/2017/10/NIO%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E4%B8%89/"/>
+    <id>https://xiangxianzui.github.io/2017/10/NIO编程学习笔记-三/</id>
+    <published>2017-10-24T13:39:54.000Z</published>
+    <updated>2017-10-25T13:16:32.382Z</updated>
     
     <summary type="html">
+    
+      &lt;h2 id=&quot;Java-NIO-Buffer&quot;&gt;&lt;a href=&quot;#Java-NIO-Buffer&quot; class=&quot;headerlink&quot; title=&quot;Java NIO Buffer&quot;&gt;&lt;/a&gt;Java NIO Buffer&lt;/h2&gt;&lt;h3 id=&quot;概述&quot;&gt;&lt;a href=&quot;
     
     </summary>
     
       <category term="学习笔记" scheme="https://xiangxianzui.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="Socket I/O" scheme="https://xiangxianzui.github.io/tags/Socket-I-O/"/>
+      <category term="NIO" scheme="https://xiangxianzui.github.io/tags/NIO/"/>
+    
+      <category term="网络编程" scheme="https://xiangxianzui.github.io/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>NIO编程学习笔记(二)</title>
+    <link href="https://xiangxianzui.github.io/2017/10/NIO%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E4%BA%8C/"/>
+    <id>https://xiangxianzui.github.io/2017/10/NIO编程学习笔记-二/</id>
+    <published>2017-10-24T08:46:42.000Z</published>
+    <updated>2017-10-25T05:45:39.574Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Java-NIO-Channel&quot;&gt;&lt;a href=&quot;#Java-NIO-Channel&quot; class=&quot;headerlink&quot; title=&quot;Java NIO Channel&quot;&gt;&lt;/a&gt;Java NIO Channel&lt;/h2&gt;&lt;h3 id=&quot;概述&quot;&gt;&lt;a hr
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="https://xiangxianzui.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="NIO" scheme="https://xiangxianzui.github.io/tags/NIO/"/>
+    
+      <category term="网络编程" scheme="https://xiangxianzui.github.io/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>NIO编程学习笔记(一)</title>
+    <link href="https://xiangxianzui.github.io/2017/10/NIO%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0-%E4%B8%80/"/>
+    <id>https://xiangxianzui.github.io/2017/10/NIO编程学习笔记-一/</id>
+    <published>2017-10-24T08:16:23.000Z</published>
+    <updated>2017-10-24T08:45:18.379Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;基本概念&quot;&gt;&lt;a href=&quot;#基本概念&quot; class=&quot;headerlink&quot; title=&quot;基本概念&quot;&gt;&lt;/a&gt;基本概念&lt;/h2&gt;&lt;h3 id=&quot;“伪异步”&quot;&gt;&lt;a href=&quot;#“伪异步”&quot; class=&quot;headerlink&quot; title=&quot;“伪异步”&quot;&gt;
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="https://xiangxianzui.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="NIO" scheme="https://xiangxianzui.github.io/tags/NIO/"/>
+    
+      <category term="网络编程" scheme="https://xiangxianzui.github.io/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Netty学习笔记</title>
+    <link href="https://xiangxianzui.github.io/2017/10/Netty%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>https://xiangxianzui.github.io/2017/10/Netty学习笔记/</id>
+    <published>2017-10-23T13:24:58.000Z</published>
+    <updated>2017-10-23T13:24:58.599Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>AIO编程学习笔记</title>
+    <link href="https://xiangxianzui.github.io/2017/10/AIO%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <id>https://xiangxianzui.github.io/2017/10/AIO编程学习笔记/</id>
+    <published>2017-10-23T13:24:44.000Z</published>
+    <updated>2017-10-23T13:24:44.143Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
     
   </entry>
   
@@ -382,114 +458,6 @@
       <category term="Linux" scheme="https://xiangxianzui.github.io/tags/Linux/"/>
     
       <category term="Ubuntu" scheme="https://xiangxianzui.github.io/tags/Ubuntu/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>实习整理(二)</title>
-    <link href="https://xiangxianzui.github.io/2017/06/%E5%AE%9E%E4%B9%A0%E6%95%B4%E7%90%86-%E4%BA%8C/"/>
-    <id>https://xiangxianzui.github.io/2017/06/实习整理-二/</id>
-    <published>2017-06-21T11:45:34.000Z</published>
-    <updated>2017-10-19T06:03:57.628Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;实习第二周，下面整理一下这周遇到的一些问题。&lt;/p&gt;
-&lt;h3 id=&quot;Linux下head-tail命令&quot;&gt;&lt;a href=&quot;#Linux下head-tail命令&quot; class=&quot;headerlink&quot; title=&quot;Linux下head/tail命令&quot;&gt;&lt;/a&gt;Linux
-    
-    </summary>
-    
-      <category term="Internship" scheme="https://xiangxianzui.github.io/categories/Internship/"/>
-    
-    
-      <category term="Linux" scheme="https://xiangxianzui.github.io/tags/Linux/"/>
-    
-      <category term="Ubuntu" scheme="https://xiangxianzui.github.io/tags/Ubuntu/"/>
-    
-      <category term="IDEA" scheme="https://xiangxianzui.github.io/tags/IDEA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>实习整理(一)</title>
-    <link href="https://xiangxianzui.github.io/2017/06/%E5%AE%9E%E4%B9%A0%E6%95%B4%E7%90%86-%E4%B8%80/"/>
-    <id>https://xiangxianzui.github.io/2017/06/实习整理-一/</id>
-    <published>2017-06-17T07:19:09.000Z</published>
-    <updated>2017-10-19T06:01:49.452Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;实习第一周结束了，下面整理一下这周遇到的一些问题。(所有操作均在Ubuntu系统下完成)&lt;/p&gt;
-&lt;h3 id=&quot;IDE配置：Intellij-IDEA&quot;&gt;&lt;a href=&quot;#IDE配置：Intellij-IDEA&quot; class=&quot;headerlink&quot; title=&quot;ID
-    
-    </summary>
-    
-      <category term="Internship" scheme="https://xiangxianzui.github.io/categories/Internship/"/>
-    
-    
-      <category term="Java" scheme="https://xiangxianzui.github.io/tags/Java/"/>
-    
-      <category term="nginx" scheme="https://xiangxianzui.github.io/tags/nginx/"/>
-    
-      <category term="Ubuntu" scheme="https://xiangxianzui.github.io/tags/Ubuntu/"/>
-    
-      <category term="IDEA" scheme="https://xiangxianzui.github.io/tags/IDEA/"/>
-    
-      <category term="Maven" scheme="https://xiangxianzui.github.io/tags/Maven/"/>
-    
-      <category term="Git" scheme="https://xiangxianzui.github.io/tags/Git/"/>
-    
-      <category term="rsync" scheme="https://xiangxianzui.github.io/tags/rsync/"/>
-    
-      <category term="免跳板机" scheme="https://xiangxianzui.github.io/tags/%E5%85%8D%E8%B7%B3%E6%9D%BF%E6%9C%BA/"/>
-    
-      <category term="缺少动态库依赖" scheme="https://xiangxianzui.github.io/tags/%E7%BC%BA%E5%B0%91%E5%8A%A8%E6%80%81%E5%BA%93%E4%BE%9D%E8%B5%96/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Frequently-used commands in Linux</title>
-    <link href="https://xiangxianzui.github.io/2017/05/Frequently-used-commands-in-Linux/"/>
-    <id>https://xiangxianzui.github.io/2017/05/Frequently-used-commands-in-Linux/</id>
-    <published>2017-05-19T05:39:38.000Z</published>
-    <updated>2017-07-08T14:37:35.549Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;This post concludes frequently-used commands in Linux, which might be functioning like a handy manual page for Linux commands.&lt;/p&gt;
-&lt;ul&gt;
-&lt;
-    
-    </summary>
-    
-      <category term="Interview" scheme="https://xiangxianzui.github.io/categories/Interview/"/>
-    
-    
-      <category term="Linux" scheme="https://xiangxianzui.github.io/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Sorting &amp; Java implementations</title>
-    <link href="https://xiangxianzui.github.io/2017/02/Sorting-Java-implementations/"/>
-    <id>https://xiangxianzui.github.io/2017/02/Sorting-Java-implementations/</id>
-    <published>2017-02-28T14:48:29.000Z</published>
-    <updated>2017-05-19T05:34:29.057Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Sorting is a hot and common subject which is frequently asked during an interviewing session. Although it is very easy for most software 
-    
-    </summary>
-    
-      <category term="Interview" scheme="https://xiangxianzui.github.io/categories/Interview/"/>
-    
-    
-      <category term="Java" scheme="https://xiangxianzui.github.io/tags/Java/"/>
-    
-      <category term="algorithm" scheme="https://xiangxianzui.github.io/tags/algorithm/"/>
-    
-      <category term="Sorting" scheme="https://xiangxianzui.github.io/tags/Sorting/"/>
     
   </entry>
   

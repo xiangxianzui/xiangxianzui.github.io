@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="default">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+<script>
+    (function(){
+        if(''){
+            if (prompt('Enter password please') !== ''){
+                alert('Bad password!');
+                history.back();
+            }
+        }
+    })();
+</script>
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="NIO,网络编程," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Muser" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="Java NIO Channel概述Java NIO Channel与流(stream)的概念相似，但有以下几点不同：  我们可以同时对channel进行读写操作，而stream是单向的，读和写不能同时进行 Channel可以异步地进行读写 Channel总是向buffer读数据，或者从buffer写数据   前面提到过Channel主要有以下四种实现类：  FileChannel Datagra">
+<meta name="keywords" content="NIO,网络编程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="NIO编程学习笔记(二)">
+<meta property="og:url" content="https://xiangxianzui.github.io/2017/10/NIO编程学习笔记-二/index.html">
+<meta property="og:site_name" content="Muser">
+<meta property="og:description" content="Java NIO Channel概述Java NIO Channel与流(stream)的概念相似，但有以下几点不同：  我们可以同时对channel进行读写操作，而stream是单向的，读和写不能同时进行 Channel可以异步地进行读写 Channel总是向buffer读数据，或者从buffer写数据   前面提到过Channel主要有以下四种实现类：  FileChannel Datagra">
+<meta property="og:image" content="https://xiangxianzui.github.io/2017/10/NIO编程学习笔记-二/overview-channels-buffers.png">
+<meta property="og:image" content="https://xiangxianzui.github.io/2017/10/NIO编程学习笔记-二/scatter.png">
+<meta property="og:image" content="https://xiangxianzui.github.io/2017/10/NIO编程学习笔记-二/gather.png">
+<meta property="og:updated_time" content="2017-10-25T05:45:39.574Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="NIO编程学习笔记(二)">
+<meta name="twitter:description" content="Java NIO Channel概述Java NIO Channel与流(stream)的概念相似，但有以下几点不同：  我们可以同时对channel进行读写操作，而stream是单向的，读和写不能同时进行 Channel可以异步地进行读写 Channel总是向buffer读数据，或者从buffer写数据   前面提到过Channel主要有以下四种实现类：  FileChannel Datagra">
+<meta name="twitter:image" content="https://xiangxianzui.github.io/2017/10/NIO编程学习笔记-二/overview-channels-buffers.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":true},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '6X41HMKSBB',
+      apiKey: '304502cbd81590137ae69166c42f1ffd',
+      indexName: 'hexo_blog',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"No results found for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://xiangxianzui.github.io/2017/10/NIO编程学习笔记-二/"/>
+
+
+
+
+
+  <title>NIO编程学习笔记(二) | Muser</title>
+  
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Muser</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">Coding While Thinking</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+<!--
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+-->
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xiangxianzui.github.io/2017/10/NIO编程学习笔记-二/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Muser">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Muser">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">NIO编程学习笔记(二)</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-24T16:46:42+08:00">
+                2017-10-24
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Last modified&#58;</span>
+              
+              <time title="Last modified" itemprop="dateModified" datetime="2017-10-25T13:45:39+08:00">
+                2017-10-25
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-eye"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count&#58;</span>
+                
+                <span title="Words count">
+                  1,626
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="Java-NIO-Channel"><a href="#Java-NIO-Channel" class="headerlink" title="Java NIO Channel"></a>Java NIO Channel</h2><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><p>Java NIO Channel与流(stream)的概念相似，但有以下几点不同：</p>
+<ul>
+<li>我们可以同时对channel进行读写操作，而stream是单向的，读和写不能同时进行</li>
+<li>Channel可以异步地进行读写</li>
+<li>Channel总是向buffer读数据，或者从buffer写数据</li>
+</ul>
+<p><img src="overview-channels-buffers.png" alt="Java NIO: Channels read data into Buffers, and Buffers write data into Channels" title="Java NIO: Channels read data into Buffers, and Buffers write data into Channels"></p>
+<p>前面提到过Channel主要有以下四种实现类：</p>
+<ul>
+<li>FileChannel</li>
+<li>DatagramChannel</li>
+<li>SocketChannel</li>
+<li>ServerSocketChannel</li>
+</ul>
+<p>FileChannel向文件读写数据<br>DatagramChannel通过UDP读写数据<br>SocketChannel通过TCP读写数据<br>ServerSocketChannel监听即将到来的TCP连接，就像Web服务器所做的那样。对每一个到来的TCP连接，都会创建一个SocketChannel</p>
+<h3 id="简单的关于Channel的例子"><a href="#简单的关于Channel的例子" class="headerlink" title="简单的关于Channel的例子"></a>简单的关于Channel的例子</h3><p>这个例子用了FileChannel将数据读到buffer中</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">RandomAccessFile aFile = <span class="keyword">new</span> RandomAccessFile(System.getProperty(<span class="string">"user.dir"</span>)+<span class="string">"/data/nio-data.txt"</span>, <span class="string">"rw"</span>);</div><div class="line">FileChannel inChannel = aFile.getChannel();</div><div class="line"></div><div class="line">ByteBuffer buf = ByteBuffer.allocate(<span class="number">48</span>);</div><div class="line"></div><div class="line"><span class="keyword">int</span> bytesRead = inChannel.read(buf);</div><div class="line"><span class="keyword">while</span> (bytesRead != -<span class="number">1</span>) &#123;</div><div class="line"></div><div class="line">    System.out.println(<span class="string">"Read "</span> + bytesRead);</div><div class="line">    buf.flip();</div><div class="line"></div><div class="line">    <span class="keyword">int</span> i = <span class="number">0</span>;</div><div class="line">    <span class="keyword">while</span>(buf.hasRemaining())&#123;</div><div class="line">        System.out.println(i + <span class="string">" "</span>+(<span class="keyword">char</span>) buf.get());</div><div class="line">        i++;</div><div class="line">    &#125;</div><div class="line"></div><div class="line">    buf.clear();</div><div class="line">    bytesRead = inChannel.read(buf);</div><div class="line">&#125;</div><div class="line">aFile.close();</div></pre></td></tr></table></figure>
+<h3 id="Channel的Scattering-read和Gathering-write"><a href="#Channel的Scattering-read和Gathering-write" class="headerlink" title="Channel的Scattering read和Gathering write"></a>Channel的Scattering read和Gathering write</h3><h4 id="Scatter-扩散"><a href="#Scatter-扩散" class="headerlink" title="Scatter(扩散)"></a>Scatter(扩散)</h4><p>Scattering read是指将1个channel的数据读到多个buffer中去，如图：<br><img src="scatter.png" alt="Java NIO: Scattering Read" title="Java NIO: Scattering Read"></p>
+<p>下面是一个简单的Scattering read的例子<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">ByteBuffer header = ByteBuffer.allocate(<span class="number">128</span>);</div><div class="line">ByteBuffer body   = ByteBuffer.allocate(<span class="number">1024</span>);</div><div class="line"></div><div class="line">ByteBuffer[] bufferArray = &#123; header, body &#125;;</div><div class="line"></div><div class="line">channel.read(bufferArray);</div></pre></td></tr></table></figure></p>
+<p>read()方法首先填充header，header满了之后再填充body<br>Scattering read只有在填满1个buffer之后才会去填充下一个，这意味着它不适合用在大小动态变化的场景。比如，我们有1个header和1个body，header的大小是固定的(e.g. 128 bytes)，那么使用Scattering read是可行的；如果header大小是可变的(e.g. 这次128 bytes，下次64 bytes了)，那么用Scattering read读到第一个buffer中的数据可能不是我们想要的。</p>
+<h4 id="Gather-聚集"><a href="#Gather-聚集" class="headerlink" title="Gather(聚集)"></a>Gather(聚集)</h4><p>Gathering write是指将多个buffer中的数据写入到1个channel中，如图：<br><img src="gather.png" alt="Java NIO: Gathering Write" title="Java NIO: Gathering Write"></p>
+<p>下面是一个简单的Gathering write的例子<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">ByteBuffer header = ByteBuffer.allocate(<span class="number">128</span>);</div><div class="line">ByteBuffer body   = ByteBuffer.allocate(<span class="number">1024</span>);</div><div class="line"></div><div class="line"><span class="comment">//write data into buffers</span></div><div class="line"></div><div class="line">ByteBuffer[] bufferArray = &#123; header, body &#125;;</div><div class="line"></div><div class="line">channel.write(bufferArray);</div></pre></td></tr></table></figure></p>
+<p>与前面的read()方法类似，write()方法按顺序将buffer依次写入到channel中，当然，只写入buffer在position和limit之间的数据，比如buffer的capacity是128字节，但是position和limit之间只有58字节，那么只写入58字节。因此，Gathering write不存在像Scattering read那样不适合用在大小动态变化场景的问题。</p>
+<h3 id="Channel和Channel之间传输数据"><a href="#Channel和Channel之间传输数据" class="headerlink" title="Channel和Channel之间传输数据"></a>Channel和Channel之间传输数据</h3><p>Java NIO允许我们直接在两个channel之间传输数据，当然这样做的前提是其中一个channel是FileChannel类，因为FileChannel类提供了transferFrom()和transferTo()</p>
+<h4 id="transferFrom"><a href="#transferFrom" class="headerlink" title="transferFrom()"></a>transferFrom()</h4><p>FileChannel.transferFrom()将数据从源channel传输到FileChannel中。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">RandomAccessFile fromFile = <span class="keyword">new</span> RandomAccessFile(<span class="string">"fromFile.txt"</span>, <span class="string">"rw"</span>);</div><div class="line">FileChannel      fromChannel = fromFile.getChannel();</div><div class="line"></div><div class="line">RandomAccessFile toFile = <span class="keyword">new</span> RandomAccessFile(<span class="string">"toFile.txt"</span>, <span class="string">"rw"</span>);</div><div class="line">FileChannel      toChannel = toFile.getChannel();</div><div class="line"></div><div class="line"><span class="keyword">long</span> position = <span class="number">0</span>;</div><div class="line"><span class="keyword">long</span> count    = fromChannel.size();</div><div class="line"></div><div class="line">toChannel.transferFrom(fromChannel, position, count);</div></pre></td></tr></table></figure>
+<p>参数position和count，告诉我们从目的文件的何处(position)开始写入数据，以及最多写入多少(count)字节的数据。如果源channel的字节数小于count，则有多少写入多少。<br>除此之外，如果源channel是SocketChannel的话，transferFrom()方法只会传输SocketChannel当前的数据，即使未来SocketChannel中还会有新的数据到来。因此，如果调用该方法时SocketChannel中的字节数少于count，传输的字节也少于count，即使未来SocketChannel中字节数多于count。</p>
+<h4 id="transferTo"><a href="#transferTo" class="headerlink" title="transferTo()"></a>transferTo()</h4><p>transferTo()方法将数据从FileChannel传输到目的channel。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">RandomAccessFile fromFile = <span class="keyword">new</span> RandomAccessFile(<span class="string">"fromFile.txt"</span>, <span class="string">"rw"</span>);</div><div class="line">FileChannel      fromChannel = fromFile.getChannel();</div><div class="line"></div><div class="line">RandomAccessFile toFile = <span class="keyword">new</span> RandomAccessFile(<span class="string">"toFile.txt"</span>, <span class="string">"rw"</span>);</div><div class="line">FileChannel      toChannel = toFile.getChannel();</div><div class="line"></div><div class="line"><span class="keyword">long</span> position = <span class="number">0</span>;</div><div class="line"><span class="keyword">long</span> count    = fromChannel.size();</div><div class="line"></div><div class="line">fromChannel.transferTo(position, count, toChannel);</div></pre></td></tr></table></figure>
+<p>此例与上面的例子相似。与此同时，上面提到的SocketChannel的问题在这里依然存在。</p>
+<h3 id="SocketChannel"><a href="#SocketChannel" class="headerlink" title="SocketChannel"></a>SocketChannel</h3><p>Java NIO SocketChannel是连接到TCP网络套接字的通道，有两种方法可以创建它。</p>
+<ul>
+<li>我们打开SocketChannel并连接到互联网某服务器</li>
+<li>当有新的连接到达ServerSocketChannel时，一个SocketChannel会被创建</li>
+</ul>
+<h4 id="打开一个SocketChannel"><a href="#打开一个SocketChannel" class="headerlink" title="打开一个SocketChannel"></a>打开一个SocketChannel</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">SocketChannel socketChannel = SocketChannel.open();</div><div class="line">socketChannel.connect(<span class="keyword">new</span> InetSocketAddress(<span class="string">"http://jenkov.com"</span>, <span class="number">80</span>));</div></pre></td></tr></table></figure>
+<h4 id="关闭一个SocketChannel"><a href="#关闭一个SocketChannel" class="headerlink" title="关闭一个SocketChannel"></a>关闭一个SocketChannel</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">socketChannel.close();</div></pre></td></tr></table></figure>
+<h4 id="从SocketChannel读数据"><a href="#从SocketChannel读数据" class="headerlink" title="从SocketChannel读数据"></a>从SocketChannel读数据</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ByteBuffer buf = ByteBuffer.allocate(<span class="number">48</span>);</div><div class="line"></div><div class="line"><span class="keyword">int</span> bytesRead = socketChannel.read(buf);</div></pre></td></tr></table></figure>
+<p>read()方法将数据从SocketChannel读到buffer中，方法返回的int值为读到数据的字节数，如果返回为-1，说明读到了流的末尾(连接关闭了)。</p>
+<h4 id="向SocketChannel写数据"><a href="#向SocketChannel写数据" class="headerlink" title="向SocketChannel写数据"></a>向SocketChannel写数据</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">String newData = <span class="string">"New String to write to file..."</span> + System.currentTimeMillis();</div><div class="line"></div><div class="line">ByteBuffer buf = ByteBuffer.allocate(<span class="number">48</span>);</div><div class="line">buf.clear();</div><div class="line">buf.put(newData.getBytes());</div><div class="line"></div><div class="line">buf.flip();</div><div class="line"></div><div class="line"><span class="keyword">while</span>(buf.hasRemaining()) &#123;</div><div class="line">    channel.write(buf);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>注意SocketChannel.write()方法的调用是在一个while循环中的。write()方法无法保证能写多少字节到SocketChannel，所以重复调用write()直到Buffer没有要写的字节为止。</p>
+<h4 id="非阻塞模式-Non-blocking-Mode"><a href="#非阻塞模式-Non-blocking-Mode" class="headerlink" title="非阻塞模式(Non-blocking Mode)"></a>非阻塞模式(Non-blocking Mode)</h4><p>我们可以把SocketChannel设置为非阻塞模式，这样我们就可以在异步模式下调用connect(),read(),write()</p>
+<p>connect()：<br>如果SocketChannel处于非阻塞模式，然后调用connect()方法，方法可能在连接建立完成之前就返回了。为了确定连接是否建立完成了，我们可以用finishConnect方法进行判断，如下例：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">socketChannel.configureBlocking(<span class="keyword">false</span>);</div><div class="line">socketChannel.connect(<span class="keyword">new</span> InetSocketAddress(<span class="string">"http://jenkov.com"</span>, <span class="number">80</span>));</div><div class="line"></div><div class="line"><span class="keyword">while</span>(! socketChannel.finishConnect() )&#123;</div><div class="line">    <span class="comment">//wait, or do something else...</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>write()：<br>非阻塞模式下write()方法可能在尚未写入任何数据时就返回了，因此需要在循环中调用write()方法。</p>
+<p>read()：<br>非阻塞模式下read()方法可能在尚未读取任何数据时就返回了，因此需要时刻关注read()方法的返回值，看读了多少字节。</p>
+<h4 id="非阻塞模式与Selector配合使用"><a href="#非阻塞模式与Selector配合使用" class="headerlink" title="非阻塞模式与Selector配合使用"></a>非阻塞模式与Selector配合使用</h4><p>非阻塞模式与Selector搭配会工作的更好，通过将一或多个SocketChannel注册到Selector，可以询问选择器哪个通道已经准备好了读取，写入等。后面会详细说明。</p>
+<h3 id="ServerSocketChannel"><a href="#ServerSocketChannel" class="headerlink" title="ServerSocketChannel"></a>ServerSocketChannel</h3><p>ServerSocketChannel可以监听即将到达的TCP连接，就像Java标准IO中的ServerSocket。<br>下面是一个例子：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">ServerSocketChannel serverSocketChannel = ServerSocketChannel.open();</div><div class="line"></div><div class="line">serverSocketChannel.socket().bind(<span class="keyword">new</span> InetSocketAddress(<span class="number">9999</span>));</div><div class="line"></div><div class="line"><span class="keyword">while</span>(<span class="keyword">true</span>)&#123;</div><div class="line">    SocketChannel socketChannel = serverSocketChannel.accept();</div><div class="line"></div><div class="line">    <span class="comment">//do something with socketChannel...</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="打开和关闭ServerSocketChannel"><a href="#打开和关闭ServerSocketChannel" class="headerlink" title="打开和关闭ServerSocketChannel"></a>打开和关闭ServerSocketChannel</h4><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">ServerSocketChannel serverSocketChannel = ServerSocketChannel.open();</div><div class="line"></div><div class="line">serverSocketChannel.close();</div></pre></td></tr></table></figure>
+<h4 id="监听新到来的TCP连接"><a href="#监听新到来的TCP连接" class="headerlink" title="监听新到来的TCP连接"></a>监听新到来的TCP连接</h4><p>通过ServerSocketChannel.accept()方法监听新进来的连接。当accept()方法返回的时候,它返回一个包含新进来的连接的SocketChannel。因此,accept()方法会一直阻塞到有新连接到达。<br>我们通常不会仅仅监听一个连接，因此通常像下例这么做：Se<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">while</span>(<span class="keyword">true</span>)&#123;</div><div class="line">    SocketChannel socketChannel = serverSocketChannel.accept();</div><div class="line"></div><div class="line">    <span class="comment">//do something with socketChannel...</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="非阻塞模式"><a href="#非阻塞模式" class="headerlink" title="非阻塞模式"></a>非阻塞模式</h4><p>ServerSocketChannel也可以被设置成非阻塞模式。在非阻塞模式下，ServerSocketChannel的accep()不论有没有连接到达都会立即返回，因此可能返回为null。看下例：<br><figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">ServerSocketChannel serverSocketChannel = ServerSocketChannel.open();</div><div class="line"></div><div class="line">serverSocketChannel.socket().bind(<span class="keyword">new</span> InetSocketAddress(<span class="number">9999</span>));</div><div class="line">serverSocketChannel.configureBlocking(<span class="keyword">false</span>);</div><div class="line"></div><div class="line"><span class="keyword">while</span>(<span class="keyword">true</span>)&#123;</div><div class="line">    SocketChannel socketChannel = serverSocketChannel.accept();</div><div class="line"></div><div class="line">    <span class="keyword">if</span>(socketChannel != <span class="keyword">null</span>)&#123;</div><div class="line">        <span class="comment">//do something with socketChannel...</span></div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="Muser Alipay"/>
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:</strong>
+    Muser
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link:</strong>
+    <a href="https://xiangxianzui.github.io/2017/10/NIO编程学习笔记-二/" title="NIO编程学习笔记(二)">https://xiangxianzui.github.io/2017/10/NIO编程学习笔记-二/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice: </strong>
+    All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> unless stating additionally.
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/NIO/" rel="tag"><i class="fa fa-tags"></i> NIO</a>
+          
+            <a href="/tags/网络编程/" rel="tag"><i class="fa fa-tags"></i> 网络编程</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2017/10/NIO编程学习笔记-一/" rel="next" title="NIO编程学习笔记(一)">
+                <i class="fa fa-chevron-left"></i> NIO编程学习笔记(一)
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2017/10/NIO编程学习笔记-三/" rel="prev" title="NIO编程学习笔记(三)">
+                NIO编程学习笔记(三) <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+  
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/avatar.jpg"
+                alt="Muser" />
+            
+              <p class="site-author-name" itemprop="name">Muser</p>
+              <p class="site-description motion-element" itemprop="description">thinking in a different way</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">35</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">44</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+  
+  
+    <div class="feed-link motion-element">
+      
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i>
+            
+            Search
+          </a>
+    </div>
+  
+
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/xiangxianzui" target="_blank" title="GitHub">
+                    
+                      <i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:xiangxianzui@gmail.com" target="_blank" title="E-Mail">
+                    
+                      <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Java-NIO-Channel"><span class="nav-number">1.</span> <span class="nav-text">Java NIO Channel</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#概述"><span class="nav-number">1.1.</span> <span class="nav-text">概述</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#简单的关于Channel的例子"><span class="nav-number">1.2.</span> <span class="nav-text">简单的关于Channel的例子</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Channel的Scattering-read和Gathering-write"><span class="nav-number">1.3.</span> <span class="nav-text">Channel的Scattering read和Gathering write</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Scatter-扩散"><span class="nav-number">1.3.1.</span> <span class="nav-text">Scatter(扩散)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Gather-聚集"><span class="nav-number">1.3.2.</span> <span class="nav-text">Gather(聚集)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Channel和Channel之间传输数据"><span class="nav-number">1.4.</span> <span class="nav-text">Channel和Channel之间传输数据</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#transferFrom"><span class="nav-number">1.4.1.</span> <span class="nav-text">transferFrom()</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#transferTo"><span class="nav-number">1.4.2.</span> <span class="nav-text">transferTo()</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SocketChannel"><span class="nav-number">1.5.</span> <span class="nav-text">SocketChannel</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#打开一个SocketChannel"><span class="nav-number">1.5.1.</span> <span class="nav-text">打开一个SocketChannel</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#关闭一个SocketChannel"><span class="nav-number">1.5.2.</span> <span class="nav-text">关闭一个SocketChannel</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#从SocketChannel读数据"><span class="nav-number">1.5.3.</span> <span class="nav-text">从SocketChannel读数据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#向SocketChannel写数据"><span class="nav-number">1.5.4.</span> <span class="nav-text">向SocketChannel写数据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#非阻塞模式-Non-blocking-Mode"><span class="nav-number">1.5.5.</span> <span class="nav-text">非阻塞模式(Non-blocking Mode)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#非阻塞模式与Selector配合使用"><span class="nav-number">1.5.6.</span> <span class="nav-text">非阻塞模式与Selector配合使用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ServerSocketChannel"><span class="nav-number">1.6.</span> <span class="nav-text">ServerSocketChannel</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#打开和关闭ServerSocketChannel"><span class="nav-number">1.6.1.</span> <span class="nav-text">打开和关闭ServerSocketChannel</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#监听新到来的TCP连接"><span class="nav-number">1.6.2.</span> <span class="nav-text">监听新到来的TCP连接</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#非阻塞模式"><span class="nav-number">1.6.3.</span> <span class="nav-text">非阻塞模式</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        
+<div class="copyright">&copy; <span itemprop="copyrightYear">2017</span>
+  <span class="with-love">
+    <i class="fa fa-star"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Muser</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words count&#58;</span>
+    
+    <span title="Site words count">21.8k</span>
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a></div>
+
+
+
+
+
+
+        
+
+<div class="busuanzi-count">
+  <script async src="/lib/busuanzi/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+  
+  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://xiangxianzui.github.io/2017/10/NIO编程学习笔记-二/';
+          this.page.identifier = '2017/10/NIO编程学习笔记-二/';
+          this.page.title = 'NIO编程学习笔记(二)';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://xiangxianzui.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.3"></script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
