@@ -1949,7 +1949,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #ffa4ff;
+  background: #ff24ff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2945,12 +2945,4 @@ embed {
 }
 .links-of-blogroll-inline .links-of-blogroll-item {
   display: inline-block;
-}
-@media screen and (min-width: 1200px) {
-  body {
-    background-image: url("/images/background.png");
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: 100% 100%;
-  }
 }
