@@ -31,9 +31,9 @@
       <category term="学习笔记" scheme="https://xiangxianzui.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="NIO" scheme="https://xiangxianzui.github.io/tags/NIO/"/>
-    
       <category term="网络编程" scheme="https://xiangxianzui.github.io/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
+    
+      <category term="NIO" scheme="https://xiangxianzui.github.io/tags/NIO/"/>
     
   </entry>
   
@@ -53,9 +53,9 @@
       <category term="学习笔记" scheme="https://xiangxianzui.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="NIO" scheme="https://xiangxianzui.github.io/tags/NIO/"/>
-    
       <category term="网络编程" scheme="https://xiangxianzui.github.io/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
+    
+      <category term="NIO" scheme="https://xiangxianzui.github.io/tags/NIO/"/>
     
   </entry>
   
@@ -75,9 +75,9 @@
       <category term="学习笔记" scheme="https://xiangxianzui.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="NIO" scheme="https://xiangxianzui.github.io/tags/NIO/"/>
-    
       <category term="网络编程" scheme="https://xiangxianzui.github.io/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
+    
+      <category term="NIO" scheme="https://xiangxianzui.github.io/tags/NIO/"/>
     
   </entry>
   
@@ -86,12 +86,20 @@
     <link href="https://xiangxianzui.github.io/2017/10/Netty%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     <id>https://xiangxianzui.github.io/2017/10/Netty学习笔记/</id>
     <published>2017-10-23T13:24:58.000Z</published>
-    <updated>2017-10-23T13:24:58.599Z</updated>
+    <updated>2017-10-29T05:49:52.429Z</updated>
     
     <summary type="html">
     
+      &lt;h3 id=&quot;为什么选择Netty？&quot;&gt;&lt;a href=&quot;#为什么选择Netty？&quot; class=&quot;headerlink&quot; title=&quot;为什么选择Netty？&quot;&gt;&lt;/a&gt;为什么选择Netty？&lt;/h3&gt;&lt;p&gt;我们已经学习了socket通信的BIO/NIO/AIO编程模型，但是
+    
     </summary>
     
+      <category term="学习笔记" scheme="https://xiangxianzui.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="网络编程" scheme="https://xiangxianzui.github.io/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
+    
+      <category term="Netty" scheme="https://xiangxianzui.github.io/tags/Netty/"/>
     
   </entry>
   
@@ -100,12 +108,18 @@
     <link href="https://xiangxianzui.github.io/2017/10/AIO%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     <id>https://xiangxianzui.github.io/2017/10/AIO编程学习笔记/</id>
     <published>2017-10-23T13:24:44.000Z</published>
-    <updated>2017-10-23T13:24:44.143Z</updated>
+    <updated>2017-10-26T14:51:03.071Z</updated>
     
     <summary type="html">
     
     </summary>
     
+      <category term="学习笔记" scheme="https://xiangxianzui.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="AIO" scheme="https://xiangxianzui.github.io/tags/AIO/"/>
+    
+      <category term="网络编程" scheme="https://xiangxianzui.github.io/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
     
   </entry>
   

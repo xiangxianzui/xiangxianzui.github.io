@@ -85,7 +85,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="网络编程,Netty," />
 
 
 
@@ -98,16 +98,17 @@
 
 
 
-<meta name="description" content="thinking in a different way">
+<meta name="description" content="为什么选择Netty？我们已经学习了socket通信的BIO/NIO/AIO编程模型，但是在实际工作中，还需要不断地完善扩展和优化。比如很经典的TCP读包写包问题，或者是数据接收的大小，实际的通信读取与应答的处理逻辑等等一些细节问题都需要我们认真地思考，需要大量的时间和经历以及丰富的经验。而Netty是流行的NIO框架，它的健壮性，功能，性能，可定制性和可扩展性在同类框架都是首屈一指的，并且得到成">
+<meta name="keywords" content="网络编程,Netty">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Netty学习笔记">
 <meta property="og:url" content="https://xiangxianzui.github.io/2017/10/Netty学习笔记/index.html">
 <meta property="og:site_name" content="Muser">
-<meta property="og:description" content="thinking in a different way">
-<meta property="og:updated_time" content="2017-10-23T13:24:58.599Z">
+<meta property="og:description" content="为什么选择Netty？我们已经学习了socket通信的BIO/NIO/AIO编程模型，但是在实际工作中，还需要不断地完善扩展和优化。比如很经典的TCP读包写包问题，或者是数据接收的大小，实际的通信读取与应答的处理逻辑等等一些细节问题都需要我们认真地思考，需要大量的时间和经历以及丰富的经验。而Netty是流行的NIO框架，它的健壮性，功能，性能，可定制性和可扩展性在同类框架都是首屈一指的，并且得到成">
+<meta property="og:updated_time" content="2017-10-29T05:49:52.429Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Netty学习笔记">
-<meta name="twitter:description" content="thinking in a different way">
+<meta name="twitter:description" content="为什么选择Netty？我们已经学习了socket通信的BIO/NIO/AIO编程模型，但是在实际工作中，还需要不断地完善扩展和优化。比如很经典的TCP读包写包问题，或者是数据接收的大小，实际的通信读取与应答的处理逻辑等等一些细节问题都需要我们认真地思考，需要大量的时间和经历以及丰富的经验。而Netty是流行的NIO框架，它的健壮性，功能，性能，可定制性和可扩展性在同类框架都是首屈一指的，并且得到成">
 
 
 
@@ -365,12 +366,34 @@
               
                 <span class="post-meta-item-text">Last modified&#58;</span>
               
-              <time title="Last modified" itemprop="dateModified" datetime="2017-10-23T21:24:58+08:00">
-                2017-10-23
+              <time title="Last modified" itemprop="dateModified" datetime="2017-10-29T13:49:52+08:00">
+                2017-10-29
               </time>
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -398,7 +421,7 @@
                   <span class="post-meta-item-text">Words count&#58;</span>
                 
                 <span title="Words count">
-                  0
+                  374
                 </span>
               
 
@@ -423,7 +446,10 @@
       
 
       
-        
+        <h3 id="为什么选择Netty？"><a href="#为什么选择Netty？" class="headerlink" title="为什么选择Netty？"></a>为什么选择Netty？</h3><p>我们已经学习了socket通信的BIO/NIO/AIO编程模型，但是在实际工作中，还需要不断地完善扩展和优化。比如很经典的TCP读包写包问题，或者是数据接收的大小，实际的通信读取与应答的处理逻辑等等一些细节问题都需要我们认真地思考，需要大量的时间和经历以及丰富的经验。而Netty是流行的NIO框架，它的健壮性，功能，性能，可定制性和可扩展性在同类框架都是首屈一指的，并且得到成百上千的商业项目的验证，比如Hadoop的RPC框架Avro，还有JMS框架，RocketMQ，还有分布式通信框架Dubbox等等。</p>
+<p>有了Netty，我们不必去编写复杂的代码逻辑去实现通信，也不需要考虑性能问题，编码问题，半包读写问题等，这些问题Netty已经帮我们实现好了，我们只需要使用即可。</p>
+<h3 id="Netty简介"><a href="#Netty简介" class="headerlink" title="Netty简介"></a>Netty简介</h3><p>Netty是NIO　client-server框架，可以用来快速开发网络应用。Netty提供一种新的方式来开发网络应用程序，这种新的方式使得它很容易使用和有很强的扩展性。Netty的内部实现是很复杂的，但Netty提供了简单易用的api从网络代理代码中解耦业务逻辑。Netty完全给予NIO实现，因此整个Netty都是异步的。</p>
+
       
     </div>
     
@@ -479,6 +505,14 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/网络编程/" rel="tag"><i class="fa fa-tags"></i> 网络编程</a>
+          
+            <a href="/tags/Netty/" rel="tag"><i class="fa fa-tags"></i> Netty</a>
+          
+        </div>
       
 
       
@@ -562,8 +596,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -604,7 +647,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">44</span>
+                  <span class="site-state-item-count">46</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -666,6 +709,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么选择Netty？"><span class="nav-number">1.</span> <span class="nav-text">为什么选择Netty？</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Netty简介"><span class="nav-number">2.</span> <span class="nav-text">Netty简介</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -694,7 +753,7 @@
     
       <span class="post-meta-item-text">Site words count&#58;</span>
     
-    <span title="Site words count">23.2k</span>
+    <span title="Site words count">23.6k</span>
   
 </div>
 
@@ -775,8 +834,6 @@
   
 
 
-  
-
 
 
 
@@ -804,9 +861,6 @@
 
   
   <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
-
-  
-  <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
 
 
   
