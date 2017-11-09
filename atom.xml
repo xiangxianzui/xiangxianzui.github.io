@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://xiangxianzui.github.io/"/>
-  <updated>2017-11-01T11:06:31.878Z</updated>
+  <updated>2017-11-09T06:01:32.409Z</updated>
   <id>https://xiangxianzui.github.io/</id>
   
   <author>
@@ -14,6 +14,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>解决校园网登录release and renew ip address问题</title>
+    <link href="https://xiangxianzui.github.io/2017/11/%E8%A7%A3%E5%86%B3%E6%A0%A1%E5%9B%AD%E7%BD%91%E7%99%BB%E5%BD%95release-and-renew-ip-address%E9%97%AE%E9%A2%98/"/>
+    <id>https://xiangxianzui.github.io/2017/11/解决校园网登录release-and-renew-ip-address问题/</id>
+    <published>2017-11-09T05:39:52.000Z</published>
+    <updated>2017-11-09T06:01:32.409Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今天在登录校园网时出现了”Invalid ip address, please release and renew it”的错误，无法正常上网，记录一下解决办法。&lt;/p&gt;
+&lt;h3 id=&quot;Windows系统&quot;&gt;&lt;a href=&quot;#Windows系统&quot; class=&quot;head
+    
+    </summary>
+    
+      <category term="Work" scheme="https://xiangxianzui.github.io/categories/Work/"/>
+    
+    
+      <category term="network" scheme="https://xiangxianzui.github.io/tags/network/"/>
+    
+  </entry>
   
   <entry>
     <title>(转载)消息队列的使用场景</title>
@@ -448,30 +469,6 @@
       <category term="正则表达式" scheme="https://xiangxianzui.github.io/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
     
       <category term="bash" scheme="https://xiangxianzui.github.io/tags/bash/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>实习整理(四)</title>
-    <link href="https://xiangxianzui.github.io/2017/07/%E5%AE%9E%E4%B9%A0%E6%95%B4%E7%90%86-%E5%9B%9B/"/>
-    <id>https://xiangxianzui.github.io/2017/07/实习整理-四/</id>
-    <published>2017-07-08T14:48:27.000Z</published>
-    <updated>2017-10-19T06:19:24.804Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;Linux命令之：more-or-less&quot;&gt;&lt;a href=&quot;#Linux命令之：more-or-less&quot; class=&quot;headerlink&quot; title=&quot;Linux命令之：more or less?&quot;&gt;&lt;/a&gt;Linux命令之：more or less?
-    
-    </summary>
-    
-      <category term="Internship" scheme="https://xiangxianzui.github.io/categories/Internship/"/>
-    
-    
-      <category term="Linux" scheme="https://xiangxianzui.github.io/tags/Linux/"/>
-    
-      <category term="Ubuntu" scheme="https://xiangxianzui.github.io/tags/Ubuntu/"/>
-    
-      <category term="SonarLint" scheme="https://xiangxianzui.github.io/tags/SonarLint/"/>
     
   </entry>
   
