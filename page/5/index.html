@@ -330,6 +330,188 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xiangxianzui.github.io/2017/07/实习整理-五/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Muser">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Muser">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/07/实习整理-五/" itemprop="url">实习整理(五)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-07-11T09:53:18+08:00">
+                2017-07-11
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Last modified&#58;</span>
+              
+              <time title="Last modified" itemprop="dateModified" datetime="2017-10-19T14:04:42+08:00">
+                2017-10-19
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Internship/" itemprop="url" rel="index">
+                    <span itemprop="name">Internship</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count&#58;</span>
+                
+                <span title="Words count">
+                  890
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          实习第五周。这周的主要工作内容是协助开发和QA跑case，由于最近我所在的组任务不多，大家的工作主要是修修补补，或者是增加一些小功能。实习了一个多月，目前为止收获最大的地方就是更加熟悉了Linux开发，这点能从我最近写的实习总结中看出来。
+周四，leader让我把在线航空公司常见的接口错误统计出来，也就是把航司的错误从日志中搂出来，需要写shell脚本来实现，简单记录一下。
+先上脚本：
+1234567#! /bin/bashatnodes 'zgrep -o " Code=\"\\w\&#123;3,\&#125;\" " &#123;logname&#125;.log.2017-07-0[8-9]-*.gz ' &#123;hostname1&#125;[3-4] &#123;hostname2&#125;[3-6] &gt; icaair_provider.loggawk '&#123; print $2 &#125;' icaair_provider.log | gawk -F '=' '&#123; print $2 &#125;' | 
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/07/实习整理-五/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://xiangxianzui.github.io/2017/07/实习整理-四/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1054,197 +1236,6 @@ Java环境配置官网下载jdk，解压到目录 /usr/lib/jdk1.7将以下内容
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://xiangxianzui.github.io/2017/05/Frequently-used-commands-in-Linux/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Muser">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Muser">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/05/Frequently-used-commands-in-Linux/" itemprop="url">Frequently-used commands in Linux</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-05-19T13:39:38+08:00">
-                2017-05-19
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Last modified&#58;</span>
-              
-              <time title="Last modified" itemprop="dateModified" datetime="2017-07-08T22:37:35+08:00">
-                2017-07-08
-              </time>
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Interview/" itemprop="url" rel="index">
-                    <span itemprop="name">Interview</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count&#58;</span>
-                
-                <span title="Words count">
-                  625
-                </span>
-              
-
-              
-
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          This post concludes frequently-used commands in Linux, which might be functioning like a handy manual page for Linux commands.
-
-man
-
-1$ man [command] //manual page of [command]
-
-ls
-
-1234$ ls -a //display all files, including hidden files$ ls -l //list detailed information$ ls -r //list files according to name, in reversing order$ ls -i //view inode number
-
-cat
-
-123456$ cat [filename] //print content of [filename]$ cat -n [filename] //print content as well as line number$ cat 
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/05/Frequently-used-commands-in-Linux/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1301,7 +1292,7 @@ cat
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">37</span>
+                  <span class="site-state-item-count">38</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1323,7 +1314,7 @@ cat
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">48</span>
+                  <span class="site-state-item-count">49</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -1431,7 +1422,7 @@ cat
     
       <span class="post-meta-item-text">Site words count&#58;</span>
     
-    <span title="Site words count">27.2k</span>
+    <span title="Site words count">28.6k</span>
   
 </div>
 

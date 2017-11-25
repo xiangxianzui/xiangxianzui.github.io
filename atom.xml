@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://xiangxianzui.github.io/"/>
-  <updated>2017-11-09T06:01:32.409Z</updated>
+  <updated>2017-11-25T08:49:08.999Z</updated>
   <id>https://xiangxianzui.github.io/</id>
   
   <author>
@@ -14,6 +14,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>nginx+lua动态改变upstream</title>
+    <link href="https://xiangxianzui.github.io/2017/11/nginx-lua%E5%8A%A8%E6%80%81%E6%94%B9%E5%8F%98upstream/"/>
+    <id>https://xiangxianzui.github.io/2017/11/nginx-lua动态改变upstream/</id>
+    <published>2017-11-23T05:01:26.000Z</published>
+    <updated>2017-11-25T08:49:08.999Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;在做毕设的时候需要动态改变通过nginx代理的服务器数量。背景大概是我有一个generator不断产生负载打在nginx上，还有一个monitor根据generator生成负载的qps来动态决定需要多少台服务器刚好能够承担这个qps的请求，因此需要动态修改nginx中的up
+    
+    </summary>
+    
+      <category term="Work" scheme="https://xiangxianzui.github.io/categories/Work/"/>
+    
+    
+      <category term="nginx" scheme="https://xiangxianzui.github.io/tags/nginx/"/>
+    
+      <category term="Lua" scheme="https://xiangxianzui.github.io/tags/Lua/"/>
+    
+  </entry>
   
   <entry>
     <title>解决校园网登录release and renew ip address问题</title>
@@ -444,31 +466,6 @@
       <category term="zsh" scheme="https://xiangxianzui.github.io/tags/zsh/"/>
     
       <category term="oh-my-zsh" scheme="https://xiangxianzui.github.io/tags/oh-my-zsh/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>实习整理(五)</title>
-    <link href="https://xiangxianzui.github.io/2017/07/%E5%AE%9E%E4%B9%A0%E6%95%B4%E7%90%86-%E4%BA%94/"/>
-    <id>https://xiangxianzui.github.io/2017/07/实习整理-五/</id>
-    <published>2017-07-11T01:53:18.000Z</published>
-    <updated>2017-10-19T06:04:42.184Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;实习第五周。这周的主要工作内容是协助开发和QA跑case，由于最近我所在的组任务不多，大家的工作主要是修修补补，或者是增加一些小功能。实习了一个多月，目前为止收获最大的地方就是更加熟悉了Linux开发，这点能从我最近写的实习总结中看出来。&lt;/p&gt;
-&lt;p&gt;周四，leader让
-    
-    </summary>
-    
-      <category term="Internship" scheme="https://xiangxianzui.github.io/categories/Internship/"/>
-    
-    
-      <category term="Linux" scheme="https://xiangxianzui.github.io/tags/Linux/"/>
-    
-      <category term="正则表达式" scheme="https://xiangxianzui.github.io/tags/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F/"/>
-    
-      <category term="bash" scheme="https://xiangxianzui.github.io/tags/bash/"/>
     
   </entry>
   

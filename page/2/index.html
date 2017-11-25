@@ -330,6 +330,191 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xiangxianzui.github.io/2017/10/NIO编程学习笔记-一/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Muser">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Muser">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2017/10/NIO编程学习笔记-一/" itemprop="url">NIO编程学习笔记(一)</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-24T16:16:23+08:00">
+                2017-10-24
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Last modified&#58;</span>
+              
+              <time title="Last modified" itemprop="dateModified" datetime="2017-10-24T16:45:18+08:00">
+                2017-10-24
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count&#58;</span>
+                
+                <span title="Words count">
+                  1,052
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          基本概念“伪异步”JAVA socket I/O是阻塞型的，为每个请求开一个线程，并发请求过多时必然消耗大量资源，JDK1.5之前没有NIO，怎样解决高并发问题呢？可以采用线程池和阻塞队列实现一种“伪异步”的IO通信框架。
+其实就是将客户端的socket封装成一个task任务(实现Runnable接口)然后投递到线程池中，线程池限制了系统为应用开辟的最大线程数，如果同时有大量的请求到来，超过了最大线程数，那么就会添加到阻塞队列中等待进入线程池。
+这种方法实际上仅仅能够解决高并发引起的服务器宕机问题，但是并不能提高效率。
+阻塞和非阻塞BIO(Blocking I/O)和NIO(Non-Blocking I/O)的区别，其本质就是阻塞和非阻塞的区别。
+阻塞：应用程序在获取网络数据的时候，如果网络传输数据很慢，那么程序就一直等着，直到传输完毕为止。
+非阻塞：应用程序直接可以获取已经准备就绪好的数据，无需等待。
+BIO为同步阻塞形式，NIO为同步非阻塞形式，NIO并没有实现异步，在JDK1.7之后，升级了NIO库包，支持异步非阻塞通信模型，即NIO2.0
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/10/NIO编程学习笔记-一/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://xiangxianzui.github.io/2017/10/Netty学习笔记/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1043,191 +1228,6 @@ shell中的命令不一定要用绝对路径，比如 /bin/pwd 和 pwd 均可Lin
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://xiangxianzui.github.io/2017/10/关于Bloom-Filter/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Muser">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Muser">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/10/关于Bloom-Filter/" itemprop="url">关于Bloom Filter</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-20T13:53:00+08:00">
-                2017-10-20
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Last modified&#58;</span>
-              
-              <time title="Last modified" itemprop="dateModified" datetime="2017-10-20T15:50:02+08:00">
-                2017-10-20
-              </time>
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Work/" itemprop="url" rel="index">
-                    <span itemprop="name">Work</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count&#58;</span>
-                
-                <span title="Words count">
-                  250
-                </span>
-              
-
-              
-
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          Bloom Filter是一种空间效率很高的随机数据结构，用来表示一个集合，主要的应用是判断一个元素是否属于这个集合，适用于能容忍一定错误率的场合下，比如网络爬虫里的url去重。
-最近看到了一个写的非常好的关于Bloom Filter的文章系列，读完之后受益匪浅，写篇博文记录之。
-Bloom Filter概念和原理http://blog.csdn.net/jiaomeng/article/details/1495500
-从哈希存储到Bloom Filterhttp://blog.csdn.net/jiaomeng/article/details/1496329
-应用Bloom Filter的几个技巧http://blog.csdn.net/jiaomeng/article/details/1497361
-Counting Bloom Filterhttp://blog.csdn.net/jiaomeng/article/details/1498283
-Partial Bloom Filterhttp://blog.csdn.net/jiaomen
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/10/关于Bloom-Filter/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1284,7 +1284,7 @@ Partial Bloom Filterhttp://blog.csdn.net/jiaomen
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">37</span>
+                  <span class="site-state-item-count">38</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1306,7 +1306,7 @@ Partial Bloom Filterhttp://blog.csdn.net/jiaomen
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">48</span>
+                  <span class="site-state-item-count">49</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -1414,7 +1414,7 @@ Partial Bloom Filterhttp://blog.csdn.net/jiaomen
     
       <span class="post-meta-item-text">Site words count&#58;</span>
     
-    <span title="Site words count">27.2k</span>
+    <span title="Site words count">28.6k</span>
   
 </div>
 
