@@ -98,17 +98,17 @@
 
 
 
-<meta name="description" content="实习第一周结束了，下面整理一下这周遇到的一些问题。(所有操作均在Ubuntu系统下完成) IDE配置：Intellij IDEA下载Ultimate版，下面网址生成license生成各种软件注册码：http://www.98key.com Java环境配置官网下载jdk，解压到目录 /usr/lib/jdk1.7将以下内容添加到/etc/profile文件结尾： 123export JAVA_HO">
+<meta name="description" content="实习第一周结束了，下面整理一下这周遇到的一些问题。(所有操作均在Ubuntu系统下完成) IDE配置：Intellij IDEA下载Ultimate版，下面网址生成license生成各种软件注册码：http://www.98key.com Java环境配置官网下载jdk，解压缩将以下内容添加到/etc/profile文件结尾： 1234export JAVA_HOME=/home/wanghao/">
 <meta name="keywords" content="Java,nginx,Ubuntu,IDEA,Maven,Git,rsync,免跳板机,缺少动态库依赖">
 <meta property="og:type" content="article">
 <meta property="og:title" content="实习整理(一)">
 <meta property="og:url" content="https://xiangxianzui.github.io/2017/06/实习整理-一/index.html">
 <meta property="og:site_name" content="Muser">
-<meta property="og:description" content="实习第一周结束了，下面整理一下这周遇到的一些问题。(所有操作均在Ubuntu系统下完成) IDE配置：Intellij IDEA下载Ultimate版，下面网址生成license生成各种软件注册码：http://www.98key.com Java环境配置官网下载jdk，解压到目录 /usr/lib/jdk1.7将以下内容添加到/etc/profile文件结尾： 123export JAVA_HO">
-<meta property="og:updated_time" content="2017-10-19T06:01:49.452Z">
+<meta property="og:description" content="实习第一周结束了，下面整理一下这周遇到的一些问题。(所有操作均在Ubuntu系统下完成) IDE配置：Intellij IDEA下载Ultimate版，下面网址生成license生成各种软件注册码：http://www.98key.com Java环境配置官网下载jdk，解压缩将以下内容添加到/etc/profile文件结尾： 1234export JAVA_HOME=/home/wanghao/">
+<meta property="og:updated_time" content="2017-11-27T11:55:55.649Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="实习整理(一)">
-<meta name="twitter:description" content="实习第一周结束了，下面整理一下这周遇到的一些问题。(所有操作均在Ubuntu系统下完成) IDE配置：Intellij IDEA下载Ultimate版，下面网址生成license生成各种软件注册码：http://www.98key.com Java环境配置官网下载jdk，解压到目录 /usr/lib/jdk1.7将以下内容添加到/etc/profile文件结尾： 123export JAVA_HO">
+<meta name="twitter:description" content="实习第一周结束了，下面整理一下这周遇到的一些问题。(所有操作均在Ubuntu系统下完成) IDE配置：Intellij IDEA下载Ultimate版，下面网址生成license生成各种软件注册码：http://www.98key.com Java环境配置官网下载jdk，解压缩将以下内容添加到/etc/profile文件结尾： 1234export JAVA_HOME=/home/wanghao/">
 
 
 
@@ -376,8 +376,8 @@
               
                 <span class="post-meta-item-text">Last modified&#58;</span>
               
-              <time title="Last modified" itemprop="dateModified" datetime="2017-10-19T14:01:49+08:00">
-                2017-10-19
+              <time title="Last modified" itemprop="dateModified" datetime="2017-11-27T19:55:55+08:00">
+                2017-11-27
               </time>
             
           </span>
@@ -431,7 +431,7 @@
                   <span class="post-meta-item-text">Words count&#58;</span>
                 
                 <span title="Words count">
-                  1,528
+                  1,634
                 </span>
               
 
@@ -458,10 +458,12 @@
       
         <p>实习第一周结束了，下面整理一下这周遇到的一些问题。(所有操作均在Ubuntu系统下完成)</p>
 <h3 id="IDE配置：Intellij-IDEA"><a href="#IDE配置：Intellij-IDEA" class="headerlink" title="IDE配置：Intellij IDEA"></a>IDE配置：Intellij IDEA</h3><p>下载Ultimate版，下面网址生成license<br>生成各种软件注册码：<a href="http://www.98key.com" target="_blank" rel="external">http://www.98key.com</a></p>
-<h3 id="Java环境配置"><a href="#Java环境配置" class="headerlink" title="Java环境配置"></a>Java环境配置</h3><p>官网下载jdk，解压到目录 /usr/lib/jdk1.7<br>将以下内容添加到/etc/profile文件结尾：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">export</span> JAVA_HOME=/home/q/java/jdk1.7.x</div><div class="line"><span class="built_in">export</span> CLASSPATH=.:<span class="variable">$JAVA_HOME</span>/lib/dt.jar:<span class="variable">$JAVA_HOME</span>/lib/tools.jar</div><div class="line"><span class="built_in">export</span> PATH=<span class="variable">$JAVA_HOME</span>/bin:<span class="variable">$PATH</span></div></pre></td></tr></table></figure>
+<h3 id="Java环境配置"><a href="#Java环境配置" class="headerlink" title="Java环境配置"></a>Java环境配置</h3><p>官网下载jdk，解压缩<br>将以下内容添加到/etc/profile文件结尾：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">export</span> JAVA_HOME=/home/wanghao/work/jdk</div><div class="line"><span class="built_in">export</span> JRE_HOME=<span class="variable">$JAVA_HOME</span>/jre</div><div class="line"><span class="built_in">export</span> CLASSPATH=.:<span class="variable">$JAVA_HOME</span>/lib/dt.jar:<span class="variable">$JAVA_HOME</span>/lib/tools.jar</div><div class="line"><span class="built_in">export</span> PATH=<span class="variable">$JAVA_HOME</span>/bin:<span class="variable">$PATH</span></div></pre></td></tr></table></figure>
 <p>更新配置文件，执行：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">source</span> /etc/profile</div></pre></td></tr></table></figure></p>
 <p>测试java是否运行正常：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"><span class="built_in">echo</span> <span class="variable">$JAVA_HOME</span></div><div class="line">java -version</div></pre></td></tr></table></figure></p>
+<h3 id="安装tomcat"><a href="#安装tomcat" class="headerlink" title="安装tomcat"></a>安装tomcat</h3><p>官网下载tomcat源码，解压缩<br>打开bin目录下的startup.sh，添加以下几行：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">JAVA_HOME=/home/wanghao/work/jdk1.7.0_40</div><div class="line">JRE_HOME=/home/wanghao/work/jdk1.7.0_40/jre</div><div class="line">PATH=<span class="variable">$JAVA_HOME</span>/bin:<span class="variable">$JRE_HOME</span>:<span class="variable">$PATH</span></div><div class="line">CLASSPATH=.:<span class="variable">$JAVA_HOME</span>/lib/dt.jar:<span class="variable">$JAVA_HOME</span>/lib/tools.jar</div><div class="line">TOMCAT_HOME=/home/wanghao/work/apache-tomcat</div></pre></td></tr></table></figure></p>
+<p>./startup.sh启动tomcat<br>./shutdown.sh关闭tomcat<br>启动之后不要马上关闭，否则可能因为tomcat还未完全启动就关闭，导致shutdown的时候报错：”Could not contact localhost:8005. Tomcat may not be running”</p>
 <h3 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h3><p>用命令“git –version”查看是否已安装，且版本为1.9.5或更高。若没安装或版本太低：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install git-core git-gui git-doc gitk</div></pre></td></tr></table></figure></p>
 <p>再用“git –version”查一下，如果安装的不是1.9.5版本，那是不是你的ubuntu太老了？试试下面的方法：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">sudo add-apt-repository ppa:git-core/ppa</div><div class="line">sudo apt-get update</div><div class="line">sudo apt-get install git</div></pre></td></tr></table></figure></p>
 <p>add-apt-repository 是由 python-software-properties 这个工具包提供的，如果使用 add-apt-repository显示“command not found”需要安装python-software-properties<br>安装方法：<br>1.首先需要安装software-properties-common<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install software-properties-common</div></pre></td></tr></table></figure></p>
@@ -794,7 +796,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#IDE配置：Intellij-IDEA"><span class="nav-number">1.</span> <span class="nav-text">IDE配置：Intellij IDEA</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java环境配置"><span class="nav-number">2.</span> <span class="nav-text">Java环境配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Git"><span class="nav-number">3.</span> <span class="nav-text">安装Git</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生成SSH-key"><span class="nav-number">4.</span> <span class="nav-text">生成SSH key</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Maven"><span class="nav-number">5.</span> <span class="nav-text">安装Maven</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-检查JDK的安装-参照Java环境配置"><span class="nav-number">5.1.</span> <span class="nav-text">(1)检查JDK的安装,参照Java环境配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-本地安装"><span class="nav-number">5.2.</span> <span class="nav-text">(2)本地安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-Maven版本的更改"><span class="nav-number">5.3.</span> <span class="nav-text">(3)Maven版本的更改</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ssh免跳板机登录开发机"><span class="nav-number">6.</span> <span class="nav-text">ssh免跳板机登录开发机</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#nginx-搭建"><span class="nav-number">7.</span> <span class="nav-text">nginx 搭建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rsync的配置和使用"><span class="nav-number">8.</span> <span class="nav-text">rsync的配置和使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#apt-file命令"><span class="nav-number">9.</span> <span class="nav-text">apt-file命令</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#IDE配置：Intellij-IDEA"><span class="nav-number">1.</span> <span class="nav-text">IDE配置：Intellij IDEA</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Java环境配置"><span class="nav-number">2.</span> <span class="nav-text">Java环境配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装tomcat"><span class="nav-number">3.</span> <span class="nav-text">安装tomcat</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Git"><span class="nav-number">4.</span> <span class="nav-text">安装Git</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#生成SSH-key"><span class="nav-number">5.</span> <span class="nav-text">生成SSH key</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装Maven"><span class="nav-number">6.</span> <span class="nav-text">安装Maven</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-检查JDK的安装-参照Java环境配置"><span class="nav-number">6.1.</span> <span class="nav-text">(1)检查JDK的安装,参照Java环境配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-本地安装"><span class="nav-number">6.2.</span> <span class="nav-text">(2)本地安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-Maven版本的更改"><span class="nav-number">6.3.</span> <span class="nav-text">(3)Maven版本的更改</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ssh免跳板机登录开发机"><span class="nav-number">7.</span> <span class="nav-text">ssh免跳板机登录开发机</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#nginx-搭建"><span class="nav-number">8.</span> <span class="nav-text">nginx 搭建</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rsync的配置和使用"><span class="nav-number">9.</span> <span class="nav-text">rsync的配置和使用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#apt-file命令"><span class="nav-number">10.</span> <span class="nav-text">apt-file命令</span></a></li></ol></div>
             
 
           </div>
@@ -829,7 +831,7 @@
     
       <span class="post-meta-item-text">Site words count&#58;</span>
     
-    <span title="Site words count">28.6k</span>
+    <span title="Site words count">28.7k</span>
   
 </div>
 
