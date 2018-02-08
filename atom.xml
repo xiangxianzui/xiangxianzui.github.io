@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://xiangxianzui.github.io/"/>
-  <updated>2017-11-25T08:49:08.999Z</updated>
+  <updated>2018-02-08T14:49:57.566Z</updated>
   <id>https://xiangxianzui.github.io/</id>
   
   <author>
@@ -14,6 +14,47 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Maven核心概念</title>
+    <link href="https://xiangxianzui.github.io/2018/02/Maven%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5/"/>
+    <id>https://xiangxianzui.github.io/2018/02/Maven核心概念/</id>
+    <published>2018-02-08T13:24:03.000Z</published>
+    <updated>2018-02-08T14:49:57.566Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;Maven是什么&quot;&gt;&lt;a href=&quot;#Maven是什么&quot; class=&quot;headerlink&quot; title=&quot;Maven是什么&quot;&gt;&lt;/a&gt;Maven是什么&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Apache基金会出品&lt;/li&gt;
+&lt;li&gt;开源&lt;/li&gt;
+&lt;li&gt;java写的&lt;
+    
+    </summary>
+    
+    
+      <category term="Maven" scheme="https://xiangxianzui.github.io/tags/Maven/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>tomcat相关问题解决</title>
+    <link href="https://xiangxianzui.github.io/2017/12/tomcat%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/"/>
+    <id>https://xiangxianzui.github.io/2017/12/tomcat相关问题解决/</id>
+    <published>2017-12-01T05:41:11.000Z</published>
+    <updated>2017-12-01T05:52:08.359Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;解决tomcat启动过慢&quot;&gt;&lt;a href=&quot;#解决tomcat启动过慢&quot; class=&quot;headerlink&quot; title=&quot;解决tomcat启动过慢&quot;&gt;&lt;/a&gt;解决tomcat启动过慢&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;http://blog.csdn.net/
+    
+    </summary>
+    
+      <category term="Work" scheme="https://xiangxianzui.github.io/categories/Work/"/>
+    
+    
+      <category term="tomcat" scheme="https://xiangxianzui.github.io/tags/tomcat/"/>
+    
+  </entry>
   
   <entry>
     <title>nginx+lua动态改变upstream</title>
@@ -42,7 +83,7 @@
     <link href="https://xiangxianzui.github.io/2017/11/%E8%A7%A3%E5%86%B3%E6%A0%A1%E5%9B%AD%E7%BD%91%E7%99%BB%E5%BD%95release-and-renew-ip-address%E9%97%AE%E9%A2%98/"/>
     <id>https://xiangxianzui.github.io/2017/11/解决校园网登录release-and-renew-ip-address问题/</id>
     <published>2017-11-09T05:39:52.000Z</published>
-    <updated>2017-11-09T06:01:32.409Z</updated>
+    <updated>2017-12-06T02:32:29.948Z</updated>
     
     <summary type="html">
     
@@ -417,55 +458,6 @@
       <category term="Logstash" scheme="https://xiangxianzui.github.io/tags/Logstash/"/>
     
       <category term="Kibana" scheme="https://xiangxianzui.github.io/tags/Kibana/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(转载)JVM监控命令详解</title>
-    <link href="https://xiangxianzui.github.io/2017/07/%E8%BD%AC%E8%BD%BD-JVM%E7%9B%91%E6%8E%A7%E5%91%BD%E4%BB%A4%E8%AF%A6%E8%A7%A3/"/>
-    <id>https://xiangxianzui.github.io/2017/07/转载-JVM监控命令详解/</id>
-    <published>2017-07-17T13:58:07.000Z</published>
-    <updated>2017-10-19T06:23:41.700Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;a href=&quot;http://learnworld.iteye.com/blog/1381949&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://learnworld.iteye.com/blog/1381949&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;&lt;a 
-    
-    </summary>
-    
-      <category term="Interview" scheme="https://xiangxianzui.github.io/categories/Interview/"/>
-    
-    
-      <category term="转载" scheme="https://xiangxianzui.github.io/tags/%E8%BD%AC%E8%BD%BD/"/>
-    
-      <category term="JVM" scheme="https://xiangxianzui.github.io/tags/JVM/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Perfect Shell: zsh</title>
-    <link href="https://xiangxianzui.github.io/2017/07/Perfect-Shell-zsh/"/>
-    <id>https://xiangxianzui.github.io/2017/07/Perfect-Shell-zsh/</id>
-    <published>2017-07-11T13:15:11.000Z</published>
-    <updated>2017-10-19T06:27:13.652Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Recently, I bought a new laptop : HP Omen II Pro. Guess what? It is a &lt;strong&gt;GAME LAPTOP&lt;/strong&gt;!!! Well, I confess that I couldn’t wai
-    
-    </summary>
-    
-      <category term="Guides" scheme="https://xiangxianzui.github.io/categories/Guides/"/>
-    
-    
-      <category term="Linux" scheme="https://xiangxianzui.github.io/tags/Linux/"/>
-    
-      <category term="tools" scheme="https://xiangxianzui.github.io/tags/tools/"/>
-    
-      <category term="zsh" scheme="https://xiangxianzui.github.io/tags/zsh/"/>
-    
-      <category term="oh-my-zsh" scheme="https://xiangxianzui.github.io/tags/oh-my-zsh/"/>
     
   </entry>
   

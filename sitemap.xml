@@ -2,6 +2,27 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://xiangxianzui.github.io/2018/02/Maven%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5/</loc>
+    
+    <lastmod>2018-02-08T14:49:57.566Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://xiangxianzui.github.io/2017/11/%E8%A7%A3%E5%86%B3%E6%A0%A1%E5%9B%AD%E7%BD%91%E7%99%BB%E5%BD%95release-and-renew-ip-address%E9%97%AE%E9%A2%98/</loc>
+    
+    <lastmod>2017-12-06T02:32:29.948Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://xiangxianzui.github.io/2017/12/tomcat%E7%9B%B8%E5%85%B3%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/</loc>
+    
+    <lastmod>2017-12-01T05:52:08.359Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://xiangxianzui.github.io/2017/06/%E5%AE%9E%E4%B9%A0%E6%95%B4%E7%90%86-%E4%B8%80/</loc>
     
     <lastmod>2017-11-27T11:55:55.649Z</lastmod>
@@ -19,13 +40,6 @@
     <loc>https://xiangxianzui.github.io/notes/index.html</loc>
     
     <lastmod>2017-11-16T08:23:36.083Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://xiangxianzui.github.io/2017/11/%E8%A7%A3%E5%86%B3%E6%A0%A1%E5%9B%AD%E7%BD%91%E7%99%BB%E5%BD%95release-and-renew-ip-address%E9%97%AE%E9%A2%98/</loc>
-    
-    <lastmod>2017-11-09T06:01:32.409Z</lastmod>
     
   </url>
   
