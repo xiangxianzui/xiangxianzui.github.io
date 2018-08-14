@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://xiangxianzui.github.io/"/>
-  <updated>2018-05-22T07:50:25.172Z</updated>
+  <updated>2018-08-14T03:31:44.836Z</updated>
   <id>https://xiangxianzui.github.io/</id>
   
   <author>
@@ -16,11 +16,63 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title></title>
+    <link href="https://xiangxianzui.github.io/2018/08/Spring%E6%B3%A8%E8%A7%A3Resource%E5%92%8CAutowired%E5%8C%BA%E5%88%AB%E5%AF%B9%E6%AF%94/"/>
+    <id>https://xiangxianzui.github.io/2018/08/Spring注解Resource和Autowired区别对比/</id>
+    <published>2018-08-14T03:31:44.836Z</published>
+    <updated>2018-08-14T03:31:44.836Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Spring注解Resource和Autowired区别对比&quot;&gt;&lt;a href=&quot;#Spring注解Resource和Autowired区别对比&quot; class=&quot;headerlink&quot; title=&quot;Spring注解Resource和Autowired区别对比&quot;&gt;
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>经典分布式协议：paxos</title>
+    <link href="https://xiangxianzui.github.io/2018/05/%E7%BB%8F%E5%85%B8%E5%88%86%E5%B8%83%E5%BC%8F%E5%8D%8F%E8%AE%AE%EF%BC%9Apaxos/"/>
+    <id>https://xiangxianzui.github.io/2018/05/经典分布式协议：paxos/</id>
+    <published>2018-05-24T18:24:45.000Z</published>
+    <updated>2018-05-24T18:24:45.625Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>git版本控制</title>
+    <link href="https://xiangxianzui.github.io/2018/05/git%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6/"/>
+    <id>https://xiangxianzui.github.io/2018/05/git版本控制/</id>
+    <published>2018-05-22T08:58:18.000Z</published>
+    <updated>2018-05-24T17:11:52.205Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;基本概念&quot;&gt;&lt;a href=&quot;#基本概念&quot; class=&quot;headerlink&quot; title=&quot;基本概念&quot;&gt;&lt;/a&gt;基本概念&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;Snapshots, Not Differences&lt;/li&gt;
+&lt;li&gt;Nearly Every Operati
+    
+    </summary>
+    
+      <category term="学习笔记" scheme="https://xiangxianzui.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="git" scheme="https://xiangxianzui.github.io/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Maven核心概念</title>
     <link href="https://xiangxianzui.github.io/2018/02/Maven%E6%A0%B8%E5%BF%83%E6%A6%82%E5%BF%B5/"/>
     <id>https://xiangxianzui.github.io/2018/02/Maven核心概念/</id>
     <published>2018-02-08T13:24:03.000Z</published>
-    <updated>2018-05-22T07:50:25.172Z</updated>
+    <updated>2018-05-22T08:05:31.948Z</updated>
     
     <summary type="html">
     
@@ -140,9 +192,9 @@
       <category term="学习笔记" scheme="https://xiangxianzui.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="网络编程" scheme="https://xiangxianzui.github.io/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
-    
       <category term="NIO" scheme="https://xiangxianzui.github.io/tags/NIO/"/>
+    
+      <category term="网络编程" scheme="https://xiangxianzui.github.io/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
     
   </entry>
   
@@ -162,9 +214,9 @@
       <category term="学习笔记" scheme="https://xiangxianzui.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="网络编程" scheme="https://xiangxianzui.github.io/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
-    
       <category term="NIO" scheme="https://xiangxianzui.github.io/tags/NIO/"/>
+    
+      <category term="网络编程" scheme="https://xiangxianzui.github.io/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
     
   </entry>
   
@@ -184,9 +236,9 @@
       <category term="学习笔记" scheme="https://xiangxianzui.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="网络编程" scheme="https://xiangxianzui.github.io/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
-    
       <category term="NIO" scheme="https://xiangxianzui.github.io/tags/NIO/"/>
+    
+      <category term="网络编程" scheme="https://xiangxianzui.github.io/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
     
   </entry>
   
@@ -226,9 +278,9 @@
       <category term="学习笔记" scheme="https://xiangxianzui.github.io/categories/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     
-      <category term="AIO" scheme="https://xiangxianzui.github.io/tags/AIO/"/>
-    
       <category term="网络编程" scheme="https://xiangxianzui.github.io/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
+    
+      <category term="AIO" scheme="https://xiangxianzui.github.io/tags/AIO/"/>
     
   </entry>
   
@@ -388,78 +440,6 @@
       <category term="Linux" scheme="https://xiangxianzui.github.io/tags/Linux/"/>
     
       <category term="定时任务" scheme="https://xiangxianzui.github.io/tags/%E5%AE%9A%E6%97%B6%E4%BB%BB%E5%8A%A1/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux查找文件</title>
-    <link href="https://xiangxianzui.github.io/2017/10/Linux%E6%9F%A5%E6%89%BE%E6%96%87%E4%BB%B6/"/>
-    <id>https://xiangxianzui.github.io/2017/10/Linux查找文件/</id>
-    <published>2017-10-19T07:42:24.000Z</published>
-    <updated>2017-10-19T08:16:36.039Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Linux下查找文件通常可以用which，whereis，locate和find命令，下面总结它们各自的用法和区别。&lt;/p&gt;
-&lt;h3 id=&quot;which&quot;&gt;&lt;a href=&quot;#which&quot; class=&quot;headerlink&quot; title=&quot;which&quot;&gt;&lt;/a&gt;which
-    
-    </summary>
-    
-      <category term="Work" scheme="https://xiangxianzui.github.io/categories/Work/"/>
-    
-    
-      <category term="Linux" scheme="https://xiangxianzui.github.io/tags/Linux/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Linux窗口管理终极解决方案:tmux</title>
-    <link href="https://xiangxianzui.github.io/2017/07/Linux%E7%AA%97%E5%8F%A3%E7%AE%A1%E7%90%86%E7%BB%88%E6%9E%81%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88-tmux/"/>
-    <id>https://xiangxianzui.github.io/2017/07/Linux窗口管理终极解决方案-tmux/</id>
-    <published>2017-07-25T14:27:13.000Z</published>
-    <updated>2017-10-19T06:26:54.524Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;&lt;a href=&quot;http://blog.csdn.net/robertbaker/article/details/42172203&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://blog.csdn.net/robertbaker/artic
-    
-    </summary>
-    
-      <category term="Guides" scheme="https://xiangxianzui.github.io/categories/Guides/"/>
-    
-    
-      <category term="Linux" scheme="https://xiangxianzui.github.io/tags/Linux/"/>
-    
-      <category term="tmux" scheme="https://xiangxianzui.github.io/tags/tmux/"/>
-    
-      <category term="窗口管理" scheme="https://xiangxianzui.github.io/tags/%E7%AA%97%E5%8F%A3%E7%AE%A1%E7%90%86/"/>
-    
-      <category term="tools" scheme="https://xiangxianzui.github.io/tags/tools/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ELK搭建实时日志分析系统</title>
-    <link href="https://xiangxianzui.github.io/2017/07/ELK%E6%90%AD%E5%BB%BA%E5%AE%9E%E6%97%B6%E6%97%A5%E5%BF%97%E5%88%86%E6%9E%90%E7%B3%BB%E7%BB%9F/"/>
-    <id>https://xiangxianzui.github.io/2017/07/ELK搭建实时日志分析系统/</id>
-    <published>2017-07-25T12:35:04.000Z</published>
-    <updated>2017-07-26T03:22:39.547Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;日志主要包括系统日志、应用程序日志和安全日志。系统运维和开发人员可以通过日志了解服务器软硬件信息、检查配置过程中的错误及错误发生的原因。经常分析日志可以了解服务器的负荷，性能安全性，从而及时采取措施纠正错误。&lt;/p&gt;
-&lt;p&gt;通常，日志被分散的储存不同的设备上。如果你管理数十
-    
-    </summary>
-    
-      <category term="Guides" scheme="https://xiangxianzui.github.io/categories/Guides/"/>
-    
-    
-      <category term="ElasticSearch" scheme="https://xiangxianzui.github.io/tags/ElasticSearch/"/>
-    
-      <category term="Logstash" scheme="https://xiangxianzui.github.io/tags/Logstash/"/>
-    
-      <category term="Kibana" scheme="https://xiangxianzui.github.io/tags/Kibana/"/>
     
   </entry>
   

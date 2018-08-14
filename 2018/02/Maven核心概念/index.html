@@ -105,7 +105,7 @@
 <meta property="og:url" content="https://xiangxianzui.github.io/2018/02/Maven核心概念/index.html">
 <meta property="og:site_name" content="Muser">
 <meta property="og:description" content="Maven是什么 Apache基金会出品 开源 java写的 Maven是一个项目构建和依赖管理的工具  为什么选择Maven 基于约定优先于配置的原则：默认限定了项目的目录结构，项目之间迁移的学习成本低 提供三方依赖包的管理：提供远程仓库，解决了依赖维护 提供一致的项目构建管理方式：将项目构建过程的操作抽象成生命周期，减少构建工作量 插件式的架构，大量的可重用的插件 方便地集成IDE  pom.">
-<meta property="og:updated_time" content="2018-05-22T07:50:25.172Z">
+<meta property="og:updated_time" content="2018-05-22T08:05:31.948Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Maven核心概念">
 <meta name="twitter:description" content="Maven是什么 Apache基金会出品 开源 java写的 Maven是一个项目构建和依赖管理的工具  为什么选择Maven 基于约定优先于配置的原则：默认限定了项目的目录结构，项目之间迁移的学习成本低 提供三方依赖包的管理：提供远程仓库，解决了依赖维护 提供一致的项目构建管理方式：将项目构建过程的操作抽象成生命周期，减少构建工作量 插件式的架构，大量的可重用的插件 方便地集成IDE  pom.">
@@ -376,7 +376,7 @@
               
                 <span class="post-meta-item-text">Last modified&#58;</span>
               
-              <time title="Last modified" itemprop="dateModified" datetime="2018-05-22T15:50:25+08:00">
+              <time title="Last modified" itemprop="dateModified" datetime="2018-05-22T16:05:31+08:00">
                 2018-05-22
               </time>
             
@@ -431,7 +431,7 @@
                   <span class="post-meta-item-text">Words count&#58;</span>
                 
                 <span title="Words count">
-                  1,359
+                  1,349
                 </span>
               
 
@@ -535,8 +535,39 @@
 </ul>
 <h3 id="插件和目标绑定构建生命周期"><a href="#插件和目标绑定构建生命周期" class="headerlink" title="插件和目标绑定构建生命周期"></a>插件和目标绑定构建生命周期</h3><ul>
 <li>生命周期的阶段与目标是绑定的，用户指定生命周期阶段实际上是隐式地调用了某个插件执行任务</li>
-<li>生命周期的各个阶段绑定的目标如表所示：<br>|    生命周期阶段    | 目标 |<br>| ———- | — |<br>| process-resources |  resources:resources |<br>| compile       |  compiler:compile |<br>| test          |  surefire:test |<br>| install       |  install:install |<br>| deploy        |  deploy:deploy |<br>比如<code>mvn compile</code>实际上就是执行了compiler插件的compile目标，相当于执行了<code>mvn compiler:compile</code><br>对于package阶段，会根据项目类型不同，绑定到不同的目标</li>
+<li>生命周期的各个阶段绑定的目标如表所示：</li>
 </ul>
+<table>
+<thead>
+<tr>
+<th>生命周期阶段</th>
+<th>目标</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>process-resources</td>
+<td>resources:resources</td>
+</tr>
+<tr>
+<td>compile</td>
+<td>compiler:compile</td>
+</tr>
+<tr>
+<td>test</td>
+<td>surefire:test</td>
+</tr>
+<tr>
+<td>install</td>
+<td>install:install</td>
+</tr>
+<tr>
+<td>deploy</td>
+<td>deploy:deploy</td>
+</tr>
+</tbody>
+</table>
+<p>比如<code>mvn compile</code>实际上就是执行了compiler插件的compile目标，相当于执行了<code>mvn compiler:compile</code><br>对于package阶段，会根据项目类型不同，绑定到不同的目标</p>
 <h3 id="插件配置"><a href="#插件配置" class="headerlink" title="插件配置"></a>插件配置</h3><p>在pom.xml中经常会配置某个插件的参数，如果不知道怎么配，可以用下面命令查看帮助文档：<br><code>mvn help:describe -Dplugin=&lt;plugin_name&gt; -Dgoal=&lt;goal_name&gt; -Ddetail</code><br>比如查看compiler插件中compile目标的配置参数帮助文档：<br><code>mvn help:describe -Dplugin=compiler -Dgoal=compile -Ddetail</code></p>
 
       
@@ -619,6 +650,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/05/git版本控制/" rel="prev" title="git版本控制">
+                git版本控制 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -708,7 +743,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">40</span>
+                  <span class="site-state-item-count">43</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -730,7 +765,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">50</span>
+                  <span class="site-state-item-count">51</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -854,7 +889,7 @@
     
       <span class="post-meta-item-text">Site words count&#58;</span>
     
-    <span title="Site words count">30.2k</span>
+    <span title="Site words count">31.9k</span>
   
 </div>
 

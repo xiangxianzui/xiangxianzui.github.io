@@ -1,0 +1,1037 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="default">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+<script>
+    (function(){
+        if(''){
+            if (prompt('Enter password please') !== ''){
+                alert('Bad password!');
+                history.back();
+            }
+        }
+    })();
+</script>
+
+
+  
+  
+    
+    
+  <script src="/lib/pace/pace.min.js?v=1.0.2"></script>
+  <link href="/lib/pace/pace-theme-minimal.min.css?v=1.0.2" rel="stylesheet">
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.3" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png?v=5.1.3">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png?v=5.1.3">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.3" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="git," />
+
+
+
+
+
+  <link rel="alternate" href="/atom.xml" title="Muser" type="application/atom+xml" />
+
+
+
+
+
+
+<meta name="description" content="基本概念 Snapshots, Not Differences Nearly Every Operation Is Local Git Has Integrity Git Generally Only Adds Data  三种状态Git has three main states that your files can reside in:  commited: Committed means">
+<meta name="keywords" content="git">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git版本控制">
+<meta property="og:url" content="https://xiangxianzui.github.io/2018/05/git版本控制/index.html">
+<meta property="og:site_name" content="Muser">
+<meta property="og:description" content="基本概念 Snapshots, Not Differences Nearly Every Operation Is Local Git Has Integrity Git Generally Only Adds Data  三种状态Git has three main states that your files can reside in:  commited: Committed means">
+<meta property="og:image" content="https://xiangxianzui.github.io/2018/05/git版本控制/gitdiff.jpg">
+<meta property="og:updated_time" content="2018-05-24T17:11:52.205Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="git版本控制">
+<meta name="twitter:description" content="基本概念 Snapshots, Not Differences Nearly Every Operation Is Local Git Has Integrity Git Generally Only Adds Data  三种状态Git has three main states that your files can reside in:  commited: Committed means">
+<meta name="twitter:image" content="https://xiangxianzui.github.io/2018/05/git版本控制/gitdiff.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.3',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":true},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '6X41HMKSBB',
+      apiKey: '304502cbd81590137ae69166c42f1ffd',
+      indexName: 'hexo_blog',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"No results found for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="https://xiangxianzui.github.io/2018/05/git版本控制/"/>
+
+
+
+
+
+  <title>git版本控制 | Muser</title>
+  
+
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Muser</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">弱小和无知不是生存的障碍，傲慢才是</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br />
+            
+            About
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br />
+            
+            Tags
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br />
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-notes">
+          <a href="/notes/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-pencil"></i> <br />
+            
+            Notes
+          </a>
+        </li>
+      
+<!--
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br />
+            
+            Search
+          </a>
+        </li>
+      
+-->
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  
+  <div class="algolia-popup popup search-popup">
+    <div class="algolia-search">
+      <div class="algolia-search-input-icon">
+        <i class="fa fa-search"></i>
+      </div>
+      <div class="algolia-search-input" id="algolia-search-input"></div>
+    </div>
+
+    <div class="algolia-results">
+      <div id="algolia-stats"></div>
+      <div id="algolia-hits"></div>
+      <div id="algolia-pagination" class="algolia-pagination"></div>
+    </div>
+
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+  </div>
+
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xiangxianzui.github.io/2018/05/git版本控制/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Muser">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Muser">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">git版本控制</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-22T16:58:18+08:00">
+                2018-05-22
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Last modified&#58;</span>
+              
+              <time title="Last modified" itemprop="dateModified" datetime="2018-05-25T01:11:52+08:00">
+                2018-05-25
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">学习笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-eye"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv" ></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count&#58;</span>
+                
+                <span title="Words count">
+                  1,157
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><ul>
+<li>Snapshots, Not Differences</li>
+<li>Nearly Every Operation Is Local</li>
+<li>Git Has Integrity</li>
+<li>Git Generally Only Adds Data</li>
+</ul>
+<h4 id="三种状态"><a href="#三种状态" class="headerlink" title="三种状态"></a>三种状态</h4><p>Git has three main states that your files can reside in:</p>
+<ul>
+<li>commited: Committed means that the data is safely stored in your local database.</li>
+<li>modified: Modified means that you have changed the file but have not committed it to your database yet.</li>
+<li>staged: Staged means that you have marked a modified file in its current version to go into your next commit snapshot.</li>
+</ul>
+<h4 id="三种区域"><a href="#三种区域" class="headerlink" title="三种区域"></a>三种区域</h4><p>This leads us to the three main sections of a Git project: </p>
+<ul>
+<li>git directory(提交区): The Git directory is where Git stores the metadata and object database for your project. This is the most important part of Git, and it is what is copied when you clone a repository from another computer.</li>
+<li>working tree(工作区): The working tree is a single checkout of one version of the project. These files are pulled out of the compressed database in the Git directory and placed on disk for you to use or modify.</li>
+<li>staging area(暂存区): The staging area is a file, generally contained in your Git directory, that stores information about what will go into your next commit. Its technical name in Git parlance is the “index”, but the phrase “staging area” works just as well.</li>
+</ul>
+<h4 id="工作流程"><a href="#工作流程" class="headerlink" title="工作流程"></a>工作流程</h4><p>The basic Git workflow goes something like this:</p>
+<ol>
+<li>You modify files in your working tree.</li>
+<li>You selectively stage just those changes you want to be part of your next commit, which adds only those changes to the staging area.</li>
+<li>You do a commit, which takes the files as they are in the staging area and stores that snapshot permanently to your Git directory.</li>
+</ol>
+<h3 id="对比"><a href="#对比" class="headerlink" title="对比"></a>对比</h3><h4 id="git-diff"><a href="#git-diff" class="headerlink" title="git diff"></a><code>git diff</code></h4><p>比较工作区和暂存区，找出那些尚未被记录到暂存区的对工作区的改变<br>This command compares what is in your working directory with what is in your staging area. The result tells you the changes you’ve made that you haven’t yet staged.</p>
+<h4 id="git-diff-staged-或-git-diff-cached"><a href="#git-diff-staged-或-git-diff-cached" class="headerlink" title="git diff --staged 或 git diff --cached"></a><code>git diff --staged</code> 或 <code>git diff --cached</code></h4><p>比较暂存区和提交区，找出哪些对暂存区的改变会进入到下一次提交<br>If you want to see what you’ve staged that will go into your next commit, you can use <code>git diff --staged</code>. This command compares your staged changes to your last commit<br>(<code>--staged</code>与<code>--cached</code>相同)</p>
+<p><img src="gitdiff.jpg" alt="git diff示意图"></p>
+<h3 id="删除"><a href="#删除" class="headerlink" title="删除"></a>删除</h3><p><code>git rm</code>与<code>git add</code>相反，如果你不想track文件foo了，那么可以用<code>git rm foo</code>把它删除。但如果foo有改变在暂存区，会报下面错误：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">error: the following file has changes staged in the index:</div><div class="line">    foo</div><div class="line">(use --cached to keep the file, or -f to force removal)</div></pre></td></tr></table></figure></p>
+<p>如提示所述，这时<code>--cached</code>会保留磁盘，仅把foo变为untracked；<code>-f</code>会强制删除文件</p>
+<h3 id="git-rm-cached"><a href="#git-rm-cached" class="headerlink" title="git rm --cached"></a><code>git rm --cached</code></h3><p>如果你忘记在.gitignore中添加某种文件类型，如日志文件，而又恰巧不小心把这种文件add到了暂存区，这时可用<code>git rm --cached foo.log</code>将它从暂存区删除，这样commit的时候就不会把这种文件commit到提交区，而且也不会将文件从工作目录中删掉</p>
+<h3 id="撤销"><a href="#撤销" class="headerlink" title="撤销"></a>撤销</h3><h4 id="git-commit-amend"><a href="#git-commit-amend" class="headerlink" title="git commit --amend"></a><code>git commit --amend</code></h4><p>如果你已经完成了某项功能的开发准备好commit了，用<code>git commit -m &quot;complete feature #7&quot;</code>做了提交。然而却发现你忘了把一个与该功能有关的文件foo.java添加到暂存区了，导致这个文件没有被存入提交快照，如果用<code>git add foo.java</code>然后再commit一次，commit message怎么写才好呢？写”forgot foo.java”？这样不太好，会被老板骂，怎么办呢？用<code>--amend</code>再commit一次就好了，这次提交会覆盖上次有问题的提交，而且<code>git log</code>中只会显示这次提交的记录，这样就避免了同一功能对应多次提交记录。<br>完整过程如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">$ git commit -m &quot;complete feature #7&quot;</div><div class="line">$ git add foo.java</div><div class="line">$ git commit --amend</div></pre></td></tr></table></figure></p>
+<h4 id="git-reset-HEAD-lt-file-gt"><a href="#git-reset-HEAD-lt-file-gt" class="headerlink" title="git reset HEAD &lt;file&gt;"></a><code>git reset HEAD &lt;file&gt;</code></h4><p>Unstaging a Staged File：比如你想做一次commit，但是暂存区中有你不想提交的文件，那么可以用该命令将文件从暂存区删除</p>
+<h4 id="git-checkout-lt-file-gt"><a href="#git-checkout-lt-file-gt" class="headerlink" title="git checkout -- &lt;file&gt;"></a><code>git checkout -- &lt;file&gt;</code></h4><p>Unmodifying a Modified File：比如你已经修改了某文件，但还未将修改添加到暂存区，此时你想丢掉做出的修改，那么可用该命令将文件恢复成上次提交的样子</p>
+<h4 id="可恢复与不可恢复"><a href="#可恢复与不可恢复" class="headerlink" title="可恢复与不可恢复"></a>可恢复与不可恢复</h4><p>Remember, anything that is committed in Git can almost always be recovered. Even commits that were on branches that were deleted or commits that were overwritten with an <code>--amend</code> commit can be recovered (see Data Recovery for data recovery). However, anything you lose that was never committed is likely never to be seen again.</p>
+<h3 id="分支"><a href="#分支" class="headerlink" title="分支"></a>分支</h3><h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><ul>
+<li><p>用户配置<br><code>git config --global user.name &lt;your_name&gt;</code><br><code>git config --global user.email &lt;your_email&gt;</code></p>
+</li>
+<li><p>配置级别<br><code>--local</code>：【默认，高优先级】，只影响本仓库，配置信息存储于本仓库中(.git/config)<br><code>--global</code>：【中优先级】，影响所有当前用户的git仓库，配置信息存储于用户目录中(~/.gitconfig)<br><code>--system</code>：【低优先级】，影响全系统的git仓库，配置信息存储于系统目录(/etc/gitconfig)</p>
+</li>
+</ul>
+<h3 id="提交记录"><a href="#提交记录" class="headerlink" title="提交记录"></a>提交记录</h3><p><code>git log</code> 查看提交记录<br><code>git log --oneline</code> 美化输出信息只显示一行</p>
+<h3 id="git学习资料及参考"><a href="#git学习资料及参考" class="headerlink" title="git学习资料及参考"></a>git学习资料及参考</h3><ul>
+<li><a href="progit.pdf">Pro Git : [everything you need to know about Git] 2nd Edition (2014)</a></li>
+<li><a href="https://try.github.io" target="_blank" rel="external">try git in 15 minutes</a></li>
+<li><a href="http://rogerdudler.github.io/git-guide/index.zh.html" target="_blank" rel="external">git - 简明指南</a></li>
+</ul>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>Donate</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="Muser Alipay"/>
+        <p>Alipay</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>Post author:</strong>
+    Muser
+  </li>
+  <li class="post-copyright-link">
+    <strong>Post link:</strong>
+    <a href="https://xiangxianzui.github.io/2018/05/git版本控制/" title="git版本控制">https://xiangxianzui.github.io/2018/05/git版本控制/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>Copyright Notice: </strong>
+    All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> unless stating additionally.
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/git/" rel="tag"><i class="fa fa-tags"></i> git</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/02/Maven核心概念/" rel="next" title="Maven核心概念">
+                <i class="fa fa-chevron-left"></i> Maven核心概念
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/05/经典分布式协议：paxos/" rel="prev" title="经典分布式协议：paxos">
+                经典分布式协议：paxos <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+  
+    <div class="comments" id="comments">
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    </div>
+  
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+      <div id="sidebar-dimmer"></div>
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="/uploads/avatar.jpg"
+                alt="Muser" />
+            
+              <p class="site-author-name" itemprop="name">Muser</p>
+              <p class="site-description motion-element" itemprop="description">Coding While Thinking</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">43</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">51</span>
+                  <span class="site-state-item-name">tags</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+            <div class="feed-link motion-element">
+              <a href="/atom.xml" rel="alternate">
+                <i class="fa fa-rss"></i>
+                RSS
+              </a>
+            </div>
+          
+
+  
+  
+    <div class="feed-link motion-element">
+      
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i>
+            
+            Search
+          </a>
+    </div>
+  
+
+
+          <div class="links-of-author motion-element">
+            
+              
+                <span class="links-of-author-item">
+                  <a href="https://github.com/xiangxianzui" target="_blank" title="GitHub">
+                    
+                      <i class="fa fa-fw fa-github"></i>GitHub</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="mailto:xiangxianzui@gmail.com" target="_blank" title="E-Mail">
+                    
+                      <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://sdk.cn/users/ckowkj/collections?tab=article" target="_blank" title="SDK.CN">
+                    
+                      <i class="fa fa-fw fa-globe"></i>SDK.CN</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="https://music.163.com/#/user/home?id=61000548" target="_blank" title="云音乐">
+                    
+                      <i class="fa fa-fw fa-music"></i>云音乐</a>
+                </span>
+              
+                <span class="links-of-author-item">
+                  <a href="http://www.jianshu.com" target="_blank" title="简书">
+                    
+                      <i class="fa fa-fw fa-heartbeat"></i>简书</a>
+                </span>
+              
+            
+          </div>
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本概念"><span class="nav-number">1.</span> <span class="nav-text">基本概念</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#三种状态"><span class="nav-number">1.1.</span> <span class="nav-text">三种状态</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#三种区域"><span class="nav-number">1.2.</span> <span class="nav-text">三种区域</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#工作流程"><span class="nav-number">1.3.</span> <span class="nav-text">工作流程</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对比"><span class="nav-number">2.</span> <span class="nav-text">对比</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#git-diff"><span class="nav-number">2.1.</span> <span class="nav-text">git diff</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#git-diff-staged-或-git-diff-cached"><span class="nav-number">2.2.</span> <span class="nav-text">git diff --staged 或 git diff --cached</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#删除"><span class="nav-number">3.</span> <span class="nav-text">删除</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git-rm-cached"><span class="nav-number">4.</span> <span class="nav-text">git rm --cached</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#撤销"><span class="nav-number">5.</span> <span class="nav-text">撤销</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#git-commit-amend"><span class="nav-number">5.1.</span> <span class="nav-text">git commit --amend</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#git-reset-HEAD-lt-file-gt"><span class="nav-number">5.2.</span> <span class="nav-text">git reset HEAD <file></span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#git-checkout-lt-file-gt"><span class="nav-number">5.3.</span> <span class="nav-text">git checkout -- <file></span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#可恢复与不可恢复"><span class="nav-number">5.4.</span> <span class="nav-text">可恢复与不可恢复</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#分支"><span class="nav-number">6.</span> <span class="nav-text">分支</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置"><span class="nav-number">7.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#提交记录"><span class="nav-number">8.</span> <span class="nav-text">提交记录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#git学习资料及参考"><span class="nav-number">9.</span> <span class="nav-text">git学习资料及参考</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        
+<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-star"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Muser</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words count&#58;</span>
+    
+    <span title="Site words count">31.9k</span>
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a></div>
+
+
+
+
+
+
+        
+
+<div class="busuanzi-count">
+  <script async src="/lib/busuanzi/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye"></i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+
+  
+  <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+
+  
+  <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+
+  
+  <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.3"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.3"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.3"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.3"></script>
+
+
+
+  
+
+
+  
+
+    
+
+    
+      <script type="text/javascript">
+        var disqus_config = function () {
+          this.page.url = 'https://xiangxianzui.github.io/2018/05/git版本控制/';
+          this.page.identifier = '2018/05/git版本控制/';
+          this.page.title = 'git版本控制';
+        };
+        var d = document, s = d.createElement('script');
+        s.src = 'https://xiangxianzui.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', '' + +new Date());
+        (d.head || d.body).appendChild(s);
+      </script>
+    
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+  
+  
+  
+  <link rel="stylesheet" href="/lib/algolia-instant-search/instantsearch.min.css">
+
+  
+  
+  <script src="/lib/algolia-instant-search/instantsearch.min.js"></script>
+  
+
+  <script src="/js/src/algolia-search.js?v=5.1.3"></script>
+
+
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
