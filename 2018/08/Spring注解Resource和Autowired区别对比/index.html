@@ -85,7 +85,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Java,Spring," />
 
 
 
@@ -98,19 +98,20 @@
 
 
 
-<meta name="description" content="Spring注解Resource和Autowired区别对比@Resource和@Autowired都是做bean的注入时使用，其实@Resource并不是Spring的注解，它的包是javax.annotation.Resource，需要导入，但是Spring支持该注解的注入。 1、共同点 两者都可以写在字段和setter方法上。两者如果都写在字段上，那么就不需要再写setter方法。 2、不同">
+<meta name="description" content="@Resource和@Autowired都是做bean的注入时使用，其实@Resource并不是Spring的注解，它的包是javax.annotation.Resource，需要导入，但是Spring支持该注解的注入。 共同点两者都可以写在字段和setter方法上。两者如果都写在字段上，那么就不需要再写setter方法。 不同点@Autowired@Autowired为Spring提供的注解，需">
+<meta name="keywords" content="Java,Spring">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Muser">
+<meta property="og:title" content="Spring注解Resource和Autowired区别对比">
 <meta property="og:url" content="https://xiangxianzui.github.io/2018/08/Spring注解Resource和Autowired区别对比/index.html">
 <meta property="og:site_name" content="Muser">
-<meta property="og:description" content="Spring注解Resource和Autowired区别对比@Resource和@Autowired都是做bean的注入时使用，其实@Resource并不是Spring的注解，它的包是javax.annotation.Resource，需要导入，但是Spring支持该注解的注入。 1、共同点 两者都可以写在字段和setter方法上。两者如果都写在字段上，那么就不需要再写setter方法。 2、不同">
+<meta property="og:description" content="@Resource和@Autowired都是做bean的注入时使用，其实@Resource并不是Spring的注解，它的包是javax.annotation.Resource，需要导入，但是Spring支持该注解的注入。 共同点两者都可以写在字段和setter方法上。两者如果都写在字段上，那么就不需要再写setter方法。 不同点@Autowired@Autowired为Spring提供的注解，需">
 <meta property="og:image" content="https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=2195010768,3429289948&fm=173&app=25&f=JPEG?w=401&h=263&s=E0D2A164DAEC976C54D5458F0000E082">
 <meta property="og:image" content="https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=1835858463,553867819&fm=173&app=25&f=JPEG?w=400&h=124&s=B8C2A544CFA4BD725E79858F0000E0C2">
 <meta property="og:image" content="https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=1198233895,1119089040&fm=173&app=25&f=JPEG?w=401&h=257&s=B0D7A1641AE48D6C14C5458B0000E08A">
-<meta property="og:updated_time" content="2018-08-14T03:31:44.836Z">
+<meta property="og:updated_time" content="2018-08-15T06:46:10.392Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Muser">
-<meta name="twitter:description" content="Spring注解Resource和Autowired区别对比@Resource和@Autowired都是做bean的注入时使用，其实@Resource并不是Spring的注解，它的包是javax.annotation.Resource，需要导入，但是Spring支持该注解的注入。 1、共同点 两者都可以写在字段和setter方法上。两者如果都写在字段上，那么就不需要再写setter方法。 2、不同">
+<meta name="twitter:title" content="Spring注解Resource和Autowired区别对比">
+<meta name="twitter:description" content="@Resource和@Autowired都是做bean的注入时使用，其实@Resource并不是Spring的注解，它的包是javax.annotation.Resource，需要导入，但是Spring支持该注解的注入。 共同点两者都可以写在字段和setter方法上。两者如果都写在字段上，那么就不需要再写setter方法。 不同点@Autowired@Autowired为Spring提供的注解，需">
 <meta name="twitter:image" content="https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=2195010768,3429289948&fm=173&app=25&f=JPEG?w=401&h=263&s=E0D2A164DAEC976C54D5458F0000E082">
 
 
@@ -147,7 +148,7 @@
 
 
 
-  <title> | Muser</title>
+  <title>Spring注解Resource和Autowired区别对比 | Muser</title>
   
 
 
@@ -351,7 +352,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline"></h1>
+          <h1 class="post-title" itemprop="name headline">Spring注解Resource和Autowired区别对比</h1>
         
 
         <div class="post-meta">
@@ -363,7 +364,7 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-14T11:31:44+08:00">
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-08-14T21:15:11+08:00">
                 2018-08-14
               </time>
             
@@ -379,12 +380,34 @@
               
                 <span class="post-meta-item-text">Last modified&#58;</span>
               
-              <time title="Last modified" itemprop="dateModified" datetime="2018-08-14T11:31:44+08:00">
-                2018-08-14
+              <time title="Last modified" itemprop="dateModified" datetime="2018-08-15T14:46:10+08:00">
+                2018-08-15
               </time>
             
           </span>
 
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Work/" itemprop="url" rel="index">
+                    <span itemprop="name">Work</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -412,7 +435,7 @@
                   <span class="post-meta-item-text">Words count&#58;</span>
                 
                 <span title="Words count">
-                  553
+                  544
                 </span>
               
 
@@ -437,17 +460,13 @@
       
 
       
-        <h2 id="Spring注解Resource和Autowired区别对比"><a href="#Spring注解Resource和Autowired区别对比" class="headerlink" title="Spring注解Resource和Autowired区别对比"></a>Spring注解Resource和Autowired区别对比</h2><p>@Resource和@Autowired都是做bean的注入时使用，其实@Resource并不是Spring的注解，它的包是javax.annotation.Resource，需要导入，但是Spring支持该注解的注入。</p>
-<p>1、共同点</p>
-<p>两者都可以写在字段和setter方法上。两者如果都写在字段上，那么就不需要再写setter方法。</p>
-<p>2、不同点</p>
-<p>（1）@Autowired</p>
-<p>@Autowired为Spring提供的注解，需要导入包org.springframework.beans.factory.annotation.Autowired;只按照byType注入。</p>
+        <p>@Resource和@Autowired都是做bean的注入时使用，其实@Resource并不是Spring的注解，它的包是javax.annotation.Resource，需要导入，但是Spring支持该注解的注入。</p>
+<h3 id="共同点"><a href="#共同点" class="headerlink" title="共同点"></a>共同点</h3><p>两者都可以写在字段和setter方法上。两者如果都写在字段上，那么就不需要再写setter方法。</p>
+<h3 id="不同点"><a href="#不同点" class="headerlink" title="不同点"></a>不同点</h3><h4 id="Autowired"><a href="#Autowired" class="headerlink" title="@Autowired"></a>@Autowired</h4><p>@Autowired为Spring提供的注解，需要导入包org.springframework.beans.factory.annotation.Autowired;只按照byType注入。</p>
 <p><img src="https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=2195010768,3429289948&amp;fm=173&amp;app=25&amp;f=JPEG?w=401&amp;h=263&amp;s=E0D2A164DAEC976C54D5458F0000E082" alt="img"></p>
 <p>@Autowired注解是按照类型（byType）装配依赖对象，默认情况下它要求依赖对象必须存在，如果允许null值，可以设置它的required属性为false。如果我们想使用按照名称（byName）来装配，可以结合@Qualifier注解一起使用。如下：</p>
 <p><img src="https://ss0.baidu.com/6ONWsjip0QIZ8tyhnq/it/u=1835858463,553867819&amp;fm=173&amp;app=25&amp;f=JPEG?w=400&amp;h=124&amp;s=B8C2A544CFA4BD725E79858F0000E0C2" alt="img"></p>
-<p>（2）@Resource</p>
-<p>@Resource默认按照ByName自动注入，由J2EE提供，需要导入包javax.annotation.Resource。@Resource有两个重要的属性：name和type，而Spring将@Resource注解的name属性解析为bean的名字，而type属性则解析为bean的类型。</p>
+<h3 id="Resource"><a href="#Resource" class="headerlink" title="@Resource"></a>@Resource</h3><p>@Resource默认按照ByName自动注入，由J2EE提供，需要导入包javax.annotation.Resource。@Resource有两个重要的属性：name和type，而Spring将@Resource注解的name属性解析为bean的名字，而type属性则解析为bean的类型。</p>
 <p>所以，如果使用name属性，则使用byName的自动注入策略，而使用type属性时则使用byType自动注入策略。如果既不制定name也不制定type属性，这时将通过反射机制使用byName自动注入策略。</p>
 <p><img src="https://ss1.baidu.com/6ONXsjip0QIZ8tyhnq/it/u=1198233895,1119089040&amp;fm=173&amp;app=25&amp;f=JPEG?w=401&amp;h=257&amp;s=B0D7A1641AE48D6C14C5458B0000E08A" alt="img"></p>
 <p>注：最好是将@Resource放在setter方法上，因为这样更符合面向对象的思想，通过set、get去操作属性，而不是直接去操作属性。</p>
@@ -457,6 +476,10 @@
 <p>③如果指定了type，则从上下文中找到类似匹配的唯一bean进行装配，找不到或是找到多个，都会抛出异常。</p>
 <p>④如果既没有指定name，又没有指定type，则自动按照byName方式进行装配；如果没有匹配，则回退为一个原始类型进行匹配，如果匹配则自动装配。</p>
 <p>@Resource的作用相当于@Autowired，只不过@Autowired按照byType自动注入。</p>
+<hr>
+<blockquote>
+<p>Written with <a href="https://typora.io/" target="_blank" rel="external">Typora</a>.</p>
+</blockquote>
 
       
     </div>
@@ -501,7 +524,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>Post link:</strong>
-    <a href="https://xiangxianzui.github.io/2018/08/Spring注解Resource和Autowired区别对比/" title="">https://xiangxianzui.github.io/2018/08/Spring注解Resource和Autowired区别对比/</a>
+    <a href="https://xiangxianzui.github.io/2018/08/Spring注解Resource和Autowired区别对比/" title="Spring注解Resource和Autowired区别对比">https://xiangxianzui.github.io/2018/08/Spring注解Resource和Autowired区别对比/</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice: </strong>
@@ -513,6 +536,14 @@
     
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Java/" rel="tag"><i class="fa fa-tags"></i> Java</a>
+          
+            <a href="/tags/Spring/" rel="tag"><i class="fa fa-tags"></i> Spring</a>
+          
+        </div>
       
 
       
@@ -532,6 +563,10 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/08/工作常用/" rel="prev" title="工作常用">
+                工作常用 <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -621,7 +656,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">43</span>
+                  <span class="site-state-item-count">44</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -643,7 +678,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">51</span>
+                  <span class="site-state-item-count">53</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -732,7 +767,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Spring注解Resource和Autowired区别对比"><span class="nav-number">1.</span> <span class="nav-text">Spring注解Resource和Autowired区别对比</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#共同点"><span class="nav-number">1.</span> <span class="nav-text">共同点</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#不同点"><span class="nav-number">2.</span> <span class="nav-text">不同点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Autowired"><span class="nav-number">2.1.</span> <span class="nav-text">@Autowired</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Resource"><span class="nav-number">3.</span> <span class="nav-text">@Resource</span></a></li></ol></div>
             
 
           </div>
@@ -914,7 +949,7 @@
         var disqus_config = function () {
           this.page.url = 'https://xiangxianzui.github.io/2018/08/Spring注解Resource和Autowired区别对比/';
           this.page.identifier = '2018/08/Spring注解Resource和Autowired区别对比/';
-          this.page.title = '';
+          this.page.title = 'Spring注解Resource和Autowired区别对比';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://xiangxianzui.disqus.com/embed.js';
