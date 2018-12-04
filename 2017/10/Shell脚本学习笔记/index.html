@@ -106,7 +106,7 @@
 <meta property="og:site_name" content="Muser">
 <meta property="og:description" content="此篇为Shell脚本的学习笔记，方便用到的时候查阅。 shell中的命令不一定要用绝对路径，比如 /bin/pwd 和 pwd 均可Linux在以下几个目录下存放命令： /bin、/sbin、/usr/bin、/usr/sbin这几个目录的区别如下：  /bin 是系统的一些指令。bin为binary的简写主要放置一些系统的必备执行档例如:cat、cp、chmod df、dmesg、gzip、ki">
 <meta property="og:image" content="https://xiangxianzui.github.io/2017/10/Shell脚本学习笔记/双引号和单引号的区别.png">
-<meta property="og:updated_time" content="2017-10-21T06:10:30.336Z">
+<meta property="og:updated_time" content="2018-12-04T14:34:28.011Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Shell脚本学习笔记">
 <meta name="twitter:description" content="此篇为Shell脚本的学习笔记，方便用到的时候查阅。 shell中的命令不一定要用绝对路径，比如 /bin/pwd 和 pwd 均可Linux在以下几个目录下存放命令： /bin、/sbin、/usr/bin、/usr/sbin这几个目录的区别如下：  /bin 是系统的一些指令。bin为binary的简写主要放置一些系统的必备执行档例如:cat、cp、chmod df、dmesg、gzip、ki">
@@ -378,8 +378,8 @@
               
                 <span class="post-meta-item-text">Last modified&#58;</span>
               
-              <time title="Last modified" itemprop="dateModified" datetime="2017-10-21T14:10:30+08:00">
-                2017-10-21
+              <time title="Last modified" itemprop="dateModified" datetime="2018-12-04T22:34:28+08:00">
+                2018-12-04
               </time>
             
           </span>
@@ -397,8 +397,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/学习笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">学习笔记</span>
+                  <a href="/categories/Learning/" itemprop="url" rel="index">
+                    <span itemprop="name">Learning</span>
                   </a>
                 </span>
 
@@ -484,13 +484,7 @@
 <h3 id="命令替换符号"><a href="#命令替换符号" class="headerlink" title="命令替换符号``"></a>命令替换符号``</h3><p>``不是单引号，在键盘中的数字1之前<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#!/bin/sh</span></div><div class="line">DATE=`/bin/date +%Y%m%d`</div><div class="line"><span class="built_in">echo</span> <span class="string">"TODAY IS <span class="variable">$DATE</span>"</span></div></pre></td></tr></table></figure></p>
 <p>输出<code>TODAY IS 20171020</code><br>``里面是命令执行的结果</p>
 <h3 id="test条件控制语句"><a href="#test条件控制语句" class="headerlink" title="test条件控制语句"></a>test条件控制语句</h3><ul>
-<li>test -d file    指定文件是否是目录</li>
-<li>test -f file    指定文件是否是常规文件</li>
-<li>test -x file    文件是否可执行</li>
-<li>test -r file    文件是否可读</li>
-<li>test -w file    文件是否可写</li>
-<li>test -a file    文件是否存在</li>
-<li>test -s file    文件大小是否非0</li>
+<li>test -d file    指定文件是否是目录<br>   test -f file    指定文件是否是常规文件<br>   test -x file    文件是否可执行<br>   test -r file    文件是否可读<br>   test -w file    文件是否可写<br>   test -a file    文件是否存在<br>   test -s file    文件大小是否非0</li>
 </ul>
 <p>test条件控制语句可以简写为[]的形式<br>比如：<code>if test -d file.txt</code>等价于<code>if [ -d file.txt ]</code><br>注意空格：if’空格’[‘空格’-d file.txt’空格’]</p>
 <h3 id="Shell中用-a表示逻辑与，用-o表示逻辑或"><a href="#Shell中用-a表示逻辑与，用-o表示逻辑或" class="headerlink" title="Shell中用-a表示逻辑与，用-o表示逻辑或"></a>Shell中用-a表示逻辑与，用-o表示逻辑或</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#!/bin/sh</span></div><div class="line"><span class="comment"># read variables from keyboard</span></div><div class="line"><span class="built_in">read</span> a b c</div><div class="line"><span class="keyword">if</span> [ <span class="variable">$a</span> <span class="_">-eq</span> <span class="variable">$b</span> <span class="_">-a</span> <span class="variable">$b</span> <span class="_">-ne</span> <span class="variable">$c</span> -o <span class="variable">$c</span> -le <span class="variable">$a</span> ]</div><div class="line"><span class="keyword">then</span>	<span class="built_in">echo</span> <span class="string">"success"</span></div><div class="line"><span class="keyword">else</span>	<span class="built_in">echo</span> <span class="string">"fail"</span></div><div class="line"><span class="keyword">fi</span></div></pre></td></tr></table></figure>
@@ -672,7 +666,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">44</span>
+                  <span class="site-state-item-count">47</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -694,7 +688,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">53</span>
+                  <span class="site-state-item-count">57</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -818,7 +812,7 @@
     
       <span class="post-meta-item-text">Site words count&#58;</span>
     
-    <span title="Site words count">31.9k</span>
+    <span title="Site words count">39.1k</span>
   
 </div>
 
