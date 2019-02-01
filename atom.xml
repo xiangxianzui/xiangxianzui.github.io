@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://xiangxianzui.github.io/"/>
-  <updated>2018-12-04T14:47:41.695Z</updated>
+  <updated>2019-02-01T06:41:35.479Z</updated>
   <id>https://xiangxianzui.github.io/</id>
   
   <author>
@@ -16,15 +16,40 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Ubuntu 14.04常用工具</title>
+    <link href="https://xiangxianzui.github.io/2019/02/Ubuntu-14-04%E5%B8%B8%E7%94%A8%E5%B7%A5%E5%85%B7/"/>
+    <id>https://xiangxianzui.github.io/2019/02/Ubuntu-14-04常用工具/</id>
+    <published>2019-02-01T06:17:10.000Z</published>
+    <updated>2019-02-01T06:41:35.479Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;记录下能在Ubuntu 14.04下使用的、个人认为比较好用的几款工具。&lt;/p&gt;
+&lt;p&gt;Markdown编辑器：Typora&lt;/p&gt;
+&lt;p&gt;diff：Meld&lt;/p&gt;
+&lt;p&gt;画图：draw.io&lt;/p&gt;
+&lt;p&gt;Todo list：Nitro、Go for it!&lt;/p&gt;
+&lt;
+    
+    </summary>
+    
+      <category term="Tool" scheme="https://xiangxianzui.github.io/categories/Tool/"/>
+    
+    
+      <category term="Ubuntu" scheme="https://xiangxianzui.github.io/tags/Ubuntu/"/>
+    
+  </entry>
+  
+  <entry>
     <title>cache和db的一致性问题</title>
     <link href="https://xiangxianzui.github.io/2018/12/cache%E5%92%8Cdb%E7%9A%84%E4%B8%80%E8%87%B4%E6%80%A7%E9%97%AE%E9%A2%98/"/>
     <id>https://xiangxianzui.github.io/2018/12/cache和db的一致性问题/</id>
     <published>2018-12-04T14:46:19.000Z</published>
-    <updated>2018-12-04T14:47:41.695Z</updated>
+    <updated>2019-01-11T12:14:36.378Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;cache和db的一致性问题：&lt;a href=&quot;https://www.jianshu.com/p/496ea8bc9aa1&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;https://www.jianshu.com/p/496ea8bc9aa1&lt;/a&gt;
+      &lt;h4 id=&quot;更新cache-db的原则&quot;&gt;&lt;a href=&quot;#更新cache-db的原则&quot; class=&quot;headerlink&quot; title=&quot;更新cache/db的原则&quot;&gt;&lt;/a&gt;更新cache/db的原则&lt;/h4&gt;&lt;h5 id=&quot;读多写少的场景&quot;&gt;&lt;a href=&quot;#读多
     
     </summary>
     
@@ -143,20 +168,6 @@
       <category term="Java" scheme="https://xiangxianzui.github.io/tags/Java/"/>
     
       <category term="Spring" scheme="https://xiangxianzui.github.io/tags/Spring/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>经典分布式协议：paxos</title>
-    <link href="https://xiangxianzui.github.io/2018/05/%E7%BB%8F%E5%85%B8%E5%88%86%E5%B8%83%E5%BC%8F%E5%8D%8F%E8%AE%AE%EF%BC%9Apaxos/"/>
-    <id>https://xiangxianzui.github.io/2018/05/经典分布式协议：paxos/</id>
-    <published>2018-05-24T18:24:45.000Z</published>
-    <updated>2018-05-24T18:24:45.625Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
     
   </entry>
   
@@ -307,9 +318,9 @@
       <category term="Learning" scheme="https://xiangxianzui.github.io/categories/Learning/"/>
     
     
-      <category term="网络编程" scheme="https://xiangxianzui.github.io/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
-    
       <category term="NIO" scheme="https://xiangxianzui.github.io/tags/NIO/"/>
+    
+      <category term="网络编程" scheme="https://xiangxianzui.github.io/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
     
   </entry>
   
@@ -329,9 +340,9 @@
       <category term="Learning" scheme="https://xiangxianzui.github.io/categories/Learning/"/>
     
     
-      <category term="网络编程" scheme="https://xiangxianzui.github.io/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
-    
       <category term="NIO" scheme="https://xiangxianzui.github.io/tags/NIO/"/>
+    
+      <category term="网络编程" scheme="https://xiangxianzui.github.io/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
     
   </entry>
   
@@ -351,49 +362,7 @@
       <category term="Learning" scheme="https://xiangxianzui.github.io/categories/Learning/"/>
     
     
-      <category term="网络编程" scheme="https://xiangxianzui.github.io/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
-    
       <category term="NIO" scheme="https://xiangxianzui.github.io/tags/NIO/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Netty学习笔记</title>
-    <link href="https://xiangxianzui.github.io/2017/10/Netty%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    <id>https://xiangxianzui.github.io/2017/10/Netty学习笔记/</id>
-    <published>2017-10-23T13:24:58.000Z</published>
-    <updated>2018-12-04T14:33:37.740Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h3 id=&quot;为什么选择Netty？&quot;&gt;&lt;a href=&quot;#为什么选择Netty？&quot; class=&quot;headerlink&quot; title=&quot;为什么选择Netty？&quot;&gt;&lt;/a&gt;为什么选择Netty？&lt;/h3&gt;&lt;p&gt;我们已经学习了socket通信的BIO/NIO/AIO编程模型，但是
-    
-    </summary>
-    
-      <category term="Learning" scheme="https://xiangxianzui.github.io/categories/Learning/"/>
-    
-    
-      <category term="网络编程" scheme="https://xiangxianzui.github.io/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
-    
-      <category term="Netty" scheme="https://xiangxianzui.github.io/tags/Netty/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>AIO编程学习笔记</title>
-    <link href="https://xiangxianzui.github.io/2017/10/AIO%E7%BC%96%E7%A8%8B%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
-    <id>https://xiangxianzui.github.io/2017/10/AIO编程学习笔记/</id>
-    <published>2017-10-23T13:24:44.000Z</published>
-    <updated>2018-12-04T14:31:24.227Z</updated>
-    
-    <summary type="html">
-    
-    </summary>
-    
-      <category term="Learning" scheme="https://xiangxianzui.github.io/categories/Learning/"/>
-    
-    
-      <category term="AIO" scheme="https://xiangxianzui.github.io/tags/AIO/"/>
     
       <category term="网络编程" scheme="https://xiangxianzui.github.io/tags/%E7%BD%91%E7%BB%9C%E7%BC%96%E7%A8%8B/"/>
     
@@ -443,6 +412,52 @@
       <category term="Linux" scheme="https://xiangxianzui.github.io/tags/Linux/"/>
     
       <category term="Shell" scheme="https://xiangxianzui.github.io/tags/Shell/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于Bloom Filter</title>
+    <link href="https://xiangxianzui.github.io/2017/10/%E5%85%B3%E4%BA%8EBloom-Filter/"/>
+    <id>https://xiangxianzui.github.io/2017/10/关于Bloom-Filter/</id>
+    <published>2017-10-20T05:53:00.000Z</published>
+    <updated>2017-10-20T07:50:02.667Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Bloom Filter是一种空间效率很高的随机数据结构，用来表示一个集合，主要的应用是判断一个元素是否属于这个集合，适用于能容忍一定错误率的场合下，比如网络爬虫里的url去重。&lt;/p&gt;
+&lt;p&gt;最近看到了一个写的非常好的关于Bloom Filter的文章系列，读完之后受益匪
+    
+    </summary>
+    
+      <category term="Work" scheme="https://xiangxianzui.github.io/categories/Work/"/>
+    
+    
+      <category term="Bloom Filter" scheme="https://xiangxianzui.github.io/tags/Bloom-Filter/"/>
+    
+      <category term="转载" scheme="https://xiangxianzui.github.io/tags/%E8%BD%AC%E8%BD%BD/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>(转载)一致性哈希</title>
+    <link href="https://xiangxianzui.github.io/2017/10/%E8%BD%AC%E8%BD%BD-%E4%B8%80%E8%87%B4%E6%80%A7%E5%93%88%E5%B8%8C/"/>
+    <id>https://xiangxianzui.github.io/2017/10/转载-一致性哈希/</id>
+    <published>2017-10-19T11:31:12.000Z</published>
+    <updated>2017-10-19T12:00:27.479Z</updated>
+    
+    <summary type="html">
+    
+      &lt;blockquote&gt;
+&lt;p&gt;原文: &lt;a href=&quot;http://blog.csdn.net/cywosp/article/details/23397179&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;http://blog.csdn.net/cywos
+    
+    </summary>
+    
+      <category term="Work" scheme="https://xiangxianzui.github.io/categories/Work/"/>
+    
+    
+      <category term="转载" scheme="https://xiangxianzui.github.io/tags/%E8%BD%AC%E8%BD%BD/"/>
+    
+      <category term="负载均衡" scheme="https://xiangxianzui.github.io/tags/%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1/"/>
     
   </entry>
   

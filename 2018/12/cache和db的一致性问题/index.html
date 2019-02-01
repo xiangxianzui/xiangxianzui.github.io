@@ -98,17 +98,20 @@
 
 
 
-<meta name="description" content="cache和db的一致性问题：https://www.jianshu.com/p/496ea8bc9aa1 读多写少的场景： 读：读cache，有就返回；没有，读db，更新cache，返回 写：写db，删除cache 写多读少的场景： cache和db操作放在一个事务里的时候，要注意cache和db的更新顺序，因为rollback是针对db而言的 如果先cache后db">
+<meta name="description" content="更新cache/db的原则读多写少的场景读：读cache，有就返回；没有，读db，更新cache，返回 写：写db，删除cache 写多读少的场景 参考：https://www.jianshu.com/p/496ea8bc9aa1  在事务中的顺序cache和db操作放在一个事务里的时候，要注意cache和db的更新顺序，因为rollback是针对db而言的。 先cache后db  写cache成">
 <meta name="keywords" content="cache,一致性">
 <meta property="og:type" content="article">
 <meta property="og:title" content="cache和db的一致性问题">
 <meta property="og:url" content="https://xiangxianzui.github.io/2018/12/cache和db的一致性问题/index.html">
 <meta property="og:site_name" content="Muser">
-<meta property="og:description" content="cache和db的一致性问题：https://www.jianshu.com/p/496ea8bc9aa1 读多写少的场景： 读：读cache，有就返回；没有，读db，更新cache，返回 写：写db，删除cache 写多读少的场景： cache和db操作放在一个事务里的时候，要注意cache和db的更新顺序，因为rollback是针对db而言的 如果先cache后db">
-<meta property="og:updated_time" content="2018-12-04T14:47:41.695Z">
+<meta property="og:description" content="更新cache/db的原则读多写少的场景读：读cache，有就返回；没有，读db，更新cache，返回 写：写db，删除cache 写多读少的场景 参考：https://www.jianshu.com/p/496ea8bc9aa1  在事务中的顺序cache和db操作放在一个事务里的时候，要注意cache和db的更新顺序，因为rollback是针对db而言的。 先cache后db  写cache成">
+<meta property="og:image" content="https://xiangxianzui.github.io/2018/12/cache和db的一致性问题/先cache后db.png">
+<meta property="og:image" content="https://xiangxianzui.github.io/2018/12/cache和db的一致性问题/先db后cache.png">
+<meta property="og:updated_time" content="2019-01-11T12:14:36.378Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="cache和db的一致性问题">
-<meta name="twitter:description" content="cache和db的一致性问题：https://www.jianshu.com/p/496ea8bc9aa1 读多写少的场景： 读：读cache，有就返回；没有，读db，更新cache，返回 写：写db，删除cache 写多读少的场景： cache和db操作放在一个事务里的时候，要注意cache和db的更新顺序，因为rollback是针对db而言的 如果先cache后db">
+<meta name="twitter:description" content="更新cache/db的原则读多写少的场景读：读cache，有就返回；没有，读db，更新cache，返回 写：写db，删除cache 写多读少的场景 参考：https://www.jianshu.com/p/496ea8bc9aa1  在事务中的顺序cache和db操作放在一个事务里的时候，要注意cache和db的更新顺序，因为rollback是针对db而言的。 先cache后db  写cache成">
+<meta name="twitter:image" content="https://xiangxianzui.github.io/2018/12/cache和db的一致性问题/先cache后db.png">
 
 
 
@@ -259,6 +262,16 @@
           </a>
         </li>
       
+        
+        <li class="menu-item menu-item-commonweal">
+          <a href="/404/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-heartbeat"></i> <br />
+            
+            Commonweal 404
+          </a>
+        </li>
+      
 <!--
       
         <li class="menu-item menu-item-search">
@@ -376,8 +389,8 @@
               
                 <span class="post-meta-item-text">Last modified&#58;</span>
               
-              <time title="Last modified" itemprop="dateModified" datetime="2018-12-04T22:47:41+08:00">
-                2018-12-04
+              <time title="Last modified" itemprop="dateModified" datetime="2019-01-11T20:14:36+08:00">
+                2019-01-11
               </time>
             
           </span>
@@ -431,7 +444,7 @@
                   <span class="post-meta-item-text">Words count&#58;</span>
                 
                 <span title="Words count">
-                  88
+                  211
                 </span>
               
 
@@ -456,13 +469,29 @@
       
 
       
-        <p>cache和db的一致性问题：<a href="https://www.jianshu.com/p/496ea8bc9aa1" target="_blank" rel="external">https://www.jianshu.com/p/496ea8bc9aa1</a></p>
-<p>读多写少的场景：</p>
-<p>读：读cache，有就返回；没有，读db，更新cache，返回</p>
+        <h4 id="更新cache-db的原则"><a href="#更新cache-db的原则" class="headerlink" title="更新cache/db的原则"></a>更新cache/db的原则</h4><h5 id="读多写少的场景"><a href="#读多写少的场景" class="headerlink" title="读多写少的场景"></a>读多写少的场景</h5><p>读：读cache，有就返回；没有，读db，更新cache，返回</p>
 <p>写：写db，删除cache</p>
-<p>写多读少的场景：</p>
-<p>cache和db操作放在一个事务里的时候，要注意cache和db的更新顺序，因为rollback是针对db而言的</p>
-<p>如果先cache后db</p>
+<h5 id="写多读少的场景"><a href="#写多读少的场景" class="headerlink" title="写多读少的场景"></a>写多读少的场景</h5><blockquote>
+<p>参考：<a href="https://www.jianshu.com/p/496ea8bc9aa1" target="_blank" rel="external">https://www.jianshu.com/p/496ea8bc9aa1</a></p>
+</blockquote>
+<h4 id="在事务中的顺序"><a href="#在事务中的顺序" class="headerlink" title="在事务中的顺序"></a>在事务中的顺序</h4><p>cache和db操作放在一个事务里的时候，要注意cache和db的更新顺序，因为rollback是针对db而言的。</p>
+<h5 id="先cache后db"><a href="#先cache后db" class="headerlink" title="先cache后db"></a>先cache后db</h5><p><img src="先cache后db.png" alt=""></p>
+<ul>
+<li>写cache成功 -&gt; 写db成功 -&gt; success</li>
+<li>写cache成功 -&gt; 写db失败 -&gt; db回滚 -&gt; cache改变了，db不变，造成不一致</li>
+<li>写cache失败 -&gt; db回滚 -&gt; cache不变，db也不变，一致</li>
+</ul>
+<h5 id="先db后cache"><a href="#先db后cache" class="headerlink" title="先db后cache"></a>先db后cache</h5><p><img src="先db后cache.png" alt=""></p>
+<ul>
+<li>写db成功 -&gt; 写cache成功 -&gt; success</li>
+<li>写db成功 -&gt; 写cache失败 -&gt; db回滚 -&gt; cache和db都不变，一致</li>
+<li>写db失败 -&gt; db回滚 -&gt; cache和db都不变，一致</li>
+</ul>
+<p>解决不一致问题的常用方法：</p>
+<p>事务</p>
+<p>悲观锁</p>
+<p>乐观锁：version</p>
+<p>分布式锁</p>
 
       
     </div>
@@ -547,6 +576,10 @@
 
           <div class="post-nav-prev post-nav-item">
             
+              <a href="/2019/02/Ubuntu-14-04常用工具/" rel="prev" title="Ubuntu 14.04常用工具">
+                Ubuntu 14.04常用工具 <i class="fa fa-chevron-right"></i>
+              </a>
+            
           </div>
         </div>
       
@@ -606,8 +639,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -626,7 +668,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">47</span>
+                  <span class="site-state-item-count">45</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -648,7 +690,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">57</span>
+                  <span class="site-state-item-count">54</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -682,38 +724,6 @@
 
           <div class="links-of-author motion-element">
             
-              
-                <span class="links-of-author-item">
-                  <a href="https://github.com/xiangxianzui" target="_blank" title="GitHub">
-                    
-                      <i class="fa fa-fw fa-github"></i>GitHub</a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  <a href="mailto:xiangxianzui@gmail.com" target="_blank" title="E-Mail">
-                    
-                      <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  <a href="https://sdk.cn/users/ckowkj/collections?tab=article" target="_blank" title="SDK.CN">
-                    
-                      <i class="fa fa-fw fa-globe"></i>SDK.CN</a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  <a href="https://music.163.com/#/user/home?id=61000548" target="_blank" title="云音乐">
-                    
-                      <i class="fa fa-fw fa-music"></i>云音乐</a>
-                </span>
-              
-                <span class="links-of-author-item">
-                  <a href="http://www.jianshu.com" target="_blank" title="简书">
-                    
-                      <i class="fa fa-fw fa-heartbeat"></i>简书</a>
-                </span>
-              
-            
           </div>
 
           
@@ -727,6 +737,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#更新cache-db的原则"><span class="nav-number">1.</span> <span class="nav-text">更新cache/db的原则</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#读多写少的场景"><span class="nav-number">1.1.</span> <span class="nav-text">读多写少的场景</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#写多读少的场景"><span class="nav-number">1.2.</span> <span class="nav-text">写多读少的场景</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在事务中的顺序"><span class="nav-number">2.</span> <span class="nav-text">在事务中的顺序</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#先cache后db"><span class="nav-number">2.1.</span> <span class="nav-text">先cache后db</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#先db后cache"><span class="nav-number">2.2.</span> <span class="nav-text">先db后cache</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -742,7 +768,7 @@
     <footer id="footer" class="footer">
       <div class="footer-inner">
         
-<div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-star"></i>
   </span>
@@ -756,7 +782,7 @@
     
       <span class="post-meta-item-text">Site words count&#58;</span>
     
-    <span title="Site words count">39.1k</span>
+    <span title="Site words count">38.9k</span>
   
 </div>
 
