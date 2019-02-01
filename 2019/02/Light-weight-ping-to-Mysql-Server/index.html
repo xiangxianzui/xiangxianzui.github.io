@@ -85,7 +85,7 @@
 
 
 
-  <meta name="keywords" content="Linux,Shell," />
+  <meta name="keywords" content="Mysql," />
 
 
 
@@ -98,19 +98,17 @@
 
 
 
-<meta name="description" content="此篇为Shell脚本的学习笔记，方便用到的时候查阅。 shell中的命令不一定要用绝对路径，比如 /bin/pwd 和 pwd 均可Linux在以下几个目录下存放命令： /bin、/sbin、/usr/bin、/usr/sbin这几个目录的区别如下：  /bin 是系统的一些指令。bin为binary的简写主要放置一些系统的必备执行档例如:cat、cp、chmod df、dmesg、gzip、ki">
-<meta name="keywords" content="Linux,Shell">
+<meta name="description" content="The MySQL JDBC driver (Connector/J) provides a ping mechanism. If you do a SQL query prepended with / ping / such as: 1/* ping */ SELECT 1 This will actually cause the driver send a ping to the server">
+<meta name="keywords" content="Mysql">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Shell脚本学习笔记">
-<meta property="og:url" content="https://xiangxianzui.github.io/2017/10/Shell脚本学习笔记/index.html">
+<meta property="og:title" content="Light-weight &#39;ping&#39; to Mysql Server">
+<meta property="og:url" content="https://xiangxianzui.github.io/2019/02/Light-weight-ping-to-Mysql-Server/index.html">
 <meta property="og:site_name" content="Muser">
-<meta property="og:description" content="此篇为Shell脚本的学习笔记，方便用到的时候查阅。 shell中的命令不一定要用绝对路径，比如 /bin/pwd 和 pwd 均可Linux在以下几个目录下存放命令： /bin、/sbin、/usr/bin、/usr/sbin这几个目录的区别如下：  /bin 是系统的一些指令。bin为binary的简写主要放置一些系统的必备执行档例如:cat、cp、chmod df、dmesg、gzip、ki">
-<meta property="og:image" content="https://xiangxianzui.github.io/2017/10/Shell脚本学习笔记/双引号和单引号的区别.png">
-<meta property="og:updated_time" content="2018-12-04T14:34:28.011Z">
+<meta property="og:description" content="The MySQL JDBC driver (Connector/J) provides a ping mechanism. If you do a SQL query prepended with / ping / such as: 1/* ping */ SELECT 1 This will actually cause the driver send a ping to the server">
+<meta property="og:updated_time" content="2019-02-01T09:12:12.635Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Shell脚本学习笔记">
-<meta name="twitter:description" content="此篇为Shell脚本的学习笔记，方便用到的时候查阅。 shell中的命令不一定要用绝对路径，比如 /bin/pwd 和 pwd 均可Linux在以下几个目录下存放命令： /bin、/sbin、/usr/bin、/usr/sbin这几个目录的区别如下：  /bin 是系统的一些指令。bin为binary的简写主要放置一些系统的必备执行档例如:cat、cp、chmod df、dmesg、gzip、ki">
-<meta name="twitter:image" content="https://xiangxianzui.github.io/2017/10/Shell脚本学习笔记/双引号和单引号的区别.png">
+<meta name="twitter:title" content="Light-weight &#39;ping&#39; to Mysql Server">
+<meta name="twitter:description" content="The MySQL JDBC driver (Connector/J) provides a ping mechanism. If you do a SQL query prepended with / ping / such as: 1/* ping */ SELECT 1 This will actually cause the driver send a ping to the server">
 
 
 
@@ -140,13 +138,13 @@
 
 
 
-  <link rel="canonical" href="https://xiangxianzui.github.io/2017/10/Shell脚本学习笔记/"/>
+  <link rel="canonical" href="https://xiangxianzui.github.io/2019/02/Light-weight-ping-to-Mysql-Server/"/>
 
 
 
 
 
-  <title>Shell脚本学习笔记 | Muser</title>
+  <title>Light-weight 'ping' to Mysql Server | Muser</title>
   
 
 
@@ -343,7 +341,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://xiangxianzui.github.io/2017/10/Shell脚本学习笔记/">
+    <link itemprop="mainEntityOfPage" href="https://xiangxianzui.github.io/2019/02/Light-weight-ping-to-Mysql-Server/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Muser">
@@ -360,7 +358,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Shell脚本学习笔记</h1>
+          <h1 class="post-title" itemprop="name headline">Light-weight 'ping' to Mysql Server</h1>
         
 
         <div class="post-meta">
@@ -372,8 +370,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-10-20T19:19:28+08:00">
-                2017-10-20
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-02-01T17:10:35+08:00">
+                2019-02-01
               </time>
             
 
@@ -388,8 +386,8 @@
               
                 <span class="post-meta-item-text">Last modified&#58;</span>
               
-              <time title="Last modified" itemprop="dateModified" datetime="2018-12-04T22:34:28+08:00">
-                2018-12-04
+              <time title="Last modified" itemprop="dateModified" datetime="2019-02-01T17:12:12+08:00">
+                2019-02-01
               </time>
             
           </span>
@@ -407,8 +405,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Learning/" itemprop="url" rel="index">
-                    <span itemprop="name">Learning</span>
+                  <a href="/categories/Work/" itemprop="url" rel="index">
+                    <span itemprop="name">Work</span>
                   </a>
                 </span>
 
@@ -443,7 +441,7 @@
                   <span class="post-meta-item-text">Words count&#58;</span>
                 
                 <span title="Words count">
-                  937
+                  396
                 </span>
               
 
@@ -468,38 +466,23 @@
       
 
       
-        <p>此篇为Shell脚本的学习笔记，方便用到的时候查阅。</p>
-<h3 id="shell中的命令不一定要用绝对路径，比如-bin-pwd-和-pwd-均可"><a href="#shell中的命令不一定要用绝对路径，比如-bin-pwd-和-pwd-均可" class="headerlink" title="shell中的命令不一定要用绝对路径，比如 /bin/pwd 和 pwd 均可"></a>shell中的命令不一定要用绝对路径，比如 /bin/pwd 和 pwd 均可</h3><h3 id="Linux在以下几个目录下存放命令：-bin、-sbin、-usr-bin、-usr-sbin"><a href="#Linux在以下几个目录下存放命令：-bin、-sbin、-usr-bin、-usr-sbin" class="headerlink" title="Linux在以下几个目录下存放命令： /bin、/sbin、/usr/bin、/usr/sbin"></a>Linux在以下几个目录下存放命令： /bin、/sbin、/usr/bin、/usr/sbin</h3><p>这几个目录的区别如下：</p>
-<ul>
-<li>/bin 是系统的一些指令。bin为binary的简写主要放置一些系统的必备执行档例如:cat、cp、chmod df、dmesg、gzip、kill、ls、mkdir、more、mount、rm、su、tar等。</li>
-<li>/sbin 一般是指超级用户指令。主要放置一些系统管理的必备程式例如:cfdisk、dhcpcd、dump、e2fsck、fdisk、halt、ifconfig、ifup、 ifdown、init、insmod、lilo、lsmod、mke2fs、modprobe、quotacheck、reboot、rmmod、 runlevel、shutdown等。</li>
-<li>/usr/bin 是你在后期安装的一些软件的运行脚本。主要放置一些应用软体工具的必备执行档例如c++、g++、gcc、chdrv、diff、dig、du、eject、elm、free、gnome<em>、 gzip、htpasswd、kfm、ktop、last、less、locale、m4、make、man、mcopy、ncftp、 newaliases、nslookup passwd、quota、smb</em>、wget等。</li>
-<li>/usr/sbin 放置一些用户安装的系统管理的必备程式例如:dhcpd、httpd、imap、in.*d、inetd、lpd、named、netconfig、nmbd、samba、sendmail、squid、swap、tcpd、tcpdump等。</li>
-</ul>
-<p>如果新装的系统，运行一些很正常的诸如：shutdown，fdisk的命令时，悍然提示：bash:command not found。那么首先就要考虑root 的$PATH里是否已经包含了这些环境变量。<br>可以查看PATH，如果是：PATH=$PATH:$HOME/bin则需要添加成如下：<br><code>PATH=$PATH:$HOME/bin:/sbin:/usr/bin:/usr/sbin</code></p>
+        <p>The MySQL JDBC driver (Connector/J) provides a ping mechanism.</p>
+<p>If you do a SQL query prepended with /<em> ping </em>/ such as:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">/* ping */ SELECT 1</div></pre></td></tr></table></figure>
+<p>This will actually cause the driver send a ping to the server and return a fake, light-weight, result set.</p>
 <blockquote>
-<p>摘自<a href="http://blog.csdn.net/kkdelta/article/details/7708250" target="_blank" rel="external">http://blog.csdn.net/kkdelta/article/details/7708250</a></p>
+<p>摘自<a href="https://dev.mysql.com/doc/connector-j/8.0/en/connector-j-usagenotes-j2ee-concepts-connection-pooling.html#idm139975764832048" target="_blank" rel="external">https://dev.mysql.com/doc/connector-j/8.0/en/connector-j-usagenotes-j2ee-concepts-connection-pooling.html#idm139975764832048</a></p>
 </blockquote>
-<h3 id="vim下的字符串替换："><a href="#vim下的字符串替换：" class="headerlink" title="vim下的字符串替换："></a>vim下的字符串替换：</h3><p>%s/old/new  把每一行中的第一个old替换成new<br>%s/old/new/g  把每一行中的所有old替换成new<br>如果在要被替换的字符串中出现分隔符/，那么可以用加号+代替/     比如：%s+/test/file1.info+/test/file1.java/g  就是把每一行中的所有/test/file1.info替换成/test/file1.java</p>
-<h3 id="Shell中有两类变量：临时变量和永久变量"><a href="#Shell中有两类变量：临时变量和永久变量" class="headerlink" title="Shell中有两类变量：临时变量和永久变量"></a>Shell中有两类变量：临时变量和永久变量</h3><p>临时变量是Shell程序内部定义的，适用范围仅限于定义它的程序，包括用户自定义变量、位置变量。<br>永久变量是环境变量，使用范围为Linux系统。<br>set命令输出系统中的所有环境变量，unset命令删除指定的变量</p>
-<h3 id="Shell中的特殊变量："><a href="#Shell中的特殊变量：" class="headerlink" title="Shell中的特殊变量："></a>Shell中的特殊变量：</h3><ul>
-<li>$*  这个程序中的所有参数</li>
-<li>$#  这个程序的参数个数</li>
-<li>$$  这个程序的PID</li>
-<li>$!  执行上一个后台命令的PID</li>
-<li>$?  执行上一个命令的返回值</li>
-<li>$(0-9)  显示位置变量</li>
-</ul>
-<h3 id="Shell中双引号和单引号的区别："><a href="#Shell中双引号和单引号的区别：" class="headerlink" title="Shell中双引号和单引号的区别："></a>Shell中双引号和单引号的区别：</h3><p>shell会把双引号里的变量值打印出来，而单引号不会去翻译变量，直接所见即所得。<br><img src="双引号和单引号的区别.png" alt="双引号和单引号的区别" title="双引号和单引号的区别"></p>
-<h3 id="命令替换符号"><a href="#命令替换符号" class="headerlink" title="命令替换符号``"></a>命令替换符号``</h3><p>``不是单引号，在键盘中的数字1之前<br><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#!/bin/sh</span></div><div class="line">DATE=`/bin/date +%Y%m%d`</div><div class="line"><span class="built_in">echo</span> <span class="string">"TODAY IS <span class="variable">$DATE</span>"</span></div></pre></td></tr></table></figure></p>
-<p>输出<code>TODAY IS 20171020</code><br>``里面是命令执行的结果</p>
-<h3 id="test条件控制语句"><a href="#test条件控制语句" class="headerlink" title="test条件控制语句"></a>test条件控制语句</h3><ul>
-<li>test -d file    指定文件是否是目录<br>   test -f file    指定文件是否是常规文件<br>   test -x file    文件是否可执行<br>   test -r file    文件是否可读<br>   test -w file    文件是否可写<br>   test -a file    文件是否存在<br>   test -s file    文件大小是否非0</li>
-</ul>
-<p>test条件控制语句可以简写为[]的形式<br>比如：<code>if test -d file.txt</code>等价于<code>if [ -d file.txt ]</code><br>注意空格：if’空格’[‘空格’-d file.txt’空格’]</p>
-<h3 id="Shell中用-a表示逻辑与，用-o表示逻辑或"><a href="#Shell中用-a表示逻辑与，用-o表示逻辑或" class="headerlink" title="Shell中用-a表示逻辑与，用-o表示逻辑或"></a>Shell中用-a表示逻辑与，用-o表示逻辑或</h3><figure class="highlight sh"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="meta">#!/bin/sh</span></div><div class="line"><span class="comment"># read variables from keyboard</span></div><div class="line"><span class="built_in">read</span> a b c</div><div class="line"><span class="keyword">if</span> [ <span class="variable">$a</span> <span class="_">-eq</span> <span class="variable">$b</span> <span class="_">-a</span> <span class="variable">$b</span> <span class="_">-ne</span> <span class="variable">$c</span> -o <span class="variable">$c</span> -le <span class="variable">$a</span> ]</div><div class="line"><span class="keyword">then</span>	<span class="built_in">echo</span> <span class="string">"success"</span></div><div class="line"><span class="keyword">else</span>	<span class="built_in">echo</span> <span class="string">"fail"</span></div><div class="line"><span class="keyword">fi</span></div></pre></td></tr></table></figure>
-<h3 id="sh-x表示以debug的方式执行脚本，方便debug"><a href="#sh-x表示以debug的方式执行脚本，方便debug" class="headerlink" title="sh -x表示以debug的方式执行脚本，方便debug"></a>sh -x表示以debug的方式执行脚本，方便debug</h3><p><code>-x xtrace        Write each command to standard error (preceded by a ‘+ ’) before it is executed.  Useful for debugging.</code></p>
-<h3 id="Shell脚本的流程控制"><a href="#Shell脚本的流程控制" class="headerlink" title="Shell脚本的流程控制"></a>Shell脚本的流程控制</h3><p>参见另一篇博文：<a href="https://xiangxianzui.github.io/2017/10/Shell%E8%84%9A%E6%9C%AC%E6%B5%81%E7%A8%8B%E6%8E%A7%E5%88%B6/">Shell脚本流程控制</a></p>
+<p>MySQL Connector/J can validate the connection by executing a lightweight ping against a server. In the case of load-balanced connections, this is performed against all active pooled internal connections that are retained. This is beneficial to Java applications using connection pools, as the pool can use this feature to validate connections. Depending on your connection pool and configuration, this validation can be carried out at different times:</p>
+<ol>
+<li>Before the pool returns a connection to the application.</li>
+<li>When the application returns a connection to the pool.</li>
+<li>During periodic checks of idle connections.</li>
+</ol>
+<p>To use this feature, specify a validation query in your connection pool that starts with <code>/* ping */</code>. Note that the syntax must be exactly as specified. This will cause the driver send a ping to the server and return a dummy lightweight result set. When using a <code>ReplicationConnection</code> or <code>LoadBalancedConnection</code>, the ping will be sent across all active connections.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">protected</span> <span class="keyword">static</span> <span class="keyword">final</span> String PING_MARKER = <span class="string">"/* ping */"</span>;</div><div class="line">... </div><div class="line"><span class="keyword">if</span> (sql.charAt(<span class="number">0</span>) == <span class="string">'/'</span>) &#123; </div><div class="line">	<span class="keyword">if</span> (sql.startsWith(PING_MARKER)) &#123; </div><div class="line">		doPingInstead(); </div><div class="line">		...</div></pre></td></tr></table></figure>
+<p>All of the previous statements will issue a normal <code>SELECT</code> statement and will <strong>not</strong> be transformed into the lightweight ping. Further, for load-balanced connections, the statement will be executed against one connection in the internal pool, rather than validating each underlying physical connection. This results in the non-active physical connections assuming a stale state, and they may die. If Connector/J then re-balances, it might select a dead connection, resulting in an exception being passed to the application. To help prevent this, you can use <code>loadBalanceValidateConnectionOnSwapServer</code> to validate the connection before use.</p>
+<p>If your Connector/J deployment uses a connection pool that allows you to specify a validation query, take advantage of it, but ensure that the query starts <em>exactly</em> with <code>/* ping */</code>. This is particularly important if you are using the load-balancing or replication-aware features of Connector/J, as it will help keep alive connections which otherwise will go stale and die, causing problems later.</p>
 
       
     </div>
@@ -544,7 +527,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>Post link:</strong>
-    <a href="https://xiangxianzui.github.io/2017/10/Shell脚本学习笔记/" title="Shell脚本学习笔记">https://xiangxianzui.github.io/2017/10/Shell脚本学习笔记/</a>
+    <a href="https://xiangxianzui.github.io/2019/02/Light-weight-ping-to-Mysql-Server/" title="Light-weight 'ping' to Mysql Server">https://xiangxianzui.github.io/2019/02/Light-weight-ping-to-Mysql-Server/</a>
   </li>
   <li class="post-copyright-license">
     <strong>Copyright Notice: </strong>
@@ -559,9 +542,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Linux/" rel="tag"><i class="fa fa-tags"></i> Linux</a>
-          
-            <a href="/tags/Shell/" rel="tag"><i class="fa fa-tags"></i> Shell</a>
+            <a href="/tags/Mysql/" rel="tag"><i class="fa fa-tags"></i> Mysql</a>
           
         </div>
       
@@ -574,8 +555,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2017/10/关于Bloom-Filter/" rel="next" title="关于Bloom Filter">
-                <i class="fa fa-chevron-left"></i> 关于Bloom Filter
+              <a href="/2019/02/HttpDNS原理/" rel="next" title="HttpDNS原理">
+                <i class="fa fa-chevron-left"></i> HttpDNS原理
               </a>
             
           </div>
@@ -583,10 +564,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/10/nginx学习笔记/" rel="prev" title="nginx学习笔记">
-                nginx学习笔记 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -647,17 +624,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table of Contents
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            Overview
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -745,22 +713,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#shell中的命令不一定要用绝对路径，比如-bin-pwd-和-pwd-均可"><span class="nav-number">1.</span> <span class="nav-text">shell中的命令不一定要用绝对路径，比如 /bin/pwd 和 pwd 均可</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Linux在以下几个目录下存放命令：-bin、-sbin、-usr-bin、-usr-sbin"><span class="nav-number">2.</span> <span class="nav-text">Linux在以下几个目录下存放命令： /bin、/sbin、/usr/bin、/usr/sbin</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vim下的字符串替换："><span class="nav-number">3.</span> <span class="nav-text">vim下的字符串替换：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Shell中有两类变量：临时变量和永久变量"><span class="nav-number">4.</span> <span class="nav-text">Shell中有两类变量：临时变量和永久变量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Shell中的特殊变量："><span class="nav-number">5.</span> <span class="nav-text">Shell中的特殊变量：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Shell中双引号和单引号的区别："><span class="nav-number">6.</span> <span class="nav-text">Shell中双引号和单引号的区别：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#命令替换符号"><span class="nav-number">7.</span> <span class="nav-text">命令替换符号``</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#test条件控制语句"><span class="nav-number">8.</span> <span class="nav-text">test条件控制语句</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Shell中用-a表示逻辑与，用-o表示逻辑或"><span class="nav-number">9.</span> <span class="nav-text">Shell中用-a表示逻辑与，用-o表示逻辑或</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sh-x表示以debug的方式执行脚本，方便debug"><span class="nav-number">10.</span> <span class="nav-text">sh -x表示以debug的方式执行脚本，方便debug</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Shell脚本的流程控制"><span class="nav-number">11.</span> <span class="nav-text">Shell脚本的流程控制</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
@@ -935,9 +887,9 @@
     
       <script type="text/javascript">
         var disqus_config = function () {
-          this.page.url = 'https://xiangxianzui.github.io/2017/10/Shell脚本学习笔记/';
-          this.page.identifier = '2017/10/Shell脚本学习笔记/';
-          this.page.title = 'Shell脚本学习笔记';
+          this.page.url = 'https://xiangxianzui.github.io/2019/02/Light-weight-ping-to-Mysql-Server/';
+          this.page.identifier = '2019/02/Light-weight-ping-to-Mysql-Server/';
+          this.page.title = 'Light-weight \'ping\' to Mysql Server';
         };
         var d = document, s = d.createElement('script');
         s.src = 'https://xiangxianzui.disqus.com/embed.js';
