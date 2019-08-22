@@ -85,7 +85,7 @@
 
 
 
-  <meta name="keywords" content="分布式,作业调度," />
+  <meta name="keywords" content="分布式,作业调度,elastic-job," />
 
 
 
@@ -99,7 +99,7 @@
 
 
 <meta name="description" content="elastic-job架构分析概览elastic-job整体上采用去中心化调度的架构，调度和执行存在于同一节点上，使用zookeeper作为注册中心进行节点的分布式协调。zookeeper中存储了每个作业的配置信息、机器节点信息、分片信息等；每个节点通过apache curator与zk通信，调度能力依然由quartz提供。此外，elastic-job提供了console管理界面，console与">
-<meta name="keywords" content="分布式,作业调度">
+<meta name="keywords" content="分布式,作业调度,elastic-job">
 <meta property="og:type" content="article">
 <meta property="og:title" content="elastic-job实现分析">
 <meta property="og:url" content="https://xiangxianzui.github.io/2018/12/elastic-job实现分析/index.html">
@@ -111,7 +111,7 @@
 <meta property="og:image" content="https://xiangxianzui.github.io/2018/12/elastic-job实现分析/作业执行过程.png">
 <meta property="og:image" content="https://xiangxianzui.github.io/2018/12/elastic-job实现分析/失效转移.png">
 <meta property="og:image" content="https://xiangxianzui.github.io/2018/12/elastic-job实现分析/LeaderLatch锁.png">
-<meta property="og:updated_time" content="2018-12-04T14:43:45.263Z">
+<meta property="og:updated_time" content="2019-08-18T07:26:31.642Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="elastic-job实现分析">
 <meta name="twitter:description" content="elastic-job架构分析概览elastic-job整体上采用去中心化调度的架构，调度和执行存在于同一节点上，使用zookeeper作为注册中心进行节点的分布式协调。zookeeper中存储了每个作业的配置信息、机器节点信息、分片信息等；每个节点通过apache curator与zk通信，调度能力依然由quartz提供。此外，elastic-job提供了console管理界面，console与">
@@ -393,8 +393,8 @@
               
                 <span class="post-meta-item-text">Last modified&#58;</span>
               
-              <time title="Last modified" itemprop="dateModified" datetime="2018-12-04T22:43:45+08:00">
-                2018-12-04
+              <time title="Last modified" itemprop="dateModified" datetime="2019-08-18T15:26:31+08:00">
+                2019-08-18
               </time>
             
           </span>
@@ -582,6 +582,8 @@
           
             <a href="/tags/作业调度/" rel="tag"><i class="fa fa-tags"></i> 作业调度</a>
           
+            <a href="/tags/elastic-job/" rel="tag"><i class="fa fa-tags"></i> elastic-job</a>
+          
         </div>
       
 
@@ -695,7 +697,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">52</span>
+                  <span class="site-state-item-count">53</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -717,7 +719,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">61</span>
+                  <span class="site-state-item-count">62</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -809,7 +811,7 @@
     
       <span class="post-meta-item-text">Site words count&#58;</span>
     
-    <span title="Site words count">46.5k</span>
+    <span title="Site words count">47.3k</span>
   
 </div>
 
