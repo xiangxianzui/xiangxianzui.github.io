@@ -98,17 +98,17 @@
 
 
 
-<meta name="description" content="http://blog.csdn.net/robertbaker/article/details/42172203 http://blog.jobbole.com/87584/  Written with StackEdit.">
+<meta name="description" content="Linux窗口管理终极解决方案:tmuxtmux是terminal multiplexing的简称，也就是终端复用，一旦熟悉了tmux后，它就像一个加速器一样加速我们的工作效率。 基本概念tmux的基本概念很简单，包含三种组成要素：  会话(session)  窗口(window)  面板(pane)   只需要记住三者之间的关系：用户可以创建多个会话，一个会话内可以创建多个窗口，一个窗口内可以创">
 <meta name="keywords" content="Linux,tmux,窗口管理">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux窗口管理终极解决方案:tmux">
 <meta property="og:url" content="https://xiangxianzui.github.io/2017/07/Linux窗口管理终极解决方案-tmux/index.html">
 <meta property="og:site_name" content="Muser">
-<meta property="og:description" content="http://blog.csdn.net/robertbaker/article/details/42172203 http://blog.jobbole.com/87584/  Written with StackEdit.">
-<meta property="og:updated_time" content="2019-02-01T05:57:44.295Z">
+<meta property="og:description" content="Linux窗口管理终极解决方案:tmuxtmux是terminal multiplexing的简称，也就是终端复用，一旦熟悉了tmux后，它就像一个加速器一样加速我们的工作效率。 基本概念tmux的基本概念很简单，包含三种组成要素：  会话(session)  窗口(window)  面板(pane)   只需要记住三者之间的关系：用户可以创建多个会话，一个会话内可以创建多个窗口，一个窗口内可以创">
+<meta property="og:updated_time" content="2019-10-16T03:51:22.846Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Linux窗口管理终极解决方案:tmux">
-<meta name="twitter:description" content="http://blog.csdn.net/robertbaker/article/details/42172203 http://blog.jobbole.com/87584/  Written with StackEdit.">
+<meta name="twitter:description" content="Linux窗口管理终极解决方案:tmuxtmux是terminal multiplexing的简称，也就是终端复用，一旦熟悉了tmux后，它就像一个加速器一样加速我们的工作效率。 基本概念tmux的基本概念很简单，包含三种组成要素：  会话(session)  窗口(window)  面板(pane)   只需要记住三者之间的关系：用户可以创建多个会话，一个会话内可以创建多个窗口，一个窗口内可以创">
 
 
 
@@ -386,8 +386,8 @@
               
                 <span class="post-meta-item-text">Last modified&#58;</span>
               
-              <time title="Last modified" itemprop="dateModified" datetime="2019-02-01T13:57:44+08:00">
-                2019-02-01
+              <time title="Last modified" itemprop="dateModified" datetime="2019-10-16T11:51:22+08:00">
+                2019-10-16
               </time>
             
           </span>
@@ -441,7 +441,7 @@
                   <span class="post-meta-item-text">Words count&#58;</span>
                 
                 <span title="Words count">
-                  16
+                  1,190
                 </span>
               
 
@@ -466,11 +466,114 @@
       
 
       
-        <p><a href="http://blog.csdn.net/robertbaker/article/details/42172203" target="_blank" rel="external">http://blog.csdn.net/robertbaker/article/details/42172203</a></p>
-<p><a href="http://blog.jobbole.com/87584/" target="_blank" rel="external">http://blog.jobbole.com/87584/</a></p>
-<blockquote>
-<p>Written with <a href="https://stackedit.io/" target="_blank" rel="external">StackEdit</a>.</p>
-</blockquote>
+        <h2 id="Linux窗口管理终极解决方案-tmux"><a href="#Linux窗口管理终极解决方案-tmux" class="headerlink" title="Linux窗口管理终极解决方案:tmux"></a>Linux窗口管理终极解决方案:tmux</h2><p>tmux是terminal multiplexing的简称，也就是终端复用，一旦熟悉了tmux后，它就像一个加速器一样加速我们的工作效率。</p>
+<h3 id="基本概念"><a href="#基本概念" class="headerlink" title="基本概念"></a>基本概念</h3><p>tmux的基本概念很简单，包含三种组成要素：</p>
+<ul>
+<li><p>会话(session)</p>
+</li>
+<li><p>窗口(window)</p>
+</li>
+<li><p>面板(pane)</p>
+</li>
+</ul>
+<p>只需要记住三者之间的关系：用户可以创建多个会话，一个会话内可以创建多个窗口，一个窗口内可以创建多个面板。</p>
+<h3 id="常用命令和快捷键"><a href="#常用命令和快捷键" class="headerlink" title="常用命令和快捷键"></a>常用命令和快捷键</h3><h4 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h4><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tmux ls</td>
+<td>列出所有会话</td>
+</tr>
+<tr>
+<td>tmux new -s basic</td>
+<td>创建一个名为basic的会话</td>
+</tr>
+<tr>
+<td>tmux new -s basic -n editor</td>
+<td>创建一个名为basic的会话，并把该会话的第一个窗口命名为editor</td>
+</tr>
+<tr>
+<td>tmux attach -t basic</td>
+<td>attach，连接到一个名为basic的会话</td>
+</tr>
+</tbody>
+</table>
+<h4 id="快捷键"><a href="#快捷键" class="headerlink" title="快捷键"></a>快捷键</h4><table>
+<thead>
+<tr>
+<th>快捷键</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>PREFIX d</td>
+<td>detach，将当前会话分离，让该会话在后台运行</td>
+</tr>
+<tr>
+<td>PREFIX c</td>
+<td>在当前会话新建一个窗口</td>
+</tr>
+<tr>
+<td>PREFIX ,</td>
+<td>对当前窗口重命名</td>
+</tr>
+<tr>
+<td>PREFIX 0…9</td>
+<td>根据窗口的编号选择窗口</td>
+</tr>
+<tr>
+<td>PREFIX n</td>
+<td>跳转到下一个窗口</td>
+</tr>
+<tr>
+<td>PREFIX %</td>
+<td>把当前窗口垂直地一分为二，分割后的两个面板各占 50% 大小</td>
+</tr>
+<tr>
+<td>PREFIX “</td>
+<td>把当前窗口水平地一分为二，分割后的两个面板各占 50% 大小</td>
+</tr>
+<tr>
+<td>PREFIX 方向键</td>
+<td>光标跳转到指定面板</td>
+</tr>
+<tr>
+<td>按住PREFIX的同时按方向键</td>
+<td>调整当前面板的大小</td>
+</tr>
+<tr>
+<td>PREFIX 空格键</td>
+<td>切换面板布局</td>
+</tr>
+<tr>
+<td>PREFIX !</td>
+<td>将当前面板从所属窗口分离出去，成为一个新的窗口</td>
+</tr>
+<tr>
+<td>PREFIX ?</td>
+<td>打印快捷键help</td>
+</tr>
+</tbody>
+</table>
+<p>为什么要有PREFIX？</p>
+<p>由于我们的程序是在tmux环境里运行的，因此需要一种方式来告诉tmux当前所输入的命令是为了让tmux去执行而不是tmux里的应用程序去执行。</p>
+<p>默认PREFIX是<code>Ctrl b</code></p>
+<h4 id="复制到剪贴板"><a href="#复制到剪贴板" class="headerlink" title="复制到剪贴板"></a>复制到剪贴板</h4><p>在开启鼠标支持的前提下，按住shift，鼠标左键选择文本，然后右键选择“复制”。</p>
+<h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><p>在默认情况下，tmux 会在两个位置查找配置文件。首先查找 <code>/etc/tmux.conf</code> 作为系统配置，然后在当前用户的主目录下查找 <code>.tmux.conf</code> 文件（~/.tmux.conf 优先级更高）。如果这两个文件都不存在，tmux 就会使用默认配置。</p>
+<h4 id="配置示例"><a href="#配置示例" class="headerlink" title="配置示例"></a>配置示例</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div></pre></td><td class="code"><pre><div class="line"># 按PREFIX R重新加载配置文件</div><div class="line">bind R source-file ~/.tmux.conf \; display-message &quot;Config reloaded..&quot;</div><div class="line"></div><div class="line"># 状态栏</div><div class="line"># 颜色</div><div class="line">set -g status-bg black</div><div class="line">set -g status-fg white</div><div class="line"></div><div class="line"># 设置面板和活动面板的颜色</div><div class="line">set -g pane-active-border-fg white</div><div class="line">set -g pane-active-border-bg yellow</div><div class="line"> </div><div class="line"># 对齐方式</div><div class="line">set-option -g status-justify centre</div><div class="line"> </div><div class="line"># 左下角</div><div class="line">set-option -g status-left &apos;#[bg=black,fg=green][#[fg=cyan]#S#[fg=green]]&apos;</div><div class="line">set-option -g status-left-length 20</div><div class="line"> </div><div class="line"># 窗口列表</div><div class="line">setw -g automatic-rename on</div><div class="line">set-window-option -g window-status-format &apos;#[dim]#I:#[default]#W#[fg=grey,dim]&apos;</div><div class="line">set-window-option -g window-status-current-format &apos;#[fg=cyan,bold]#I#[fg=blue]:#[fg=cyan]#W#[fg=dim]&apos;</div><div class="line"> </div><div class="line"># 右下角</div><div class="line">set -g status-right &apos;#[fg=green][#[fg=cyan]%Y-%m-%d#[fg=green]]&apos;</div><div class="line"></div><div class="line"># 设置鼠标滚轮可用</div><div class="line">set-window-option -g mode-mouse on</div><div class="line"></div><div class="line"># 设置窗口活动通知</div><div class="line">set-window-option -g monitor-activity on</div><div class="line">set -g visual-activity on</div></pre></td></tr></table></figure>
+<h3 id="自动化脚本"><a href="#自动化脚本" class="headerlink" title="自动化脚本"></a>自动化脚本</h3><p>在日常开发中，我们经常需要打开各种各样的窗口，比如一个运行测试自动化脚本的窗口，一个查看应用运行日志的窗口，一个数据库窗口，难道每次都需要一个一个地打开各个窗口吗？自动化脚本就是让你一键拥有需要的所有窗口，并直接运行你想要的程序。</p>
+<h4 id="脚本示例"><a href="#脚本示例" class="headerlink" title="脚本示例"></a>脚本示例</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line"><span class="comment"># 创建新的会话basic，并detach</span></div><div class="line">tmux new <span class="_">-s</span> basic <span class="_">-d</span></div><div class="line"></div><div class="line"><span class="comment"># 列出常用工作路径</span></div><div class="line">tmux send-keys -t basic <span class="string">'sd -l'</span> C-m</div><div class="line"></div><div class="line"><span class="comment"># 创建新的面板</span></div><div class="line">tmux split-window -h -t basic</div><div class="line"></div><div class="line"><span class="comment"># 连接hyvpn</span></div><div class="line">tmux send-keys -t basic:0.1 <span class="string">'cd ~/Downloads'</span> C-m</div><div class="line">tmux send-keys -t basic:0.1 <span class="string">'sudo openvpn hy-vpn.ovpn'</span> C-m</div><div class="line"></div><div class="line"><span class="comment"># 创建新的窗口，命名为bl</span></div><div class="line">tmux new-window -n bl -t basic</div><div class="line"></div><div class="line"><span class="comment"># ssh登录堡垒机</span></div><div class="line">tmux send-keys -t basic:1 <span class="string">'ssh-add ~/.ssh/netease/id_rsa'</span> C-m</div><div class="line">tmux send-keys -t basic:1 <span class="string">'ssh -A bl'</span> C-m</div><div class="line"></div><div class="line"><span class="comment"># attach会话</span></div><div class="line">tmux attach -t basic</div></pre></td></tr></table></figure>
+<p>tmux采用c/s架构，有个后台server线程，send-keys就是向这个后台线程发送想让tmux执行的终端命令；<code>tmux send-keys -t basic:0.1 &#39;cd ~/Downloads&#39; C-m</code>表示向basic会话的第1个窗口的第2个面板发送打开<code>~/Downloads</code>文件夹的命令，<code>C-m</code>表示回车。</p>
+<p>窗口、面板默认都是从0开始计数，也可以通过配置使其从1开始计数。</p>
+<p>执行与上面类似的脚本，就可以一键拥有想要的开发环境。</p>
+<h3 id="进阶"><a href="#进阶" class="headerlink" title="进阶"></a>进阶</h3><p>以上内容已基本能够cover住日常工作需求，如需使用tmux更高级的功能，请参考：</p>
+<p>《tmux: Productive Mouse-Free Development》中文版：<a href="https://aquaregia.gitbooks.io/tmux-productive-mouse-free-development_zh/content/index.html" target="_blank" rel="external">https://aquaregia.gitbooks.io/tmux-productive-mouse-free-development_zh/content/index.html</a> </p>
 
       
     </div>
@@ -620,8 +723,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -710,6 +822,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Linux窗口管理终极解决方案-tmux"><span class="nav-number">1.</span> <span class="nav-text">Linux窗口管理终极解决方案:tmux</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#基本概念"><span class="nav-number">1.1.</span> <span class="nav-text">基本概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#常用命令和快捷键"><span class="nav-number">1.2.</span> <span class="nav-text">常用命令和快捷键</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#常用命令"><span class="nav-number">1.2.1.</span> <span class="nav-text">常用命令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#快捷键"><span class="nav-number">1.2.2.</span> <span class="nav-text">快捷键</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#复制到剪贴板"><span class="nav-number">1.2.3.</span> <span class="nav-text">复制到剪贴板</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置文件"><span class="nav-number">1.3.</span> <span class="nav-text">配置文件</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#配置示例"><span class="nav-number">1.3.1.</span> <span class="nav-text">配置示例</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自动化脚本"><span class="nav-number">1.4.</span> <span class="nav-text">自动化脚本</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#脚本示例"><span class="nav-number">1.4.1.</span> <span class="nav-text">脚本示例</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#进阶"><span class="nav-number">1.5.</span> <span class="nav-text">进阶</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -738,7 +866,7 @@
     
       <span class="post-meta-item-text">Site words count&#58;</span>
     
-    <span title="Site words count">48.6k</span>
+    <span title="Site words count">49.7k</span>
   
 </div>
 
