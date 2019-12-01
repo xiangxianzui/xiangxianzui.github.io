@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://xiangxianzui.github.io/"/>
-  <updated>2019-10-09T12:43:22.611Z</updated>
+  <updated>2019-12-01T05:42:49.603Z</updated>
   <id>https://xiangxianzui.github.io/</id>
   
   <author>
@@ -14,6 +14,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>elastic-job分片策略</title>
+    <link href="https://xiangxianzui.github.io/2019/12/elastic-job%E5%88%86%E7%89%87%E7%AD%96%E7%95%A5/"/>
+    <id>https://xiangxianzui.github.io/2019/12/elastic-job分片策略/</id>
+    <published>2019-12-01T04:01:36.000Z</published>
+    <updated>2019-12-01T05:42:49.603Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;elastic-job分片策略&quot;&gt;&lt;a href=&quot;#elastic-job分片策略&quot; class=&quot;headerlink&quot; title=&quot;elastic-job分片策略&quot;&gt;&lt;/a&gt;elastic-job分片策略&lt;/h2&gt;&lt;p&gt;elastic-job在选举出主节点
+    
+    </summary>
+    
+      <category term="Work" scheme="https://xiangxianzui.github.io/categories/Work/"/>
+    
+    
+      <category term="分布式" scheme="https://xiangxianzui.github.io/tags/%E5%88%86%E5%B8%83%E5%BC%8F/"/>
+    
+      <category term="作业调度" scheme="https://xiangxianzui.github.io/tags/%E4%BD%9C%E4%B8%9A%E8%B0%83%E5%BA%A6/"/>
+    
+      <category term="elastic-job" scheme="https://xiangxianzui.github.io/tags/elastic-job/"/>
+    
+  </entry>
   
   <entry>
     <title>ssh认证原理</title>
@@ -123,9 +147,9 @@
       <category term="Work" scheme="https://xiangxianzui.github.io/categories/Work/"/>
     
     
-      <category term="dubbo" scheme="https://xiangxianzui.github.io/tags/dubbo/"/>
-    
       <category term="分布式" scheme="https://xiangxianzui.github.io/tags/%E5%88%86%E5%B8%83%E5%BC%8F/"/>
+    
+      <category term="dubbo" scheme="https://xiangxianzui.github.io/tags/dubbo/"/>
     
       <category term="tomcat" scheme="https://xiangxianzui.github.io/tags/tomcat/"/>
     
@@ -266,7 +290,7 @@
     <link href="https://xiangxianzui.github.io/2018/12/elastic-job%E5%AE%9E%E7%8E%B0%E5%88%86%E6%9E%90/"/>
     <id>https://xiangxianzui.github.io/2018/12/elastic-job实现分析/</id>
     <published>2018-12-04T14:29:03.000Z</published>
-    <updated>2019-08-18T07:26:31.642Z</updated>
+    <updated>2019-11-04T03:14:29.329Z</updated>
     
     <summary type="html">
     
@@ -434,28 +458,6 @@
     
     
       <category term="tomcat" scheme="https://xiangxianzui.github.io/tags/tomcat/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>nginx+lua动态改变upstream</title>
-    <link href="https://xiangxianzui.github.io/2017/11/nginx-lua%E5%8A%A8%E6%80%81%E6%94%B9%E5%8F%98upstream/"/>
-    <id>https://xiangxianzui.github.io/2017/11/nginx-lua动态改变upstream/</id>
-    <published>2017-11-23T05:01:26.000Z</published>
-    <updated>2017-11-25T08:49:08.999Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;在做毕设的时候需要动态改变通过nginx代理的服务器数量。背景大概是我有一个generator不断产生负载打在nginx上，还有一个monitor根据generator生成负载的qps来动态决定需要多少台服务器刚好能够承担这个qps的请求，因此需要动态修改nginx中的up
-    
-    </summary>
-    
-      <category term="Work" scheme="https://xiangxianzui.github.io/categories/Work/"/>
-    
-    
-      <category term="nginx" scheme="https://xiangxianzui.github.io/tags/nginx/"/>
-    
-      <category term="Lua" scheme="https://xiangxianzui.github.io/tags/Lua/"/>
     
   </entry>
   
