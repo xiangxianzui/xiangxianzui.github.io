@@ -336,6 +336,563 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xiangxianzui.github.io/2020/02/延时任务实现方案/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Muser">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Muser">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/02/延时任务实现方案/" itemprop="url">延时任务实现方案</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-12T11:07:43+08:00">
+                2020-02-12
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Last modified&#58;</span>
+              
+              <time title="Last modified" itemprop="dateModified" datetime="2020-02-12T17:16:21+08:00">
+                2020-02-12
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Work/" itemprop="url" rel="index">
+                    <span itemprop="name">Work</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count&#58;</span>
+                
+                <span title="Words count">
+                  819
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          延时任务实现方案业务场景我们买火车票或者叫外卖的时候，下完单之后会跳转到支付页面，页面里通常会有一个计时器，要求在指定时间内完成支付，否则订单就会被自动取消。这就是延时任务的一个典型业务场景。分析这个场景，其实最关键的就是如何在订单超时的时候立即触发取消订单的动作。
+那么如何实现这种延时业务呢？通常有以下4种方案。
+定时任务轮询db用户下单后db中会生成一条订单记录，记录了订单号、用户ID、创建时间、订单详情、订单状态等信息。假设超时时间是600秒，我们后台起一个定时任务，每隔固定时间运行一次，每次扫描db中的超时订单select * from order where createTime &lt;= now()-600，然后取消查询到的订单。
+这种方法实现简单，但是有很多缺点。超时时间通常是秒级的，如果定时任务每秒运行一次，那么就相当于每秒就要对订单表做一次扫描，这是相当消耗db资源的操作，因此定时任务一般不会设置为秒级；但是如果设置为分钟级，又会牺牲即时性，比如600秒超时，很有可能660秒的时候订单才被取消。
+DelayQueueJDK的D
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/02/延时任务实现方案/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xiangxianzui.github.io/2020/02/秒杀系统设计分析/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Muser">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Muser">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/02/秒杀系统设计分析/" itemprop="url">秒杀系统设计分析</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-02T22:54:42+08:00">
+                2020-02-02
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Last modified&#58;</span>
+              
+              <time title="Last modified" itemprop="dateModified" datetime="2020-02-12T11:10:10+08:00">
+                2020-02-12
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Work/" itemprop="url" rel="index">
+                    <span itemprop="name">Work</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count&#58;</span>
+                
+                <span title="Words count">
+                  1,506
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          业务场景分析业务场景：商品秒杀、商品抢购、群红包、抢优惠券、抽奖、买火车票
+业务特点：瞬时售空、瞬时并发高、持续时间短、一般是商品定时上架
+技术特点：读多写少、高并发、资源冲突
+技术特点分析读多写少：秒杀系统请求数量巨大，但是真正抢到资源的请求很少，所以是读多写少。使用缓存减缓对后端的压力，比如利用CDN将图片等页面静态资源缓存掉。
+高并发：秒杀系统最关键的就是要利用限流，把大多数请求挡在外面；负载均衡将请求分摊给各个后端；利用消息队列中间件做异步削峰；缓存缓解后端压力。
+资源冲突：保证关键资源（如商品库存）的原子操作。数据库锁（乐观锁、悲观锁），分布式锁（redis、zk），利用redis decr的原子操作。
+请求链路分析一次秒杀请求，首先是由客户端发起的，经过网络链路到达负载层，再由负载层分发到后端服务层，服务层处理业务逻辑之后，最终结果反映在数据库上。那么我们分析一下在整个请求链路上，针对秒杀系统，我们都有哪些解决方案。
+
+客户端层：客户端呈现的秒杀页面中包含的图片、音乐、商品详情等静态资源，可以在客户端缓存起来，避免每次都要请求服务端而
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/02/秒杀系统设计分析/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xiangxianzui.github.io/2020/02/分布式ID生成策略/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Muser">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Muser">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/02/分布式ID生成策略/" itemprop="url">分布式ID生成策略</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-02-01T21:24:33+08:00">
+                2020-02-01
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Last modified&#58;</span>
+              
+              <time title="Last modified" itemprop="dateModified" datetime="2020-02-01T22:24:26+08:00">
+                2020-02-01
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Work/" itemprop="url" rel="index">
+                    <span itemprop="name">Work</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count&#58;</span>
+                
+                <span title="Words count">
+                  686
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          分布式环境下的ID生成策略考虑的维度在选择ID生成策略时，通常要根据不同的业务场景考虑下面几个维度：
+全局唯一性：ID是否需要全局唯一
+高并发下的高可用性：ID的生成需要支持高并发，保证高可用性
+趋势递增：ID生成一般要趋势递增（不一定要严格递增），这样作为数据库的主键时可增加性能
+信息安全：ID中不要泄露用户敏感信息，如手机号、生日等比较明显的信息
+4种策略UUID：java的UUID.randomUUID()
+数据库自增ID：
+利用DB自身的自增能力，比如mysql中，auto_increment_increment=3表示每次ID增加3，auto_increment_offset=1表示ID从1开始增加；
+在数据库集群中，如果没有一个中心化的ID生成器，那么就需要依赖各个数据库节点自行生成ID了，这个时候一个办法就是在各个节点中设置相同的auto_increment_increment，设置不同的auto_increment_offset。比如集群中A、B、C共3个db节点，3个节点的increment都设置成3，offset分别设置为1、
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/02/分布式ID生成策略/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://xiangxianzui.github.io/2019/12/elastic-job分片策略/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -699,564 +1256,11 @@ RotateServerByNameJobShardingStrategy：根据作业名的哈希值对服务器�
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://xiangxianzui.github.io/2019/08/elastic-job事件追踪改造/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Muser">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Muser">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/08/elastic-job事件追踪改造/" itemprop="url">elastic-job事件追踪改造</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-18T15:25:54+08:00">
-                2019-08-18
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Last modified&#58;</span>
-              
-              <time title="Last modified" itemprop="dateModified" datetime="2019-08-22T19:33:59+08:00">
-                2019-08-22
-              </time>
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Work/" itemprop="url" rel="index">
-                    <span itemprop="name">Work</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count&#58;</span>
-                
-                <span title="Words count">
-                  734
-                </span>
-              
-
-              
-
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          在整个作业执行的过程中，elastic-job对作业的状态、执行情况做了事件追踪，用于查询、统计和监控。事件总线JobEventBus中注册了两种事件，分别是JobStatusTraceEvent和JobExecutionEvent，分别对应作业状态和触发来源。elastic-job会在作业执行过程中向事件总线实时发送事件追踪信息，JobEventBus接收追踪信息后会写入DB。
-
-问题JobStatusTraceEvent和JobExecutionEvent分别对应mysql中的两张表，可能会带来一些问题：
-
-每个作业执行到不同阶段都会将追踪事件写入db，而elastic-job并没有提供定期清理功能，除非手动删除，否则两张表将会慢慢地变得非常庞大。
-事件追踪表对业务有一定程度的入侵。如果事件追踪表与业务表使用不同的数据源，那么在业务代码里就要为事件追踪单独配置一个数据源；而跟业务使用同一个数据源显然是不合理的。
-elastic-job每接入一个业务工程，都要配置一个数据源，接入麻烦，而且不易于管理。
-
-改造针对上面的问题，改造思路主要是不要写
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/08/elastic-job事件追踪改造/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://xiangxianzui.github.io/2019/08/分布式链路追踪zipkin-brave/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Muser">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Muser">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/08/分布式链路追踪zipkin-brave/" itemprop="url">分布式链路追踪zipkin&brave</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-18T14:47:50+08:00">
-                2019-08-18
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Last modified&#58;</span>
-              
-              <time title="Last modified" itemprop="dateModified" datetime="2019-08-18T15:07:05+08:00">
-                2019-08-18
-              </time>
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Work/" itemprop="url" rel="index">
-                    <span itemprop="name">Work</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count&#58;</span>
-                
-                <span title="Words count">
-                  635
-                </span>
-              
-
-              
-
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          背景在微服务系统中，各个微服务之间通过http、rpc等方式相互调用，形成了一个调用网络。当微服务系统逐渐庞大，有成百上千个微服务，这个调用网络就会变得非常庞杂。为了能够知道一次请求经过了哪些服务，经过的先后顺序是怎样的，以及在每个服务停留了多长时间，我们需要一个调用链路的追踪工具来帮我们收集这些信息，以便于理清服务链路、定位服务的短板所在。
-zipkinzipkin就是一个这样的追踪工具。zipkin是典型的C/S架构，zipkin-client负责埋点、采样，将调用轨迹发送给zipkin-server，zipkin-server负责收集数据并存储，再暴露API给Web UI，进行调用链路的展示。
-
-zipkin-server包含四个组件，分别是collector、storage、search、web UI
-
-collector 就是信息收集器,作为一个守护进程，它会时刻等待客户端传递过来的追踪数据，对这些数据进行验证、存储以及创建查询需要的索引。
-storage  是存储组件。zipkin 默认直接将数据存在内存中，此外支持使用Cassand
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/08/分布式链路追踪zipkin-brave/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://xiangxianzui.github.io/2019/08/分布式数据库下的大表分页查询/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Muser">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Muser">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/08/分布式数据库下的大表分页查询/" itemprop="url">分布式数据库下的大表分页查询</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-08-18T13:06:28+08:00">
-                2019-08-18
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Last modified&#58;</span>
-              
-              <time title="Last modified" itemprop="dateModified" datetime="2019-08-18T13:58:24+08:00">
-                2019-08-18
-              </time>
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Work/" itemprop="url" rel="index">
-                    <span itemprop="name">Work</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count&#58;</span>
-                
-                <span title="Words count">
-                  870
-                </span>
-              
-
-              
-
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          我们对外提供的/video/list接口会对某用户下所有的视频列表进行分页查询，而vod_video表是一个具有亿级数据量的大表，任何一个对此表的查询都应该慎重对待。
-分布式数据库大表查询的常见问题vod_video表的schema像这样：
-1234567891011121314151617CREATE TABLE `vod_video` (  `vid` bigint(20) NOT NULL COMMENT '视频ID，自增主键',  `video_name` varchar(256) DEFAULT NULL COMMENT '视频文件名称',  `description` varchar(256) DEFAULT NULL COMMENT '视频简介',  `duration` bigint(20) DEFAULT NULL COMMENT '视频时间长度（秒）',  `width` int(11) DEFAULT '0' COMMENT '视频宽度',  `height` int(11) DEFAULT '0' COMMENT '视频高
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/08/分布式数据库下的大表分页查询/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1308,7 +1312,7 @@ storage  是存储组件。zipkin 默认直接将数据存在内存中，此外�
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">55</span>
+                  <span class="site-state-item-count">58</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1330,7 +1334,7 @@ storage  是存储组件。zipkin 默认直接将数据存在内存中，此外�
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">63</span>
+                  <span class="site-state-item-count">65</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -1392,7 +1396,7 @@ storage  是存储组件。zipkin 默认直接将数据存在内存中，此外�
     <footer id="footer" class="footer">
       <div class="footer-inner">
         
-<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-star"></i>
   </span>
@@ -1406,7 +1410,7 @@ storage  是存储组件。zipkin 默认直接将数据存在内存中，此外�
     
       <span class="post-meta-item-text">Site words count&#58;</span>
     
-    <span title="Site words count">50.5k</span>
+    <span title="Site words count">53.5k</span>
   
 </div>
 

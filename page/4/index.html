@@ -336,6 +336,556 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xiangxianzui.github.io/2018/12/elastic-job实现分析/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Muser">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Muser">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/elastic-job实现分析/" itemprop="url">elastic-job实现分析</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-04T22:29:03+08:00">
+                2018-12-04
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Last modified&#58;</span>
+              
+              <time title="Last modified" itemprop="dateModified" datetime="2019-11-04T11:14:29+08:00">
+                2019-11-04
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Work/" itemprop="url" rel="index">
+                    <span itemprop="name">Work</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count&#58;</span>
+                
+                <span title="Words count">
+                  1,982
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          elastic-job架构分析概览elastic-job整体上采用去中心化调度的架构，调度和执行存在于同一节点上，使用zookeeper作为注册中心进行节点的分布式协调。zookeeper中存储了每个作业的配置信息、机器节点信息、分片信息等；每个节点通过apache curator与zk通信，调度能力依然由quartz提供。此外，elastic-job提供了console管理界面，console与各执行节点无任何交互，可以理解为一个zk client，拉取zk节点中的作业状态等并进行展示。
+
+elastic-job的部署十分简单，console由springboot开启，各机器节点引入elastic-job-lite-core.jar和elastic-job-lite-spring.jar包即可。
+zk节点管理下图是elastic-job的zk目录结构（黄色是临时节点，蓝色是持久化的目录或节点）：
+
+下图是elastic-job与zk通信和节点操作时涉及到的主要类的简单关系图。左边的五个Node节点类对应zk的目录节点，上层通过相应的Servic
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/12/elastic-job实现分析/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xiangxianzui.github.io/2018/12/xxl-job实现分析/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Muser">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Muser">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/12/xxl-job实现分析/" itemprop="url">xxl-job实现分析</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-12-04T22:28:25+08:00">
+                2018-12-04
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Last modified&#58;</span>
+              
+              <time title="Last modified" itemprop="dateModified" datetime="2018-12-04T22:42:10+08:00">
+                2018-12-04
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Work/" itemprop="url" rel="index">
+                    <span itemprop="name">Work</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count&#58;</span>
+                
+                <span title="Words count">
+                  1,421
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          xxl-job架构分析概览xxl-job整体上采用中心化调度的思想，将调度和执行完全解耦。调度中心专门进行任务的调度和下发，还提供了一个web console进行可视化的管理；执行器接收执行请求，专注于业务代码的执行。
+
+xxl-job的部署十分简单：调度中心是springboot项目，引入xxl-job-admin.jar和xxl-job-core.jar即可；执行器只需引入xxl-job-core.jar包。
+注册&amp;发现由于xxl-job是中心化架构，每个执行器都知悉调度中心的地址，而调度中心并不能立即感知新加入或退出的执行器，因此“注册”是执行器的主动行为，“发现”是调度中心的被动行为。
+
+执行器启动后会起一个注册线程ExecutorRegistryThread，每30s向调度中心发送注册心跳，这是个rpc调用（xxl-job提供了简单的rpc框架，其底层通信协议是http）。调度中心收到请求后解析XxlRpcRequest，校验通信accessToken，解析出执行的方法名和参数，进行反射调用执行注册操作。XXL_JOB_QRTZ
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/12/xxl-job实现分析/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xiangxianzui.github.io/2018/10/dns解析过程抓包分析/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Muser">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Muser">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/10/dns解析过程抓包分析/" itemprop="url">dns解析过程抓包分析</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-10-15T21:26:47+08:00">
+                2018-10-15
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Last modified&#58;</span>
+              
+              <time title="Last modified" itemprop="dateModified" datetime="2018-10-15T21:56:40+08:00">
+                2018-10-15
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Work/" itemprop="url" rel="index">
+                    <span itemprop="name">Work</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count&#58;</span>
+                
+                <span title="Words count">
+                  2,613
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          dig +trace抓包分析：dig +trace [hostname]命令从根服务器开始追踪一个域名的解析过程,下面结合命令输出以及wireshark抓包分析执行dig +trace命令后究竟发生了哪些事情。
+dig +trace www.baidu.com 抓包结果：
+以www.baidu.com为例：
+123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596979899100101-&gt; dig +trace www.baidu.com; &lt;&lt;&gt;&gt; DiG 9.9.5-3-Ubuntu &lt;&lt;&gt;&gt; +trace www.baidu.com;; global options: +cmd.	
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/10/dns解析过程抓包分析/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://xiangxianzui.github.io/2018/10/ddb架构和坑/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -696,587 +1246,11 @@ DBI通过打包成db.jar为供应用端所使用，DDB的升级需要重新打�
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://xiangxianzui.github.io/2018/05/git版本控制/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Muser">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Muser">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/git版本控制/" itemprop="url">git版本控制</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-22T16:58:18+08:00">
-                2018-05-22
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Last modified&#58;</span>
-              
-              <time title="Last modified" itemprop="dateModified" datetime="2018-12-04T22:32:50+08:00">
-                2018-12-04
-              </time>
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Learning/" itemprop="url" rel="index">
-                    <span itemprop="name">Learning</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count&#58;</span>
-                
-                <span title="Words count">
-                  1,157
-                </span>
-              
-
-              
-
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          基本概念
-Snapshots, Not Differences
-Nearly Every Operation Is Local
-Git Has Integrity
-Git Generally Only Adds Data
-
-三种状态Git has three main states that your files can reside in:
-
-commited: Committed means that the data is safely stored in your local database.
-modified: Modified means that you have changed the file but have not committed it to your database yet.
-staged: Staged means that you have marked a modified file in its current version to go into your next commit snapshot.
-
-三
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/05/git版本控制/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://xiangxianzui.github.io/2018/02/Maven核心概念/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Muser">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Muser">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/02/Maven核心概念/" itemprop="url">Maven核心概念</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-02-08T21:24:03+08:00">
-                2018-02-08
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Last modified&#58;</span>
-              
-              <time title="Last modified" itemprop="dateModified" datetime="2018-12-04T22:33:27+08:00">
-                2018-12-04
-              </time>
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Learning/" itemprop="url" rel="index">
-                    <span itemprop="name">Learning</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count&#58;</span>
-                
-                <span title="Words count">
-                  1,349
-                </span>
-              
-
-              
-
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          Maven是什么
-Apache基金会出品
-开源
-java写的
-Maven是一个项目构建和依赖管理的工具
-
-为什么选择Maven
-基于约定优先于配置的原则：默认限定了项目的目录结构，项目之间迁移的学习成本低
-提供三方依赖包的管理：提供远程仓库，解决了依赖维护
-提供一致的项目构建管理方式：将项目构建过程的操作抽象成生命周期，减少构建工作量
-插件式的架构，大量的可重用的插件
-方便地集成IDE
-
-pom.xml
-POM: Project Object Model
-groupId:组织
-artifactId:项目标识符
-version:版本　　X.Y.Z-SNAPSHOT, X.Y.Z-RELEASE, X.Y.Z
-groupId,artifactId,version三个字段构成了一个项目的唯一坐标
-packaging:打包类型　有war,jar,pom三种
-dependencies:依赖的项目
-
-Maven基本命令
-mvn archetype:generate  使用模板生成项目例子：mvn archetype:generate -DgroupId=co
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2018/02/Maven核心概念/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://xiangxianzui.github.io/2017/12/tomcat相关问题解决/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Muser">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Muser">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2017/12/tomcat相关问题解决/" itemprop="url">tomcat相关问题解决</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2017-12-01T13:41:11+08:00">
-                2017-12-01
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Last modified&#58;</span>
-              
-              <time title="Last modified" itemprop="dateModified" datetime="2017-12-01T13:52:08+08:00">
-                2017-12-01
-              </time>
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Work/" itemprop="url" rel="index">
-                    <span itemprop="name">Work</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count&#58;</span>
-                
-                <span title="Words count">
-                  131
-                </span>
-              
-
-              
-
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          解决tomcat启动过慢http://blog.csdn.net/benyuxy/article/details/7570244http://blog.csdn.net/u011627980/article/details/54024974http://blog.csdn.net/changyinling520/article/details/71036515
-远程部署war包过程中，tomcat报错java.util.zip.ZipException: error in opening zip file。tomcat会自动解压webapps目录下的war包，当用scp把war包部署到远程tomcat上的时候，如果这个war包比较大，那么tomcat在war包还没有传输完成的时候就尝试解压，这样就会导致zipException
-另：
-tomcat下部署war包的两种方法http://blog.csdn.net/wy818/article/details/7240294
-
-          
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2017/12/tomcat相关问题解决/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
   <nav class="pagination">
-    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/11/">11</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right"></i></a>
+    <a class="extend prev" rel="prev" href="/page/3/"><i class="fa fa-angle-left"></i></a><a class="page-number" href="/">1</a><span class="space">&hellip;</span><a class="page-number" href="/page/3/">3</a><span class="page-number current">4</span><a class="page-number" href="/page/5/">5</a><span class="space">&hellip;</span><a class="page-number" href="/page/12/">12</a><a class="extend next" rel="next" href="/page/5/"><i class="fa fa-angle-right"></i></a>
   </nav>
 
 
@@ -1328,7 +1302,7 @@ tomcat下部署war包的两种方法http://blog.csdn.net/wy818/article/details/7
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">55</span>
+                  <span class="site-state-item-count">58</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1350,7 +1324,7 @@ tomcat下部署war包的两种方法http://blog.csdn.net/wy818/article/details/7
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">63</span>
+                  <span class="site-state-item-count">65</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -1412,7 +1386,7 @@ tomcat下部署war包的两种方法http://blog.csdn.net/wy818/article/details/7
     <footer id="footer" class="footer">
       <div class="footer-inner">
         
-<div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+<div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
   <span class="with-love">
     <i class="fa fa-star"></i>
   </span>
@@ -1426,7 +1400,7 @@ tomcat下部署war包的两种方法http://blog.csdn.net/wy818/article/details/7
     
       <span class="post-meta-item-text">Site words count&#58;</span>
     
-    <span title="Site words count">50.5k</span>
+    <span title="Site words count">53.5k</span>
   
 </div>
 
