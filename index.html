@@ -336,6 +336,197 @@
   
   
   <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://xiangxianzui.github.io/2020/05/JVM垃圾回收基础/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Muser">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/uploads/avatar.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Muser">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2020/05/JVM垃圾回收基础/" itemprop="url">JVM垃圾回收基础</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2020-05-03T16:28:02+08:00">
+                2020-05-03
+              </time>
+            
+
+            
+              <span class="post-meta-divider">|</span>
+            
+
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Last modified&#58;</span>
+              
+              <time title="Last modified" itemprop="dateModified" datetime="2020-05-03T16:33:30+08:00">
+                2020-05-03
+              </time>
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Work/" itemprop="url" rel="index">
+                    <span itemprop="name">Work</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Words count&#58;</span>
+                
+                <span title="Words count">
+                  1,246
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+          垃圾回收基础什么是垃圾没有任何引用指向的一个对象或多个对象（循环引用）叫做垃圾。
+如何定位垃圾引用计数：引用计数为0的对象标记为垃圾，无法解决循环依赖
+GC roots：
+JVM stack, native method stack, runtime constant pool, static references in method area, Clazz
+从GC roots开始遍历所有对象，遍历不到的对象标记为垃圾
+常见的垃圾回收算法这里说垃圾回收算法，其实叫垃圾回收思想更合适，因为实际垃圾回收算法都是借鉴了这些思想。
+标记清除（Mark Sweep）：找到所有垃圾后清除
+优点是实现简单，缺点是容易产生内存碎片。
+拷贝（Copying）：将内存一分为二，只使用其中一份，垃圾回收时，把非垃圾对象拷贝到另一份内存，然后把第一份内存清掉
+优点是没有内存碎片，缺点是浪费空间。
+标记压缩（Mark Compact）：找到所有垃圾后清除，然后把存活对象压缩到一起消除碎片
+优点是没有内存碎片，缺点是效率偏低。
+JVM内存分代模型jdk1.7：年轻代（You
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2020/05/JVM垃圾回收基础/#more" rel="contents">
+              Read more &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://xiangxianzui.github.io/2020/02/延时任务实现方案/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1066,196 +1257,6 @@ RotateServerByNameJobShardingStrategy：根据作业名的哈希值对服务器�
 
 
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://xiangxianzui.github.io/2019/10/ssh认证原理/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="Muser">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="/uploads/avatar.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Muser">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2019/10/ssh认证原理/" itemprop="url">ssh认证原理</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Posted on</span>
-              
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-10-09T11:19:47+08:00">
-                2019-10-09
-              </time>
-            
-
-            
-              <span class="post-meta-divider">|</span>
-            
-
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-check-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">Last modified&#58;</span>
-              
-              <time title="Last modified" itemprop="dateModified" datetime="2019-10-09T20:43:22+08:00">
-                2019-10-09
-              </time>
-            
-          </span>
-
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">In</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Work/" itemprop="url" rel="index">
-                    <span itemprop="name">Work</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">Words count&#58;</span>
-                
-                <span title="Words count">
-                  1,286
-                </span>
-              
-
-              
-
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-          ssh认证原理通过ssh从客户端登入服务端需要身份认证，ssh主要提供了密码认证和公钥认证两种方式。
-下图是PAC的ssh连接管理界面，可以看Authentication一栏下的User/Password和Private Key，前者就是密码认证，后者其实就是公钥认证，只不过需要告诉PAC在哪里可以找到私钥。
-
-密码认证密码认证需要ssh client携带用户名和密码传递给ssh server，server端需要配置PasswordAuthentication为yes，否则不允许通过密码认证登录服务器。
-生产环境下建议关闭密码认证：
-
-虽然用户名和密码都被session key加密后再传输给server端，但是依然有被暴力破解的风险；
-如果集群中所有机器都使用相同的密码，那么一台机器被破解整个集群将被全部破解；
-如果不同机器使用不同的密码，那么给维护带来困难，客户端需要记住不同机器的密码，这也势必导致设置的密码十分简单，增大了被破解的风险。
-
-登录命令：
-1234# -l 指定用户名# -p 指定端口# 输入下面的命令后根据提示输入密码就可以登录
-          ...
-          <!--noindex-->
-          <div class="post-button text-center">
-            <a class="btn" href="/2019/10/ssh认证原理/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-          <!--/noindex-->
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
   </section>
 
   
@@ -1312,7 +1313,7 @@ RotateServerByNameJobShardingStrategy：根据作业名的哈希值对服务器�
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">58</span>
+                  <span class="site-state-item-count">60</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -1334,7 +1335,7 @@ RotateServerByNameJobShardingStrategy：根据作业名的哈希值对服务器�
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">65</span>
+                  <span class="site-state-item-count">67</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -1410,7 +1411,7 @@ RotateServerByNameJobShardingStrategy：根据作业名的哈希值对服务器�
     
       <span class="post-meta-item-text">Site words count&#58;</span>
     
-    <span title="Site words count">53.5k</span>
+    <span title="Site words count">55.0k</span>
   
 </div>
 

@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://xiangxianzui.github.io/"/>
-  <updated>2020-02-12T09:16:21.524Z</updated>
+  <updated>2020-05-03T08:33:30.036Z</updated>
   <id>https://xiangxianzui.github.io/</id>
   
   <author>
@@ -14,6 +14,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JVM垃圾回收基础</title>
+    <link href="https://xiangxianzui.github.io/2020/05/JVM%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E5%9F%BA%E7%A1%80/"/>
+    <id>https://xiangxianzui.github.io/2020/05/JVM垃圾回收基础/</id>
+    <published>2020-05-03T08:28:02.000Z</published>
+    <updated>2020-05-03T08:33:30.036Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;垃圾回收基础&quot;&gt;&lt;a href=&quot;#垃圾回收基础&quot; class=&quot;headerlink&quot; title=&quot;垃圾回收基础&quot;&gt;&lt;/a&gt;垃圾回收基础&lt;/h2&gt;&lt;h3 id=&quot;什么是垃圾&quot;&gt;&lt;a href=&quot;#什么是垃圾&quot; class=&quot;headerlink&quot; title=
+    
+    </summary>
+    
+      <category term="Work" scheme="https://xiangxianzui.github.io/categories/Work/"/>
+    
+    
+      <category term="垃圾回收" scheme="https://xiangxianzui.github.io/tags/%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6/"/>
+    
+      <category term="JVM" scheme="https://xiangxianzui.github.io/tags/JVM/"/>
+    
+  </entry>
   
   <entry>
     <title>延时任务实现方案</title>
@@ -99,6 +121,28 @@
       <category term="作业调度" scheme="https://xiangxianzui.github.io/tags/%E4%BD%9C%E4%B8%9A%E8%B0%83%E5%BA%A6/"/>
     
       <category term="elastic-job" scheme="https://xiangxianzui.github.io/tags/elastic-job/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>CDN经典算法初探</title>
+    <link href="https://xiangxianzui.github.io/2019/11/CDN%E7%BB%8F%E5%85%B8%E7%AE%97%E6%B3%95%E5%88%9D%E6%8E%A2/"/>
+    <id>https://xiangxianzui.github.io/2019/11/CDN经典算法初探/</id>
+    <published>2019-11-01T03:02:35.000Z</published>
+    <updated>2019-11-01T10:06:59.429Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;CDN经典算法初探&quot;&gt;&lt;a href=&quot;#CDN经典算法初探&quot; class=&quot;headerlink&quot; title=&quot;CDN经典算法初探&quot;&gt;&lt;/a&gt;CDN经典算法初探&lt;/h2&gt;&lt;p&gt;Overview&lt;/p&gt;
+&lt;p&gt;Global Load Balancing&lt;/p&gt;
+
+    
+    </summary>
+    
+      <category term="Work" scheme="https://xiangxianzui.github.io/categories/Work/"/>
+    
+    
+      <category term="CDN" scheme="https://xiangxianzui.github.io/tags/CDN/"/>
     
   </entry>
   
@@ -223,12 +267,11 @@
     <link href="https://xiangxianzui.github.io/2019/04/Enable-TLSv1-2-in-JDK7/"/>
     <id>https://xiangxianzui.github.io/2019/04/Enable-TLSv1-2-in-JDK7/</id>
     <published>2019-04-09T07:19:30.000Z</published>
-    <updated>2019-04-10T03:40:08.270Z</updated>
+    <updated>2020-05-06T13:57:41.084Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;最近发现我们线上服务器向用户服务器发送https请求被拒绝的现象，原因是用户服务器设置的https协议是只支持TLSv1.2的请求，而我们服务器发送https请求使用的是TLSv1，用户服务器拒绝握手。&lt;/p&gt;
-
+      &lt;p&gt;最近发现我们线上服务器向用户服务器发送https请求被拒绝的现象，原因是用户服务器设置的https协议是只支持TLSv1.2的请求，而我们使用JDK7的服务器发送https请求时默认使用的是TLSv1，用户服务器拒绝握手，出现connection reset错误，在不升级到
     
     </summary>
     
@@ -413,49 +456,6 @@
       <category term="DNS" scheme="https://xiangxianzui.github.io/tags/DNS/"/>
     
       <category term="抓包" scheme="https://xiangxianzui.github.io/tags/%E6%8A%93%E5%8C%85/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>ddb架构和坑</title>
-    <link href="https://xiangxianzui.github.io/2018/10/ddb%E6%9E%B6%E6%9E%84%E5%92%8C%E5%9D%91/"/>
-    <id>https://xiangxianzui.github.io/2018/10/ddb架构和坑/</id>
-    <published>2018-10-15T13:16:36.000Z</published>
-    <updated>2018-10-15T13:24:25.742Z</updated>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;DDB架构&quot;&gt;&lt;a href=&quot;#DDB架构&quot; class=&quot;headerlink&quot; title=&quot;DDB架构&quot;&gt;&lt;/a&gt;DDB架构&lt;/h2&gt;&lt;h3 id=&quot;老架构&quot;&gt;&lt;a href=&quot;#老架构&quot; class=&quot;headerlink&quot; title=&quot;老架构&quot;&gt;&lt;/
-    
-    </summary>
-    
-      <category term="Work" scheme="https://xiangxianzui.github.io/categories/Work/"/>
-    
-    
-      <category term="分布式数据库" scheme="https://xiangxianzui.github.io/tags/%E5%88%86%E5%B8%83%E5%BC%8F%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Spring注解Resource和Autowired区别对比</title>
-    <link href="https://xiangxianzui.github.io/2018/08/Spring%E6%B3%A8%E8%A7%A3Resource%E5%92%8CAutowired%E5%8C%BA%E5%88%AB%E5%AF%B9%E6%AF%94/"/>
-    <id>https://xiangxianzui.github.io/2018/08/Spring注解Resource和Autowired区别对比/</id>
-    <published>2018-08-14T13:15:11.000Z</published>
-    <updated>2018-08-15T06:46:10.392Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;@Resource和@Autowired都是做bean的注入时使用，其实@Resource并不是Spring的注解，它的包是javax.annotation.Resource，需要导入，但是Spring支持该注解的注入。&lt;/p&gt;
-&lt;h3 id=&quot;共同点&quot;&gt;&lt;a href=&quot;
-    
-    </summary>
-    
-      <category term="Work" scheme="https://xiangxianzui.github.io/categories/Work/"/>
-    
-    
-      <category term="Java" scheme="https://xiangxianzui.github.io/tags/Java/"/>
-    
-      <category term="Spring" scheme="https://xiangxianzui.github.io/tags/Spring/"/>
     
   </entry>
   

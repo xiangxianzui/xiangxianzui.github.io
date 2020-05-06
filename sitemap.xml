@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://xiangxianzui.github.io/2019/04/Enable-TLSv1-2-in-JDK7/</loc>
+    
+    <lastmod>2020-05-06T13:57:41.084Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://xiangxianzui.github.io/2020/05/JVM%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6%E5%9F%BA%E7%A1%80/</loc>
+    
+    <lastmod>2020-05-03T08:33:30.036Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://xiangxianzui.github.io/2020/02/%E5%BB%B6%E6%97%B6%E4%BB%BB%E5%8A%A1%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%A1%88/</loc>
     
     <lastmod>2020-02-12T09:16:21.524Z</lastmod>
@@ -33,6 +47,13 @@
     <loc>https://xiangxianzui.github.io/2018/12/elastic-job%E5%AE%9E%E7%8E%B0%E5%88%86%E6%9E%90/</loc>
     
     <lastmod>2019-11-04T03:14:29.329Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://xiangxianzui.github.io/2019/11/CDN%E7%BB%8F%E5%85%B8%E7%AE%97%E6%B3%95%E5%88%9D%E6%8E%A2/</loc>
+    
+    <lastmod>2019-11-01T10:06:59.429Z</lastmod>
     
   </url>
   
@@ -89,13 +110,6 @@
     <loc>https://xiangxianzui.github.io/2017/07/Perfect-Shell-zsh/</loc>
     
     <lastmod>2019-08-14T02:06:47.667Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://xiangxianzui.github.io/2019/04/Enable-TLSv1-2-in-JDK7/</loc>
-    
-    <lastmod>2019-04-10T03:40:08.270Z</lastmod>
     
   </url>
   

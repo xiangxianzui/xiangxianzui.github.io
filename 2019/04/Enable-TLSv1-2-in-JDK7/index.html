@@ -98,17 +98,17 @@
 
 
 
-<meta name="description" content="最近发现我们线上服务器向用户服务器发送https请求被拒绝的现象，原因是用户服务器设置的https协议是只支持TLSv1.2的请求，而我们服务器发送https请求使用的是TLSv1，用户服务器拒绝握手。">
+<meta name="description" content="最近发现我们线上服务器向用户服务器发送https请求被拒绝的现象，原因是用户服务器设置的https协议是只支持TLSv1.2的请求，而我们使用JDK7的服务器发送https请求时默认使用的是TLSv1，用户服务器拒绝握手，出现connection reset错误，在不升级到JDK8的前提下需要支持发送TLSv1.2的https请求。 使用apache的httpClient代码如下： 1234567">
 <meta name="keywords" content="https">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Enable TLSv1.2 in JDK7">
 <meta property="og:url" content="https://xiangxianzui.github.io/2019/04/Enable-TLSv1-2-in-JDK7/index.html">
 <meta property="og:site_name" content="Muser">
-<meta property="og:description" content="最近发现我们线上服务器向用户服务器发送https请求被拒绝的现象，原因是用户服务器设置的https协议是只支持TLSv1.2的请求，而我们服务器发送https请求使用的是TLSv1，用户服务器拒绝握手。">
-<meta property="og:updated_time" content="2019-04-10T03:40:08.270Z">
+<meta property="og:description" content="最近发现我们线上服务器向用户服务器发送https请求被拒绝的现象，原因是用户服务器设置的https协议是只支持TLSv1.2的请求，而我们使用JDK7的服务器发送https请求时默认使用的是TLSv1，用户服务器拒绝握手，出现connection reset错误，在不升级到JDK8的前提下需要支持发送TLSv1.2的https请求。 使用apache的httpClient代码如下： 1234567">
+<meta property="og:updated_time" content="2020-05-06T13:57:41.084Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Enable TLSv1.2 in JDK7">
-<meta name="twitter:description" content="最近发现我们线上服务器向用户服务器发送https请求被拒绝的现象，原因是用户服务器设置的https协议是只支持TLSv1.2的请求，而我们服务器发送https请求使用的是TLSv1，用户服务器拒绝握手。">
+<meta name="twitter:description" content="最近发现我们线上服务器向用户服务器发送https请求被拒绝的现象，原因是用户服务器设置的https协议是只支持TLSv1.2的请求，而我们使用JDK7的服务器发送https请求时默认使用的是TLSv1，用户服务器拒绝握手，出现connection reset错误，在不升级到JDK8的前提下需要支持发送TLSv1.2的https请求。 使用apache的httpClient代码如下： 1234567">
 
 
 
@@ -382,8 +382,8 @@
               
                 <span class="post-meta-item-text">Last modified&#58;</span>
               
-              <time title="Last modified" itemprop="dateModified" datetime="2019-04-10T11:40:08+08:00">
-                2019-04-10
+              <time title="Last modified" itemprop="dateModified" datetime="2020-05-06T21:57:41+08:00">
+                2020-05-06
               </time>
             
           </span>
@@ -437,7 +437,7 @@
                   <span class="post-meta-item-text">Words count&#58;</span>
                 
                 <span title="Words count">
-                  74
+                  153
                 </span>
               
 
@@ -462,7 +462,10 @@
       
 
       
-        <p>最近发现我们线上服务器向用户服务器发送https请求被拒绝的现象，原因是用户服务器设置的https协议是只支持TLSv1.2的请求，而我们服务器发送https请求使用的是TLSv1，用户服务器拒绝握手。</p>
+        <p>最近发现我们线上服务器向用户服务器发送https请求被拒绝的现象，原因是用户服务器设置的https协议是只支持TLSv1.2的请求，而我们使用JDK7的服务器发送https请求时默认使用的是TLSv1，用户服务器拒绝握手，出现connection reset错误，在不升级到JDK8的前提下需要支持发送TLSv1.2的https请求。</p>
+<p>使用apache的httpClient代码如下：</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">CloseableHttpClient httpClient = HttpClientBuilder</div><div class="line">                .create()</div><div class="line">                .setSSLSocketFactory(<span class="keyword">new</span> SSLConnectionSocketFactory((SSLSocketFactory)SSLSocketFactory.getDefault(),</div><div class="line">                        <span class="keyword">new</span> String[] &#123;<span class="string">"TLSv1"</span>, <span class="string">"TLSv1.1"</span>, <span class="string">"TLSv1.2"</span>&#125;,</div><div class="line">                        <span class="keyword">null</span>,</div><div class="line">                        SSLConnectionSocketFactory.getDefaultHostnameVerifier()))</div><div class="line">                .build();</div></pre></td></tr></table></figure>
+<p>详细原因见SSLSocketFactory类，在JDK7和JDK8中有不同的实现。</p>
 
       
     </div>
@@ -628,7 +631,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">58</span>
+                  <span class="site-state-item-count">60</span>
                   <span class="site-state-item-name">posts</span>
                 </a>
               </div>
@@ -650,7 +653,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">65</span>
+                  <span class="site-state-item-count">67</span>
                   <span class="site-state-item-name">tags</span>
                 </a>
               </div>
@@ -726,7 +729,7 @@
     
       <span class="post-meta-item-text">Site words count&#58;</span>
     
-    <span title="Site words count">53.5k</span>
+    <span title="Site words count">55.0k</span>
   
 </div>
 
